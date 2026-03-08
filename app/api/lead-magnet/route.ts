@@ -1,13 +1,23 @@
 import { NextResponse } from "next/server"
+import { validateAntiSpam } from "@/lib/antispam"
 
 interface LeadMagnetRequest {
   email: string
+  _gotcha?: string
+  _loadedAt?: number
 }
 
 export async function POST(request: Request) {
   try {
     const body: LeadMagnetRequest = await request.json()
     const { email } = body
+
+    // Anti-spam checks (honeypot + timer + rate limit)
+    const spamResult = validateAntiSpam(request, body as unknown as Record<string, unknown>)
+    if (spamResult) {
+      console.log(`[Anti-spam] Blocked lead magnet: ${spamResult}`)
+      return NextResponse.json({ success: true, message: "Guide envoyé avec succès" })
+    }
 
     // Validation
     if (!email || !email.trim()) {

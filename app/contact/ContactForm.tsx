@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useCallback } from "react"
+import { useState, useCallback, useRef } from "react"
 import { Send, Loader2, CheckCircle, Check } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -51,6 +51,10 @@ export function ContactForm() {
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
+
+  // Anti-spam: honeypot + timer
+  const [honeypot, setHoneypot] = useState("")
+  const loadedAtRef = useRef(Date.now())
 
   // Validation helpers
   const isNameValid = (name: string) => name.trim().length >= 2
@@ -136,7 +140,11 @@ export function ContactForm() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          _gotcha: honeypot,
+          _loadedAt: loadedAtRef.current,
+        }),
       })
 
       if (response.ok) {
@@ -207,6 +215,20 @@ export function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
+      {/* Honeypot - invisible to users, bots fill this */}
+      <div className="absolute opacity-0 top-0 left-0 h-0 w-0 -z-10" aria-hidden="true">
+        <label htmlFor="_gotcha">Ne pas remplir</label>
+        <input
+          id="_gotcha"
+          name="_gotcha"
+          type="text"
+          value={honeypot}
+          onChange={(e) => setHoneypot(e.target.value)}
+          tabIndex={-1}
+          autoComplete="off"
+        />
+      </div>
+
       <div className="grid sm:grid-cols-2 gap-6">
         {/* Name */}
         <div className="space-y-2">

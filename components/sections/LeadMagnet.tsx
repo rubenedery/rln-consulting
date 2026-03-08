@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useRef } from "react"
 import { motion } from "framer-motion"
 import { Download, Mail, Loader2, CheckCircle, FileText, TrendingUp, AlertCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -13,6 +13,10 @@ export function LeadMagnet() {
   const [isLoading, setIsLoading] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
   const [error, setError] = useState("")
+
+  // Anti-spam: honeypot + timer
+  const [honeypot, setHoneypot] = useState("")
+  const loadedAtRef = useRef(Date.now())
 
   const validateEmail = (email: string) => {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
@@ -40,7 +44,11 @@ export function LeadMagnet() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({
+          email,
+          _gotcha: honeypot,
+          _loadedAt: loadedAtRef.current,
+        }),
       })
 
       if (response.ok) {
@@ -161,6 +169,20 @@ export function LeadMagnet() {
               </div>
 
               <form onSubmit={handleSubmit} className="space-y-4">
+                {/* Honeypot - invisible to users, bots fill this */}
+                <div className="absolute opacity-0 top-0 left-0 h-0 w-0 -z-10" aria-hidden="true">
+                  <label htmlFor="_lm_gotcha">Ne pas remplir</label>
+                  <input
+                    id="_lm_gotcha"
+                    name="_gotcha"
+                    type="text"
+                    value={honeypot}
+                    onChange={(e) => setHoneypot(e.target.value)}
+                    tabIndex={-1}
+                    autoComplete="off"
+                  />
+                </div>
+
                 <div className="space-y-2">
                   <div className="relative">
                     <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
