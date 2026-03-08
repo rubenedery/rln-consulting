@@ -153,6 +153,7 @@ export default function ConfidentialitePage() {
               </p>
               <ul className="list-disc list-inside text-muted-foreground space-y-2">
                 <li><strong>Vercel</strong> : hébergement du site web (USA, clauses contractuelles types)</li>
+                <li><strong>Google Analytics</strong> : analyse du trafic (sous réserve de consentement)</li>
                 <li><strong>Vercel Analytics</strong> : analyse du trafic (données anonymisées)</li>
                 <li><strong>Resend</strong> : envoi d&apos;emails transactionnels (si activé)</li>
               </ul>
@@ -236,18 +237,26 @@ export default function ConfidentialitePage() {
                 Cookies analytiques
               </h3>
               <p className="text-muted-foreground mb-4">
-                Nous utilisons Vercel Analytics pour comprendre comment les visiteurs utilisent
-                notre site. Ces données sont anonymisées et ne permettent pas de vous identifier
-                personnellement.
+                Nous utilisons Google Analytics et Vercel Analytics pour comprendre comment les
+                visiteurs utilisent notre site. Ces cookies ne sont activés qu&apos;avec votre
+                consentement explicite.
+              </p>
+
+              <h3 className="text-xl font-medium text-foreground mt-6 mb-3">
+                Cookies marketing
+              </h3>
+              <p className="text-muted-foreground mb-4">
+                Ces cookies permettent d&apos;afficher des publicités personnalisées (Facebook Pixel,
+                LinkedIn, etc.). Ils ne sont activés qu&apos;avec votre consentement explicite.
               </p>
 
               <h3 className="text-xl font-medium text-foreground mt-6 mb-3">
                 Gérer vos préférences
               </h3>
               <p className="text-muted-foreground">
-                Vous pouvez gérer vos préférences de cookies directement dans les paramètres de
-                votre navigateur. Notez que le blocage de certains cookies peut affecter votre
-                expérience sur le site.
+                Lors de votre première visite, un bandeau de consentement vous permet de choisir
+                les cookies que vous acceptez. Vous pouvez modifier vos choix à tout moment en
+                cliquant sur &quot;Gérer les cookies&quot; dans le pied de page du site.
               </p>
             </section>
 

@@ -5,6 +5,7 @@ import { motion } from "framer-motion"
 import { ArrowRight, Code, Target, Zap } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { fadeInUp, staggerContainer } from "@/lib/animations"
+import { track_cta_click } from "@/components/analytics"
 
 export function Hero() {
   return (
@@ -58,13 +59,14 @@ export function Hero() {
               asChild
               size="lg"
               className="bg-accent hover:bg-accent/90 text-accent-foreground"
+              onClick={() => track_cta_click("demarrer_projet", "hero")}
             >
               <Link href="/contact">
                 Démarrer un projet
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
-            <Button asChild variant="outline" size="lg">
+            <Button asChild variant="outline" size="lg" onClick={() => track_cta_click("voir_realisations", "hero")}>
               <Link href="/cas-etudes">Voir nos réalisations</Link>
             </Button>
           </motion.div>

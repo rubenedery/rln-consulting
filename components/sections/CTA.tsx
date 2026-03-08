@@ -4,6 +4,7 @@ import Link from "next/link"
 import { motion } from "framer-motion"
 import { ArrowRight, Mail, Phone } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { track_cta_click, track_email_click, track_phone_click } from "@/components/analytics"
 
 export function CTA() {
   return (
@@ -39,6 +40,7 @@ export function CTA() {
               asChild
               size="lg"
               className="bg-accent hover:bg-accent/90 text-accent-foreground"
+              onClick={() => track_cta_click("contactez_nous", "cta_section")}
             >
               <Link href="/contact">
                 Contactez-nous
@@ -60,6 +62,7 @@ export function CTA() {
             <a
               href="mailto:ruben@rln-consulting.com"
               className="flex items-center gap-2 hover:text-accent transition-colors"
+              onClick={() => track_email_click()}
             >
               <Mail className="h-4 w-4" />
               ruben@rln-consulting.com
@@ -67,6 +70,7 @@ export function CTA() {
             <a
               href="tel:+33600000000"
               className="flex items-center gap-2 hover:text-accent transition-colors"
+              onClick={() => track_phone_click()}
             >
               <Phone className="h-4 w-4" />
               +33 6 00 00 00 00

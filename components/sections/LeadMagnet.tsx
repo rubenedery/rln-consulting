@@ -6,6 +6,7 @@ import { Download, Mail, Loader2, CheckCircle, FileText, TrendingUp, AlertCircle
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { toast } from "@/hooks/use-toast"
+import { track_lead_magnet } from "@/components/analytics"
 
 export function LeadMagnet() {
   const [email, setEmail] = useState("")
@@ -43,6 +44,7 @@ export function LeadMagnet() {
       })
 
       if (response.ok) {
+        track_lead_magnet()
         setIsSuccess(true)
         toast({
           title: "Guide envoyé !",

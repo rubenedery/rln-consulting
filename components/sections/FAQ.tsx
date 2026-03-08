@@ -51,6 +51,7 @@ export function FAQ({
                 className="border border-border/50 rounded-lg overflow-hidden bg-card hover:border-primary/30 transition-colors"
               >
                 <button
+                  id={`faq-question-${index}`}
                   onClick={() => toggleItem(index)}
                   className="flex items-center justify-between w-full px-6 py-4 text-left"
                   aria-expanded={openIndex === index}
@@ -70,6 +71,8 @@ export function FAQ({
                   {openIndex === index && (
                     <motion.div
                       id={`faq-answer-${index}`}
+                      role="region"
+                      aria-labelledby={`faq-question-${index}`}
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
