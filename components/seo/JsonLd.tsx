@@ -461,6 +461,117 @@ export function WebPageJsonLd({ title, description, url }: WebPageJsonLdProps) {
   )
 }
 
+/**
+ * LocalBusiness Schema pour les pages villes (SEO local par région)
+ */
+interface CityLocalBusinessJsonLdProps {
+  cityName: string
+  region: string
+  postalCode: string
+  latitude: number
+  longitude: number
+  url: string
+}
+
+export function CityLocalBusinessJsonLd({
+  cityName,
+  region,
+  postalCode,
+  latitude,
+  longitude,
+  url,
+}: CityLocalBusinessJsonLdProps) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": `${url}/#localbusiness`,
+    name: `${siteConfig.name} - ${cityName}`,
+    description: `Agence de développement web et marketing digital à ${cityName}. Sites web Next.js, Google Ads, Facebook Ads et solutions IA pour les entreprises de ${cityName} et ${region}.`,
+    url,
+    telephone: siteConfig.contact.phone.replace(/\s/g, "-"),
+    email: siteConfig.contact.email,
+    logo: `${siteConfig.url}/logo.png`,
+    image: `${siteConfig.url}/og-image.png`,
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: cityName,
+      addressRegion: region,
+      postalCode,
+      addressCountry: "FR",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude,
+      longitude,
+    },
+    areaServed: [
+      {
+        "@type": "City",
+        name: cityName,
+      },
+      {
+        "@type": "State",
+        name: region,
+      },
+      {
+        "@type": "Country",
+        name: "France",
+      },
+    ],
+    priceRange: "€€",
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        opens: "09:00",
+        closes: "18:00",
+      },
+    ],
+    sameAs: [
+      siteConfig.social.linkedin,
+      siteConfig.social.twitter,
+      siteConfig.social.github,
+    ],
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: `Services digitaux à ${cityName}`,
+      itemListElement: [
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: `Création de site web à ${cityName}`,
+            url: `${siteConfig.url}/services/developpement`,
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: `Gestion Google Ads à ${cityName}`,
+            url: `${siteConfig.url}/services/ads-management`,
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: `Solutions IA à ${cityName}`,
+            url: `${siteConfig.url}/services/ia-entreprise`,
+          },
+        },
+      ],
+    },
+  }
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+    />
+  )
+}
+
 interface BreadcrumbJsonLdProps {
   items: Array<{
     name: string

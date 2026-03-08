@@ -2,6 +2,7 @@ export {
   WebSiteJsonLd,
   OrganizationJsonLd,
   LocalBusinessJsonLd,
+  CityLocalBusinessJsonLd,
   FAQPageJsonLd,
   ServiceJsonLd,
   BlogPostingJsonLd,
