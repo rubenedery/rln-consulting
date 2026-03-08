@@ -50,7 +50,7 @@ export async function generateMetadata({
       url: `https://rln-consulting.com/blog/${post.slug}`,
       images: [
         {
-          url: post.image,
+          url: `/api/og?title=${encodeURIComponent(post.title)}&description=${encodeURIComponent(post.description)}&type=blog`,
           width: 1200,
           height: 630,
           alt: post.title,
@@ -61,7 +61,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: post.title,
       description: post.description,
-      images: [post.image],
+      images: [`/api/og?title=${encodeURIComponent(post.title)}&description=${encodeURIComponent(post.description)}&type=blog`],
     },
   }
 }

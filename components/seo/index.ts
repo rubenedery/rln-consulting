@@ -1,4 +1,5 @@
 export {
+  WebSiteJsonLd,
   OrganizationJsonLd,
   LocalBusinessJsonLd,
   FAQPageJsonLd,

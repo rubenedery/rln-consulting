@@ -65,7 +65,7 @@ export const metadata: Metadata = {
       "Agence de développement web et marketing digital à Paris. Sites web, applications mobiles, CRM et publicités en ligne.",
     images: [
       {
-        url: "/og-image.png",
+        url: "/api/og?title=RLN+Consulting&description=Agence+D%C3%A9veloppement+Web+%26+Marketing+Digital+Paris",
         width: 1200,
         height: 630,
         alt: "RLN Consulting - Agence Web Paris",
@@ -76,7 +76,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "RLN Consulting | Agence Développement Web Paris",
     description: "Agence de développement web et marketing digital à Paris.",
-    images: ["/og-image.png"],
+    images: ["/api/og?title=RLN+Consulting&description=Agence+D%C3%A9veloppement+Web+%26+Marketing+Digital+Paris"],
     creator: "@rlnconsulting",
   },
   icons: {

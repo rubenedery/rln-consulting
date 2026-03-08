@@ -24,6 +24,7 @@ export const metadata: Metadata = {
     description:
       "Services de développement web et gestion de campagnes publicitaires.",
     url: "https://rln-consulting.com/services",
+    images: [{ url: "/api/og?title=Nos+Services&description=D%C3%A9veloppement+Web%2C+Marketing+Digital+%26+IA+pour+Entreprises&type=service", width: 1200, height: 630 }],
   },
 }
 
