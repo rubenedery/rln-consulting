@@ -5,7 +5,7 @@ description: "Mise en place d'une stratégie d'acquisition multi-canal pour une 
 date: "2023-09-20"
 services: ["Google Ads", "LinkedIn Ads", "Stratégie Marketing"]
 industry: "SaaS / Tech"
-image: "/images/case-studies/dataflow.jpg"
+image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=630&fit=crop&q=80"
 results:
   - metric: "Coût par lead"
     before: "185€"

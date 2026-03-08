@@ -8,7 +8,7 @@ services:
   - Intégration API
   - Développement Web
 industry: "E-commerce"
-image: "/images/case-studies/chatbot-ia.jpg"
+image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&h=630&fit=crop&q=80"
 results:
   - metric: "Tickets résolus par IA"
     before: "0%"

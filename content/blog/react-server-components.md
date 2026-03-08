@@ -5,7 +5,7 @@ date: "2024-03-01"
 author: "Ruben Edery"
 category: "developpement"
 tags: ["react", "nextjs", "server-components", "performance"]
-image: "/images/blog/rsc.jpg"
+image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=1200&h=630&fit=crop&q=80"
 ---
 
 ## Qu'est-ce qu'un React Server Component ?

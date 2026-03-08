@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation"
 import Link from "next/link"
+import Image from "next/image"
 import type { Metadata } from "next"
 import { ArrowLeft, Calendar, Building2, Briefcase, Quote } from "lucide-react"
 import { getCaseStudy, getCaseStudySlugs, getAllCaseStudies } from "@/lib/mdx"
@@ -140,9 +141,18 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
             </div>
           </header>
 
-          {/* Featured image placeholder */}
+          {/* Featured image */}
           <div className="max-w-5xl mx-auto mb-16">
-            <div className="aspect-video bg-muted rounded-lg" />
+            <div className="aspect-video bg-muted rounded-lg relative overflow-hidden">
+              <Image
+                src={caseStudy.image}
+                alt={caseStudy.title}
+                fill
+                className="object-cover rounded-lg"
+                sizes="(max-width: 768px) 100vw, 1120px"
+                priority
+              />
+            </div>
           </div>
 
           {/* Results */}

@@ -58,11 +58,15 @@ export function CaseStudiesPreview({ caseStudies }: CaseStudiesPreviewProps) {
               <Link href={`/cas-etudes/${study.slug}`}>
                 <Card className="h-full overflow-hidden hover:shadow-lg transition-all duration-300 group border-border/50">
                   {/* Image */}
-                  <div className="relative aspect-video bg-muted">
+                  <div className="relative aspect-video bg-muted overflow-hidden">
+                    <Image
+                      src={study.image}
+                      alt={study.title}
+                      fill
+                      className="object-cover transition-transform duration-300 group-hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />
-                    <div className="absolute inset-0 flex items-center justify-center text-muted-foreground">
-                      <TrendingUp className="h-12 w-12" />
-                    </div>
                     <div className="absolute bottom-4 left-4 right-4 z-20">
                       <Badge variant="secondary" className="bg-accent text-accent-foreground">
                         {study.industry}
