@@ -3,7 +3,7 @@
 import * as React from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { Menu, ChevronDown } from "lucide-react"
+import { Menu, ChevronDown, X } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
@@ -189,26 +189,38 @@ export function Navbar() {
                   <span className="sr-only">Ouvrir le menu</span>
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-[300px] sm:w-[350px]">
+              <SheetContent side="right" className="w-[300px] sm:w-[350px] p-0" showCloseButton={false}>
                 <SheetTitle className="sr-only">Menu de navigation</SheetTitle>
-                <div className="flex flex-col space-y-4 mt-8">
-                  {navigation.map((item) => (
-                    <div key={item.name}>
-                      {item.children ? (
-                        <div className="space-y-2">
-                          <span className="text-sm font-medium text-muted-foreground">
-                            {item.name}
-                          </span>
-                          <div className="ml-4 space-y-1">
+                <nav className="flex flex-col h-full">
+                  {/* Header */}
+                  <div className="flex items-center justify-between px-6 pt-6 pb-4 border-b border-border">
+                    <span className="text-lg font-bold text-primary">
+                      RLN<span className="text-accent">Consulting</span>
+                    </span>
+                    <SheetClose className="rounded-full p-2 hover:bg-muted transition-colors">
+                      <X className="h-5 w-5" />
+                      <span className="sr-only">Fermer</span>
+                    </SheetClose>
+                  </div>
+
+                  {/* Navigation links */}
+                  <div className="flex-1 overflow-y-auto px-6 py-6 space-y-1">
+                    {navigation.map((item) => (
+                      <div key={item.name}>
+                        {item.children ? (
+                          <div className="space-y-1">
+                            <span className="block px-3 py-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                              {item.name}
+                            </span>
                             {item.children.map((child) => (
                               <SheetClose asChild key={child.href}>
                                 <Link
                                   href={child.href}
                                   className={cn(
-                                    "block py-2 text-sm transition-colors",
+                                    "block rounded-lg px-3 py-2.5 text-sm transition-colors",
                                     isActive(child.href)
-                                      ? "text-primary font-medium"
-                                      : "text-foreground hover:text-primary"
+                                      ? "bg-primary/10 text-primary font-medium"
+                                      : "text-foreground hover:bg-muted"
                                   )}
                                 >
                                   {child.name}
@@ -216,26 +228,28 @@ export function Navbar() {
                               </SheetClose>
                             ))}
                           </div>
-                        </div>
-                      ) : (
-                        <SheetClose asChild>
-                          <Link
-                            href={item.href}
-                            className={cn(
-                              "block py-2 text-base transition-colors",
-                              isActive(item.href)
-                                ? "text-primary font-medium"
-                                : "text-foreground hover:text-primary"
-                            )}
-                          >
-                            {item.name}
-                          </Link>
-                        </SheetClose>
-                      )}
-                    </div>
-                  ))}
-                  <div className="pt-4 border-t border-border space-y-4">
-                    <div className="flex items-center justify-between">
+                        ) : (
+                          <SheetClose asChild>
+                            <Link
+                              href={item.href}
+                              className={cn(
+                                "block rounded-lg px-3 py-2.5 text-sm font-medium transition-colors",
+                                isActive(item.href)
+                                  ? "bg-primary/10 text-primary"
+                                  : "text-foreground hover:bg-muted"
+                              )}
+                            >
+                              {item.name}
+                            </Link>
+                          </SheetClose>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Footer actions */}
+                  <div className="px-6 py-6 border-t border-border space-y-3">
+                    <div className="flex items-center justify-between px-3">
                       <span className="text-sm text-muted-foreground">Thème</span>
                       <ThemeToggle />
                     </div>
@@ -248,6 +262,7 @@ export function Navbar() {
                           href={WHATSAPP_URL}
                           target="_blank"
                           rel="noopener noreferrer"
+                          onClick={() => track_whatsapp_click()}
                         >
                           <WhatsAppIcon className="size-5" />
                           WhatsApp
@@ -255,12 +270,12 @@ export function Navbar() {
                       </Button>
                     </SheetClose>
                     <SheetClose asChild>
-                      <Button asChild className="w-full bg-accent hover:bg-accent/90">
-                        <Link href="/contact">Contactez-nous</Link>
+                      <Button asChild className="w-full bg-accent hover:bg-accent/90 text-accent-foreground">
+                        <Link href="/contact" onClick={() => track_cta_click("contactez_nous", "mobile_menu")}>Contactez-nous</Link>
                       </Button>
                     </SheetClose>
                   </div>
-                </div>
+                </nav>
               </SheetContent>
             </Sheet>
           </div>
