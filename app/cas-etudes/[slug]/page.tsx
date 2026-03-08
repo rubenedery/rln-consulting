@@ -45,12 +45,18 @@ export async function generateMetadata({
       url: `https://rln-consulting.com/cas-etudes/${caseStudy.slug}`,
       images: [
         {
-          url: caseStudy.image,
+          url: `/api/og?title=${encodeURIComponent(caseStudy.title)}&description=${encodeURIComponent(caseStudy.description)}&type=cas-etude`,
           width: 1200,
           height: 630,
           alt: caseStudy.title,
         },
       ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: caseStudy.title,
+      description: caseStudy.description,
+      images: [`/api/og?title=${encodeURIComponent(caseStudy.title)}&description=${encodeURIComponent(caseStudy.description)}&type=cas-etude`],
     },
   }
 }

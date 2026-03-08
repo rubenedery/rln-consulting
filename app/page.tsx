@@ -8,7 +8,7 @@ import {
   CTA,
   CaseStudiesPreview,
 } from "@/components/sections"
-import { OrganizationJsonLd, LocalBusinessJsonLd } from "@/components/seo"
+import { WebSiteJsonLd, OrganizationJsonLd, LocalBusinessJsonLd } from "@/components/seo"
 import { getAllCaseStudies } from "@/lib/mdx"
 
 export default function HomePage() {
@@ -16,6 +16,7 @@ export default function HomePage() {
 
   return (
     <>
+      <WebSiteJsonLd />
       <OrganizationJsonLd />
       <LocalBusinessJsonLd />
       <Hero />

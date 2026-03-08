@@ -35,6 +35,7 @@ export const metadata: Metadata = {
     description:
       "Gestion et optimisation de vos campagnes publicitaires Facebook Ads et Google Ads.",
     url: "https://rln-consulting.com/services/ads-management",
+    images: [{ url: "/api/og?title=Gestion+Publicit%C3%A9s&description=Facebook+Ads+%26+Google+Ads+-+Strat%C3%A9gie%2C+Cr%C3%A9ation+%26+Optimisation&type=service", width: 1200, height: 630 }],
   },
 }
 

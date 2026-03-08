@@ -37,6 +37,7 @@ export const metadata: Metadata = {
     description:
       "Transformez votre entreprise avec l'intelligence artificielle. Chatbots, automatisation et solutions sur mesure.",
     url: "https://rln-consulting.com/services/ia-entreprise",
+    images: [{ url: "/api/og?title=IA+pour+Entreprises&description=Chatbots%2C+Automatisation+%26+Int%C3%A9gration+IA+Sur+Mesure&type=service", width: 1200, height: 630 }],
   },
 }
 

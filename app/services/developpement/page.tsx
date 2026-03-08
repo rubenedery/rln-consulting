@@ -25,6 +25,7 @@ export const metadata: Metadata = {
     description:
       "Services de développement web sur mesure avec Next.js et React.",
     url: "https://rln-consulting.com/services/developpement",
+    images: [{ url: "/api/og?title=D%C3%A9veloppement+Web&description=Next.js%2C+React+%26+Applications+Sur+Mesure&type=service", width: 1200, height: 630 }],
   },
 }
 
