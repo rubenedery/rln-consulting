@@ -9,9 +9,8 @@ export const siteConfig = {
 
   contact: {
     email: "ruben@rln-consulting.com",
-    // TODO: Remplacer par le vrai numéro de téléphone
-    phone: "+33 6 00 00 00 00",
-    phoneHref: "tel:+33600000000",
+    phone: "+33 6 09 86 66 72",
+    phoneHref: "tel:+33609866672",
     location: "Paris, France",
   },
 
