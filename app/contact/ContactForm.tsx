@@ -8,6 +8,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { toast } from "@/hooks/use-toast"
 import { cn } from "@/lib/utils"
+import { track_contact_form } from "@/components/analytics"
 
 interface FormData {
   name: string
@@ -139,6 +140,7 @@ export function ContactForm() {
       })
 
       if (response.ok) {
+        track_contact_form()
         toast({
           title: "Message envoyé !",
           description: "Nous vous répondrons sous 24 heures.",

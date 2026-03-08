@@ -120,12 +120,17 @@ export default function MentionsLegalesPage() {
                 utilisateur et analyser le trafic. Ces cookies sont de type :
               </p>
               <ul className="list-disc list-inside text-muted-foreground space-y-2 mb-4">
-                <li><strong>Cookies techniques :</strong> nécessaires au fonctionnement du site</li>
-                <li><strong>Cookies analytiques :</strong> permettant d&apos;analyser le trafic (Vercel Analytics)</li>
+                <li><strong>Cookies essentiels :</strong> nécessaires au fonctionnement du site (toujours actifs)</li>
+                <li><strong>Cookies analytiques :</strong> permettant d&apos;analyser le trafic (Google Analytics, Vercel Analytics) — soumis à votre consentement</li>
+                <li><strong>Cookies marketing :</strong> utilisés pour des publicités ciblées (Facebook Pixel, LinkedIn, etc.) — soumis à votre consentement</li>
               </ul>
+              <p className="text-muted-foreground mb-4">
+                Lors de votre première visite, un bandeau vous permet de choisir quels cookies vous
+                acceptez. Vous pouvez modifier vos préférences à tout moment en cliquant sur
+                &quot;Gérer les cookies&quot; dans le pied de page du site.
+              </p>
               <p className="text-muted-foreground">
-                Vous pouvez paramétrer votre navigateur pour refuser les cookies. Pour plus
-                d&apos;informations, consultez notre{" "}
+                Pour plus d&apos;informations, consultez notre{" "}
                 <a href="/confidentialite" className="text-primary hover:underline">
                   Politique de confidentialité
                 </a>.

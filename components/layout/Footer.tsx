@@ -3,6 +3,7 @@ import { Mail, Phone, MapPin, Linkedin, Twitter, Github } from "lucide-react"
 import { Separator } from "@/components/ui/separator"
 import { siteConfig } from "@/lib/constants"
 import { FooterTrustBadges } from "@/components/ui/trust-badges"
+import { CookieSettingsButton } from "@/components/ui/cookie-banner"
 import { sectors, categoryLabels, getSectorsByCategory } from "@/lib/sectors-data"
 import type { Sector } from "@/types/sectors"
 
@@ -197,6 +198,7 @@ export function Footer() {
                 {link.name}
               </Link>
             ))}
+            <CookieSettingsButton />
           </div>
         </div>
       </div>

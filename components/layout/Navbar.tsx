@@ -15,6 +15,7 @@ import {
   SheetTitle,
 } from "@/components/ui/sheet"
 import { ThemeToggle } from "@/components/ui/theme-toggle"
+import { track_whatsapp_click, track_cta_click } from "@/components/analytics"
 
 const WHATSAPP_URL = "https://wa.me/33609866672"
 
@@ -169,11 +170,12 @@ export function Navbar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Nous contacter sur WhatsApp"
+                onClick={() => track_whatsapp_click()}
               >
                 <WhatsAppIcon className="size-5" />
               </a>
             </Button>
-            <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground">
+            <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground" onClick={() => track_cta_click("contactez_nous", "navbar")}>
               <Link href="/contact">Contactez-nous</Link>
             </Button>
           </div>
