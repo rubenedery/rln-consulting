@@ -47,13 +47,12 @@ export default function MentionsLegalesPage() {
               </h2>
               <div className="bg-secondary/50 rounded-lg p-6 space-y-2 text-foreground">
                 <p><strong>Raison sociale :</strong> RLN Consulting</p>
-                <p><strong>Forme juridique :</strong> Micro-entreprise / Auto-entrepreneur</p>
+                <p><strong>Forme juridique :</strong> SAS (Société par Actions Simplifiée)</p>
                 <p><strong>Dirigeant :</strong> Ruben Edery</p>
                 <p><strong>Adresse :</strong> Paris, France</p>
                 <p><strong>Email :</strong> <a href="mailto:ruben@rln-consulting.com" className="text-primary hover:underline">ruben@rln-consulting.com</a></p>
-                {/* TODO: Remplacer par le vrai numéro de téléphone */}
-                <p><strong>Téléphone :</strong> +33 6 00 00 00 00</p>
-                <p><strong>SIRET :</strong> [À compléter]</p>
+                <p><strong>Téléphone :</strong> +33 6 09 86 66 72</p>
+                <p><strong>SIRET :</strong> 94925251400011</p>
               </div>
             </section>
 

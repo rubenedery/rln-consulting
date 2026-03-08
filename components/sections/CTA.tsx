@@ -68,12 +68,12 @@ export function CTA() {
               ruben@rln-consulting.com
             </a>
             <a
-              href="tel:+33600000000"
+              href="tel:+33609866672"
               className="flex items-center gap-2 hover:text-accent transition-colors"
               onClick={() => track_phone_click()}
             >
               <Phone className="h-4 w-4" />
-              +33 6 00 00 00 00
+              +33 6 09 86 66 72
             </a>
           </div>
         </motion.div>
