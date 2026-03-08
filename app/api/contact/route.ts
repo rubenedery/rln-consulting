@@ -123,14 +123,9 @@ export async function POST(request: Request) {
           html: generateEmailHtml(validatedData),
         })
 
-        console.log("Email sent successfully via Resend")
-      } catch (emailError) {
-        console.error("Failed to send email via Resend:", emailError)
+      } catch {
         // Continue anyway - we don't want to fail the user's request
       }
-    } else {
-      // Log form submission when Resend is not configured
-      console.log("Contact form submission (Resend not configured):", validatedData)
     }
 
     return NextResponse.json(
@@ -145,7 +140,6 @@ export async function POST(request: Request) {
       )
     }
 
-    console.error("Contact form error:", error)
     return NextResponse.json(
       { error: "Une erreur est survenue" },
       { status: 500 }
