@@ -5,7 +5,7 @@ date: "2024-01-05"
 author: "Ruben Edery"
 category: "marketing"
 tags: ["google-ads", "leads", "sem", "conversion"]
-image: "/images/blog/google-ads.jpg"
+image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1200&h=630&fit=crop&q=80"
 ---
 
 ## Pourquoi Google Ads pour la génération de leads

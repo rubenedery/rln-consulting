@@ -5,7 +5,7 @@ description: "Migration vers Shopify avec intégration headless Next.js. Amélio
 date: "2023-11-15"
 services: ["Développement Web", "E-commerce", "Optimisation Performance"]
 industry: "Mode & Retail"
-image: "/images/case-studies/modastyle.jpg"
+image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200&h=630&fit=crop&q=80"
 results:
   - metric: "Temps de chargement"
     before: "4.2s"

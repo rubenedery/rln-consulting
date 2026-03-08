@@ -5,7 +5,7 @@ date: "2024-01-20"
 author: "Ruben Edery"
 category: "developpement"
 tags: ["tailwind", "css", "react", "frontend"]
-image: "/images/blog/tailwind-css.jpg"
+image: "https://images.unsplash.com/photo-1507721999472-8ed4421c4af2?w=1200&h=630&fit=crop&q=80"
 ---
 
 ## Le dilemme du styling en React

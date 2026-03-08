@@ -24,7 +24,7 @@ const plans = [
     id: "essentiel",
     name: "Essentiel",
     description: "Idéal pour les startups et petites entreprises qui démarrent leur présence en ligne.",
-    price: "2 000",
+    price: "999",
     priceNote: "à partir de",
     icon: Sparkles,
     popular: false,
@@ -48,9 +48,9 @@ const plans = [
   {
     id: "professionnel",
     name: "Professionnel",
-    description: "Pour les entreprises qui veulent un site performant avec plus de fonctionnalités.",
-    price: "5 000",
-    priceNote: "à partir de",
+    description: "Pour les entreprises qui veulent un site performant avec des fonctionnalités avancées.",
+    price: "Sur devis",
+    priceNote: "",
     icon: Zap,
     popular: true,
     features: [
@@ -61,20 +61,20 @@ const plans = [
       "Animations & interactions",
       "Intégrations tierces (Calendly, CRM...)",
       "Performance optimisée (Score 90+)",
-      "Livraison en 4-6 semaines",
+      "V1 livrée en 3 mois maximum",
       "3 mois de support inclus",
     ],
     notIncluded: [
       "E-commerce complet",
       "Application web complexe",
     ],
-    cta: "C'est pour moi",
+    cta: "Demander mon devis",
     ctaVariant: "default" as const,
   },
   {
     id: "sur-mesure",
     name: "Sur-Mesure",
-    description: "Pour les projets ambitieux nécessitant une solution personnalisée.",
+    description: "Pour les projets ambitieux nécessitant une solution entièrement personnalisée.",
     price: "Sur devis",
     priceNote: "",
     icon: Crown,
@@ -87,6 +87,7 @@ const plans = [
       "Dashboard & analytics custom",
       "Architecture scalable",
       "Tests automatisés",
+      "V1 livrée en 3 mois maximum",
       "Documentation technique",
       "Formation équipe",
       "Support prioritaire 12 mois",
@@ -152,9 +153,13 @@ export default function TarifsPage() {
               <span className="text-primary">vos ambitions</span>
             </h1>
             <p className="text-lg text-muted-foreground">
-              Choisissez le forfait qui correspond à vos besoins. Tous nos prix
-              sont indicatifs - contactez-nous pour un devis personnalisé gratuit.
+              Chaque projet est unique : nos tarifs sont personnalisés selon vos besoins.
+              Contactez-nous pour un devis gratuit et sur mesure.
             </p>
+            <div className="mt-6 inline-flex items-center gap-2 rounded-lg bg-accent/10 px-5 py-3 text-sm font-medium text-accent">
+              <Zap className="h-4 w-4" />
+              Votre V1 livrée en 3 mois maximum, quel que soit le projet
+            </div>
           </div>
 
           {/* Simulator CTA */}
@@ -320,11 +325,14 @@ export default function TarifsPage() {
             <Card className="max-w-2xl mx-auto bg-primary/5 border-primary/20">
               <CardContent className="py-10">
                 <h2 className="text-2xl font-bold text-foreground mb-4">
-                  Besoin d&apos;un devis personnalisé ?
+                  Un projet en tête ? Parlons-en.
                 </h2>
-                <p className="text-muted-foreground mb-6">
-                  Chaque projet est unique. Contactez-nous pour discuter de vos
-                  besoins spécifiques et obtenir une estimation précise.
+                <p className="text-muted-foreground mb-2">
+                  Nos tarifs sont adaptés à la complexité de votre projet.
+                  On échange, on comprend vos besoins, et on vous propose un prix juste.
+                </p>
+                <p className="text-sm font-medium text-accent mb-6">
+                  V1 livrée en 3 mois maximum — c&apos;est notre engagement.
                 </p>
                 <Button
                   asChild

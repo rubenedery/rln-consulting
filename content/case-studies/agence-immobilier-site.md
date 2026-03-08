@@ -5,7 +5,7 @@ description: "Création d'un site vitrine moderne avec stratégie SEO local pour
 date: "2024-01-10"
 services: ["Développement Web", "SEO", "Design UI/UX"]
 industry: "Immobilier"
-image: "/images/case-studies/immobilier.jpg"
+image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&h=630&fit=crop&q=80"
 results:
   - metric: "Trafic organique"
     before: "800/mois"

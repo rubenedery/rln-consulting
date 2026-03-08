@@ -5,7 +5,7 @@ date: "2024-02-28"
 author: "Ruben Edery"
 category: "marketing"
 tags: ["facebook-ads", "ecommerce", "publicite", "conversion"]
-image: "/images/blog/facebook-ads.jpg"
+image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=1200&h=630&fit=crop&q=80"
 ---
 
 ## Pourquoi Facebook Ads reste incontournable pour l'e-commerce

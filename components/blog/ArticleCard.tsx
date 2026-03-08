@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { Calendar, Clock, User } from "lucide-react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -36,8 +37,15 @@ export function ArticleCard({ post, searchQuery = "" }: ArticleCardProps) {
   return (
     <Link href={`/blog/${post.slug}`}>
       <Card className="h-full overflow-hidden hover:shadow-lg transition-all duration-300 group border-border/50 hover:border-primary/30">
-        {/* Image placeholder */}
+        {/* Image */}
         <div className="aspect-video bg-muted relative overflow-hidden">
+          <Image
+            src={post.image}
+            alt={post.title}
+            fill
+            className="object-cover transition-transform duration-300 group-hover:scale-105"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          />
           <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
           <div className="absolute top-4 left-4">
             <Badge variant="secondary" className="bg-primary text-primary-foreground">

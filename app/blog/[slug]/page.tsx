@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation"
 import Link from "next/link"
+import Image from "next/image"
 import type { Metadata } from "next"
 import { ArrowLeft, Calendar, Clock, User, Tag } from "lucide-react"
 import { getBlogPost, getBlogSlugs, getAllBlogPosts } from "@/lib/mdx"
@@ -138,9 +139,18 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             </div>
           </header>
 
-          {/* Featured image placeholder */}
+          {/* Featured image */}
           <div className="max-w-4xl mx-auto mb-12">
-            <div className="aspect-video bg-muted rounded-lg" />
+            <div className="aspect-video bg-muted rounded-lg relative overflow-hidden">
+              <Image
+                src={post.image}
+                alt={post.title}
+                fill
+                className="object-cover rounded-lg"
+                sizes="(max-width: 768px) 100vw, 896px"
+                priority
+              />
+            </div>
           </div>
 
           {/* Content */}

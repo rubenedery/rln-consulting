@@ -72,7 +72,7 @@ export const webProjectOptions: SelectOption<WebProjectType>[] = [
     label: "Site Vitrine",
     description: "1 à 5 pages pour présenter votre activité",
     icon: Layout,
-    price: "2 000€",
+    price: "999€",
   },
   {
     value: "avance",
@@ -330,7 +330,7 @@ export const aiComplexityOptions: SelectOption<AIComplexity>[] = [
 export const PRICING = {
   web: {
     projectTypes: {
-      vitrine: 2000,
+      vitrine: 999,
       avance: 4000,
       ecommerce: 6000,
       webapp: 10000,
