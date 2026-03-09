@@ -179,19 +179,25 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
                   __html: caseStudy.content
                     .split("\n")
                     .map((line) => {
+                      // Parse inline markdown: **bold** and *italic*
+                      const parseInline = (text: string) =>
+                        text
+                          .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
+                          .replace(/\*(.+?)\*/g, "<em>$1</em>")
+
                       if (line.startsWith("## ")) {
-                        return `<h2>${line.slice(3)}</h2>`
+                        return `<h2>${parseInline(line.slice(3))}</h2>`
                       }
                       if (line.startsWith("### ")) {
-                        return `<h3>${line.slice(4)}</h3>`
+                        return `<h3>${parseInline(line.slice(4))}</h3>`
                       }
                       if (line.startsWith("- ")) {
-                        return `<li>${line.slice(2)}</li>`
+                        return `<li>${parseInline(line.slice(2))}</li>`
                       }
                       if (line.trim() === "") {
                         return "<br />"
                       }
-                      return `<p>${line}</p>`
+                      return `<p>${parseInline(line)}</p>`
                     })
                     .join("\n"),
                 }}
