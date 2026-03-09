@@ -47,3 +47,7 @@ export function hasConsent(): boolean {
 export function hasAnalyticsConsent(): boolean {
   return getConsent()?.analytics ?? false
 }
+
+export function hasMarketingConsent(): boolean {
+  return getConsent()?.marketing ?? false
+}

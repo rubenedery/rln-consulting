@@ -4,7 +4,8 @@ import { Separator } from "@/components/ui/separator"
 import { siteConfig } from "@/lib/constants"
 import { FooterTrustBadges } from "@/components/ui/trust-badges"
 import { CookieSettingsButton } from "@/components/ui/cookie-banner"
-import { sectors, categoryLabels, getSectorsByCategory } from "@/lib/sectors-data"
+import { categoryLabels, getSectorsByCategory } from "@/lib/sectors-data"
+import { cities } from "@/lib/cities-data"
 import type { Sector } from "@/types/sectors"
 
 const footerLinks = {
@@ -173,6 +174,26 @@ export function Footer() {
             >
               Voir tous les secteurs →
             </Link>
+          </div>
+        </div>
+
+        <Separator className="my-8 bg-primary-foreground/20" />
+
+        {/* Cities Section - Local SEO Links */}
+        <div className="mb-8">
+          <h3 className="font-semibold mb-6 text-center">
+            Zones d'intervention
+          </h3>
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
+            {cities.map((city) => (
+              <Link
+                key={city.slug}
+                href={`/agence-web-${city.slug}`}
+                className="text-sm text-primary-foreground/70 hover:text-accent transition-colors"
+              >
+                Agence web {city.name}
+              </Link>
+            ))}
           </div>
         </div>
 
