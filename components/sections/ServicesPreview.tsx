@@ -2,45 +2,38 @@
 
 import Link from "next/link"
 import { motion } from "framer-motion"
-import { Code, Target, ArrowRight, Check } from "lucide-react"
+import {
+  Code,
+  Target,
+  BrainCircuit,
+  Smartphone,
+  LayoutDashboard,
+  Search,
+  Mail,
+  ShoppingCart,
+  ArrowRight,
+  Check,
+} from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { containerVariants, itemVariants } from "@/lib/animations"
+import { services } from "@/lib/content"
 
-const services = [
-  {
-    icon: Code,
-    title: "Développement Web",
-    description:
-      "Création de sites web et applications performantes avec les dernières technologies.",
-    features: [
-      "Sites vitrines & e-commerce",
-      "Applications web sur mesure",
-      "Intégrations API & CMS",
-      "Optimisation performance",
-    ],
-    href: "/services/developpement",
-  },
-  {
-    icon: Target,
-    title: "Gestion Publicités",
-    description:
-      "Gestion et optimisation de vos campagnes Facebook Ads, Google Ads et autres plateformes.",
-    features: [
-      "Audit & stratégie publicitaire",
-      "Création de campagnes",
-      "A/B testing & optimisation",
-      "Reporting & analytics",
-    ],
-    href: "/services/ads-management",
-  },
-]
+const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
+  Code,
+  Target,
+  BrainCircuit,
+  Smartphone,
+  LayoutDashboard,
+  Search,
+  Mail,
+  ShoppingCart,
+}
 
 export function ServicesPreview() {
   return (
     <section className="py-20 lg:py-28 bg-muted/30">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -60,48 +53,50 @@ export function ServicesPreview() {
           </p>
         </motion.div>
 
-        {/* Services grid */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid md:grid-cols-2 gap-8"
+          className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"
         >
-          {services.map((service, index) => (
-            <motion.div key={index} variants={itemVariants}>
-              <Card className="h-full hover:shadow-lg transition-shadow duration-300 border-border/50">
-                <CardHeader>
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                    <service.icon className="h-6 w-6 text-primary" />
-                  </div>
-                  <CardTitle className="text-xl">{service.title}</CardTitle>
-                  <CardDescription className="text-base">
-                    {service.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2 mb-6">
-                    {service.features.map((feature, featureIndex) => (
-                      <li
-                        key={featureIndex}
-                        className="flex items-center gap-2 text-sm text-muted-foreground"
-                      >
-                        <Check className="h-4 w-4 text-accent flex-shrink-0" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                  <Button asChild variant="outline" className="w-full group">
-                    <Link href={service.href}>
-                      En savoir plus
-                      <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                    </Link>
-                  </Button>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
+          {services.map((service, index) => {
+            const IconComponent = iconMap[service.icon] || Code
+            return (
+              <motion.div key={index} variants={itemVariants}>
+                <Card className="h-full hover:shadow-lg transition-shadow duration-300 border-border/50">
+                  <CardHeader className="pb-3">
+                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-3">
+                      <IconComponent className="h-5 w-5 text-primary" />
+                    </div>
+                    <CardTitle className="text-lg">{service.title}</CardTitle>
+                    <CardDescription className="text-sm line-clamp-2">
+                      {service.description}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="pt-0">
+                    <ul className="space-y-1.5 mb-4">
+                      {service.features.slice(0, 3).map((feature, featureIndex) => (
+                        <li
+                          key={featureIndex}
+                          className="flex items-center gap-2 text-xs text-muted-foreground"
+                        >
+                          <Check className="h-3 w-3 text-accent flex-shrink-0" />
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                    <Button asChild variant="outline" size="sm" className="w-full group">
+                      <Link href={service.href}>
+                        En savoir plus
+                        <ArrowRight className="ml-2 h-3 w-3 transition-transform group-hover:translate-x-1" />
+                      </Link>
+                    </Button>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            )
+          })}
         </motion.div>
       </div>
     </section>

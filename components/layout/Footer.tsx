@@ -11,8 +11,13 @@ import type { Sector } from "@/types/sectors"
 const footerLinks = {
   services: [
     { name: "Développement Web", href: "/services/developpement" },
-    { name: "Gestion Publicités", href: "/services/ads-management" },
+    { name: "Acquisition Clients", href: "/services/ads-management" },
     { name: "IA pour Entreprises", href: "/services/ia-entreprise" },
+    { name: "Applications Mobiles", href: "/services/applications-mobiles" },
+    { name: "CRM & Apps Métier", href: "/services/crm-applications-metier" },
+    { name: "SEO & Référencement", href: "/services/seo-referencement" },
+    { name: "Email Marketing", href: "/services/email-marketing" },
+    { name: "E-commerce", href: "/services/ecommerce" },
   ],
   resources: [
     { name: "Tarifs", href: "/tarifs" },
