@@ -43,6 +43,7 @@ const navigation = [
       { name: "IA pour Entreprises", href: "/services/ia-entreprise" },
       { name: "Applications Mobiles", href: "/services/applications-mobiles" },
       { name: "CRM & Apps Métier", href: "/services/crm-applications-metier" },
+      { name: "Configurateurs 3D", href: "/services/configurateur-3d" },
       { name: "SEO & Référencement", href: "/services/seo-referencement" },
       { name: "Email Marketing", href: "/services/email-marketing" },
       { name: "E-commerce", href: "/services/ecommerce" },

@@ -108,6 +108,21 @@ export const services: Service[] = [
     href: "/services/email-marketing",
   },
   {
+    id: "configurateur-3d",
+    title: "Configurateurs 3D",
+    description:
+      "Configurateurs de produits 3D interactifs pour personnaliser lunettes, valises, meubles et tout type de produit.",
+    features: [
+      "Visualisation 3D temps réel",
+      "Personnalisation produits",
+      "Intégration e-commerce",
+      "Export devis automatique",
+      "Compatible mobile",
+    ],
+    icon: "Box",
+    href: "/services/configurateur-3d",
+  },
+  {
     id: "ecommerce",
     title: "E-commerce",
     description:
