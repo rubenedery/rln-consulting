@@ -19,14 +19,14 @@ export const services: Service[] = [
   },
   {
     id: "ads-management",
-    title: "Gestion Publicités",
+    title: "Acquisition Clients",
     description:
-      "Gestion et optimisation de vos campagnes publicitaires Facebook Ads, Google Ads et autres plateformes.",
+      "On vous apporte des clients via Google Ads, Facebook Ads et autres plateformes publicitaires.",
     features: [
-      "Audit & stratégie publicitaire",
-      "Création de campagnes",
+      "Google Ads & Facebook Ads",
+      "Stratégie d'acquisition",
       "A/B testing & optimisation",
-      "Reporting & analytics",
+      "Reporting & ROI",
       "Retargeting avancé",
     ],
     icon: "Target",
@@ -46,6 +46,81 @@ export const services: Service[] = [
     ],
     icon: "BrainCircuit",
     href: "/services/ia-entreprise",
+  },
+  {
+    id: "applications-mobiles",
+    title: "Applications Mobiles",
+    description:
+      "Développement d'applications iOS et Android natives ou cross-platform pour toucher vos clients sur mobile.",
+    features: [
+      "Apps iOS & Android",
+      "React Native / Flutter",
+      "Publication stores",
+      "Notifications push",
+      "Mode hors-ligne",
+    ],
+    icon: "Smartphone",
+    href: "/services/applications-mobiles",
+  },
+  {
+    id: "crm-applications-metier",
+    title: "CRM & Applications Métier",
+    description:
+      "Solutions CRM et applications sur mesure adaptées à vos processus métier pour gagner en efficacité.",
+    features: [
+      "CRM personnalisé",
+      "Tableaux de bord métier",
+      "Gestion pipeline commercial",
+      "Automatisations",
+      "Intégrations outils existants",
+    ],
+    icon: "LayoutDashboard",
+    href: "/services/crm-applications-metier",
+  },
+  {
+    id: "seo-referencement",
+    title: "SEO & Référencement",
+    description:
+      "Stratégie SEO complète pour apparaître en premier sur Google et attirer des clients qualifiés.",
+    features: [
+      "Audit SEO complet",
+      "Optimisation on-page",
+      "SEO local & Google My Business",
+      "Stratégie de contenu",
+      "Suivi des positions",
+    ],
+    icon: "Search",
+    href: "/services/seo-referencement",
+  },
+  {
+    id: "email-marketing",
+    title: "Email Marketing & Automation",
+    description:
+      "Stratégies d'email marketing et automatisation pour convertir et fidéliser vos prospects.",
+    features: [
+      "Séquences automatisées",
+      "Newsletters",
+      "Lead nurturing",
+      "Segmentation avancée",
+      "A/B testing",
+    ],
+    icon: "Mail",
+    href: "/services/email-marketing",
+  },
+  {
+    id: "ecommerce",
+    title: "E-commerce",
+    description:
+      "Création de boutiques en ligne performantes pour vendre vos produits 24h/24.",
+    features: [
+      "Shopify & WooCommerce",
+      "Solutions sur mesure",
+      "Paiement sécurisé",
+      "Gestion des stocks",
+      "Click & Collect",
+    ],
+    icon: "ShoppingCart",
+    href: "/services/ecommerce",
   },
 ]
 
