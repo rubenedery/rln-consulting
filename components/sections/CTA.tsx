@@ -51,7 +51,7 @@ export function CTA() {
               asChild
               variant="outline"
               size="lg"
-              className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10"
+              className="border-white text-white hover:bg-white/20 bg-white/10"
             >
               <Link href="/cas-etudes">Voir nos réalisations</Link>
             </Button>
