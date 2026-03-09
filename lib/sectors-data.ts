@@ -10,20 +10,20 @@ export const digitalServicesData: Record<DigitalServiceType, DigitalService> = {
   seo_local: {
     type: "seo_local",
     title: "Référencement Local",
-    description: "Apparaissez en premier sur Google pour les recherches locales de votre secteur.",
-    benefits: ["Google My Business optimisé", "Citations locales", "Mots-clés géolocalisés", "Fiche établissement"],
+    description: "Apparaissez en premier sur Google et attirez des clients locaux qui recherchent vos services.",
+    benefits: ["Nouveaux clients locaux", "Google My Business optimisé", "Mots-clés géolocalisés", "Visibilité accrue"],
   },
   google_ads: {
     type: "google_ads",
-    title: "Google Ads",
-    description: "Campagnes publicitaires ciblées pour générer des leads qualifiés immédiatement.",
-    benefits: ["Résultats immédiats", "Ciblage précis", "Budget maîtrisé", "ROI mesurable"],
+    title: "Acquisition Clients Google",
+    description: "On vous apporte des clients via Google Ads. Campagnes optimisées pour générer des demandes qualifiées.",
+    benefits: ["Nouveaux clients garantis", "Résultats immédiats", "Budget maîtrisé", "ROI mesurable"],
   },
   facebook_ads: {
     type: "facebook_ads",
-    title: "Facebook & Instagram Ads",
-    description: "Publicités sur les réseaux sociaux pour toucher votre audience idéale.",
-    benefits: ["Ciblage démographique", "Visuels engageants", "Retargeting", "Notoriété locale"],
+    title: "Acquisition Clients Réseaux Sociaux",
+    description: "On vous apporte des clients via Facebook et Instagram Ads. Publicités ciblées pour attirer votre clientèle idéale.",
+    benefits: ["Nouveaux clients ciblés", "Visuels engageants", "Retargeting", "Notoriété locale"],
   },
   avis_google: {
     type: "avis_google",
