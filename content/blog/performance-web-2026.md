@@ -1,7 +1,7 @@
 ---
-title: "Performance Web en 2024 : Les techniques essentielles"
+title: "Performance Web en 2026 : Les techniques essentielles"
 description: "Optimisez la vitesse de votre site web avec ces techniques de performance. Core Web Vitals, lazy loading, caching et optimisation des assets."
-date: "2024-02-15"
+date: "2026-02-15"
 author: "Ruben Edery"
 category: "performance"
 tags: ["performance", "core-web-vitals", "optimisation", "vitesse"]

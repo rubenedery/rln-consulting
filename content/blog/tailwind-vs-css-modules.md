@@ -1,7 +1,7 @@
 ---
 title: "Tailwind CSS vs CSS Modules : Quel choix pour votre projet ?"
 description: "Comparaison détaillée entre Tailwind CSS et CSS Modules. Avantages, inconvénients et cas d'usage pour choisir la meilleure approche."
-date: "2024-01-20"
+date: "2026-01-20"
 author: "Ruben Edery"
 category: "developpement"
 tags: ["tailwind", "css", "react", "frontend"]

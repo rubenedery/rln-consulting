@@ -2,7 +2,7 @@
 title: "Refonte E-commerce pour une marque de mode"
 client: "ModaStyle"
 description: "Migration vers Shopify avec intégration headless Next.js. Amélioration significative des performances et du taux de conversion."
-date: "2023-11-15"
+date: "2026-11-15"
 services: ["Développement Web", "E-commerce", "Optimisation Performance"]
 industry: "Mode & Retail"
 image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200&h=630&fit=crop&q=80"

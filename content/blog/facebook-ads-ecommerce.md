@@ -1,7 +1,7 @@
 ---
 title: "Facebook Ads pour E-commerce : Stratégies qui convertissent"
 description: "Découvrez les meilleures stratégies Facebook Ads pour booster les ventes de votre boutique en ligne. Ciblage, créatives et optimisation du ROAS."
-date: "2024-02-28"
+date: "2026-02-28"
 author: "Ruben Edery"
 category: "marketing"
 tags: ["facebook-ads", "ecommerce", "publicite", "conversion"]

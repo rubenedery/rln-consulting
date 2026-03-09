@@ -1,7 +1,7 @@
 ---
 title: "Google Ads pour la génération de leads : Guide complet"
 description: "Maîtrisez Google Ads pour générer des leads qualifiés. Stratégies de mots-clés, landing pages et optimisation du coût par lead."
-date: "2024-01-05"
+date: "2026-01-05"
 author: "Ruben Edery"
 category: "marketing"
 tags: ["google-ads", "leads", "sem", "conversion"]

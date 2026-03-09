@@ -2,7 +2,7 @@
 title: "Stratégie d'acquisition pour une startup SaaS B2B"
 client: "DataFlow"
 description: "Mise en place d'une stratégie d'acquisition multi-canal pour une startup SaaS. Google Ads, LinkedIn Ads et content marketing."
-date: "2023-09-20"
+date: "2026-09-20"
 services: ["Google Ads", "LinkedIn Ads", "Stratégie Marketing"]
 industry: "SaaS / Tech"
 image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=630&fit=crop&q=80"

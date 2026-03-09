@@ -2,7 +2,7 @@
 title: "Chatbot IA pour Service Client E-commerce"
 client: "ModeExpress"
 description: "Mise en place d'un chatbot intelligent qui gère 70% des demandes clients automatiquement, réduisant les coûts de support de 60%."
-date: "2024-02-15"
+date: "2026-02-15"
 services:
   - IA & Automatisation
   - Intégration API

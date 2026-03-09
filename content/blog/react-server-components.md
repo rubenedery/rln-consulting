@@ -1,7 +1,7 @@
 ---
 title: "React Server Components : Tout comprendre en 5 minutes"
 description: "Découvrez les React Server Components avec Next.js App Router. Fonctionnement, avantages et cas d'usage pour vos applications React."
-date: "2024-03-01"
+date: "2026-03-01"
 author: "Ruben Edery"
 category: "developpement"
 tags: ["react", "nextjs", "server-components", "performance"]

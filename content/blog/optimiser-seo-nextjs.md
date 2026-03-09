@@ -1,7 +1,7 @@
 ---
 title: "Comment optimiser le SEO de votre site Next.js en 2024"
 description: "Guide complet pour améliorer le référencement naturel de votre site Next.js. Metadata, sitemap, Core Web Vitals et bonnes pratiques SEO."
-date: "2024-03-15"
+date: "2026-03-15"
 author: "Ruben Edery"
 category: "seo"
 tags: ["nextjs", "seo", "performance", "react"]

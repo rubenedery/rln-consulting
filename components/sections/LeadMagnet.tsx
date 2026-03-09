@@ -67,7 +67,7 @@ export function LeadMagnet() {
 
   const benefits = [
     "Les 10 erreurs critiques qui tuent votre taux de conversion",
-    "Comment optimiser votre site pour le SEO en 2024",
+    "Comment optimiser votre site pour le SEO en 2026",
     "Checklist complète pour un site performant",
   ]
 

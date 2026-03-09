@@ -2,7 +2,7 @@
 title: "Site vitrine et SEO local pour agence immobilière"
 client: "Immobilier Prestige"
 description: "Création d'un site vitrine moderne avec stratégie SEO local pour une agence immobilière haut de gamme à Paris."
-date: "2024-01-10"
+date: "2026-01-10"
 services: ["Développement Web", "SEO", "Design UI/UX"]
 industry: "Immobilier"
 image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&h=630&fit=crop&q=80"
