@@ -3,8 +3,9 @@ import Link from "next/link"
 import { ArrowRight, BarChart2, Mail, MousePointerClick, Send, Settings, Users } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { ServiceJsonLd, BreadcrumbJsonLd } from "@/components/seo"
-import { CTA } from "@/components/sections"
+import { ServiceJsonLd, BreadcrumbJsonLd, FAQPageJsonLd } from "@/components/seo"
+import { CTA, FAQ } from "@/components/sections"
+import { serviceFaqs } from "@/lib/content"
 
 export const metadata: Metadata = {
   title: "Email Marketing & Automation | Convertissez vos prospects",
@@ -84,6 +85,7 @@ export default function EmailMarketingPage() {
           { name: "Email Marketing & Automation", url: "https://rln-consulting.com/services/email-marketing" },
         ]}
       />
+      <FAQPageJsonLd questions={serviceFaqs["email-marketing"]} />
 
       <section className="py-20 lg:py-28 bg-gradient-to-br from-primary/5 via-background to-accent/5">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -146,6 +148,9 @@ export default function EmailMarketingPage() {
           </div>
         </div>
       </section>
+
+      {/* FAQ Section */}
+      <FAQ items={serviceFaqs["email-marketing"]} />
 
       <CTA />
     </>

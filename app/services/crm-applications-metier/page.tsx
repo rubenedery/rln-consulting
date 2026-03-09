@@ -3,8 +3,9 @@ import Link from "next/link"
 import { ArrowRight, BarChart3, Database, LayoutDashboard, Settings, Users, Workflow } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { ServiceJsonLd, BreadcrumbJsonLd } from "@/components/seo"
-import { CTA } from "@/components/sections"
+import { ServiceJsonLd, BreadcrumbJsonLd, FAQPageJsonLd } from "@/components/seo"
+import { CTA, FAQ } from "@/components/sections"
+import { serviceFaqs } from "@/lib/content"
 
 export const metadata: Metadata = {
   title: "CRM & Applications Métier | Solutions Sur Mesure",
@@ -85,6 +86,7 @@ export default function CrmApplicationsMetierPage() {
           { name: "CRM & Applications Métier", url: "https://rln-consulting.com/services/crm-applications-metier" },
         ]}
       />
+      <FAQPageJsonLd questions={serviceFaqs["crm-applications-metier"]} />
 
       <section className="py-20 lg:py-28 bg-gradient-to-br from-primary/5 via-background to-accent/5">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -147,6 +149,9 @@ export default function CrmApplicationsMetierPage() {
           </div>
         </div>
       </section>
+
+      {/* FAQ Section */}
+      <FAQ items={serviceFaqs["crm-applications-metier"]} />
 
       <CTA />
     </>

@@ -3,8 +3,9 @@ import Link from "next/link"
 import { ArrowRight, BarChart2, FileText, Globe, MapPin, Search, TrendingUp } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { ServiceJsonLd, BreadcrumbJsonLd } from "@/components/seo"
-import { CTA } from "@/components/sections"
+import { ServiceJsonLd, BreadcrumbJsonLd, FAQPageJsonLd } from "@/components/seo"
+import { CTA, FAQ } from "@/components/sections"
+import { serviceFaqs } from "@/lib/content"
 
 export const metadata: Metadata = {
   title: "SEO & Référencement | Apparaissez en Premier sur Google",
@@ -80,6 +81,7 @@ export default function SeoReferencementPage() {
           { name: "SEO & Référencement", url: "https://rln-consulting.com/services/seo-referencement" },
         ]}
       />
+      <FAQPageJsonLd questions={serviceFaqs["seo-referencement"]} />
 
       <section className="py-20 lg:py-28 bg-gradient-to-br from-primary/5 via-background to-accent/5">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -140,6 +142,9 @@ export default function SeoReferencementPage() {
           </div>
         </div>
       </section>
+
+      {/* FAQ Section */}
+      <FAQ items={serviceFaqs["seo-referencement"]} />
 
       <CTA />
     </>

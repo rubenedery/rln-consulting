@@ -15,8 +15,9 @@ import {
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { ServiceJsonLd, BreadcrumbJsonLd } from "@/components/seo"
-import { CTA } from "@/components/sections"
+import { ServiceJsonLd, BreadcrumbJsonLd, FAQPageJsonLd } from "@/components/seo"
+import { CTA, FAQ } from "@/components/sections"
+import { serviceFaqs } from "@/lib/content"
 
 export const metadata: Metadata = {
   title: "IA pour Entreprises | Chatbots, Automatisation & Intégration",
@@ -167,6 +168,7 @@ export default function IAEntreprisePage() {
           },
         ]}
       />
+      <FAQPageJsonLd questions={serviceFaqs["ia-entreprise"]} />
 
       <section className="py-20 lg:py-28 bg-gradient-to-br from-primary/5 via-background to-accent/5">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -361,6 +363,9 @@ export default function IAEntreprisePage() {
           </div>
         </div>
       </section>
+
+      {/* FAQ Section */}
+      <FAQ items={serviceFaqs["ia-entreprise"]} />
 
       <CTA />
     </>

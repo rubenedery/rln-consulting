@@ -13,8 +13,9 @@ import {
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { ServiceJsonLd, BreadcrumbJsonLd } from "@/components/seo"
-import { CTA } from "@/components/sections"
+import { ServiceJsonLd, BreadcrumbJsonLd, FAQPageJsonLd } from "@/components/seo"
+import { CTA, FAQ } from "@/components/sections"
+import { serviceFaqs } from "@/lib/content"
 
 export const metadata: Metadata = {
   title: "Gestion Publicités | Facebook Ads & Google Ads",
@@ -126,6 +127,7 @@ export default function AdsManagementPage() {
           },
         ]}
       />
+      <FAQPageJsonLd questions={serviceFaqs["ads-management"]} />
 
       {/* Hero */}
       <section className="py-20 lg:py-28 bg-gradient-to-br from-primary/5 via-background to-accent/5">
@@ -298,6 +300,9 @@ export default function AdsManagementPage() {
           </div>
         </div>
       </section>
+
+      {/* FAQ Section */}
+      <FAQ items={serviceFaqs["ads-management"]} />
 
       <CTA />
     </>

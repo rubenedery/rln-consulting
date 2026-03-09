@@ -3,8 +3,9 @@ import Link from "next/link"
 import { ArrowRight, Check, Code, Database, Globe, Layers, Rocket, Zap } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { ServiceJsonLd, BreadcrumbJsonLd } from "@/components/seo"
-import { CTA } from "@/components/sections"
+import { ServiceJsonLd, BreadcrumbJsonLd, FAQPageJsonLd } from "@/components/seo"
+import { CTA, FAQ } from "@/components/sections"
+import { serviceFaqs } from "@/lib/content"
 
 export const metadata: Metadata = {
   title: "Développement Web | Next.js, React & Applications Sur Mesure",
@@ -128,6 +129,7 @@ export default function DeveloppementPage() {
           },
         ]}
       />
+      <FAQPageJsonLd questions={serviceFaqs["developpement"]} />
 
       {/* Hero */}
       <section className="py-20 lg:py-28 bg-gradient-to-br from-primary/5 via-background to-accent/5">
@@ -247,6 +249,9 @@ export default function DeveloppementPage() {
           </div>
         </div>
       </section>
+
+      {/* FAQ Section */}
+      <FAQ items={serviceFaqs["developpement"]} />
 
       <CTA />
     </>

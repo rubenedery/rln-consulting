@@ -3,8 +3,9 @@ import Link from "next/link"
 import { ArrowRight, Box, Eye, Glasses, Luggage, Palette, ShoppingBag, Sofa } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { ServiceJsonLd, BreadcrumbJsonLd } from "@/components/seo"
-import { CTA } from "@/components/sections"
+import { ServiceJsonLd, BreadcrumbJsonLd, FAQPageJsonLd } from "@/components/seo"
+import { CTA, FAQ } from "@/components/sections"
+import { serviceFaqs } from "@/lib/content"
 
 export const metadata: Metadata = {
   title: "Configurateurs 3D | Personnalisation Produits en Temps Réel",
@@ -91,6 +92,7 @@ export default function Configurateur3DPage() {
           { name: "Configurateurs 3D", url: "https://rln-consulting.com/services/configurateur-3d" },
         ]}
       />
+      <FAQPageJsonLd questions={serviceFaqs["configurateur-3d"]} />
 
       <section className="py-20 lg:py-28 bg-gradient-to-br from-primary/5 via-background to-accent/5">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -169,6 +171,9 @@ export default function Configurateur3DPage() {
           </div>
         </div>
       </section>
+
+      {/* FAQ Section */}
+      <FAQ items={serviceFaqs["configurateur-3d"]} />
 
       <CTA />
     </>
