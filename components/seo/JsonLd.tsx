@@ -13,7 +13,7 @@ export function WebSiteJsonLd() {
     name: siteConfig.name,
     url: siteConfig.url,
     description:
-      "Agence de développement web et marketing digital à Paris. Sites web Next.js, applications mobiles, CRM sur mesure.",
+      "RLN Consulting : agence web française fondée en 2020. Développement Next.js/React, e-commerce, CRM sur mesure, Google Ads et Meta Ads. Tarifs à partir de 1 500€.",
     publisher: {
       "@type": "Organization",
       "@id": `${siteConfig.url}/#organization`,
@@ -47,6 +47,7 @@ export function OrganizationJsonLd({ url = siteConfig.url }: OrganizationJsonLdP
     "@type": "Organization",
     "@id": `${url}/#organization`,
     name: siteConfig.name,
+    legalName: "RLN Consulting",
     url,
     logo: {
       "@type": "ImageObject",
@@ -56,7 +57,8 @@ export function OrganizationJsonLd({ url = siteConfig.url }: OrganizationJsonLdP
     },
     image: `${url}/og-image.png`,
     description:
-      "Agence de développement web et marketing digital en France. Création de sites web Next.js, gestion de campagnes publicitaires.",
+      "RLN Consulting est une agence web française fondée en 2020, spécialisée en développement Next.js/React et gestion Google Ads/Meta Ads. Services : création de sites web (à partir de 1 500€), e-commerce, applications web, CRM sur mesure et intégration IA pour entreprises.",
+    slogan: "Votre partenaire digital pour des projets web sur mesure",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Paris",
@@ -85,46 +87,121 @@ export function OrganizationJsonLd({ url = siteConfig.url }: OrganizationJsonLdP
       "@type": "QuantitativeValue",
       value: 5,
     },
-    areaServed: {
-      "@type": "Country",
-      name: "France",
-    },
+    areaServed: [
+      {
+        "@type": "Country",
+        name: "France",
+      },
+      {
+        "@type": "AdministrativeArea",
+        name: "Europe francophone",
+      },
+    ],
     knowsAbout: [
-      "Web Development",
-      "Digital Marketing",
-      "SEO",
-      "Google Ads",
-      "Facebook Ads",
+      // Développement Web
       "Next.js",
       "React",
-      "Artificial Intelligence",
+      "TypeScript",
+      "Node.js",
+      "Tailwind CSS",
+      "PostgreSQL",
+      "Prisma ORM",
+      "Vercel",
+      // E-commerce
+      "Shopify",
+      "Stripe",
+      "WooCommerce",
+      // Marketing Digital
+      "Google Ads",
+      "Meta Ads",
+      "Facebook Ads",
+      "SEO",
+      "Google Analytics",
+      // Intelligence Artificielle
+      "OpenAI GPT-4",
+      "Claude AI",
+      "LangChain",
+      "RAG (Retrieval-Augmented Generation)",
+      "Chatbots IA",
+      "Automatisation IA",
     ],
     hasOfferCatalog: {
       "@type": "OfferCatalog",
-      name: "Services digitaux",
+      name: "Services digitaux RLN Consulting",
       itemListElement: [
         {
           "@type": "Offer",
           itemOffered: {
             "@type": "Service",
-            name: "Développement Web",
+            name: "Création de site web vitrine",
+            description: "Site web responsive sur mesure avec Next.js et React",
             url: `${url}/services/developpement`,
           },
-        },
-        {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "Gestion Publicités",
-            url: `${url}/services/ads-management`,
+          priceSpecification: {
+            "@type": "PriceSpecification",
+            priceCurrency: "EUR",
+            minPrice: 1500,
+            price: "1500-5000",
           },
         },
         {
           "@type": "Offer",
           itemOffered: {
             "@type": "Service",
-            name: "IA pour Entreprises",
+            name: "Site e-commerce",
+            description: "Boutique en ligne Shopify ou sur mesure avec paiement Stripe",
+            url: `${url}/services/ecommerce`,
+          },
+          priceSpecification: {
+            "@type": "PriceSpecification",
+            priceCurrency: "EUR",
+            minPrice: 3000,
+            price: "3000-15000",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Gestion Google Ads & Meta Ads",
+            description: "Création et optimisation de campagnes publicitaires",
+            url: `${url}/services/ads-management`,
+          },
+          priceSpecification: {
+            "@type": "PriceSpecification",
+            priceCurrency: "EUR",
+            minPrice: 500,
+            price: "500/mois minimum",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Intégration IA pour entreprises",
+            description: "Chatbots, automatisation et solutions IA sur mesure avec GPT-4 et Claude",
             url: `${url}/services/ia-entreprise`,
+          },
+          priceSpecification: {
+            "@type": "PriceSpecification",
+            priceCurrency: "EUR",
+            minPrice: 2000,
+            price: "Sur devis",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "CRM et applications métier",
+            description: "Développement d'applications web sur mesure pour la gestion d'entreprise",
+            url: `${url}/services/crm-applications-metier`,
+          },
+          priceSpecification: {
+            "@type": "PriceSpecification",
+            priceCurrency: "EUR",
+            minPrice: 5000,
+            price: "Sur devis",
           },
         },
       ],
@@ -153,7 +230,7 @@ export function LocalBusinessJsonLd({ url = siteConfig.url }: LocalBusinessJsonL
     "@id": `${url}/#localbusiness`,
     name: siteConfig.name,
     description:
-      "Agence de développement web et marketing digital à Paris. Sites web Next.js, React, et gestion de campagnes publicitaires Facebook/Google Ads.",
+      "RLN Consulting : agence web parisienne fondée en 2020. Développement Next.js/React, e-commerce Shopify, CRM sur mesure, Google Ads et Meta Ads. Tarifs à partir de 1 500€ pour un site web vitrine.",
     url,
     telephone: siteConfig.contact.phone.replace(/\s/g, "-"),
     email: siteConfig.contact.email,

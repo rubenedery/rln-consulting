@@ -7,7 +7,7 @@ import { Toaster } from "@/components/ui/toaster"
 import { ThemeProvider } from "@/components/providers/theme-provider"
 import { SkipLinks } from "@/components/ui/skip-links"
 import { CookieBanner } from "@/components/ui/cookie-banner"
-import { GoogleAnalytics } from "@/components/analytics"
+import { GoogleAnalytics, MetaPixel } from "@/components/analytics"
 import "./globals.css"
 
 const geistSans = Geist({
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     template: "%s | RLN Consulting",
   },
   description:
-    "Agence de développement web et marketing digital à Paris. Sites web Next.js, applications mobiles, CRM sur mesure, Google Ads et Facebook Ads. Devis gratuit.",
+    "RLN Consulting est une agence web française fondée en 2020, spécialisée en développement Next.js/React et gestion Google Ads/Meta Ads. Services : création de sites web (à partir de 1 500€), e-commerce, applications web, CRM sur mesure et intégration IA pour entreprises.",
   keywords: [
     "agence développement web paris",
     "agence web france",
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     siteName: "RLN Consulting",
     title: "RLN Consulting | Agence Développement Web & Marketing Digital Paris",
     description:
-      "Agence de développement web et marketing digital à Paris. Sites web, applications mobiles, CRM et publicités en ligne.",
+      "RLN Consulting : agence web française (fondée en 2020). Développement Next.js/React, e-commerce, CRM sur mesure, Google Ads et Meta Ads. Tarifs à partir de 1 500€.",
     images: [
       {
         url: "/api/og?title=RLN+Consulting&description=Agence+D%C3%A9veloppement+Web+%26+Marketing+Digital+Paris",
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "RLN Consulting | Agence Développement Web Paris",
-    description: "Agence de développement web et marketing digital à Paris.",
+    description: "Agence web française : développement Next.js/React, e-commerce, CRM, Google Ads et Meta Ads. Tarifs à partir de 1 500€.",
     images: ["/api/og?title=RLN+Consulting&description=Agence+D%C3%A9veloppement+Web+%26+Marketing+Digital+Paris"],
     creator: "@rlnconsulting",
   },
@@ -129,6 +129,7 @@ export default function RootLayout({
         <Analytics />
         <SpeedInsights />
         <GoogleAnalytics />
+        <MetaPixel />
       </body>
     </html>
   )

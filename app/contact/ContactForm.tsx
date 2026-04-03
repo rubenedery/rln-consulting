@@ -8,7 +8,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { toast } from "@/hooks/use-toast"
 import { cn } from "@/lib/utils"
-import { track_contact_form } from "@/components/analytics"
+import { track_contact_form, track_meta_lead } from "@/components/analytics"
 
 interface FormData {
   name: string
@@ -141,6 +141,7 @@ export function ContactForm() {
 
       if (response.ok) {
         track_contact_form()
+        track_meta_lead()
         toast({
           title: "Message envoyé !",
           description: "Nous vous répondrons sous 24 heures.",
@@ -159,8 +160,7 @@ export function ContactForm() {
       } else {
         throw new Error("Erreur lors de l'envoi")
       }
-    } catch (error) {
-      console.error("Error submitting form:", error)
+    } catch {
       toast({
         title: "Erreur d'envoi",
         description: "Une erreur est survenue. Veuillez réessayer.",
