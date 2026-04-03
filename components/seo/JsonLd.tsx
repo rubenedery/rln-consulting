@@ -98,6 +98,9 @@ export function OrganizationJsonLd({ url = siteConfig.url }: OrganizationJsonLdP
       "Next.js",
       "React",
       "Artificial Intelligence",
+      "Generative Engine Optimization",
+      "GEO",
+      "LLM Optimization",
     ],
     hasOfferCatalog: {
       "@type": "OfferCatalog",
@@ -125,6 +128,14 @@ export function OrganizationJsonLd({ url = siteConfig.url }: OrganizationJsonLdP
             "@type": "Service",
             name: "IA pour Entreprises",
             url: `${url}/services/ia-entreprise`,
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "GEO - Référencement IA",
+            url: `${url}/services/geo`,
           },
         },
       ],
@@ -558,6 +569,14 @@ export function CityLocalBusinessJsonLd({
             "@type": "Service",
             name: `Solutions IA à ${cityName}`,
             url: `${siteConfig.url}/services/ia-entreprise`,
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: `GEO - Référencement IA à ${cityName}`,
+            url: `${siteConfig.url}/services/geo`,
           },
         },
       ],

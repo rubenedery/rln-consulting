@@ -26,6 +26,7 @@ export interface BlogPostMeta {
 
 export type BlogCategory =
   | "seo"
+  | "geo"
   | "developpement"
   | "marketing"
   | "performance"
@@ -34,6 +35,7 @@ export type BlogCategory =
 
 export const blogCategories: Record<BlogCategory, string> = {
   seo: "SEO",
+  geo: "GEO",
   developpement: "Développement",
   marketing: "Marketing",
   performance: "Performance",

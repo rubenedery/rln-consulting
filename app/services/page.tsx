@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import { ArrowRight, Code, Target, Check, Sparkles } from "lucide-react"
+import { ArrowRight, Code, Target, BrainCircuit, Search, Check, Sparkles } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { WebPageJsonLd, BreadcrumbJsonLd } from "@/components/seo"
@@ -8,9 +8,9 @@ import { CTA } from "@/components/sections"
 import { services } from "@/lib/content"
 
 export const metadata: Metadata = {
-  title: "Services | Développement Web & Gestion Publicitaire",
+  title: "Services | Développement Web, Publicités, IA & Référencement IA (GEO)",
   description:
-    "Découvrez nos services de développement web (Next.js, React) et gestion de campagnes publicitaires (Facebook Ads, Google Ads). Solutions digitales sur mesure pour votre entreprise.",
+    "Découvrez nos services : développement web (Next.js, React), gestion publicitaire, intégration IA et GEO (Generative Engine Optimization) pour être cité par ChatGPT et Perplexity.",
   keywords: [
     "services développement web",
     "gestion publicités",
@@ -18,6 +18,9 @@ export const metadata: Metadata = {
     "Next.js",
     "Facebook Ads",
     "Google Ads",
+    "GEO",
+    "référencement IA",
+    "IA entreprise",
   ],
   openGraph: {
     title: "Services | RLN Consulting",
@@ -31,6 +34,8 @@ export const metadata: Metadata = {
 const iconMap: Record<string, React.ElementType> = {
   Code: Code,
   Target: Target,
+  BrainCircuit: BrainCircuit,
+  Search: Search,
 }
 
 const whyChooseUs = [

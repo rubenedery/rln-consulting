@@ -41,6 +41,7 @@ const navigation = [
       { name: "Développement Web", href: "/services/developpement" },
       { name: "Gestion Publicités", href: "/services/ads-management" },
       { name: "IA pour Entreprises", href: "/services/ia-entreprise" },
+      { name: "GEO - Référencement IA", href: "/services/geo" },
     ],
   },
   { name: "Tarifs", href: "/tarifs" },

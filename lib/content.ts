@@ -47,6 +47,21 @@ export const services: Service[] = [
     icon: "BrainCircuit",
     href: "/services/ia-entreprise",
   },
+  {
+    id: "geo",
+    title: "GEO - Référencement IA",
+    description:
+      "Optimisez votre visibilité sur les moteurs IA (ChatGPT, Perplexity, Google AI). Stratégie de contenu, données structurées et autorité thématique pour être cité par les LLM.",
+    features: [
+      "Audit de visibilité IA",
+      "Optimisation contenu pour LLM",
+      "Schema markup avancé",
+      "Stratégie d'autorité thématique",
+      "Suivi des citations IA",
+    ],
+    icon: "Search",
+    href: "/services/geo",
+  },
 ]
 
 // Testimonials data
@@ -232,6 +247,12 @@ export const faqData: FAQItem[] = [
     question: "Quels modèles d'IA utilisez-vous ?",
     answer:
       "Nous travaillons avec les meilleurs modèles du marché selon les besoins : OpenAI GPT-4 pour la génération de texte, Claude d'Anthropic pour les assistants conversationnels, ainsi que des solutions open-source quand la confidentialité des données l'exige. Nous recommandons la solution la plus adaptée à votre cas d'usage et votre budget.",
+    category: "services",
+  },
+  {
+    question: "Qu'est-ce que le GEO (Generative Engine Optimization) ?",
+    answer:
+      "Le GEO est l'optimisation de votre contenu web pour être cité et référencé par les moteurs de recherche IA comme ChatGPT, Perplexity, Claude et Google AI Overview. Contrairement au SEO classique qui cible les résultats Google, le GEO vise les réponses générées par l'intelligence artificielle. Nous optimisons votre contenu, vos données structurées et votre autorité thématique pour maximiser votre visibilité dans ces nouveaux canaux.",
     category: "services",
   },
 ]
