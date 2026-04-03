@@ -98,7 +98,6 @@ export function OrganizationJsonLd({ url = siteConfig.url }: OrganizationJsonLdP
       },
     ],
     knowsAbout: [
-      // Développement Web
       "Next.js",
       "React",
       "TypeScript",
@@ -107,23 +106,23 @@ export function OrganizationJsonLd({ url = siteConfig.url }: OrganizationJsonLdP
       "PostgreSQL",
       "Prisma ORM",
       "Vercel",
-      // E-commerce
       "Shopify",
       "Stripe",
       "WooCommerce",
-      // Marketing Digital
       "Google Ads",
       "Meta Ads",
       "Facebook Ads",
       "SEO",
       "Google Analytics",
-      // Intelligence Artificielle
       "OpenAI GPT-4",
       "Claude AI",
       "LangChain",
       "RAG (Retrieval-Augmented Generation)",
       "Chatbots IA",
       "Automatisation IA",
+      "Generative Engine Optimization",
+      "GEO",
+      "LLM Optimization",
     ],
     hasOfferCatalog: {
       "@type": "OfferCatalog",
@@ -202,6 +201,15 @@ export function OrganizationJsonLd({ url = siteConfig.url }: OrganizationJsonLdP
             priceCurrency: "EUR",
             minPrice: 5000,
             price: "Sur devis",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "GEO - Référencement IA",
+            description: "Optimisation pour les moteurs de recherche IA (ChatGPT, Perplexity, Google AI)",
+            url: `${url}/services/geo`,
           },
         },
       ],
@@ -333,20 +341,17 @@ interface ServiceJsonLdProps {
   minPrice?: number
   maxPrice?: number
   features?: string[]
-  /** Note moyenne sur 5 */
   aggregateRating?: {
     ratingValue: number
     reviewCount: number
     bestRating?: number
   }
-  /** Avis clients */
   reviews?: Array<{
     author: string
     reviewBody: string
     ratingValue: number
     datePublished?: string
   }>
-  /** Temps moyen de réalisation */
   estimatedDuration?: string
 }
 
@@ -380,7 +385,6 @@ export function ServiceJsonLd({
       name: "France",
     },
     serviceType: name,
-    // Offre avec prix détaillés
     ...(priceRange || minPrice) && {
       offers: {
         "@type": "Offer",
@@ -399,7 +403,6 @@ export function ServiceJsonLd({
         validFrom: new Date().toISOString().split("T")[0],
       },
     },
-    // Note globale
     ...(aggregateRating && {
       aggregateRating: {
         "@type": "AggregateRating",
@@ -409,7 +412,6 @@ export function ServiceJsonLd({
         worstRating: 1,
       },
     }),
-    // Avis individuels
     ...(reviews && reviews.length > 0 && {
       review: reviews.map((review) => ({
         "@type": "Review",
@@ -427,7 +429,6 @@ export function ServiceJsonLd({
         ...(review.datePublished && { datePublished: review.datePublished }),
       })),
     }),
-    // Durée estimée
     ...(estimatedDuration && {
       providerMobility: estimatedDuration,
     }),
@@ -696,6 +697,14 @@ export function CityLocalBusinessJsonLd({
             "@type": "Service",
             name: `Solutions IA à ${cityName}`,
             url: `${siteConfig.url}/services/ia-entreprise`,
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: `GEO - Référencement IA à ${cityName}`,
+            url: `${siteConfig.url}/services/geo`,
           },
         },
       ],

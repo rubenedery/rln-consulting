@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server"
 import { z } from "zod"
 import { siteConfig } from "@/lib/constants"
+import { validateAntiSpam } from "@/lib/antispam"
 
 // Validation schema
 const contactSchema = z.object({
@@ -102,6 +103,17 @@ function generateEmailHtml(data: ContactData): string {
 export async function POST(request: Request) {
   try {
     const body = await request.json()
+
+    // Anti-spam checks (honeypot + timer + rate limit)
+    const spamResult = validateAntiSpam(request, body)
+    if (spamResult) {
+      // Return 200 to not reveal detection to bots
+      console.log(`[Anti-spam] Blocked contact form: ${spamResult}`)
+      return NextResponse.json(
+        { message: "Message envoyé avec succès" },
+        { status: 200 }
+      )
+    }
 
     // Validate input
     const validatedData = contactSchema.parse(body)

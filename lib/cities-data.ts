@@ -50,9 +50,6 @@ export interface CityData {
   localServices?: LocalService[]
 }
 
-/**
- * Services locaux par défaut pour toutes les villes
- */
 export function getLocalServicesForCity(cityName: string): LocalService[] {
   return [
     {

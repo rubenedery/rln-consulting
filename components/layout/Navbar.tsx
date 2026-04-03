@@ -41,6 +41,7 @@ const navigation = [
       { name: "Développement Web", href: "/services/developpement" },
       { name: "Acquisition Clients", href: "/services/ads-management" },
       { name: "IA pour Entreprises", href: "/services/ia-entreprise" },
+      { name: "GEO - Référencement IA", href: "/services/geo" },
       { name: "Applications Mobiles", href: "/services/applications-mobiles" },
       { name: "CRM & Apps Métier", href: "/services/crm-applications-metier" },
       { name: "Configurateurs 3D", href: "/services/configurateur-3d" },

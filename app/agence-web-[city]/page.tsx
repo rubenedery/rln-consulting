@@ -83,7 +83,6 @@ export default async function CityPage({ params }: PageProps) {
 
   const url = `${siteConfig.url}/agence-web-${cityData.slug}`
 
-  // Services locaux pour ciblage LLM (requêtes "développeur Next.js Paris", "expert Shopify Lyon", etc.)
   const localServices = cityData.localServices || getLocalServicesForCity(cityData.name)
 
   const localServiceIcons: Record<string, React.ElementType> = {
