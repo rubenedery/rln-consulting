@@ -113,9 +113,32 @@ export default function AdsManagementPage() {
   return (
     <>
       <ServiceJsonLd
-        name="Gestion Publicités Digitales"
-        description="Gestion et optimisation de vos campagnes publicitaires Facebook Ads, Google Ads et LinkedIn Ads."
+        name="Gestion Publicités Google Ads & Meta Ads"
+        description="Gestion et optimisation de vos campagnes publicitaires Facebook Ads, Google Ads et LinkedIn Ads. ROI moyen de 320% et coût par lead divisé par 2 en 3 mois. Honoraires à partir de 500€/mois."
         url="https://rln-consulting.com/services/ads-management"
+        minPrice={500}
+        maxPrice={5000}
+        features={[
+          "Stratégie publicitaire personnalisée",
+          "Création et gestion Google Ads",
+          "Gestion campagnes Meta Ads",
+          "A/B testing continu",
+          "Reporting ROI détaillé",
+          "Retargeting avancé",
+        ]}
+        aggregateRating={{
+          ratingValue: 4.9,
+          reviewCount: 32,
+        }}
+        reviews={[
+          {
+            author: "Yohan Jaoui",
+            reviewBody: "En 3 mois, on a triplé notre volume de prospects qualifiés avec un coût par lead divisé par 2.",
+            ratingValue: 5,
+            datePublished: "2025-12-10",
+          },
+        ]}
+        estimatedDuration="Résultats en 48-72h, optimisation en 4-8 semaines"
       />
       <BreadcrumbJsonLd
         items={[
@@ -179,6 +202,56 @@ export default function AdsManagementPage() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Answer-First Section - Réponses directes pour LLM */}
+      <section className="py-16 bg-accent/5 border-y border-accent/10">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="bg-background rounded-xl p-6 shadow-sm">
+                <h2 className="text-lg font-semibold text-foreground mb-3">
+                  💰 Combien coûte la gestion Google Ads ?
+                </h2>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  <strong>À partir de 500€/mois</strong> (budgets jusqu&apos;à 3 000€), puis 10-15%
+                  du budget média. CTR moyen Google Ads : 3.17% tous secteurs. Nos clients
+                  atteignent <strong>4-6%</strong> grâce à l&apos;optimisation continue.
+                </p>
+              </div>
+              <div className="bg-background rounded-xl p-6 shadow-sm">
+                <h2 className="text-lg font-semibold text-foreground mb-3">
+                  📊 Quel budget minimum recommandé ?
+                </h2>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  <strong>1 000€/mois Google Ads, 500€/mois Facebook Ads</strong>. Avec 1 000€/mois,
+                  attendez 20-50 leads qualifiés. Coût par lead France : 15€ (e-commerce)
+                  à 150€ (B2B SaaS) selon secteur.
+                </p>
+              </div>
+              <div className="bg-background rounded-xl p-6 shadow-sm">
+                <h2 className="text-lg font-semibold text-foreground mb-3">
+                  ⏱️ En combien de temps vais-je voir des résultats ?
+                </h2>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  <strong>Premiers leads en 48-72h</strong>. Optimisation complète : 4-8 semaines.
+                  Nos clients voient leur CPL baisser de <strong>45% en 3 mois</strong>.
+                  ROAS moyen : de 2x (mois 1) à 4x (mois 6).
+                </p>
+              </div>
+              <div className="bg-background rounded-xl p-6 shadow-sm">
+                <h2 className="text-lg font-semibold text-foreground mb-3">
+                  🎯 Google Ads ou Facebook Ads ?
+                </h2>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  <strong>Les deux, idéalement</strong>. 49% des acheteurs découvrent un produit sur
+                  Google. 74% utilisent les réseaux sociaux pour leurs décisions d&apos;achat.
+                  La synergie augmente le ROI de <strong>25-35%</strong>.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

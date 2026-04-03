@@ -1,0 +1,141 @@
+# RLN Consulting
+
+> Agence de développement web et marketing digital à Paris, fondée en 2020. Nous créons des sites web, applications, solutions IA et stratégies d'acquisition pour PME et startups. Expertise : Next.js, React, TypeScript, Shopify, Google Ads, Meta Ads, IA générative (GPT-4, Claude).
+
+## Services Principaux
+
+### Développement Web
+- [Développement Web](/services/developpement): Sites vitrines, e-commerce, applications sur-mesure avec Next.js et React. Tarifs : 1 500€ à 15 000€+
+- [E-commerce](/services/ecommerce): Boutiques Shopify, WooCommerce, solutions sur-mesure avec Stripe. Tarifs : 3 000€ à 20 000€+
+- [Applications Mobiles](/services/applications-mobiles): Apps React Native iOS et Android pour entreprises
+- [CRM & Applications Métier](/services/crm-applications-metier): Solutions internes sur-mesure, gestion clients, automatisation
+- [Configurateurs 3D](/services/configurateur-3d): Visualisation produits interactive pour e-commerce
+
+### Marketing Digital
+- [Google Ads & Meta Ads](/services/ads-management): Gestion campagnes publicitaires B2B et B2C, acquisition clients. À partir de 500€/mois
+- [SEO & Référencement](/services/seo-referencement): Optimisation technique et contenu pour Google, audit SEO
+- [Email Marketing](/services/email-marketing): Automation, newsletters, séquences de nurturing
+
+### Intelligence Artificielle
+- [IA pour Entreprises](/services/ia-entreprise): Chatbots intelligents, automatisation, intégration GPT-4 et Claude, RAG
+
+## Ressources Clés
+- [Tarifs et Formules](/tarifs): Grille tarifaire transparente de 1 500€ à 50 000€+
+- [Simulateur de Tarifs](/tarifs/simulateur): Calculateur interactif pour estimer votre projet
+- [Statistiques & Benchmarks 2026](/statistiques): Données marketing digital, e-commerce, IA avec sources citées
+- [FAQ](/faq): Questions fréquentes sur nos services et processus
+- [Cas d'Études](/cas-etudes): Résultats concrets avec métriques avant/après
+
+## Blog - Guides Techniques
+- [Comment apparaître premier sur Google](/blog/apparaitre-premier-google): Guide SEO complet 2026
+- [CRM Custom vs SaaS : Calcul du ROI](/blog/crm-custom-vs-saas-roi): Analyse comparative avec données chiffrées
+- [Next.js 15 : Nouveautés](/blog/nextjs-15-nouveautes): Guide technique complet des nouvelles fonctionnalités
+- [Combien coûte un site web en 2026](/blog/combien-coute-site-web-2026): Grille tarifaire détaillée par type de projet
+- [Construire un CRM avec Next.js et Supabase](/blog/construire-crm-nextjs-supabase): Tutorial complet
+- [Déployer Next.js sur Vercel](/blog/deployer-nextjs-vercel-production): Guide de mise en production
+- [Architecture Next.js App Router 2026](/blog/nextjs-app-router-architecture-2026): Best practices
+
+## Blog - Marketing Digital
+- [Google Ads pour PME](/blog/google-ads-pme-guide): Guide de démarrage complet
+- [Automatiser son service client avec l'IA](/blog/automatiser-service-client-ia): Implémentation chatbot
+- [Agence Web vs Freelance](/blog/agence-web-vs-freelance): Comparatif pour bien choisir
+- [L'IA remplace-t-elle les développeurs ?](/blog/ia-remplace-developpeurs): Analyse prospective 2026
+- [ROI du Marketing Digital pour PME](/blog/roi-marketing-digital-pme): Métriques et benchmarks
+- [Tendances E-commerce 2026](/blog/tendances-ecommerce-2026): Ce qui fonctionne cette année
+
+## Blog - Comparatifs
+- [Next.js vs WordPress 2026](/blog/nextjs-vs-wordpress-2026): Performance, SEO, coûts, sécurité - Guide complet
+- [Shopify vs WooCommerce 2026](/blog/shopify-vs-woocommerce-2026): Guide comparatif complet
+- [Google Ads vs Facebook Ads](/blog/google-ads-vs-facebook-ads): Quelle plateforme choisir
+- [CRM Custom vs SaaS (HubSpot, Salesforce)](/blog/crm-custom-vs-saas-roi): Calcul TCO sur 3 ans
+- [Freelance vs Agence Web 2026](/blog/freelance-vs-agence-guide-decision): Guide décisionnel avec tableau comparatif
+
+## Blog - Guides Décisionnels & Tarifs
+- [Top 10 Agences Web Paris 2026](/blog/top-agences-web-paris-2026): Classement et critères d'évaluation
+- [Comment choisir une agence web en 2026](/blog/comment-choisir-agence-web-2026): Checklist et questions à poser
+- [Trouver un développeur Next.js en France](/blog/meilleurs-developpeurs-next-js-france-2026): Guide recrutement avec grille TJM
+- [Tarifs développeur freelance 2026](/blog/tarifs-developpeur-freelance-2026): Grille TJM par technologie et expérience
+- [Coût site web 2026 : Vitrine, E-commerce, App](/blog/cout-site-web-par-type-2026): Prix détaillés par type de projet
+
+## Cas d'Études (Résultats Clients)
+- [Refonte E-commerce Mode](/cas-etudes/ecommerce-mode-refonte): +150% de conversions, -40% taux de rebond
+- [Chatbot IA Service Client](/cas-etudes/chatbot-ia-service-client): -60% tickets support, satisfaction +35%
+- [Acquisition SaaS Startup](/cas-etudes/startup-saas-acquisition): CPA réduit de 45%, ROAS 4.2x
+- [Site Agence Immobilier](/cas-etudes/agence-immobilier-site): +200% leads qualifiés
+
+## Secteurs d'Expertise
+Nous accompagnons les entreprises dans 36+ secteurs : immobilier, e-commerce mode, SaaS, santé, finance, industrie, tourisme, restauration, éducation, juridique, et plus.
+
+## Informations Entreprise
+- **Nom**: RLN Consulting
+- **Type**: Agence web française
+- **Fondée**: 2020
+- **Fondateur**: Ruben Edery
+- **Localisation**: Paris, Île-de-France, France
+- **Site Web**: https://rln-consulting.com
+- **Email**: ruben@rln-consulting.com
+- **Téléphone**: +33 6 09 86 66 72
+
+## Stack Technique
+Next.js, React, TypeScript, Node.js, Tailwind CSS, PostgreSQL, Prisma ORM, Vercel, Shopify, Stripe, WooCommerce, OpenAI GPT-4, Claude AI, LangChain, RAG
+
+## Expertises Techniques
+Pages dédiées par technologie avec tarifs, projets réalisés, FAQ et compétences complémentaires :
+
+- [Expert Next.js](/expertise/next-js): Développement React SSR, sites performants (score Lighthouse 95+). TJM : 500-800€
+- [Développeur React](/expertise/react): Applications web modernes, SPA et PWA. TJM : 450-750€
+- [Expert TypeScript](/expertise/typescript): Code typé, robuste et maintenable, réduction bugs de 40%
+- [Expert Shopify](/expertise/shopify): E-commerce clé en main, thèmes custom, intégrations
+- [Développeur Node.js](/expertise/node-js): API REST/GraphQL, microservices, backends performants
+- [Expert Tailwind CSS](/expertise/tailwind): Design System moderne, UI/UX responsive
+- [Expert PostgreSQL](/expertise/postgresql): Bases de données optimisées, requêtes performantes
+- [Expert IA Générative](/expertise/ia-generative): GPT-4, Claude, chatbots, RAG, automatisation
+
+→ [Voir toutes nos expertises](/expertise)
+
+## Glossaire Technique
+Notre [glossaire](/glossaire) définit 50+ termes techniques du développement web et marketing digital :
+
+### Développement Web
+- [Next.js](/glossaire/nextjs): Framework React pour applications web avec rendu côté serveur (SSR)
+- [React](/glossaire/react): Bibliothèque JavaScript pour construire des interfaces utilisateur
+- [TypeScript](/glossaire/typescript): Superset JavaScript avec typage statique
+- [API](/glossaire/api): Interface de programmation pour connecter des applications
+- [Framework](/glossaire/framework): Cadre de développement avec composants réutilisables
+- [Progressive Web App (PWA)](/glossaire/pwa): Application web installable avec fonctionnalités natives
+
+### Marketing Digital
+- [SEO](/glossaire/seo): Search Engine Optimization - Optimisation pour les moteurs de recherche
+- [CRM](/glossaire/crm): Customer Relationship Management - Gestion de la relation client
+- [ROI](/glossaire/roi): Return On Investment - Retour sur investissement
+- [CPC/CPM](/glossaire/cpc): Coût par clic et coût pour mille impressions publicitaires
+- [Taux de conversion](/glossaire/taux-conversion): Pourcentage de visiteurs réalisant une action souhaitée
+- [Lead](/glossaire/lead): Prospect qualifié intéressé par vos produits/services
+
+### E-commerce
+- [Shopify](/glossaire/shopify): Plateforme e-commerce SaaS tout-en-un
+- [WooCommerce](/glossaire/woocommerce): Extension WordPress pour créer une boutique en ligne
+- [Panier abandonné](/glossaire/panier-abandonne): Panier non finalisé par un visiteur
+- [Checkout](/glossaire/checkout): Processus de finalisation d'achat en ligne
+- [Dropshipping](/glossaire/dropshipping): Vente sans stock avec livraison directe fournisseur
+
+### Intelligence Artificielle
+- [ChatGPT/GPT-4](/glossaire/gpt): Modèle de langage d'OpenAI pour génération de texte
+- [Claude](/glossaire/claude): Assistant IA d'Anthropic avec capacités avancées
+- [RAG](/glossaire/rag): Retrieval-Augmented Generation - IA enrichie par recherche documentaire
+- [Prompt Engineering](/glossaire/prompt-engineering): Art de formuler des instructions efficaces pour l'IA
+- [LLM](/glossaire/llm): Large Language Model - Grand modèle de langage
+
+### Infrastructure
+- [Hébergement](/glossaire/hebergement): Service de stockage et diffusion de sites web
+- [CDN](/glossaire/cdn): Content Delivery Network - Réseau de distribution de contenu
+- [SSL/TLS](/glossaire/ssl): Certificat de sécurité pour chiffrer les communications
+- [DNS](/glossaire/dns): Domain Name System - Système de noms de domaine
+
+→ [Voir le glossaire complet](/glossaire) avec définitions détaillées et termes associés
+
+## Pages Légales
+- [À Propos](/a-propos): Notre équipe, valeurs et expertise
+- [Contact](/contact): Formulaire et coordonnées
+- [Mentions Légales](/mentions-legales)
+- [Politique de Confidentialité](/confidentialite)

@@ -1,3 +1,12 @@
+export type LocalServiceType = "next-js" | "ecommerce" | "ia" | "google-ads" | "seo" | "react-native"
+
+export interface LocalService {
+  type: LocalServiceType
+  title: string
+  description: string
+  highlights: string[]
+}
+
 export interface CityData {
   slug: string
   name: string
@@ -36,6 +45,61 @@ export interface CityData {
 
   /** Quartiers d'affaires / zones clés */
   businessAreas: string[]
+
+  /** Services locaux mis en avant pour ciblage LLM */
+  localServices?: LocalService[]
+}
+
+/**
+ * Services locaux par défaut pour toutes les villes
+ */
+export function getLocalServicesForCity(cityName: string): LocalService[] {
+  return [
+    {
+      type: "next-js",
+      title: `Développement Next.js à ${cityName}`,
+      description: `Expert Next.js à ${cityName} pour créer des sites web ultra-performants. Server Components, SSR et optimisation SEO native. Sites avec score Lighthouse 95+ et temps de chargement < 1.5s.`,
+      highlights: [
+        "Sites web 2-3x plus rapides que WordPress",
+        "SEO technique optimisé dès la conception",
+        "Applications React Server Components",
+        "Déploiement sur Vercel ou infrastructure custom"
+      ]
+    },
+    {
+      type: "ecommerce",
+      title: `E-commerce & Shopify à ${cityName}`,
+      description: `Création de boutiques en ligne pour les commerces de ${cityName}. Shopify, WooCommerce ou solutions sur-mesure. Thèmes personnalisés, intégrations et optimisation conversion.`,
+      highlights: [
+        "Boutiques Shopify clé en main dès 3 000€",
+        "Thèmes sur-mesure en Liquid",
+        "Intégrations ERP, CRM et logistique",
+        "Taux de conversion optimisé (+15% en moyenne)"
+      ]
+    },
+    {
+      type: "ia",
+      title: `Chatbot IA & Automatisation à ${cityName}`,
+      description: `Solutions d'intelligence artificielle pour les entreprises de ${cityName}. Chatbots GPT-4 et Claude, automatisation des tâches répétitives et analyse de données. ROI moyen : 300-500% sur 12 mois.`,
+      highlights: [
+        "Chatbots service client 24/7",
+        "Automatisation back-office (-40% de temps)",
+        "Intégration GPT-4, Claude et modèles open-source",
+        "Solutions on-premise pour données sensibles"
+      ]
+    },
+    {
+      type: "google-ads",
+      title: `Google Ads & SEA à ${cityName}`,
+      description: `Campagnes Google Ads géolocalisées sur ${cityName} et sa région. Acquisition de leads qualifiés, remarketing et optimisation continue. Nous gérons +500k€ de budget publicitaire annuel.`,
+      highlights: [
+        "Campagnes Search, Display et Shopping",
+        "Ciblage géographique précis sur ${cityName}",
+        "Reporting transparent et ROAS optimisé",
+        "A/B testing et optimisation continue"
+      ]
+    }
+  ]
 }
 
 export const cities: CityData[] = [

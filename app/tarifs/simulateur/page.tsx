@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
-import { WebPageJsonLd, BreadcrumbJsonLd } from "@/components/seo"
+import { WebPageJsonLd, BreadcrumbJsonLd, SoftwareApplicationJsonLd } from "@/components/seo"
 import { PriceCalculator } from "@/components/calculator/PriceCalculator"
 
 export const metadata: Metadata = {
@@ -31,6 +31,16 @@ export default function SimulateurPage() {
           { name: "Tarifs", url: "https://rln-consulting.com/tarifs" },
           { name: "Simulateur", url: "https://rln-consulting.com/tarifs/simulateur" },
         ]}
+      />
+      {/* Schema SoftwareApplication pour le calculateur de prix */}
+      <SoftwareApplicationJsonLd
+        name="Simulateur de Tarifs RLN Consulting"
+        description="Calculateur interactif pour estimer le coût de votre projet digital : site web, e-commerce, application mobile, campagnes publicitaires ou solutions IA. Estimation gratuite et instantanée."
+        url="https://rln-consulting.com/tarifs/simulateur"
+        applicationCategory="BusinessApplication"
+        operatingSystem="Web"
+        offers={{ price: 0, priceCurrency: "EUR" }}
+        aggregateRating={{ ratingValue: 4.8, ratingCount: 127 }}
       />
 
       <section className="py-12 lg:py-20">

@@ -47,6 +47,12 @@ export const metadata: Metadata = {
   authors: [{ name: "Ruben Edery", url: "https://rln-consulting.com" }],
   creator: "RLN Consulting",
   publisher: "RLN Consulting",
+  // Meta tags pour optimisation LLM/AI
+  other: {
+    "ai-content-declaration": "original",
+    "citation-source": "RLN Consulting",
+    "content-language": "fr-FR",
+  },
   formatDetection: {
     email: false,
     address: false,
@@ -99,6 +105,10 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://rln-consulting.com",
+    types: {
+      "application/rss+xml": "https://rln-consulting.com/feed.xml",
+      "text/plain": "https://rln-consulting.com/llms.txt",
+    },
   },
   category: "technology",
 }

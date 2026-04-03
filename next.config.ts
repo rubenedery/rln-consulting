@@ -34,6 +34,11 @@ const nextConfig: NextConfig = {
       {
         source: "/:path*",
         headers: [
+          // Header pour AI crawlers - autoriser l'indexation complète
+          {
+            key: "X-Robots-Tag",
+            value: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+          },
           {
             key: "X-Content-Type-Options",
             value: "nosniff",

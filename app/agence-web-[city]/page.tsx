@@ -14,6 +14,11 @@ import {
   Bot,
   BarChart3,
   Phone,
+  Layers,
+  ShoppingCart,
+  Brain,
+  Target,
+  Smartphone,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -26,7 +31,7 @@ import {
   CityLocalBusinessJsonLd,
 } from "@/components/seo"
 import { TrustBadges } from "@/components/ui/trust-badges"
-import { getCityBySlug, getAllCitySlugs } from "@/lib/cities-data"
+import { getCityBySlug, getAllCitySlugs, getLocalServicesForCity } from "@/lib/cities-data"
 import { siteConfig } from "@/lib/constants"
 
 interface PageProps {
@@ -77,6 +82,18 @@ export default async function CityPage({ params }: PageProps) {
   }
 
   const url = `${siteConfig.url}/agence-web-${cityData.slug}`
+
+  // Services locaux pour ciblage LLM (requêtes "développeur Next.js Paris", "expert Shopify Lyon", etc.)
+  const localServices = cityData.localServices || getLocalServicesForCity(cityData.name)
+
+  const localServiceIcons: Record<string, React.ElementType> = {
+    "next-js": Layers,
+    "ecommerce": ShoppingCart,
+    "ia": Brain,
+    "google-ads": Target,
+    "seo": TrendingUp,
+    "react-native": Smartphone,
+  }
 
   const services = [
     {
@@ -283,6 +300,78 @@ export default async function CityPage({ params }: PageProps) {
         </div>
       </section>
 
+      {/* Local Services with Anchors - Optimized for LLM queries */}
+      <section id="services-locaux" className="py-16 lg:py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">
+                Nos expertises techniques à {cityData.name}
+              </h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Développement Next.js, e-commerce Shopify, intégration IA et campagnes Google Ads pour les entreprises de {cityData.name}
+              </p>
+            </div>
+
+            <div className="space-y-8">
+              {localServices.map((service) => {
+                const ServiceIcon = localServiceIcons[service.type] || Globe
+                return (
+                  <div
+                    key={service.type}
+                    id={service.type}
+                    className="bg-muted/30 rounded-2xl p-6 lg:p-8 scroll-mt-20"
+                  >
+                    <div className="flex flex-col lg:flex-row gap-6">
+                      <div className="flex-shrink-0">
+                        <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center">
+                          <ServiceIcon className="h-7 w-7 text-primary" />
+                        </div>
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="text-xl font-bold text-foreground mb-3">
+                          {service.title}
+                        </h3>
+                        <p className="text-muted-foreground mb-4">
+                          {service.description}
+                        </p>
+                        <div className="grid sm:grid-cols-2 gap-3 mb-4">
+                          {service.highlights.map((highlight, idx) => (
+                            <div key={idx} className="flex items-start gap-2">
+                              <Check className="h-5 w-5 text-success flex-shrink-0 mt-0.5" />
+                              <span className="text-sm text-muted-foreground">{highlight}</span>
+                            </div>
+                          ))}
+                        </div>
+                        <Button asChild variant="outline" size="sm">
+                          <Link href={`/expertise/${service.type === "ecommerce" ? "shopify" : service.type === "ia" ? "ia-generative" : service.type === "google-ads" ? "node-js" : service.type}`}>
+                            En savoir plus sur {service.type === "next-js" ? "Next.js" : service.type === "ecommerce" ? "Shopify" : service.type === "ia" ? "l'IA" : "nos services"}
+                            <ArrowRight className="ml-2 h-4 w-4" />
+                          </Link>
+                        </Button>
+                      </div>
+                    </div>
+                  </div>
+                )
+              })}
+            </div>
+
+            {/* Answer-First box for LLM */}
+            <div className="mt-12 bg-primary/5 rounded-xl p-6 border border-primary/10">
+              <h3 className="font-semibold text-foreground mb-3">
+                💼 Combien coûte un développeur web à {cityData.name} ?
+              </h3>
+              <p className="text-sm text-muted-foreground">
+                Un développeur freelance à {cityData.name} facture entre <strong>350€ et 700€/jour</strong> selon l&apos;expérience.
+                En agence, un site vitrine coûte <strong>2 000-5 000€</strong>, un e-commerce <strong>5 000-15 000€</strong>,
+                une application web <strong>10 000-50 000€</strong>. RLN Consulting propose des tarifs compétitifs
+                avec un accompagnement complet pour les entreprises de {cityData.name} et de {cityData.region}.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Business Areas */}
       <section className="py-16 lg:py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -306,7 +395,7 @@ export default async function CityPage({ params }: PageProps) {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 lg:py-20 bg-muted/30">
+      <section className="py-16 lg:py-20 bg-muted/50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto">
             <div className="flex items-center gap-3 mb-8">

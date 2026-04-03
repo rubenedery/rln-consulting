@@ -154,9 +154,32 @@ export default function IAEntreprisePage() {
   return (
     <>
       <ServiceJsonLd
-        name="IA pour Entreprises"
-        description="Services d'intégration d'intelligence artificielle pour entreprises. Chatbots, automatisation, analyse de données et assistants IA sur mesure."
+        name="IA pour Entreprises - Chatbots & Automatisation"
+        description="Intégration d'intelligence artificielle pour entreprises. Chatbots GPT-4/Claude à partir de 3 000€, automatisation -60% tickets support. Solutions RAG formées sur vos données avec confidentialité garantie."
         url="https://rln-consulting.com/services/ia-entreprise"
+        minPrice={3000}
+        maxPrice={30000}
+        features={[
+          "Chatbots IA intelligents 24/7",
+          "Intégration GPT-4 et Claude",
+          "RAG sur données entreprise",
+          "Automatisation des tâches",
+          "Assistants IA internes",
+          "Hébergement sécurisé RGPD",
+        ]}
+        aggregateRating={{
+          ratingValue: 4.8,
+          reviewCount: 18,
+        }}
+        reviews={[
+          {
+            author: "David, CEO FastDelivery",
+            reviewBody: "Le chatbot IA gère 70% de nos demandes clients automatiquement. Notre équipe peut enfin se concentrer sur les cas complexes.",
+            ratingValue: 5,
+            datePublished: "2025-10-05",
+          },
+        ]}
+        estimatedDuration="POC en 2 semaines, solution complète 6-12 semaines"
       />
       <BreadcrumbJsonLd
         items={[
@@ -200,6 +223,56 @@ export default function IAEntreprisePage() {
               <Button asChild variant="outline" size="lg">
                 <Link href="/cas-etudes">Voir nos cas d&apos;usage</Link>
               </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Answer-First Section - Réponses directes pour LLM */}
+      <section className="py-16 bg-primary/5 border-y border-primary/10">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="bg-background rounded-xl p-6 shadow-sm">
+                <h2 className="text-lg font-semibold text-foreground mb-3">
+                  💰 Combien coûte un chatbot IA ?
+                </h2>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  <strong>Chatbot basique : 3 000€ à 8 000€</strong> + 200-500€/mois maintenance.
+                  Assistant IA avancé (RAG) : 10 000€ à 30 000€. Un chatbot IA réduit les
+                  tickets support de <strong>70%</strong> (Gartner 2025).
+                </p>
+              </div>
+              <div className="bg-background rounded-xl p-6 shadow-sm">
+                <h2 className="text-lg font-semibold text-foreground mb-3">
+                  🤖 GPT-4 ou Claude ?
+                </h2>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  <strong>GPT-4</strong> pour génération texte, <strong>Claude</strong> pour
+                  conversations complexes, <strong>Llama/Mistral</strong> pour données sensibles.
+                  72% des entreprises prévoient d&apos;investir dans l&apos;IA en 2026 (McKinsey).
+                </p>
+              </div>
+              <div className="bg-background rounded-xl p-6 shadow-sm">
+                <h2 className="text-lg font-semibold text-foreground mb-3">
+                  ⏱️ Quel délai de déploiement ?
+                </h2>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  <strong>POC : 2 semaines</strong>. Chatbot simple : 2-4 semaines.
+                  Solution complète intégrée : 6-12 semaines. 85% des interactions client
+                  seront gérées sans humain d&apos;ici 2027 (Gartner).
+                </p>
+              </div>
+              <div className="bg-background rounded-xl p-6 shadow-sm">
+                <h2 className="text-lg font-semibold text-foreground mb-3">
+                  🔒 Mes données sont-elles sécurisées ?
+                </h2>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  <strong>Oui</strong> : chiffrement TLS, hébergement Europe (RGPD), option
+                  on-premise. Vos données ne sont jamais utilisées pour entraîner les modèles.
+                  Économies service client : <strong>40%</strong> en moyenne (IBM 2025).
+                </p>
+              </div>
             </div>
           </div>
         </div>

@@ -10,6 +10,7 @@ import { Separator } from "@/components/ui/separator"
 import { BlogPostingJsonLd, BreadcrumbJsonLd } from "@/components/seo"
 import { CTA } from "@/components/sections"
 import { ArticleCard } from "@/components/blog"
+import { MarkdownContent } from "@/components/markdown"
 import { blogCategories } from "@/types"
 
 interface BlogPostPageProps {
@@ -155,31 +156,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
           {/* Content */}
           <div className="max-w-3xl mx-auto">
-            <div className="prose prose-lg max-w-none prose-headings:text-foreground prose-p:text-muted-foreground prose-a:text-primary prose-strong:text-foreground">
-              {/* Render markdown content as HTML */}
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: post.content
-                    .split("\n")
-                    .map((line) => {
-                      if (line.startsWith("## ")) {
-                        return `<h2>${line.slice(3)}</h2>`
-                      }
-                      if (line.startsWith("### ")) {
-                        return `<h3>${line.slice(4)}</h3>`
-                      }
-                      if (line.startsWith("- ")) {
-                        return `<li>${line.slice(2)}</li>`
-                      }
-                      if (line.trim() === "") {
-                        return "<br />"
-                      }
-                      return `<p>${line}</p>`
-                    })
-                    .join("\n"),
-                }}
-              />
-            </div>
+            <MarkdownContent
+              content={post.content}
+              className="prose prose-lg max-w-none prose-headings:text-foreground prose-p:text-muted-foreground prose-a:text-primary prose-strong:text-foreground"
+            />
 
             {/* Tags */}
             <Separator className="my-12" />

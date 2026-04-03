@@ -12,7 +12,7 @@ import {
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { WebPageJsonLd, BreadcrumbJsonLd } from "@/components/seo"
+import { WebPageJsonLd, BreadcrumbJsonLd, PersonJsonLd, OrganizationJsonLd } from "@/components/seo"
 import { CTA } from "@/components/sections"
 import { companyStats, companyValues, teamMembers } from "@/lib/content"
 
@@ -49,6 +49,10 @@ export default function AboutPage() {
           { name: "À Propos", url: "https://rln-consulting.com/a-propos" },
         ]}
       />
+      {/* Schema PersonJsonLd pour E-E-A-T - Établit l'autorité du fondateur */}
+      <PersonJsonLd />
+      {/* Schema OrganizationJsonLd pour renforcer l'identité de l'entreprise */}
+      <OrganizationJsonLd />
 
       {/* Hero */}
       <section className="py-20 lg:py-28 bg-gradient-to-br from-primary/5 via-background to-accent/5">

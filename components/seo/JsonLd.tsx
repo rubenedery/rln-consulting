@@ -330,7 +330,24 @@ interface ServiceJsonLdProps {
   url: string
   provider?: string
   priceRange?: string
+  minPrice?: number
+  maxPrice?: number
   features?: string[]
+  /** Note moyenne sur 5 */
+  aggregateRating?: {
+    ratingValue: number
+    reviewCount: number
+    bestRating?: number
+  }
+  /** Avis clients */
+  reviews?: Array<{
+    author: string
+    reviewBody: string
+    ratingValue: number
+    datePublished?: string
+  }>
+  /** Temps moyen de réalisation */
+  estimatedDuration?: string
 }
 
 export function ServiceJsonLd({
@@ -339,7 +356,12 @@ export function ServiceJsonLd({
   url,
   provider = "RLN Consulting",
   priceRange,
+  minPrice,
+  maxPrice,
   features,
+  aggregateRating,
+  reviews,
+  estimatedDuration,
 }: ServiceJsonLdProps) {
   const jsonLd = {
     "@context": "https://schema.org",
@@ -358,17 +380,56 @@ export function ServiceJsonLd({
       name: "France",
     },
     serviceType: name,
-    ...(priceRange && {
+    // Offre avec prix détaillés
+    ...(priceRange || minPrice) && {
       offers: {
         "@type": "Offer",
         priceCurrency: "EUR",
-        price: priceRange,
-        priceSpecification: {
-          "@type": "PriceSpecification",
-          priceCurrency: "EUR",
-          price: priceRange,
-        },
+        ...(priceRange && { price: priceRange }),
+        ...(minPrice && {
+          priceSpecification: {
+            "@type": "PriceSpecification",
+            priceCurrency: "EUR",
+            minPrice,
+            ...(maxPrice && { maxPrice }),
+            ...(minPrice && !maxPrice && { price: minPrice }),
+          },
+        }),
+        availability: "https://schema.org/InStock",
+        validFrom: new Date().toISOString().split("T")[0],
       },
+    },
+    // Note globale
+    ...(aggregateRating && {
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: aggregateRating.ratingValue,
+        reviewCount: aggregateRating.reviewCount,
+        bestRating: aggregateRating.bestRating || 5,
+        worstRating: 1,
+      },
+    }),
+    // Avis individuels
+    ...(reviews && reviews.length > 0 && {
+      review: reviews.map((review) => ({
+        "@type": "Review",
+        author: {
+          "@type": "Person",
+          name: review.author,
+        },
+        reviewBody: review.reviewBody,
+        reviewRating: {
+          "@type": "Rating",
+          ratingValue: review.ratingValue,
+          bestRating: 5,
+          worstRating: 1,
+        },
+        ...(review.datePublished && { datePublished: review.datePublished }),
+      })),
+    }),
+    // Durée estimée
+    ...(estimatedDuration && {
+      providerMobility: estimatedDuration,
     }),
     ...(features && {
       hasOfferCatalog: {
@@ -665,6 +726,393 @@ export function BreadcrumbJsonLd({ items }: BreadcrumbJsonLdProps) {
       position: index + 1,
       name: item.name,
       item: item.url,
+    })),
+  }
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+    />
+  )
+}
+
+/**
+ * Person Schema - Établit l'autorité E-E-A-T du fondateur
+ * Améliore la crédibilité auprès des moteurs de recherche et LLM
+ */
+interface PersonJsonLdProps {
+  name?: string
+  jobTitle?: string
+  url?: string
+  image?: string
+  sameAs?: string[]
+  worksFor?: string
+  knowsAbout?: string[]
+  description?: string
+}
+
+export function PersonJsonLd({
+  name = siteConfig.founder.name,
+  jobTitle = siteConfig.founder.role,
+  url = siteConfig.url,
+  image = `${siteConfig.url}/images/team/ruben-edery.jpg`,
+  sameAs = [
+    siteConfig.founder.social.linkedin,
+    siteConfig.founder.social.twitter,
+    siteConfig.founder.social.github,
+  ],
+  worksFor = siteConfig.name,
+  knowsAbout = [
+    "Développement Web",
+    "Next.js",
+    "React",
+    "TypeScript",
+    "Marketing Digital",
+    "Google Ads",
+    "Meta Ads",
+    "SEO",
+    "Intelligence Artificielle",
+    "E-commerce",
+    "CRM",
+    "Shopify",
+  ],
+  description = "Fondateur et Lead Developer de RLN Consulting, agence web française spécialisée dans le développement Next.js/React et le marketing digital. Expert en création de sites web, applications mobiles, solutions IA et gestion de campagnes publicitaires.",
+}: PersonJsonLdProps = {}) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": `${siteConfig.url}/#founder`,
+    name,
+    jobTitle,
+    url,
+    image: {
+      "@type": "ImageObject",
+      url: image,
+      width: 400,
+      height: 400,
+    },
+    description,
+    sameAs,
+    worksFor: {
+      "@type": "Organization",
+      "@id": `${siteConfig.url}/#organization`,
+      name: worksFor,
+      url: siteConfig.url,
+    },
+    knowsAbout,
+    alumniOf: {
+      "@type": "Organization",
+      name: "Formation autodidacte et certifications professionnelles",
+    },
+    nationality: {
+      "@type": "Country",
+      name: "France",
+    },
+    hasCredential: [
+      {
+        "@type": "EducationalOccupationalCredential",
+        name: "Google Ads Certification",
+        credentialCategory: "Professional Certification",
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        name: "Meta Blueprint Certification",
+        credentialCategory: "Professional Certification",
+      },
+    ],
+  }
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+    />
+  )
+}
+
+/**
+ * HowTo Schema - Structure les guides et tutoriels pour les rich snippets
+ * Optimisé pour les réponses directes des LLM et AI Overviews
+ */
+interface HowToStep {
+  name: string
+  text: string
+  url?: string
+  image?: string
+}
+
+interface HowToJsonLdProps {
+  name: string
+  description: string
+  steps: HowToStep[]
+  totalTime?: string // Format ISO 8601 (ex: "PT30M" pour 30 minutes)
+  estimatedCost?: {
+    value: number | string
+    currency?: string
+  }
+  image?: string
+  tool?: string[]
+  supply?: string[]
+}
+
+export function HowToJsonLd({
+  name,
+  description,
+  steps,
+  totalTime,
+  estimatedCost,
+  image,
+  tool,
+  supply,
+}: HowToJsonLdProps) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name,
+    description,
+    ...(totalTime && { totalTime }),
+    ...(image && {
+      image: {
+        "@type": "ImageObject",
+        url: image.startsWith("http") ? image : `${siteConfig.url}${image}`,
+      },
+    }),
+    ...(estimatedCost && {
+      estimatedCost: {
+        "@type": "MonetaryAmount",
+        currency: estimatedCost.currency || "EUR",
+        value: estimatedCost.value,
+      },
+    }),
+    ...(tool && {
+      tool: tool.map((t) => ({
+        "@type": "HowToTool",
+        name: t,
+      })),
+    }),
+    ...(supply && {
+      supply: supply.map((s) => ({
+        "@type": "HowToSupply",
+        name: s,
+      })),
+    }),
+    step: steps.map((step, index) => ({
+      "@type": "HowToStep",
+      position: index + 1,
+      name: step.name,
+      text: step.text,
+      ...(step.url && { url: step.url }),
+      ...(step.image && {
+        image: {
+          "@type": "ImageObject",
+          url: step.image.startsWith("http")
+            ? step.image
+            : `${siteConfig.url}${step.image}`,
+        },
+      }),
+    })),
+  }
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+    />
+  )
+}
+
+/**
+ * DefinedTerm Schema - Pour le glossaire technique
+ * Permet aux LLM de comprendre et citer les définitions
+ */
+interface DefinedTermJsonLdProps {
+  term: string
+  definition: string
+  url: string
+  inDefinedTermSet?: string
+  relatedTerms?: string[]
+}
+
+export function DefinedTermJsonLd({
+  term,
+  definition,
+  url,
+  inDefinedTermSet = "Glossaire Marketing Digital & Développement Web",
+  relatedTerms,
+}: DefinedTermJsonLdProps) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "DefinedTerm",
+    name: term,
+    description: definition,
+    url,
+    inDefinedTermSet: {
+      "@type": "DefinedTermSet",
+      name: inDefinedTermSet,
+      url: `${siteConfig.url}/glossaire`,
+    },
+    ...(relatedTerms && {
+      relatedLink: relatedTerms.map((t) => ({
+        "@type": "DefinedTerm",
+        name: t,
+      })),
+    }),
+  }
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+    />
+  )
+}
+
+/**
+ * SoftwareApplication Schema - Pour les outils/configurateurs
+ */
+interface SoftwareApplicationJsonLdProps {
+  name: string
+  description: string
+  url: string
+  applicationCategory?: string
+  operatingSystem?: string
+  offers?: {
+    price: number | string
+    priceCurrency?: string
+  }
+  aggregateRating?: {
+    ratingValue: number
+    ratingCount: number
+  }
+}
+
+export function SoftwareApplicationJsonLd({
+  name,
+  description,
+  url,
+  applicationCategory = "BusinessApplication",
+  operatingSystem = "Web",
+  offers,
+  aggregateRating,
+}: SoftwareApplicationJsonLdProps) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name,
+    description,
+    url,
+    applicationCategory,
+    operatingSystem,
+    ...(offers && {
+      offers: {
+        "@type": "Offer",
+        price: offers.price,
+        priceCurrency: offers.priceCurrency || "EUR",
+      },
+    }),
+    ...(aggregateRating && {
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: aggregateRating.ratingValue,
+        ratingCount: aggregateRating.ratingCount,
+        bestRating: 5,
+        worstRating: 1,
+      },
+    }),
+    author: {
+      "@type": "Organization",
+      "@id": `${siteConfig.url}/#organization`,
+      name: siteConfig.name,
+    },
+  }
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+    />
+  )
+}
+
+/**
+ * Speakable Schema - Optimise le contenu pour les assistants vocaux
+ * Indique aux AI quelles parties du contenu sont appropriées pour la lecture vocale
+ */
+interface SpeakableJsonLdProps {
+  url: string
+  cssSelectors?: string[]
+  xpaths?: string[]
+}
+
+export function SpeakableJsonLd({
+  url,
+  cssSelectors = ["article h1", "article h2", "article p:first-of-type", ".speakable"],
+  xpaths,
+}: SpeakableJsonLdProps) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    url,
+    speakable: {
+      "@type": "SpeakableSpecification",
+      ...(cssSelectors && { cssSelector: cssSelectors }),
+      ...(xpaths && { xpath: xpaths }),
+    },
+  }
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+    />
+  )
+}
+
+/**
+ * ItemList Schema - Pour les listes structurées (services, articles, etc.)
+ * Améliore l'affichage dans les rich snippets et AI Overviews
+ */
+interface ItemListJsonLdProps {
+  name: string
+  description?: string
+  items: Array<{
+    name: string
+    url: string
+    description?: string
+    image?: string
+    position?: number
+  }>
+  itemListOrder?: "ItemListOrderAscending" | "ItemListOrderDescending" | "ItemListUnordered"
+}
+
+export function ItemListJsonLd({
+  name,
+  description,
+  items,
+  itemListOrder = "ItemListUnordered",
+}: ItemListJsonLdProps) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name,
+    ...(description && { description }),
+    itemListOrder,
+    numberOfItems: items.length,
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: item.position || index + 1,
+      item: {
+        "@type": "Thing",
+        name: item.name,
+        url: item.url,
+        ...(item.description && { description: item.description }),
+        ...(item.image && {
+          image: item.image.startsWith("http")
+            ? item.image
+            : `${siteConfig.url}${item.image}`,
+        }),
+      },
     })),
   }
 
