@@ -76,6 +76,9 @@ export function GET() {
   lines.push("## Ressources Clés")
   lines.push("")
   lines.push("- [Tarifs et Formules](/tarifs): Grille tarifaire transparente de 1 500€ à 50 000€+")
+  lines.push(
+    "- [Générateur de quittance de loyer](/outils/quittance-de-loyer): Outil gratuit pour créer et imprimer une quittance conforme à la loi du 6 juillet 1989, sans inscription"
+  )
   lines.push("- [Simulateur de Tarifs](/tarifs/simulateur): Calculateur interactif pour estimer votre projet")
   lines.push("- [Statistiques & Benchmarks 2026](/statistiques): Données marketing digital, e-commerce, IA avec sources citées")
   lines.push("- [FAQ](/faq): Questions fréquentes sur nos services et processus")

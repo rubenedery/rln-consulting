@@ -10,9 +10,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/tarifs/simulateur",
   },
-  title: "Simulateur de Prix | Estimez votre projet digital",
+  title: "Simulateur de Prix Site Internet | Estimation Immédiate & Gratuite",
   description:
-    "Obtenez une estimation instantanée pour votre projet web, publicité ou IA. Calculateur interactif gratuit et sans engagement.",
+    "Combien coûte votre site internet ? Simulateur de prix gratuit : estimation instantanée pour site web, e-commerce, publicité ou IA. Sans inscription ni engagement.",
   openGraph: {
     title: "Simulateur de Prix | RLN Consulting",
     description:

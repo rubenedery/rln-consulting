@@ -26,13 +26,14 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/services/ia-entreprise",
   },
-  title: "IA pour Entreprises | Chatbots, Automatisation & Intégration",
+  title: "IA sur Mesure pour Entreprises | Chatbots & Automatisation",
   description:
-    "Intégrez l'intelligence artificielle dans votre entreprise. Chatbots, automatisation des tâches, analyse de données et assistants IA sur mesure.",
+    "IA sur mesure pour votre entreprise : chatbots sur mesure, automatisation des tâches, analyse de données et assistants IA intégrés à vos outils. POC en 2 semaines, dès 3 000€.",
   keywords: [
+    "IA sur mesure entreprise",
+    "chatbot sur mesure entreprise",
     "IA entreprise",
     "intelligence artificielle",
-    "chatbot",
     "automatisation",
     "GPT",
     "Claude",
@@ -217,8 +218,8 @@ export default function IAEntreprisePage() {
               Intelligence Artificielle
             </Badge>
             <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-foreground mb-6">
-              Transformez votre entreprise avec{" "}
-              <span className="text-primary">l&apos;IA</span>
+              L&apos;IA sur mesure pour{" "}
+              <span className="text-primary">votre entreprise</span>
             </h1>
             <p className="text-lg text-muted-foreground mb-10">
               Chatbots intelligents, automatisation des tâches, analyse de données...
@@ -251,12 +252,12 @@ export default function IAEntreprisePage() {
             <div className="grid md:grid-cols-2 gap-8">
               <div className="bg-background rounded-xl p-6 shadow-sm">
                 <h2 className="text-lg font-semibold text-foreground mb-3">
-                  💰 Combien coûte un chatbot IA ?
+                  💰 Combien coûte un chatbot sur mesure ?
                 </h2>
                 <p className="text-muted-foreground text-sm leading-relaxed">
-                  <strong>Chatbot basique : 3 000€ à 8 000€</strong> + 200-500€/mois maintenance.
-                  Assistant IA avancé (RAG) : 10 000€ à 30 000€. Un chatbot IA réduit les
-                  tickets support de <strong>70%</strong> (Gartner 2025).
+                  <strong>Chatbot sur mesure : 3 000€ à 8 000€</strong> + 200-500€/mois maintenance.
+                  Assistant IA avancé (RAG, entraîné sur vos données) : 10 000€ à 30 000€. Un
+                  chatbot IA réduit les tickets support de <strong>70%</strong> (Gartner 2025).
                 </p>
               </div>
               <div className="bg-background rounded-xl p-6 shadow-sm">

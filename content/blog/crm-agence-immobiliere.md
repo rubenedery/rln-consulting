@@ -290,4 +290,6 @@ Cloud (SaaS) sans hésitation : mises à jour automatiques, accès partout, main
 
 Un CRM adapté transforme le quotidien d'une agence immobilière : meilleur suivi, moins d'opportunités perdues, gain de temps. Choisissez une solution qui correspond à vos besoins et investissez dans la formation de vos équipes.
 
+En attendant d'équiper votre agence, notre [générateur de quittance de loyer gratuit](/outils/quittance-de-loyer) vous permet déjà de créer des quittances conformes pour vos locataires, sans inscription.
+
 Besoin d'aide pour choisir ou implémenter votre CRM ? Contactez-nous.

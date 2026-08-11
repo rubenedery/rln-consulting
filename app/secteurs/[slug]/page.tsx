@@ -453,6 +453,32 @@ export default async function SectorPage({ params }: PageProps) {
         </div>
       </section>
 
+      {/* Outils gratuits pertinents pour ce métier */}
+      {sector.relatedTools && sector.relatedTools.length > 0 && (
+        <section className="py-12">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-3xl mx-auto">
+              <h2 className="text-xl font-bold text-foreground mb-4">Outils gratuits</h2>
+              <div className="space-y-3">
+                {sector.relatedTools.map((tool) => (
+                  <Link
+                    key={tool.href}
+                    href={tool.href}
+                    className="flex items-start justify-between gap-4 rounded-lg border border-border p-4 hover:border-primary/40 transition-colors"
+                  >
+                    <div>
+                      <p className="font-medium text-foreground">{tool.name}</p>
+                      <p className="text-sm text-muted-foreground">{tool.description}</p>
+                    </div>
+                    <ArrowRight className="h-4 w-4 text-muted-foreground flex-shrink-0 mt-1" />
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Cross-link vers la page IA du métier */}
       {aiProfile && (
         <section className="py-12 bg-primary/5 border-y border-primary/10">

@@ -249,3 +249,33 @@ body {
 .prose tr:nth-child(even) {
   background-color: hsl(var(--muted) / 0.3);
 }
+
+/* Impression : n'imprimer que la quittance (outil /outils/quittance-de-loyer).
+   visibility (et non display:none) pour préserver le layout des ancêtres. */
+@media print {
+  @page {
+    margin: 1.5cm;
+    size: A4;
+  }
+  body * {
+    visibility: hidden;
+  }
+  .quittance-print,
+  .quittance-print * {
+    visibility: visible;
+  }
+  .quittance-print {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    box-shadow: none;
+    border: none;
+    background: #fff !important;
+    color: #000 !important;
+  }
+  .print-hidden {
+    display: none !important;
+  }
+}
