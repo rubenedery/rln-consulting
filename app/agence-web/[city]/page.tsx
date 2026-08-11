@@ -343,7 +343,7 @@ export default async function CityPage({ params }: PageProps) {
                           ))}
                         </div>
                         <Button asChild variant="outline" size="sm">
-                          <Link href={`/expertise/${service.type === "ecommerce" ? "shopify" : service.type === "ia" ? "ia-generative" : service.type === "google-ads" ? "node-js" : service.type}`}>
+                          <Link href={service.type === "ecommerce" ? "/expertise/shopify" : service.type === "ia" ? "/expertise/ia-generative" : service.type === "google-ads" ? "/services/ads-management" : `/expertise/${service.type}`}>
                             En savoir plus sur {service.type === "next-js" ? "Next.js" : service.type === "ecommerce" ? "Shopify" : service.type === "ia" ? "l'IA" : "nos services"}
                             <ArrowRight className="ml-2 h-4 w-4" />
                           </Link>
@@ -508,9 +508,9 @@ export default async function CityPage({ params }: PageProps) {
             <div className="flex flex-wrap gap-2 justify-center">
               <Link href="/secteurs/restaurant" className="text-sm text-muted-foreground hover:text-primary hover:underline">Restaurants</Link>
               <Link href="/secteurs/avocat" className="text-sm text-muted-foreground hover:text-primary hover:underline">Avocats</Link>
-              <Link href="/secteurs/cabinet-medecin" className="text-sm text-muted-foreground hover:text-primary hover:underline">Médecins</Link>
-              <Link href="/secteurs/agence-immobilier" className="text-sm text-muted-foreground hover:text-primary hover:underline">Agences immobilières</Link>
-              <Link href="/secteurs/coiffeur" className="text-sm text-muted-foreground hover:text-primary hover:underline">Coiffeurs</Link>
+              <Link href="/secteurs/medecin" className="text-sm text-muted-foreground hover:text-primary hover:underline">Médecins</Link>
+              <Link href="/secteurs/agence-immobiliere" className="text-sm text-muted-foreground hover:text-primary hover:underline">Agences immobilières</Link>
+              <Link href="/secteurs/salon-coiffure" className="text-sm text-muted-foreground hover:text-primary hover:underline">Coiffeurs</Link>
               <Link href="/secteurs/plombier" className="text-sm text-muted-foreground hover:text-primary hover:underline">Plombiers</Link>
               <Link href="/secteurs/boutique-vetements" className="text-sm text-muted-foreground hover:text-primary hover:underline">Boutiques</Link>
               <Link href="/secteurs" className="text-sm text-primary font-medium hover:underline">Voir tous les secteurs →</Link>

@@ -3,11 +3,11 @@ import Link from "next/link"
 import Image from "next/image"
 import type { Metadata } from "next"
 import { ArrowLeft, Calendar, Clock, User, Tag } from "lucide-react"
-import { getBlogPost, getBlogSlugs, getAllBlogPosts } from "@/lib/mdx"
+import { getBlogPost, getBlogSlugs, getAllBlogPosts, extractFaqFromMarkdown } from "@/lib/mdx"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
-import { BlogPostingJsonLd, BreadcrumbJsonLd } from "@/components/seo"
+import { BlogPostingJsonLd, BreadcrumbJsonLd, FAQPageJsonLd } from "@/components/seo"
 import { Breadcrumbs } from "@/components/ui/breadcrumbs"
 import { CTA } from "@/components/sections"
 import { ArticleCard } from "@/components/blog"
@@ -80,6 +80,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     notFound()
   }
 
+  // FAQ de l'article (section "## FAQ" du markdown) pour le JSON-LD FAQPage
+  const articleFaqs = extractFaqFromMarkdown(post.content)
+
   // Get related posts (same category, excluding current)
   const allPosts = getAllBlogPosts()
   const relatedPosts = allPosts
@@ -99,6 +102,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         url={`${siteConfig.url}/blog/${post.slug}`}
       />
       <BreadcrumbJsonLd items={breadcrumbItems} />
+      {articleFaqs.length > 0 && <FAQPageJsonLd questions={articleFaqs} />}
 
       <article className="py-12 lg:py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">

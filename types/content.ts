@@ -27,20 +27,30 @@ export interface BlogPostMeta {
 export type BlogCategory =
   | "seo"
   | "geo"
+  | "ia"
   | "developpement"
   | "marketing"
   | "performance"
   | "design"
   | "strategie"
+  | "secteur"
+  | "ecommerce"
+  | "business"
+  | "innovation"
 
 export const blogCategories: Record<BlogCategory, string> = {
   seo: "SEO",
   geo: "GEO",
+  ia: "Intelligence Artificielle",
   developpement: "Développement",
   marketing: "Marketing",
   performance: "Performance",
   design: "Design",
   strategie: "Stratégie",
+  secteur: "Secteurs",
+  ecommerce: "E-commerce",
+  business: "Business",
+  innovation: "Innovation",
 }
 
 // Case Study Types

@@ -159,6 +159,26 @@ export default async function GlossaryTermPage({ params }: PageProps) {
           </section>
         )}
 
+        {/* Passerelle vers les guides IA par métier */}
+        {term.category === "ia" && (
+          <section className="mb-12 bg-primary/5 border border-primary/10 rounded-xl p-6">
+            <h2 className="text-xl font-bold mb-2">
+              L&apos;IA appliquée à votre métier
+            </h2>
+            <p className="text-sm text-muted-foreground mb-4">
+              Découvrez ce que cette technologie peut concrètement faire pour
+              votre profession : cas d&apos;usage, coûts et retour sur
+              investissement détaillés pour plus de 30 métiers.
+            </p>
+            <Link href="/ia">
+              <Button variant="accent">
+                Voir l&apos;IA par métier
+                <ArrowRight className="h-4 w-4 ml-2" />
+              </Button>
+            </Link>
+          </section>
+        )}
+
         {/* Termes liés */}
         {relatedTerms.length > 0 && (
           <section className="mb-12">

@@ -9,6 +9,7 @@ import {
   Lightbulb,
   BarChart3,
   ChevronRight,
+  Sparkles,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -41,6 +42,7 @@ import {
 } from "lucide-react"
 import type { DigitalServiceType } from "@/types/sectors"
 import { siteConfig } from "@/lib/constants"
+import { getAiSectorBySlug } from "@/lib/ai-use-cases-data"
 
 const service_icons: Record<DigitalServiceType, React.ElementType> = {
   site_web: Globe,
@@ -100,6 +102,9 @@ export default async function SectorPage({ params }: PageProps) {
   if (!sector) {
     notFound()
   }
+
+  // Page IA du métier si elle existe (rendu conditionnel de l'encart croisé)
+  const aiProfile = getAiSectorBySlug(sector.slug)
 
   // Build FAQ data for JSON-LD
   const faqJsonLd = sector.faqs.map((faq) => ({
@@ -447,6 +452,34 @@ export default async function SectorPage({ params }: PageProps) {
           </div>
         </div>
       </section>
+
+      {/* Cross-link vers la page IA du métier */}
+      {aiProfile && (
+        <section className="py-12 bg-primary/5 border-y border-primary/10">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-3xl mx-auto text-center">
+              <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary mb-4">
+                <Sparkles className="h-4 w-4" />
+                Nouveau
+              </span>
+              <h2 className="text-2xl font-bold text-foreground mb-3">
+                Intégrer l&apos;IA dans votre activité de {sector.name}
+              </h2>
+              <p className="text-muted-foreground mb-6">
+                Chatbot, automatisation administrative, IA dans votre CRM :
+                découvrez les cas d&apos;usage concrets, les coûts réels et le
+                retour sur investissement pour les {aiProfile.namePlural}.
+              </p>
+              <Button asChild variant="accent">
+                <Link href={`/ia/${aiProfile.slug}`}>
+                  Découvrir l&apos;IA pour les {aiProfile.namePlural}
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Trust Badges */}
       <section className="py-8">

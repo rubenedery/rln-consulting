@@ -88,6 +88,19 @@ const nextConfig: NextConfig = {
     ]
   },
 
+  // Réécritures : les URLs publiques /agence-web-paris pointent vers la route
+  // dynamique /agence-web/[city] (Next.js ne supporte pas les segments partiels
+  // type "agence-web-[city]" — l'ancien dossier était traité comme une route
+  // littérale et toutes les pages villes renvoyaient 404)
+  async rewrites() {
+    return [
+      {
+        source: "/agence-web-:city",
+        destination: "/agence-web/:city",
+      },
+    ]
+  },
+
   // Redirections (ex: anciennes URLs)
   async redirects() {
     return [
@@ -103,6 +116,12 @@ const nextConfig: NextConfig = {
       {
         source: "/portfolio",
         destination: "/cas-etudes",
+        permanent: true,
+      },
+      // Ancien slug secteur accentué (indexé sous sa forme URL-encodée)
+      {
+        source: "/secteurs/vid%C3%A9aste",
+        destination: "/secteurs/videaste",
         permanent: true,
       },
     ]

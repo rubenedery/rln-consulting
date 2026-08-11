@@ -44,6 +44,7 @@ import {
   type ExpertiseCategory,
 } from "@/lib/expertise-data"
 import { siteConfig } from "@/lib/constants"
+import { getGlossaryTermBySlug } from "@/lib/glossary-data"
 
 const baseUrl = siteConfig.url
 
@@ -130,6 +131,11 @@ export default async function ExpertiseTechPage({ params }: PageProps) {
   const relatedExpertises = allExpertises
     .filter((e) => e.slug !== expertise.slug)
     .slice(0, 3)
+
+  // Résoudre les termes de glossaire liés (slugs inexistants filtrés)
+  const relatedGlossaryTerms = (expertise.relatedGlossaryTerms ?? [])
+    .map((slug) => getGlossaryTermBySlug(slug))
+    .filter((term): term is NonNullable<typeof term> => term !== undefined)
 
   const breadcrumbItems = [
     { name: "Accueil", url: baseUrl },
@@ -490,6 +496,55 @@ export default async function ExpertiseTechPage({ params }: PageProps) {
                     </Link>
                   )
                 })}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Passerelle vers les guides IA par métier */}
+      {expertise.slug === "ia-generative" && (
+        <section className="py-16 bg-primary/5 border-y border-primary/10">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-4xl mx-auto text-center">
+              <h2 className="text-2xl font-bold text-foreground mb-3">
+                L&apos;IA appliquée à votre métier
+              </h2>
+              <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+                Expert-comptable, avocat, médecin, artisan, commerçant :
+                découvrez les cas d&apos;usage concrets de l&apos;IA générative
+                pour votre profession, avec coûts et ROI détaillés.
+              </p>
+              <Link href="/ia">
+                <Button variant="accent">
+                  Voir l&apos;IA par métier
+                  <ArrowRight className="h-4 w-4 ml-2" />
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Related Glossary Terms */}
+      {relatedGlossaryTerms.length > 0 && (
+        <section className="py-16">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-2xl font-bold text-foreground mb-6">
+                Termes à connaître
+              </h2>
+              <div className="flex flex-wrap gap-3">
+                {relatedGlossaryTerms.map((term) => (
+                  <Link key={term.slug} href={`/glossaire/${term.slug}`}>
+                    <Badge
+                      variant="outline"
+                      className="text-sm py-2 px-4 hover:border-primary/50 hover:text-primary transition-colors cursor-pointer"
+                    >
+                      {term.term}
+                    </Badge>
+                  </Link>
+                ))}
               </div>
             </div>
           </div>

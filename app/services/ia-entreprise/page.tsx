@@ -20,6 +20,7 @@ import { Breadcrumbs } from "@/components/ui/breadcrumbs"
 import { CTA, FAQ } from "@/components/sections"
 import { serviceFaqs } from "@/lib/content"
 import { siteConfig } from "@/lib/constants"
+import { getAiSectorBySlug } from "@/lib/ai-use-cases-data"
 
 export const metadata: Metadata = {
   alternates: {
@@ -155,7 +156,21 @@ const process_steps = [
   },
 ]
 
+// Métiers phares mis en avant dans le bloc « IA appliquée à votre métier »
+const featuredAiSlugs = [
+  "expert-comptable",
+  "agence-immobiliere",
+  "avocat",
+  "medecin",
+  "restaurant",
+  "garage-automobile",
+]
+
 export default function IAEntreprisePage() {
+  const featuredAiProfiles = featuredAiSlugs
+    .map((slug) => getAiSectorBySlug(slug))
+    .filter((profile): profile is NonNullable<typeof profile> => profile !== undefined)
+
   const breadcrumbItems = [
     { name: "Accueil", url: siteConfig.url },
     { name: "Services", url: `${siteConfig.url}/services` },
@@ -434,6 +449,39 @@ export default function IAEntreprisePage() {
                 </p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* L'IA appliquée à votre métier */}
+      <section className="py-16 bg-primary/5 border-y border-primary/10">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-2xl font-bold text-foreground mb-3">
+              L&apos;IA appliquée à votre métier
+            </h2>
+            <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
+              Chaque profession a ses propres cas d&apos;usage. Découvrez ce que
+              l&apos;IA peut concrètement faire pour votre activité, avec les
+              coûts et le retour sur investissement détaillés.
+            </p>
+            <div className="flex flex-wrap justify-center gap-2 mb-8">
+              {featuredAiProfiles.map((profile) => (
+                <Link
+                  key={profile.slug}
+                  href={`/ia/${profile.slug}`}
+                  className="text-sm px-4 py-2 rounded-full border border-border bg-background text-muted-foreground hover:text-primary hover:border-primary/50 transition-colors"
+                >
+                  IA pour les {profile.namePlural}
+                </Link>
+              ))}
+            </div>
+            <Button asChild variant="accent">
+              <Link href="/ia">
+                Tous les métiers
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
           </div>
         </div>
       </section>

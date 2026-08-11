@@ -1026,3 +1026,38 @@ export function ItemListJsonLd({
     />
   )
 }
+
+/**
+ * HowTo Schema - Étapes de mise en place (rich snippets "Comment faire")
+ * Utilisé sur les pages /ia/[metier] pour le plan d'intégration IA.
+ */
+interface HowToJsonLdProps {
+  name: string
+  description: string
+  steps: { name: string; text: string }[]
+  /** Durée totale au format ISO 8601 (ex. "P8W" pour 8 semaines) */
+  totalTime?: string
+}
+
+export function HowToJsonLd({ name, description, steps, totalTime }: HowToJsonLdProps) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name,
+    description,
+    ...(totalTime && { totalTime }),
+    step: steps.map((step, index) => ({
+      "@type": "HowToStep",
+      position: index + 1,
+      name: step.name,
+      text: step.text,
+    })),
+  }
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+    />
+  )
+}

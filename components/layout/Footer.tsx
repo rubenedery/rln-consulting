@@ -28,6 +28,7 @@ const footerLinks = {
     { name: "FAQ", href: "/faq" },
     { name: "À propos", href: "/a-propos" },
     { name: "Glossaire", href: "/glossaire" },
+    { name: "IA par métier", href: "/ia" },
     { name: "Statistiques & chiffres clés", href: "/statistiques" },
   ],
   legal: [

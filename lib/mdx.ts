@@ -202,3 +202,28 @@ export function getAllServices(): string[] {
   studies.forEach((study) => study.services.forEach((s) => servicesSet.add(s)))
   return Array.from(servicesSet).sort()
 }
+
+// Extraire les paires question/réponse d'une section "## FAQ" en markdown
+// (format conventionnel des articles : "### Question ?" suivi de paragraphes de réponse).
+// Utilisé pour émettre un JSON-LD FAQPage sur les articles qui en ont une.
+export function extractFaqFromMarkdown(
+  content: string
+): { question: string; answer: string }[] {
+  // Découper en sections "## " et isoler celle intitulée FAQ
+  const sections = content.split(/^## /m)
+  const faqSection = sections.find((s) => /^FAQ\s*$/m.test(s.split("\n")[0]))
+  if (!faqSection) return []
+  const faqs: { question: string; answer: string }[] = []
+  const questionBlocks = faqSection.split(/^### /m).slice(1)
+
+  for (const block of questionBlocks) {
+    const [questionLine, ...answerLines] = block.split("\n")
+    const question = questionLine.trim()
+    const answer = answerLines.join("\n").trim()
+    if (question && answer) {
+      faqs.push({ question, answer })
+    }
+  }
+
+  return faqs
+}

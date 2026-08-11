@@ -91,7 +91,7 @@ export function getLocalServicesForCity(cityName: string): LocalService[] {
       description: `Campagnes Google Ads géolocalisées sur ${cityName} et sa région. Acquisition de leads qualifiés, remarketing et optimisation continue. Nous gérons +500k€ de budget publicitaire annuel.`,
       highlights: [
         "Campagnes Search, Display et Shopping",
-        "Ciblage géographique précis sur ${cityName}",
+        `Ciblage géographique précis sur ${cityName}`,
         "Reporting transparent et ROAS optimisé",
         "A/B testing et optimisation continue"
       ]

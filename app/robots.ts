@@ -4,6 +4,20 @@ import { siteConfig } from "@/lib/constants"
 export default function robots(): MetadataRoute.Robots {
   const baseUrl = siteConfig.url
 
+  // Chemins ouverts aux crawlers IA (GPTBot, ClaudeBot, PerplexityBot, etc.)
+  // Toute nouvelle famille de pages destinée à la citation LLM doit être ajoutée ici.
+  const aiAllowList = [
+    "/",
+    "/llms.txt",
+    "/blog/",
+    "/services/",
+    "/cas-etudes/",
+    "/secteurs/",
+    "/expertise/",
+    "/glossaire/",
+    "/ia/",
+  ]
+
   return {
     rules: [
       // Règle par défaut pour tous les robots
@@ -33,34 +47,34 @@ export default function robots(): MetadataRoute.Robots {
       // OpenAI
       {
         userAgent: "GPTBot",
-        allow: ["/", "/llms.txt", "/blog/", "/services/", "/cas-etudes/"],
+        allow: aiAllowList,
       },
       {
         userAgent: "ChatGPT-User",
-        allow: ["/", "/llms.txt", "/blog/", "/services/", "/cas-etudes/"],
+        allow: aiAllowList,
       },
       // Anthropic (Claude)
       {
         userAgent: "Claude-Web",
-        allow: ["/", "/llms.txt", "/blog/", "/services/", "/cas-etudes/"],
+        allow: aiAllowList,
       },
       {
         userAgent: "ClaudeBot",
-        allow: ["/", "/llms.txt", "/blog/", "/services/", "/cas-etudes/"],
+        allow: aiAllowList,
       },
       {
         userAgent: "anthropic-ai",
-        allow: ["/", "/llms.txt", "/blog/", "/services/", "/cas-etudes/"],
+        allow: aiAllowList,
       },
       // Perplexity
       {
         userAgent: "PerplexityBot",
-        allow: ["/", "/llms.txt", "/blog/", "/services/", "/cas-etudes/"],
+        allow: aiAllowList,
       },
       // Google AI
       {
         userAgent: "Google-Extended",
-        allow: ["/", "/llms.txt", "/blog/", "/services/", "/cas-etudes/"],
+        allow: aiAllowList,
       },
       {
         userAgent: "Googlebot",
@@ -69,7 +83,7 @@ export default function robots(): MetadataRoute.Robots {
       // Amazon / Alexa
       {
         userAgent: "Amazonbot",
-        allow: ["/", "/llms.txt", "/blog/", "/services/", "/cas-etudes/"],
+        allow: aiAllowList,
       },
       // Microsoft / Bing / Copilot
       {
@@ -79,26 +93,26 @@ export default function robots(): MetadataRoute.Robots {
       // ByteDance / TikTok
       {
         userAgent: "Bytespider",
-        allow: ["/", "/llms.txt", "/blog/", "/services/", "/cas-etudes/"],
+        allow: aiAllowList,
       },
       // Common Crawl (utilisé pour entraîner les LLM)
       {
         userAgent: "CCBot",
-        allow: ["/", "/llms.txt", "/blog/", "/services/", "/cas-etudes/"],
+        allow: aiAllowList,
       },
       // Cohere AI
       {
         userAgent: "cohere-ai",
-        allow: ["/", "/llms.txt", "/blog/", "/services/", "/cas-etudes/"],
+        allow: aiAllowList,
       },
       // Meta AI
       {
         userAgent: "FacebookBot",
-        allow: ["/", "/llms.txt", "/blog/", "/services/", "/cas-etudes/"],
+        allow: aiAllowList,
       },
       {
         userAgent: "meta-externalagent",
-        allow: ["/", "/llms.txt", "/blog/", "/services/", "/cas-etudes/"],
+        allow: aiAllowList,
       },
       // Apple
       {
@@ -107,22 +121,22 @@ export default function robots(): MetadataRoute.Robots {
       },
       {
         userAgent: "Applebot-Extended",
-        allow: ["/", "/llms.txt", "/blog/", "/services/", "/cas-etudes/"],
+        allow: aiAllowList,
       },
       // YouChat
       {
         userAgent: "YouBot",
-        allow: ["/", "/llms.txt", "/blog/", "/services/", "/cas-etudes/"],
+        allow: aiAllowList,
       },
       // AI21 Labs
       {
         userAgent: "AI2Bot",
-        allow: ["/", "/llms.txt", "/blog/", "/services/", "/cas-etudes/"],
+        allow: aiAllowList,
       },
       // Hugging Face
       {
         userAgent: "HuggingFaceBot",
-        allow: ["/", "/llms.txt", "/blog/", "/services/", "/cas-etudes/"],
+        allow: aiAllowList,
       },
     ],
     sitemap: `${baseUrl}/sitemap.xml`,

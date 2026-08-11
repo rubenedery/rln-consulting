@@ -1,9 +1,11 @@
 import { MetadataRoute } from "next"
 import { getAllBlogPosts, getAllCaseStudies } from "@/lib/mdx"
 import { getAllSectorSlugs } from "@/lib/sectors-data"
+import { getAllServiceSlugs } from "@/lib/services-data"
 import { cities } from "@/lib/cities-data"
 import { getAllGlossarySlugs } from "@/lib/glossary-data"
 import { getExpertiseSlugs } from "@/lib/expertise-data"
+import { getAllAiSectorSlugs } from "@/lib/ai-use-cases-data"
 import { siteConfig } from "@/lib/constants"
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -21,66 +23,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.95,
-    },
-    {
-      url: `${baseUrl}/services/developpement`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/services/ads-management`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/services/ia-entreprise`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/services/geo`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/services/ecommerce`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/services/seo-referencement`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/services/applications-mobiles`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.85,
-    },
-    {
-      url: `${baseUrl}/services/crm-applications-metier`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.85,
-    },
-    {
-      url: `${baseUrl}/services/email-marketing`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.85,
-    },
-    {
-      url: `${baseUrl}/services/configurateur-3d`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
     },
     {
       url: `${baseUrl}/expertise`,
@@ -156,6 +98,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ]
 
+  // Les 3 routes statiques de app/services/ n'existent pas dans services-data
+  const staticServiceSlugs = ["ia-entreprise", "geo", "ads-management"]
+  const servicePages: MetadataRoute.Sitemap = [
+    ...getAllServiceSlugs(),
+    ...staticServiceSlugs,
+  ].map((slug) => ({
+    url: `${baseUrl}/services/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.9,
+  }))
+
   const blogPages: MetadataRoute.Sitemap = getAllBlogPosts().map((post) => {
     const isGuide =
       post.slug.includes("guide") || post.slug.includes("comment") || post.slug.includes("tutorial")
@@ -215,8 +169,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.85,
   }))
 
+  const aiPages: MetadataRoute.Sitemap = [
+    {
+      url: `${baseUrl}/ia`,
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 0.9,
+    },
+    ...getAllAiSectorSlugs().map((slug) => ({
+      url: `${baseUrl}/ia/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.85,
+    })),
+  ]
+
   return [
     ...staticPages,
+    ...servicePages,
+    ...aiPages,
     ...blogPages,
     ...caseStudyPages,
     ...sectorPages,

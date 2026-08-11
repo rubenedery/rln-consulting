@@ -1144,7 +1144,7 @@ export const sectors: Sector[] = [
     ],
   },
   {
-    slug: "vidéaste",
+    slug: "videaste",
     name: "Vidéaste",
     namePlural: "Vidéastes",
     icon: "Video",
