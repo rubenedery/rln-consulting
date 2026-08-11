@@ -1,64 +1,90 @@
 import { NextResponse } from "next/server"
+import { z } from "zod"
+import { siteConfig } from "@/lib/constants"
 import { validateAntiSpam } from "@/lib/antispam"
+import { escapeHtml } from "@/lib/email-utils"
+import {
+  generateGuideHtml,
+  generateLeadNotificationHtml,
+} from "@/lib/emails/lead-magnet"
 
-interface LeadMagnetRequest {
-  email: string
-  _gotcha?: string
-  _loadedAt?: number
-}
+const leadMagnetSchema = z.object({
+  email: z.string().email("Email invalide"),
+})
 
 export async function POST(request: Request) {
   try {
-    const body: LeadMagnetRequest = await request.json()
-    const { email } = body
+    const body = await request.json()
 
     // Anti-spam checks (honeypot + timer + rate limit)
-    const spamResult = validateAntiSpam(request, body as unknown as Record<string, unknown>)
+    const spamResult = validateAntiSpam(request, body)
     if (spamResult) {
+      // Return 200 to not reveal detection to bots
       console.log(`[Anti-spam] Blocked lead magnet: ${spamResult}`)
       return NextResponse.json({ success: true, message: "Guide envoyé avec succès" })
     }
 
-    // Validation
-    if (!email || !email.trim()) {
-      return NextResponse.json(
-        { error: "L'email est requis" },
-        { status: 400 }
-      )
+    const { email } = leadMagnetSchema.parse(body)
+
+    const resendApiKey = process.env.RESEND_API_KEY
+    const unavailableError = NextResponse.json(
+      {
+        error: `Le service d'envoi est temporairement indisponible. Écrivez-nous à ${siteConfig.contact.email} pour recevoir le guide.`,
+      },
+      { status: 500 }
+    )
+
+    if (!resendApiKey) {
+      console.error(`[Lead magnet] RESEND_API_KEY manquante — lead perdu: ${email}`)
+      return unavailableError
     }
 
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-    if (!emailRegex.test(email)) {
-      return NextResponse.json(
-        { error: "Email invalide" },
-        { status: 400 }
-      )
+    const { Resend } = await import("resend")
+    const resend = new Resend(resendApiKey)
+    const from =
+      process.env.RESEND_FROM_EMAIL || `contact@${new URL(siteConfig.url).host}`
+
+    // Resend v6 ne throw pas sur une erreur API : elle est retournée dans `error`
+    const [guideResult, notifyResult] = await Promise.all([
+      resend.emails.send({
+        from,
+        to: email,
+        subject: "Votre guide : 10 erreurs qui tuent la conversion",
+        html: generateGuideHtml(),
+      }),
+      resend.emails.send({
+        from,
+        to: siteConfig.contact.email,
+        replyTo: email,
+        subject: `[Lead Magnet] Nouveau lead : ${email}`,
+        html: generateLeadNotificationHtml(escapeHtml(email)),
+      }),
+    ])
+
+    if (guideResult.error) {
+      console.error(`[Lead magnet] Échec envoi guide à ${email}:`, guideResult.error)
+      return unavailableError
     }
 
-    // TODO: Intégrer avec un service d'emailing (Mailchimp, ConvertKit, etc.)
-    // Pour l'instant, on simule un succès avec un délai
-    console.log("Lead magnet requested by:", email)
-
-    // Simuler un délai réseau
-    await new Promise((resolve) => setTimeout(resolve, 500))
-
-    // TODO: Envoyer l'email avec le lien du PDF
-    // await sendEmail({
-    //   to: email,
-    //   subject: "Votre guide : 10 erreurs qui tuent la conversion",
-    //   template: "lead-magnet",
-    //   data: { downloadLink: "https://..." }
-    // })
-
-    // TODO: Sauvegarder le lead dans une base de données
-    // await db.leads.create({ email, source: "lead-magnet-conversion-guide" })
+    // Le prospect a reçu son guide : un échec de notification interne
+    // ne doit pas lui être présenté comme une erreur.
+    if (notifyResult.error) {
+      console.error(
+        `[Lead magnet] Échec notification interne pour ${email}:`,
+        notifyResult.error
+      )
+    }
 
     return NextResponse.json({
       success: true,
       message: "Guide envoyé avec succès",
     })
   } catch (error) {
-    console.error("Lead magnet error:", error)
+    if (error instanceof z.ZodError) {
+      return NextResponse.json({ error: "Email invalide" }, { status: 400 })
+    }
+
+    console.error("[Lead magnet] Erreur inattendue:", error)
     return NextResponse.json(
       { error: "Erreur serveur. Veuillez réessayer." },
       { status: 500 }

@@ -2,7 +2,7 @@
 
 import { useState, useRef } from "react"
 import { motion } from "framer-motion"
-import { Download, Mail, Loader2, CheckCircle, FileText, TrendingUp, AlertCircle } from "lucide-react"
+import { Download, Mail, Loader2, CheckCircle, FileText, AlertCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { toast } from "@/hooks/use-toast"
@@ -37,6 +37,7 @@ export function LeadMagnet() {
     }
 
     setIsLoading(true)
+    let serverError: string | null = null
 
     try {
       const response = await fetch("/api/lead-magnet", {
@@ -60,12 +61,15 @@ export function LeadMagnet() {
           variant: "success",
         })
       } else {
+        // Remonter le message du serveur (ex. service indisponible + email de secours)
+        const body = await response.json().catch(() => null)
+        if (typeof body?.error === "string") serverError = body.error
         throw new Error("Erreur lors de l'envoi")
       }
     } catch {
       toast({
         title: "Erreur",
-        description: "Une erreur est survenue. Veuillez réessayer.",
+        description: serverError ?? "Une erreur est survenue. Veuillez réessayer.",
         variant: "destructive",
       })
     } finally {
@@ -159,12 +163,8 @@ export function LeadMagnet() {
                   <FileText className="h-8 w-8 text-primary" />
                 </div>
                 <div className="text-left">
-                  <p className="font-semibold text-foreground">Guide PDF</p>
-                  <p className="text-sm text-muted-foreground">15 pages • Gratuit</p>
-                  <div className="flex items-center gap-1 text-sm text-success mt-1">
-                    <TrendingUp className="h-3 w-3" />
-                    <span>+150% de conversions</span>
-                  </div>
+                  <p className="font-semibold text-foreground">Guide complet par email</p>
+                  <p className="text-sm text-muted-foreground">10 erreurs détaillées • Gratuit</p>
                 </div>
               </div>
 
@@ -221,7 +221,7 @@ export function LeadMagnet() {
                   ) : (
                     <>
                       <Download className="mr-2 h-4 w-4" />
-                      Télécharger le guide gratuit
+                      Recevoir le guide gratuit
                     </>
                   )}
                 </Button>

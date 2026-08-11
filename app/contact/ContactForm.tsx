@@ -133,6 +133,7 @@ export function ContactForm() {
     }
 
     setIsSubmitting(true)
+    let serverError: string | null = null
 
     try {
       const response = await fetch("/api/contact", {
@@ -166,12 +167,15 @@ export function ContactForm() {
         })
         setTouched({ name: false, email: false, message: false })
       } else {
+        // Remonter le message du serveur (ex. service indisponible + email de secours)
+        const body = await response.json().catch(() => null)
+        if (typeof body?.error === "string") serverError = body.error
         throw new Error("Erreur lors de l'envoi")
       }
     } catch {
       toast({
         title: "Erreur d'envoi",
-        description: "Une erreur est survenue. Veuillez réessayer.",
+        description: serverError ?? "Une erreur est survenue. Veuillez réessayer.",
         variant: "destructive",
       })
     } finally {

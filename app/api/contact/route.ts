@@ -2,6 +2,7 @@ import { NextResponse } from "next/server"
 import { z } from "zod"
 import { siteConfig } from "@/lib/constants"
 import { validateAntiSpam } from "@/lib/antispam"
+import { escapeHtml } from "@/lib/email-utils"
 
 // Validation schema
 const contactSchema = z.object({
@@ -18,12 +19,24 @@ type ContactData = z.infer<typeof contactSchema>
 /**
  * Génère le contenu HTML de l'email
  */
-function generateEmailHtml(data: ContactData): string {
+function generateEmailHtml(rawData: ContactData): string {
   const serviceLabels: Record<string, string> = {
     developpement: "Développement Web",
     ads: "Gestion Publicités",
     both: "Développement + Publicités",
     other: "Autre",
+  }
+
+  // Échappement systématique : ces valeurs sont interpolées dans du HTML
+  // (contenu et attributs href), sans quoi le formulaire permet d'injecter
+  // des balises arbitraires dans l'email reçu.
+  const data = {
+    name: escapeHtml(rawData.name),
+    email: escapeHtml(rawData.email),
+    company: rawData.company ? escapeHtml(rawData.company) : undefined,
+    phone: rawData.phone ? escapeHtml(rawData.phone) : undefined,
+    service: rawData.service ? escapeHtml(rawData.service) : undefined,
+    message: escapeHtml(rawData.message),
   }
 
   return `
@@ -118,26 +131,39 @@ export async function POST(request: Request) {
     // Validate input
     const validatedData = contactSchema.parse(body)
 
-    // Check if Resend is configured
     const resendApiKey = process.env.RESEND_API_KEY
+    const unavailableError = NextResponse.json(
+      {
+        error: `Le service d'envoi est temporairement indisponible. Écrivez-nous directement à ${siteConfig.contact.email}`,
+      },
+      { status: 500 }
+    )
 
-    if (resendApiKey) {
-      // Dynamic import to avoid issues if resend is not installed
-      try {
-        const { Resend } = await import("resend")
-        const resend = new Resend(resendApiKey)
+    if (!resendApiKey) {
+      console.error(
+        `[Contact] RESEND_API_KEY manquante — lead perdu: ${validatedData.email}`
+      )
+      return unavailableError
+    }
 
-        await resend.emails.send({
-          from: process.env.RESEND_FROM_EMAIL || `contact@${new URL(siteConfig.url).host}`,
-          to: siteConfig.contact.email,
-          replyTo: validatedData.email,
-          subject: `[Contact] ${validatedData.name} - ${validatedData.service || "Demande générale"}`,
-          html: generateEmailHtml(validatedData),
-        })
+    const { Resend } = await import("resend")
+    const resend = new Resend(resendApiKey)
 
-      } catch {
-        // Continue anyway - we don't want to fail the user's request
-      }
+    // Resend v6 ne throw pas sur une erreur API : elle est retournée dans `error`
+    const { error: sendError } = await resend.emails.send({
+      from: process.env.RESEND_FROM_EMAIL || `contact@${new URL(siteConfig.url).host}`,
+      to: siteConfig.contact.email,
+      replyTo: validatedData.email,
+      subject: `[Contact] ${validatedData.name} - ${validatedData.service || "Demande générale"}`,
+      html: generateEmailHtml(validatedData),
+    })
+
+    if (sendError) {
+      console.error(
+        `[Contact] Échec envoi Resend pour ${validatedData.email}:`,
+        sendError
+      )
+      return unavailableError
     }
 
     return NextResponse.json(
@@ -152,6 +178,7 @@ export async function POST(request: Request) {
       )
     }
 
+    console.error("[Contact] Erreur inattendue:", error)
     return NextResponse.json(
       { error: "Une erreur est survenue" },
       { status: 500 }
