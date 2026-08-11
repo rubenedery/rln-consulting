@@ -20,6 +20,9 @@ export default function robots(): MetadataRoute.Robots {
           "/contact",
           "/llms.txt",
           "/feed.xml",
+          // Les images Open Graph sont servies par cette route : la règle la
+          // plus spécifique l'emporte sur le disallow de /api/
+          "/api/og",
         ],
         disallow: ["/api/", "/admin/", "/_next/", "/private/"],
       },

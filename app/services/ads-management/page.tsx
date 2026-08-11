@@ -14,6 +14,7 @@ import {
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { ServiceJsonLd, BreadcrumbJsonLd, FAQPageJsonLd } from "@/components/seo"
+import { Breadcrumbs } from "@/components/ui/breadcrumbs"
 import { CTA, FAQ } from "@/components/sections"
 import { serviceFaqs } from "@/lib/content"
 
@@ -113,6 +114,15 @@ const results = [
 ]
 
 export default function AdsManagementPage() {
+  const breadcrumbItems = [
+    { name: "Accueil", url: "https://rln-consulting.com" },
+    { name: "Services", url: "https://rln-consulting.com/services" },
+    {
+      name: "Gestion Publicités",
+      url: "https://rln-consulting.com/services/ads-management",
+    },
+  ]
+
   return (
     <>
       <ServiceJsonLd
@@ -129,35 +139,22 @@ export default function AdsManagementPage() {
           "Reporting ROI détaillé",
           "Retargeting avancé",
         ]}
-        aggregateRating={{
-          ratingValue: 4.9,
-          reviewCount: 32,
-        }}
-        reviews={[
-          {
-            author: "Yohan Jaoui",
-            reviewBody: "En 3 mois, on a triplé notre volume de prospects qualifiés avec un coût par lead divisé par 2.",
-            ratingValue: 5,
-            datePublished: "2025-12-10",
-          },
-        ]}
         estimatedDuration="Résultats en 48-72h, optimisation en 4-8 semaines"
       />
-      <BreadcrumbJsonLd
-        items={[
-          { name: "Accueil", url: "https://rln-consulting.com" },
-          { name: "Services", url: "https://rln-consulting.com/services" },
-          {
-            name: "Gestion Publicités",
-            url: "https://rln-consulting.com/services/ads-management",
-          },
-        ]}
-      />
+      <BreadcrumbJsonLd items={breadcrumbItems} />
       <FAQPageJsonLd questions={serviceFaqs["ads-management"]} />
 
       {/* Hero */}
       <section className="py-20 lg:py-28 bg-gradient-to-br from-primary/5 via-background to-accent/5">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <Breadcrumbs
+            items={breadcrumbItems.slice(1).map((item, index, arr) =>
+              index < arr.length - 1
+                ? { label: item.name, href: new URL(item.url).pathname }
+                : { label: item.name }
+            )}
+            className="mb-6"
+          />
           <div className="max-w-3xl mx-auto text-center">
             <span className="inline-flex items-center gap-2 rounded-full bg-accent/10 px-4 py-1.5 text-sm font-medium text-accent mb-6">
               <Target className="h-4 w-4" />
@@ -176,7 +173,7 @@ export default function AdsManagementPage() {
               <Button
                 asChild
                 size="lg"
-                className="bg-accent hover:bg-accent/90"
+                variant="accent"
               >
                 <Link href="/contact">
                   Audit gratuit de vos campagnes

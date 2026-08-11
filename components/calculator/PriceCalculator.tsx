@@ -1,6 +1,6 @@
 "use client"
 
-import { AnimatePresence, motion } from "framer-motion"
+import { AnimatePresence, m } from "framer-motion"
 import { ArrowLeft, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -78,7 +78,7 @@ function CalculatorContent() {
       <Card className="overflow-hidden">
         <CardContent className="pt-8 pb-6">
           <AnimatePresence mode="wait" custom={direction}>
-            <motion.div
+            <m.div
               key={currentStepId}
               custom={direction}
               variants={slideVariants}
@@ -92,7 +92,7 @@ function CalculatorContent() {
               className="min-h-[400px] flex flex-col justify-center"
             >
               {renderStep()}
-            </motion.div>
+            </m.div>
           </AnimatePresence>
         </CardContent>
       </Card>

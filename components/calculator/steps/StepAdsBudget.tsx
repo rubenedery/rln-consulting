@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { m } from "framer-motion"
 import { useCalculator } from "../CalculatorContext"
 import { OptionCard } from "../ui/OptionCard"
 import { adsEngagementOptions, PRICING } from "@/lib/pricing-data"
@@ -14,7 +14,7 @@ export function StepAdsBudget() {
   const managementFee = Math.round(state.ads.monthlyBudget * PRICING.ads.managementFee)
 
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -34,7 +34,7 @@ export function StepAdsBudget() {
         {/* Budget presets */}
         <div className="flex flex-wrap justify-center gap-3 mb-6">
           {budgetPresets.map((budget) => (
-            <motion.button
+            <m.button
               key={budget}
               type="button"
               onClick={() => dispatch({ type: "SET_ADS_BUDGET", payload: budget })}
@@ -47,7 +47,7 @@ export function StepAdsBudget() {
               whileTap={{ scale: 0.95 }}
             >
               {budget.toLocaleString("fr-FR")}€
-            </motion.button>
+            </m.button>
           ))}
         </div>
 
@@ -74,7 +74,7 @@ export function StepAdsBudget() {
         </div>
 
         {/* Management fee info */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           className="text-center mt-4 p-3 bg-muted/50 rounded-lg max-w-sm mx-auto"
@@ -82,7 +82,7 @@ export function StepAdsBudget() {
           <p className="text-sm text-muted-foreground">
             Frais de gestion (12%) : <span className="font-semibold text-foreground">{managementFee}€/mois</span>
           </p>
-        </motion.div>
+        </m.div>
       </div>
 
       {/* Engagement period */}
@@ -98,7 +98,7 @@ export function StepAdsBudget() {
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 max-w-4xl mx-auto">
           {adsEngagementOptions.map((option, index) => (
-            <motion.div
+            <m.div
               key={option.value}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -117,10 +117,10 @@ export function StepAdsBudget() {
                   })
                 }
               />
-            </motion.div>
+            </m.div>
           ))}
         </div>
       </div>
-    </motion.div>
+    </m.div>
   )
 }

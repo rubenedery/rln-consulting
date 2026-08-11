@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { motion } from "framer-motion"
+import { m } from "framer-motion"
 import { ArrowRight, Mail, Phone } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { track_cta_click, track_email_click, track_phone_click } from "@/components/analytics"
@@ -16,7 +16,7 @@ export function CTA() {
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -76,7 +76,7 @@ export function CTA() {
               +33 6 09 86 66 72
             </a>
           </div>
-        </motion.div>
+        </m.div>
       </div>
     </section>
   )

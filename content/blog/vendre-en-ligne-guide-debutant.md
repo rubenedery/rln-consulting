@@ -5,7 +5,7 @@ date: "2026-02-20"
 author: "Ruben Edery"
 category: "ecommerce"
 tags: ["e-commerce", "vente-en-ligne", "boutique-en-ligne", "debutant"]
-image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&h=630&fit=crop&q=80"
+image: "https://images.unsplash.com/photo-1522199755839-a2bacb67c546?w=1200&h=630&fit=crop&q=80"
 ---
 
 ## Pourquoi vendre en ligne en 2026

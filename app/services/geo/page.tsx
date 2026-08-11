@@ -17,6 +17,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { ServiceJsonLd, BreadcrumbJsonLd, FAQPageJsonLd } from "@/components/seo"
+import { Breadcrumbs } from "@/components/ui/breadcrumbs"
 import { CTA } from "@/components/sections"
 
 export const metadata: Metadata = {
@@ -198,6 +199,15 @@ const deliverables = [
 ]
 
 export default function GEOPage() {
+  const breadcrumbItems = [
+    { name: "Accueil", url: "https://rln-consulting.com" },
+    { name: "Services", url: "https://rln-consulting.com/services" },
+    {
+      name: "GEO - Référencement IA",
+      url: "https://rln-consulting.com/services/geo",
+    },
+  ]
+
   return (
     <>
       <ServiceJsonLd
@@ -205,21 +215,20 @@ export default function GEOPage() {
         description="Service d'optimisation pour les moteurs de recherche IA. Soyez cité par ChatGPT, Perplexity et Google AI Overview grâce au Generative Engine Optimization. Audit, stratégie de contenu, données structurées et monitoring."
         url="https://rln-consulting.com/services/geo"
       />
-      <BreadcrumbJsonLd
-        items={[
-          { name: "Accueil", url: "https://rln-consulting.com" },
-          { name: "Services", url: "https://rln-consulting.com/services" },
-          {
-            name: "GEO - Référencement IA",
-            url: "https://rln-consulting.com/services/geo",
-          },
-        ]}
-      />
+      <BreadcrumbJsonLd items={breadcrumbItems} />
       <FAQPageJsonLd questions={faqItems} />
 
       {/* Hero */}
       <section className="py-20 lg:py-28 bg-gradient-to-br from-primary/5 via-background to-accent/5">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <Breadcrumbs
+            items={breadcrumbItems.slice(1).map((item, index, arr) =>
+              index < arr.length - 1
+                ? { label: item.name, href: new URL(item.url).pathname }
+                : { label: item.name }
+            )}
+            className="mb-6"
+          />
           <div className="max-w-3xl mx-auto text-center">
             <Badge variant="secondary" className="mb-6 bg-accent/10 text-accent">
               <Search className="h-4 w-4 mr-2" />
@@ -238,7 +247,7 @@ export default function GEOPage() {
               <Button
                 asChild
                 size="lg"
-                className="bg-accent hover:bg-accent/90"
+                variant="accent"
               >
                 <Link href="/contact">
                   Audit de visibilité IA gratuit

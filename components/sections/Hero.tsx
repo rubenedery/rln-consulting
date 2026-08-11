@@ -1,12 +1,12 @@
 "use client"
 
 import Link from "next/link"
-import { motion } from "framer-motion"
 import { ArrowRight, Code, Target, Zap } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { fadeInUp, staggerContainer } from "@/lib/animations"
 import { track_cta_click } from "@/components/analytics"
 
+// Animations CSS pures (pas de framer-motion ici) : le h1 est l'élément LCP
+// de la home, il doit être peint sans attendre l'hydratation JavaScript.
 export function Hero() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-primary/5 via-background to-accent/5 py-20 lg:py-32">
@@ -17,48 +17,34 @@ export function Hero() {
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          variants={staggerContainer}
-          initial="hidden"
-          animate="visible"
-          className="max-w-4xl mx-auto text-center"
-        >
+        <div className="max-w-4xl mx-auto text-center">
           {/* Badge */}
-          <motion.div variants={fadeInUp} className="mb-6">
+          <div className="mb-6 animate-fade-in-up">
             <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
               <Zap className="h-4 w-4" />
               Agence Web & Marketing Digital
             </span>
-          </motion.div>
+          </div>
 
           {/* Headline */}
-          <motion.h1
-            variants={fadeInUp}
-            className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-foreground mb-6"
-          >
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-foreground mb-6 animate-fade-in-up [animation-delay:100ms]">
             Transformez vos idées en{" "}
             <span className="text-primary">solutions digitales</span>{" "}
             performantes
-          </motion.h1>
+          </h1>
 
           {/* Subheadline */}
-          <motion.p
-            variants={fadeInUp}
-            className="text-lg sm:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto"
-          >
+          <p className="text-lg sm:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto animate-fade-in-up [animation-delay:200ms]">
             Développement web sur mesure et gestion de campagnes publicitaires
             pour propulser votre entreprise vers le succès digital.
-          </motion.p>
+          </p>
 
           {/* CTA Buttons */}
-          <motion.div
-            variants={fadeInUp}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4"
-          >
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up [animation-delay:300ms]">
             <Button
               asChild
               size="lg"
-              className="bg-accent hover:bg-accent/90 text-accent-foreground"
+              variant="accent"
               onClick={() => track_cta_click("demarrer_projet", "hero")}
             >
               <Link href="/contact">
@@ -69,16 +55,13 @@ export function Hero() {
             <Button asChild variant="outline" size="lg" onClick={() => track_cta_click("voir_realisations", "hero")}>
               <Link href="/cas-etudes">Voir nos réalisations</Link>
             </Button>
-          </motion.div>
+          </div>
 
           {/* Stats */}
-          <motion.div
-            variants={fadeInUp}
-            className="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-8"
-          >
+          <div className="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-8 animate-fade-in-up [animation-delay:400ms]">
             {[
               { value: "50+", label: "Projets livrés" },
-              { value: "8+", label: "Années d'exp." },
+              { value: "2020", label: "Depuis" },
               { value: "95%", label: "Satisfaction" },
               { value: "24h", label: "Réponse" },
             ].map((stat, index) => (
@@ -91,33 +74,28 @@ export function Hero() {
                 </div>
               </div>
             ))}
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
 
         {/* Service icons */}
-        <motion.div
-          variants={staggerContainer}
-          initial="hidden"
-          animate="visible"
-          className="mt-20 flex justify-center gap-8 lg:gap-16"
-        >
+        <div className="mt-20 flex justify-center gap-8 lg:gap-16">
           {[
             { icon: Code, label: "Développement" },
             { icon: Target, label: "Marketing" },
             { icon: Zap, label: "Performance" },
           ].map((item, index) => (
-            <motion.div
+            <div
               key={index}
-              variants={fadeInUp}
-              className="flex flex-col items-center gap-2 text-muted-foreground"
+              className="flex flex-col items-center gap-2 text-muted-foreground animate-fade-in-up"
+              style={{ animationDelay: `${500 + index * 100}ms` }}
             >
               <div className="p-3 rounded-full bg-primary/10">
                 <item.icon className="h-6 w-6 text-primary" />
               </div>
               <span className="text-sm font-medium">{item.label}</span>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   )

@@ -26,6 +26,9 @@ const footerLinks = {
     { name: "Blog", href: "/blog" },
     { name: "Cas d'études", href: "/cas-etudes" },
     { name: "FAQ", href: "/faq" },
+    { name: "À propos", href: "/a-propos" },
+    { name: "Glossaire", href: "/glossaire" },
+    { name: "Statistiques & chiffres clés", href: "/statistiques" },
   ],
   legal: [
     { name: "Mentions légales", href: "/mentions-legales" },
@@ -37,7 +40,7 @@ const socialLinks = [
   { name: "LinkedIn", href: siteConfig.social.linkedin, icon: Linkedin },
   { name: "Twitter", href: siteConfig.social.twitter, icon: Twitter },
   { name: "GitHub", href: siteConfig.social.github, icon: Github },
-]
+].filter((link) => link.href)
 
 // Get selected sectors for each category (for footer display)
 const categoryOrder: Sector["category"][] = [
@@ -90,7 +93,7 @@ export function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="font-semibold mb-4">Services</h3>
+            <h2 className="font-semibold mb-4">Services</h2>
             <ul className="space-y-2">
               {footerLinks.services.map((link) => (
                 <li key={link.href}>
@@ -107,7 +110,7 @@ export function Footer() {
 
           {/* Resources */}
           <div>
-            <h3 className="font-semibold mb-4">Ressources</h3>
+            <h2 className="font-semibold mb-4">Ressources</h2>
             <ul className="space-y-2">
               {footerLinks.resources.map((link) => (
                 <li key={link.href}>
@@ -122,42 +125,44 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Social */}
-          <div>
-            <h3 className="font-semibold mb-4">Suivez-nous</h3>
-            <p className="text-sm text-primary-foreground/80 mb-4">
-              Restez informé de nos dernières actualités et conseils.
-            </p>
-            <div className="flex gap-4">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.name}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-primary-foreground/80 hover:text-accent transition-colors"
-                  aria-label={social.name}
-                >
-                  <social.icon className="h-5 w-5" />
-                </a>
-              ))}
+          {/* Social — masqué tant qu'aucun profil réel n'est renseigné dans siteConfig */}
+          {socialLinks.length > 0 && (
+            <div>
+              <h2 className="font-semibold mb-4">Suivez-nous</h2>
+              <p className="text-sm text-primary-foreground/80 mb-4">
+                Restez informé de nos dernières actualités et conseils.
+              </p>
+              <div className="flex gap-4">
+                {socialLinks.map((social) => (
+                  <a
+                    key={social.name}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary-foreground/80 hover:text-accent transition-colors"
+                    aria-label={social.name}
+                  >
+                    <social.icon className="h-5 w-5" />
+                  </a>
+                ))}
+              </div>
             </div>
-          </div>
+          )}
         </div>
 
         <Separator className="my-8 bg-primary-foreground/20" />
 
         {/* Sectors Section - SEO Links */}
         <div className="mb-8">
-          <h3 className="font-semibold mb-6 text-center">
+          <h2 className="font-semibold mb-6 text-center">
             Sites web par secteur d'activité
-          </h3>
+          </h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-x-6 gap-y-4">
             {categoryOrder.map((category) => (
               <div key={category}>
-                <h4 className="text-xs font-medium text-primary-foreground/60 uppercase tracking-wider mb-2">
+                <h3 className="text-xs font-medium text-primary-foreground/60 uppercase tracking-wider mb-2">
                   {categoryLabels[category]}
-                </h4>
+                </h3>
                 <ul className="space-y-1">
                   {getSectorsByCategory(category).map((sector) => (
                     <li key={sector.slug}>
@@ -187,9 +192,9 @@ export function Footer() {
 
         {/* Cities Section - Local SEO Links */}
         <div className="mb-8">
-          <h3 className="font-semibold mb-6 text-center">
+          <h2 className="font-semibold mb-6 text-center">
             Zones d'intervention
-          </h3>
+          </h2>
           <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
             {cities.map((city) => (
               <Link

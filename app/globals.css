@@ -1,6 +1,9 @@
 @import "tailwindcss";
 
 :root {
+  /* Les contrôles natifs (scrollbars, formulaires) suivent le thème actif */
+  color-scheme: light dark;
+
   /* Base colors */
   --background: 0 0% 100%;
   --foreground: 222.2 84% 4.9%;
@@ -71,12 +74,12 @@
   --background: 222.2 84% 4.9%;
   --foreground: 210 40% 98%;
 
-  /* Card colors - Dark mode */
-  --card: 222.2 84% 4.9%;
+  /* Card colors - Dark mode (légèrement plus clair que le fond pour rester discernable) */
+  --card: 222.2 47% 9%;
   --card-foreground: 210 40% 98%;
 
   /* Popover colors - Dark mode */
-  --popover: 222.2 84% 4.9%;
+  --popover: 222.2 47% 9%;
   --popover-foreground: 210 40% 98%;
 
   /* Primary stays same */
@@ -91,9 +94,10 @@
   --muted: 217.2 32.6% 17.5%;
   --muted-foreground: 215 20.2% 65.1%;
 
-  /* Accent: Orange stays same */
+  /* Accent: l'orange reste identique, mais le texte posé dessus doit être
+     sombre (comme en light) — le blanc donnait un contraste de ~2:1 */
   --accent: 38 92% 50%;
-  --accent-foreground: 210 40% 98%;
+  --accent-foreground: 222.2 84% 4.9%;
 
   /* Success - Dark mode (plus clair pour le contraste) */
   --success: 142 70% 45%;
@@ -103,66 +107,18 @@
   --border: 217.2 32.6% 17.5%;
   --input: 217.2 32.6% 17.5%;
 
+  /* Ring : bleu clair, visible sur fond sombre (la valeur light est quasi invisible ici) */
+  --ring: 224 76% 65%;
+
   /* Sidebar - Dark mode */
   --sidebar: 222.2 84% 4.9%;
   --sidebar-foreground: 210 40% 98%;
   --sidebar-primary: 224 64% 50%;
   --sidebar-primary-foreground: 210 40% 98%;
   --sidebar-accent: 38 92% 50%;
-  --sidebar-accent-foreground: 210 40% 98%;
+  --sidebar-accent-foreground: 222.2 84% 4.9%;
   --sidebar-border: 217.2 32.6% 17.5%;
-  --sidebar-ring: 224 64% 50%;
-}
-
-/* Fallback for system preference when no class is set */
-@media (prefers-color-scheme: dark) {
-  :root:not(.light) {
-    /* Base colors - Dark mode */
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    /* Card colors - Dark mode */
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    /* Popover colors - Dark mode */
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    /* Primary stays same */
-    --primary: 224 64% 50%;
-    --primary-foreground: 210 40% 98%;
-
-    /* Secondary - Dark mode */
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    /* Muted - Dark mode */
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    /* Accent: Orange stays same */
-    --accent: 38 92% 50%;
-    --accent-foreground: 210 40% 98%;
-
-    /* Success - Dark mode (plus clair pour le contraste) */
-    --success: 142 70% 45%;
-    --success-foreground: 0 0% 100%;
-
-    /* Border and input - Dark mode */
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-
-    /* Sidebar - Dark mode */
-    --sidebar: 222.2 84% 4.9%;
-    --sidebar-foreground: 210 40% 98%;
-    --sidebar-primary: 224 64% 50%;
-    --sidebar-primary-foreground: 210 40% 98%;
-    --sidebar-accent: 38 92% 50%;
-    --sidebar-accent-foreground: 210 40% 98%;
-    --sidebar-border: 217.2 32.6% 17.5%;
-    --sidebar-ring: 224 64% 50%;
-  }
+  --sidebar-ring: 224 76% 65%;
 }
 
 @theme inline {
@@ -216,9 +172,11 @@ body {
   font-family: var(--font-sans), system-ui, sans-serif;
 }
 
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
+/* Smooth scrolling — uniquement si l'utilisateur n'a pas réduit les animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 /* Selection color */
@@ -244,9 +202,28 @@ html {
   animation-play-state: paused;
 }
 
+/* Entrée du hero : animation CSS pure, peinte dès le parse du CSS.
+   Contrairement à framer-motion (initial hidden), le contenu reste visible
+   même sans JavaScript et le LCP n'attend pas l'hydratation. */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.5s ease-out both;
+}
+
 /* Reduced motion preference */
 @media (prefers-reduced-motion: reduce) {
-  .animate-marquee {
+  .animate-marquee,
+  .animate-fade-in-up {
     animation: none;
   }
 }

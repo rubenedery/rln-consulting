@@ -4,6 +4,7 @@ import { ArrowRight, CreditCard, Package, ShoppingCart, Store, Truck, BarChart2 
 import { Button } from "@/components/ui/button"
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { ServiceJsonLd, BreadcrumbJsonLd, FAQPageJsonLd } from "@/components/seo"
+import { Breadcrumbs } from "@/components/ui/breadcrumbs"
 import { CTA, FAQ } from "@/components/sections"
 import { serviceFaqs } from "@/lib/content"
 
@@ -74,6 +75,12 @@ const platforms = [
 ]
 
 export default function EcommercePage() {
+  const breadcrumbItems = [
+    { name: "Accueil", url: "https://rln-consulting.com" },
+    { name: "Services", url: "https://rln-consulting.com/services" },
+    { name: "E-commerce", url: "https://rln-consulting.com/services/ecommerce" },
+  ]
+
   return (
     <>
       <ServiceJsonLd
@@ -90,31 +97,21 @@ export default function EcommercePage() {
           "Click & Collect",
           "SEO produits optimisé",
         ]}
-        aggregateRating={{
-          ratingValue: 4.9,
-          reviewCount: 28,
-        }}
-        reviews={[
-          {
-            author: "Marie D., Mode Parisienne",
-            reviewBody: "Notre taux de conversion a augmenté de 35% après la refonte. Le tunnel d'achat est beaucoup plus fluide.",
-            ratingValue: 5,
-            datePublished: "2026-01-20",
-          },
-        ]}
         estimatedDuration="4-8 semaines selon complexité"
       />
-      <BreadcrumbJsonLd
-        items={[
-          { name: "Accueil", url: "https://rln-consulting.com" },
-          { name: "Services", url: "https://rln-consulting.com/services" },
-          { name: "E-commerce", url: "https://rln-consulting.com/services/ecommerce" },
-        ]}
-      />
+      <BreadcrumbJsonLd items={breadcrumbItems} />
       <FAQPageJsonLd questions={serviceFaqs["ecommerce"]} />
 
       <section className="py-20 lg:py-28 bg-gradient-to-br from-primary/5 via-background to-accent/5">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <Breadcrumbs
+            items={breadcrumbItems.slice(1).map((item, index, arr) =>
+              index < arr.length - 1
+                ? { label: item.name, href: new URL(item.url).pathname }
+                : { label: item.name }
+            )}
+            className="mb-6"
+          />
           <div className="max-w-3xl mx-auto text-center">
             <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary mb-6">
               <ShoppingCart className="h-4 w-4" />
@@ -128,7 +125,7 @@ export default function EcommercePage() {
               Shopify, WooCommerce ou solution sur mesure selon vos besoins.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button asChild size="lg" className="bg-accent hover:bg-accent/90">
+              <Button asChild size="lg" variant="accent">
                 <Link href="/contact">
                   Lancer ma boutique
                   <ArrowRight className="ml-2 h-4 w-4" />

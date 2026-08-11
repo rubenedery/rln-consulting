@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
 import { CaseStudyJsonLd, BreadcrumbJsonLd } from "@/components/seo"
+import { Breadcrumbs } from "@/components/ui/breadcrumbs"
 import { ResultsMetrics, CaseStudyCard } from "@/components/case-studies"
 import { CTA } from "@/components/sections"
 
@@ -78,25 +79,34 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
     .filter((cs) => cs.slug !== caseStudy.slug)
     .slice(0, 2)
 
+  const breadcrumbItems = [
+    { name: "Accueil", url: "https://rln-consulting.com" },
+    { name: "Cas d'études", url: "https://rln-consulting.com/cas-etudes" },
+    {
+      name: caseStudy.title,
+      url: `https://rln-consulting.com/cas-etudes/${caseStudy.slug}`,
+    },
+  ]
+
   return (
     <>
       <CaseStudyJsonLd
         caseStudy={caseStudy}
         url={`https://rln-consulting.com/cas-etudes/${caseStudy.slug}`}
       />
-      <BreadcrumbJsonLd
-        items={[
-          { name: "Accueil", url: "https://rln-consulting.com" },
-          { name: "Cas d'études", url: "https://rln-consulting.com/cas-etudes" },
-          {
-            name: caseStudy.title,
-            url: `https://rln-consulting.com/cas-etudes/${caseStudy.slug}`,
-          },
-        ]}
-      />
+      <BreadcrumbJsonLd items={breadcrumbItems} />
 
       <article className="py-12 lg:py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <Breadcrumbs
+            items={breadcrumbItems.slice(1).map((item, index, arr) =>
+              index < arr.length - 1
+                ? { label: item.name, href: new URL(item.url).pathname }
+                : { label: item.name }
+            )}
+            className="mb-6"
+          />
+
           {/* Back link */}
           <Button asChild variant="ghost" className="mb-8">
             <Link href="/cas-etudes">

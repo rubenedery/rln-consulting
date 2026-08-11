@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { m } from "framer-motion"
 import { CheckCircle2, Clock, Shield, Sparkles } from "lucide-react"
 import { containerVariants, itemVariants } from "@/lib/animations"
 
@@ -35,7 +35,7 @@ export function Guarantees() {
   return (
     <section className="py-12 lg:py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
+        <m.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -43,22 +43,22 @@ export function Guarantees() {
           className="max-w-4xl mx-auto"
         >
           {/* Header */}
-          <motion.div variants={itemVariants} className="text-center mb-10">
+          <m.div variants={itemVariants} className="text-center mb-10">
             <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-3">
               Nos engagements pour votre <span className="text-primary">sérénité</span>
             </h2>
             <p className="text-muted-foreground">
               Des garanties claires pour une collaboration en toute confiance.
             </p>
-          </motion.div>
+          </m.div>
 
           {/* Guarantees grid */}
-          <motion.div
+          <m.div
             variants={containerVariants}
             className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"
           >
             {guarantees.map((guarantee) => (
-              <motion.div
+              <m.div
                 key={guarantee.title}
                 variants={itemVariants}
                 className="group relative p-6 rounded-2xl bg-card border border-border/50 hover:border-primary/30 hover:shadow-lg transition-all duration-300"
@@ -82,10 +82,10 @@ export function Guarantees() {
                 <p className="text-sm text-muted-foreground">
                   {guarantee.description}
                 </p>
-              </motion.div>
+              </m.div>
             ))}
-          </motion.div>
-        </motion.div>
+          </m.div>
+        </m.div>
       </div>
     </section>
   )

@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { motion } from "framer-motion"
+import { m } from "framer-motion"
 import { ArrowRight, TrendingUp } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -26,7 +26,7 @@ export function CaseStudiesPreview({ caseStudies }: CaseStudiesPreviewProps) {
     <section className="py-20 lg:py-28 bg-muted/30">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -43,10 +43,10 @@ export function CaseStudiesPreview({ caseStudies }: CaseStudiesPreviewProps) {
             Découvrez comment nous avons aidé nos clients à atteindre leurs
             objectifs avec des solutions sur mesure.
           </p>
-        </motion.div>
+        </m.div>
 
         {/* Case studies grid */}
-        <motion.div
+        <m.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -54,7 +54,7 @@ export function CaseStudiesPreview({ caseStudies }: CaseStudiesPreviewProps) {
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           {displayedCaseStudies.map((study) => (
-            <motion.div key={study.slug} variants={itemVariants}>
+            <m.div key={study.slug} variants={itemVariants}>
               <Link href={`/cas-etudes/${study.slug}`}>
                 <Card className="h-full overflow-hidden hover:shadow-lg transition-all duration-300 group border-border/50">
                   {/* Image */}
@@ -105,12 +105,12 @@ export function CaseStudiesPreview({ caseStudies }: CaseStudiesPreviewProps) {
                   </CardContent>
                 </Card>
               </Link>
-            </motion.div>
+            </m.div>
           ))}
-        </motion.div>
+        </m.div>
 
         {/* View all button */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -123,7 +123,7 @@ export function CaseStudiesPreview({ caseStudies }: CaseStudiesPreviewProps) {
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </Button>
-        </motion.div>
+        </m.div>
       </div>
     </section>
   )

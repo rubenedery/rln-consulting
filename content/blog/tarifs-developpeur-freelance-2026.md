@@ -5,7 +5,7 @@ date: "2026-04-02"
 author: "Ruben Edery"
 category: "developpement"
 tags: ["freelance", "tarifs", "développeur", "TJM", "budget", "2026"]
-image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1200&h=630&fit=crop&q=80"
+image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=1200&h=630&fit=crop&q=80"
 ---
 
 ## Tarifs développeurs freelance en 2026

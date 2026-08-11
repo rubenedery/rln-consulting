@@ -163,9 +163,9 @@ export function BlogList({ posts }: BlogListProps) {
           <div className="w-16 h-16 rounded-full bg-muted flex items-center justify-center mx-auto mb-4">
             <Search className="h-8 w-8 text-muted-foreground" />
           </div>
-          <h3 className="text-lg font-medium text-foreground mb-2">
+          <h2 className="text-lg font-medium text-foreground mb-2">
             Aucun article trouvé
-          </h3>
+          </h2>
           <p className="text-muted-foreground mb-4">
             Aucun article ne correspond à votre recherche.
           </p>

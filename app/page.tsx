@@ -1,6 +1,5 @@
 import {
   Hero,
-  ClientLogos,
   ServicesPreview,
   AIServices,
   LeadMagnet,
@@ -27,7 +26,6 @@ export default function HomePage() {
       <OrganizationJsonLd />
       <LocalBusinessJsonLd />
       <Hero />
-      <ClientLogos />
       <ServicesPreview />
       <AIServices />
       <LeadMagnet />

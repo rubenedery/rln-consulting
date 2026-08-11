@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { m } from "framer-motion"
 import { useCalculator } from "../CalculatorContext"
 import { OptionCard, OptionCardCompact } from "../ui/OptionCard"
 import { webDesignOptions, webTimelineOptions } from "@/lib/pricing-data"
@@ -10,7 +10,7 @@ export function StepWebOptions() {
   const { state, dispatch } = useCalculator()
 
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -29,7 +29,7 @@ export function StepWebOptions() {
 
         <div className="grid gap-4 sm:grid-cols-3 max-w-4xl mx-auto">
           {webDesignOptions.map((option, index) => (
-            <motion.div
+            <m.div
               key={option.value}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -49,7 +49,7 @@ export function StepWebOptions() {
                   })
                 }
               />
-            </motion.div>
+            </m.div>
           ))}
         </div>
       </div>
@@ -67,7 +67,7 @@ export function StepWebOptions() {
 
         <div className="grid gap-3 sm:grid-cols-3 max-w-3xl mx-auto">
           {webTimelineOptions.map((option, index) => (
-            <motion.div
+            <m.div
               key={option.value}
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -86,13 +86,13 @@ export function StepWebOptions() {
                   })
                 }
               />
-            </motion.div>
+            </m.div>
           ))}
         </div>
       </div>
 
       {/* Maintenance option */}
-      <motion.div
+      <m.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.5 }}
@@ -110,7 +110,7 @@ export function StepWebOptions() {
             })
           }
         />
-      </motion.div>
-    </motion.div>
+      </m.div>
+    </m.div>
   )
 }

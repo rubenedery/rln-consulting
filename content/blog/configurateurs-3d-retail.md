@@ -5,7 +5,7 @@ date: "2026-01-22"
 author: "Ruben Edery"
 category: "innovation"
 tags: ["3d", "configurateur", "retail", "experience-client"]
-image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=1200&h=630&fit=crop&q=80"
+image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1200&h=630&fit=crop&q=80"
 ---
 
 ## La révolution de la visualisation produit

@@ -4,6 +4,7 @@ import { ArrowRight, Box, Eye, Glasses, Luggage, Palette, ShoppingBag, Sofa } fr
 import { Button } from "@/components/ui/button"
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { ServiceJsonLd, BreadcrumbJsonLd, FAQPageJsonLd } from "@/components/seo"
+import { Breadcrumbs } from "@/components/ui/breadcrumbs"
 import { CTA, FAQ } from "@/components/sections"
 import { serviceFaqs } from "@/lib/content"
 
@@ -81,6 +82,12 @@ const technologies = [
 ]
 
 export default function Configurateur3DPage() {
+  const breadcrumbItems = [
+    { name: "Accueil", url: "https://rln-consulting.com" },
+    { name: "Services", url: "https://rln-consulting.com/services" },
+    { name: "Configurateurs 3D", url: "https://rln-consulting.com/services/configurateur-3d" },
+  ]
+
   return (
     <>
       <ServiceJsonLd
@@ -88,17 +95,19 @@ export default function Configurateur3DPage() {
         description="Développement de configurateurs 3D interactifs pour personnaliser vos produits en temps réel."
         url="https://rln-consulting.com/services/configurateur-3d"
       />
-      <BreadcrumbJsonLd
-        items={[
-          { name: "Accueil", url: "https://rln-consulting.com" },
-          { name: "Services", url: "https://rln-consulting.com/services" },
-          { name: "Configurateurs 3D", url: "https://rln-consulting.com/services/configurateur-3d" },
-        ]}
-      />
+      <BreadcrumbJsonLd items={breadcrumbItems} />
       <FAQPageJsonLd questions={serviceFaqs["configurateur-3d"]} />
 
       <section className="py-20 lg:py-28 bg-gradient-to-br from-primary/5 via-background to-accent/5">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <Breadcrumbs
+            items={breadcrumbItems.slice(1).map((item, index, arr) =>
+              index < arr.length - 1
+                ? { label: item.name, href: new URL(item.url).pathname }
+                : { label: item.name }
+            )}
+            className="mb-6"
+          />
           <div className="max-w-3xl mx-auto text-center">
             <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary mb-6">
               <Box className="h-4 w-4" />
@@ -112,7 +121,7 @@ export default function Configurateur3DPage() {
               Lunettes, valises, meubles... tout devient configurable.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button asChild size="lg" className="bg-accent hover:bg-accent/90">
+              <Button asChild size="lg" variant="accent">
                 <Link href="/contact">
                   Discutons de votre projet
                   <ArrowRight className="ml-2 h-4 w-4" />

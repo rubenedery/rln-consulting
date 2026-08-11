@@ -5,7 +5,7 @@ date: "2026-02-28"
 author: "Ruben Edery"
 category: "marketing"
 tags: ["acquisition-clients", "marketing-digital", "leads", "strategie"]
-image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=630&fit=crop&q=80"
+image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&h=630&fit=crop&q=80"
 ---
 
 ## Le défi de l'acquisition client en ligne

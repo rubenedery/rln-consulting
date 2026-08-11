@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { motion } from "framer-motion"
+import { m } from "framer-motion"
 import {
   Code,
   Target,
@@ -36,7 +36,7 @@ export function ServicesPreview() {
   return (
     <section className="py-20 lg:py-28 bg-muted/30">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -53,9 +53,9 @@ export function ServicesPreview() {
             De la conception à la mise en ligne, nous vous accompagnons à chaque
             étape de votre transformation numérique.
           </p>
-        </motion.div>
+        </m.div>
 
-        <motion.div
+        <m.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -65,7 +65,7 @@ export function ServicesPreview() {
           {services.map((service, index) => {
             const IconComponent = iconMap[service.icon] || Code
             return (
-              <motion.div key={index} variants={itemVariants}>
+              <m.div key={index} variants={itemVariants}>
                 <Card className="h-full hover:shadow-lg transition-shadow duration-300 border-border/50">
                   <CardHeader className="pb-3">
                     <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-3">
@@ -96,10 +96,10 @@ export function ServicesPreview() {
                     </Button>
                   </CardContent>
                 </Card>
-              </motion.div>
+              </m.div>
             )
           })}
-        </motion.div>
+        </m.div>
       </div>
     </section>
   )

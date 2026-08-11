@@ -13,6 +13,7 @@ import {
   type GlossaryCategory,
 } from "@/lib/glossary-data"
 import { DefinedTermJsonLd, BreadcrumbJsonLd, SpeakableJsonLd } from "@/components/seo"
+import { Breadcrumbs } from "@/components/ui/breadcrumbs"
 
 const baseUrl = "https://rln-consulting.com"
 
@@ -77,6 +78,12 @@ export default async function GlossaryTermPage({ params }: PageProps) {
 
   const relatedTerms = getRelatedGlossaryTerms(term.slug)
 
+  const breadcrumbItems = [
+    { name: "Accueil", url: baseUrl },
+    { name: "Glossaire", url: `${baseUrl}/glossaire` },
+    { name: term.term, url: `${baseUrl}/glossaire/${term.slug}` },
+  ]
+
   return (
     <>
       <DefinedTermJsonLd
@@ -85,13 +92,7 @@ export default async function GlossaryTermPage({ params }: PageProps) {
         url={`${baseUrl}/glossaire/${term.slug}`}
         relatedTerms={term.relatedTerms}
       />
-      <BreadcrumbJsonLd
-        items={[
-          { name: "Accueil", url: baseUrl },
-          { name: "Glossaire", url: `${baseUrl}/glossaire` },
-          { name: term.term, url: `${baseUrl}/glossaire/${term.slug}` },
-        ]}
-      />
+      <BreadcrumbJsonLd items={breadcrumbItems} />
       <SpeakableJsonLd
         url={`${baseUrl}/glossaire/${term.slug}`}
         cssSelectors={["h1", ".definition", ".long-description"]}
@@ -99,23 +100,14 @@ export default async function GlossaryTermPage({ params }: PageProps) {
 
       <article className="container mx-auto px-4 py-12 max-w-4xl">
         {/* Breadcrumb */}
-        <nav className="mb-8" aria-label="Fil d'Ariane">
-          <ol className="flex items-center gap-2 text-sm text-muted-foreground">
-            <li>
-              <Link href="/" className="hover:text-primary transition-colors">
-                Accueil
-              </Link>
-            </li>
-            <li>/</li>
-            <li>
-              <Link href="/glossaire" className="hover:text-primary transition-colors">
-                Glossaire
-              </Link>
-            </li>
-            <li>/</li>
-            <li className="text-foreground font-medium">{term.term}</li>
-          </ol>
-        </nav>
+        <Breadcrumbs
+          items={breadcrumbItems.slice(1).map((item, index, arr) =>
+            index < arr.length - 1
+              ? { label: item.name, href: new URL(item.url).pathname }
+              : { label: item.name }
+          )}
+          className="mb-6"
+        />
 
         {/* Header */}
         <header className="mb-8">

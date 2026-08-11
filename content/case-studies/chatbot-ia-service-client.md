@@ -8,7 +8,7 @@ services:
   - Intégration API
   - Développement Web
 industry: "E-commerce"
-image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&h=630&fit=crop&q=80"
+image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1200&h=630&fit=crop&q=80"
 results:
   - metric: "Tickets résolus par IA"
     before: "0%"

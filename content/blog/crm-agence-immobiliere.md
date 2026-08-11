@@ -5,7 +5,7 @@ date: "2026-02-10"
 author: "Ruben Edery"
 category: "secteur"
 tags: ["crm", "immobilier", "agence-immobiliere", "gestion-clients"]
-image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&h=630&fit=crop&q=80"
+image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=1200&h=630&fit=crop&q=80"
 ---
 
 ## Pourquoi un CRM est indispensable en immobilier

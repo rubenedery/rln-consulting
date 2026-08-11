@@ -16,6 +16,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { ServiceJsonLd, BreadcrumbJsonLd, FAQPageJsonLd } from "@/components/seo"
+import { Breadcrumbs } from "@/components/ui/breadcrumbs"
 import { CTA, FAQ } from "@/components/sections"
 import { serviceFaqs } from "@/lib/content"
 
@@ -154,6 +155,15 @@ const process_steps = [
 ]
 
 export default function IAEntreprisePage() {
+  const breadcrumbItems = [
+    { name: "Accueil", url: "https://rln-consulting.com" },
+    { name: "Services", url: "https://rln-consulting.com/services" },
+    {
+      name: "IA pour Entreprises",
+      url: "https://rln-consulting.com/services/ia-entreprise",
+    },
+  ]
+
   return (
     <>
       <ServiceJsonLd
@@ -170,34 +180,21 @@ export default function IAEntreprisePage() {
           "Assistants IA internes",
           "Hébergement sécurisé RGPD",
         ]}
-        aggregateRating={{
-          ratingValue: 4.8,
-          reviewCount: 18,
-        }}
-        reviews={[
-          {
-            author: "David, CEO FastDelivery",
-            reviewBody: "Le chatbot IA gère 70% de nos demandes clients automatiquement. Notre équipe peut enfin se concentrer sur les cas complexes.",
-            ratingValue: 5,
-            datePublished: "2025-10-05",
-          },
-        ]}
         estimatedDuration="POC en 2 semaines, solution complète 6-12 semaines"
       />
-      <BreadcrumbJsonLd
-        items={[
-          { name: "Accueil", url: "https://rln-consulting.com" },
-          { name: "Services", url: "https://rln-consulting.com/services" },
-          {
-            name: "IA pour Entreprises",
-            url: "https://rln-consulting.com/services/ia-entreprise",
-          },
-        ]}
-      />
+      <BreadcrumbJsonLd items={breadcrumbItems} />
       <FAQPageJsonLd questions={serviceFaqs["ia-entreprise"]} />
 
       <section className="py-20 lg:py-28 bg-gradient-to-br from-primary/5 via-background to-accent/5">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <Breadcrumbs
+            items={breadcrumbItems.slice(1).map((item, index, arr) =>
+              index < arr.length - 1
+                ? { label: item.name, href: new URL(item.url).pathname }
+                : { label: item.name }
+            )}
+            className="mb-6"
+          />
           <div className="max-w-3xl mx-auto text-center">
             <Badge variant="secondary" className="mb-6 bg-accent/10 text-accent">
               <BrainCircuit className="h-4 w-4 mr-2" />
@@ -216,7 +213,7 @@ export default function IAEntreprisePage() {
               <Button
                 asChild
                 size="lg"
-                className="bg-accent hover:bg-accent/90"
+                variant="accent"
               >
                 <Link href="/contact">
                   Discutons de votre projet IA

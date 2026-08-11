@@ -3,11 +3,12 @@
 import * as React from "react"
 import { Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
-import { motion, AnimatePresence } from "framer-motion"
 import { Button } from "@/components/ui/button"
 
+// Transition CSS (pattern shadcn) plutôt que framer-motion : ce composant est
+// chargé sur toutes les pages via la navbar.
 export function ThemeToggle() {
-  const { theme, setTheme, resolvedTheme } = useTheme()
+  const { setTheme, resolvedTheme } = useTheme()
   const [mounted, setMounted] = React.useState(false)
 
   // Évite les problèmes d'hydratation
@@ -27,36 +28,26 @@ export function ThemeToggle() {
     )
   }
 
+  const isDark = resolvedTheme === "dark"
+
   return (
     <Button
       variant="ghost"
       size="icon"
       onClick={toggleTheme}
-      aria-label={resolvedTheme === "dark" ? "Passer en mode clair" : "Passer en mode sombre"}
+      aria-label={isDark ? "Passer en mode clair" : "Passer en mode sombre"}
+      className="relative"
     >
-      <AnimatePresence mode="wait" initial={false}>
-        {resolvedTheme === "dark" ? (
-          <motion.div
-            key="moon"
-            initial={{ rotate: -90, opacity: 0 }}
-            animate={{ rotate: 0, opacity: 1 }}
-            exit={{ rotate: 90, opacity: 0 }}
-            transition={{ duration: 0.2 }}
-          >
-            <Moon className="h-5 w-5" />
-          </motion.div>
-        ) : (
-          <motion.div
-            key="sun"
-            initial={{ rotate: 90, opacity: 0 }}
-            animate={{ rotate: 0, opacity: 1 }}
-            exit={{ rotate: -90, opacity: 0 }}
-            transition={{ duration: 0.2 }}
-          >
-            <Sun className="h-5 w-5" />
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <Sun
+        className={`h-5 w-5 transition-all duration-200 ${
+          isDark ? "-rotate-90 scale-0 opacity-0" : "rotate-0 scale-100 opacity-100"
+        }`}
+      />
+      <Moon
+        className={`absolute h-5 w-5 transition-all duration-200 ${
+          isDark ? "rotate-0 scale-100 opacity-100" : "rotate-90 scale-0 opacity-0"
+        }`}
+      />
     </Button>
   )
 }

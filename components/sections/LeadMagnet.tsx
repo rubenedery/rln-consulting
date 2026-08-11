@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useRef } from "react"
-import { motion } from "framer-motion"
+import { m } from "framer-motion"
 import { Download, Mail, Loader2, CheckCircle, FileText, AlertCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -87,7 +87,7 @@ export function LeadMagnet() {
     return (
       <section className="py-16 lg:py-20 bg-primary/5">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             className="max-w-2xl mx-auto text-center"
@@ -102,7 +102,7 @@ export function LeadMagnet() {
               Vérifiez votre boîte email (et vos spams). Vous recevrez le guide
               dans les prochaines minutes.
             </p>
-          </motion.div>
+          </m.div>
         </div>
       </section>
     )
@@ -114,7 +114,7 @@ export function LeadMagnet() {
         <div className="max-w-5xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Content */}
-            <motion.div
+            <m.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -147,10 +147,10 @@ export function LeadMagnet() {
                   </li>
                 ))}
               </ul>
-            </motion.div>
+            </m.div>
 
             {/* Form */}
-            <motion.div
+            <m.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -230,7 +230,7 @@ export function LeadMagnet() {
                   🔒 Vos données sont protégées. Pas de spam, promis.
                 </p>
               </form>
-            </motion.div>
+            </m.div>
           </div>
         </div>
       </div>

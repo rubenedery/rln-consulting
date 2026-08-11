@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { m } from "framer-motion"
 import { useCalculator } from "../CalculatorContext"
 import { OptionCardCompact } from "../ui/OptionCard"
 import { webFeatureOptions } from "@/lib/pricing-data"
@@ -14,7 +14,7 @@ export function StepWebFeatures() {
   }
 
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -31,7 +31,7 @@ export function StepWebFeatures() {
 
       <div className="grid gap-3 sm:grid-cols-2 max-w-3xl mx-auto">
         {webFeatureOptions.map((option, index) => (
-          <motion.div
+          <m.div
             key={option.value}
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -45,13 +45,13 @@ export function StepWebFeatures() {
               selected={state.web.features.includes(option.value)}
               onClick={() => handleToggle(option.value)}
             />
-          </motion.div>
+          </m.div>
         ))}
       </div>
 
       {/* Language count for multilingue */}
       {state.web.features.includes("multilingue") && (
-        <motion.div
+        <m.div
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: "auto" }}
           className="max-w-md mx-auto mt-6 p-4 bg-muted/50 rounded-lg"
@@ -91,7 +91,7 @@ export function StepWebFeatures() {
               (+{state.web.languageCount * 600}€)
             </span>
           </div>
-        </motion.div>
+        </m.div>
       )}
 
       {state.web.features.length === 0 && (
@@ -99,6 +99,6 @@ export function StepWebFeatures() {
           Vous pouvez passer cette étape si aucune fonctionnalité supplémentaire n'est nécessaire
         </p>
       )}
-    </motion.div>
+    </m.div>
   )
 }

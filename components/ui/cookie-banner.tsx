@@ -1,7 +1,6 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { motion, AnimatePresence } from "framer-motion"
 import { Cookie, Settings, X, Shield } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import {
@@ -43,15 +42,13 @@ export function CookieBanner() {
     setVisible(false)
   }
 
+  // Animation CSS d'entrée : la sortie n'a pas besoin de transition
+  // (la bannière disparaît après un choix explicite de l'utilisateur)
   return (
-    <AnimatePresence>
+    <>
       {visible && (
-        <motion.div
-          initial={{ y: 100, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          exit={{ y: 100, opacity: 0 }}
-          transition={{ type: "spring", damping: 25, stiffness: 200 }}
-          className="fixed bottom-0 left-0 right-0 z-[60] p-4 md:p-6"
+        <div
+          className="fixed bottom-0 left-0 right-0 z-[60] p-4 md:p-6 animate-fade-in-up"
           role="dialog"
           aria-label="Gestion des cookies"
           aria-modal="false"
@@ -161,9 +158,9 @@ export function CookieBanner() {
               </div>
             )}
           </div>
-        </motion.div>
+        </div>
       )}
-    </AnimatePresence>
+    </>
   )
 }
 

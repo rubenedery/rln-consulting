@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { motion } from "framer-motion"
+import { m } from "framer-motion"
 import { ArrowRight, Bot, BrainCircuit, MessageSquare, Sparkles, Workflow, Zap } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -46,7 +46,7 @@ export function AIServices() {
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -65,9 +65,9 @@ export function AIServices() {
             Chatbots intelligents, automatisation des tâches, analyse de données...
             Nous intégrons l&apos;intelligence artificielle dans votre business.
           </p>
-        </motion.div>
+        </m.div>
 
-        <motion.div
+        <m.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -75,7 +75,7 @@ export function AIServices() {
           className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12"
         >
           {ai_features.map((feature, index) => (
-            <motion.div key={index} variants={itemVariants}>
+            <m.div key={index} variants={itemVariants}>
               <Card className="h-full border-border/50 hover:border-primary/30 transition-all hover:shadow-lg group text-center">
                 <CardContent className="pt-6">
                   <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
@@ -89,11 +89,11 @@ export function AIServices() {
                   </p>
                 </CardContent>
               </Card>
-            </motion.div>
+            </m.div>
           ))}
-        </motion.div>
+        </m.div>
 
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -106,9 +106,9 @@ export function AIServices() {
               <div className="text-sm text-muted-foreground">{stat.label}</div>
             </div>
           ))}
-        </motion.div>
+        </m.div>
 
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -131,7 +131,7 @@ export function AIServices() {
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
-        </motion.div>
+        </m.div>
       </div>
     </section>
   )

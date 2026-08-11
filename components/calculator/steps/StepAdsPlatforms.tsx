@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { m } from "framer-motion"
 import { useCalculator } from "../CalculatorContext"
 import { OptionCardCompact } from "../ui/OptionCard"
 import { adsPlatformOptions } from "@/lib/pricing-data"
@@ -14,7 +14,7 @@ export function StepAdsPlatforms() {
   }
 
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -31,7 +31,7 @@ export function StepAdsPlatforms() {
 
       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 max-w-4xl mx-auto">
         {adsPlatformOptions.map((option, index) => (
-          <motion.div
+          <m.div
             key={option.value}
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -44,13 +44,13 @@ export function StepAdsPlatforms() {
               selected={state.ads.platforms.includes(option.value)}
               onClick={() => handleToggle(option.value)}
             />
-          </motion.div>
+          </m.div>
         ))}
       </div>
 
       {/* Selected platforms summary */}
       {state.ads.platforms.length > 0 && (
-        <motion.div
+        <m.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           className="text-center mt-6 p-4 bg-primary/5 rounded-lg max-w-md mx-auto"
@@ -61,7 +61,7 @@ export function StepAdsPlatforms() {
           <p className="text-lg font-semibold text-primary mt-1">
             {state.ads.platforms.length * 500}€/mois (gestion)
           </p>
-        </motion.div>
+        </m.div>
       )}
 
       {state.ads.platforms.length === 0 && (
@@ -69,6 +69,6 @@ export function StepAdsPlatforms() {
           Sélectionnez au moins une plateforme pour continuer
         </p>
       )}
-    </motion.div>
+    </m.div>
   )
 }

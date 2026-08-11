@@ -4,6 +4,7 @@ import { ArrowRight, Check, Code, Database, Globe, Layers, Rocket, Zap } from "l
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { ServiceJsonLd, BreadcrumbJsonLd, FAQPageJsonLd } from "@/components/seo"
+import { Breadcrumbs } from "@/components/ui/breadcrumbs"
 import { CTA, FAQ } from "@/components/sections"
 import { serviceFaqs } from "@/lib/content"
 
@@ -115,6 +116,15 @@ const process = [
 ]
 
 export default function DeveloppementPage() {
+  const breadcrumbItems = [
+    { name: "Accueil", url: "https://rln-consulting.com" },
+    { name: "Services", url: "https://rln-consulting.com/services" },
+    {
+      name: "Développement Web",
+      url: "https://rln-consulting.com/services/developpement",
+    },
+  ]
+
   return (
     <>
       <ServiceJsonLd
@@ -131,41 +141,22 @@ export default function DeveloppementPage() {
           "Optimisation Core Web Vitals",
           "SEO technique avancé",
         ]}
-        aggregateRating={{
-          ratingValue: 4.9,
-          reviewCount: 47,
-        }}
-        reviews={[
-          {
-            author: "Yohan Jaoui",
-            reviewBody: "Un site web performant livré en 3 semaines. La qualité du code et le SEO sont au top.",
-            ratingValue: 5,
-            datePublished: "2026-01-15",
-          },
-          {
-            author: "Sophie M.",
-            reviewBody: "Application métier développée sur mesure, parfaitement adaptée à nos processus.",
-            ratingValue: 5,
-            datePublished: "2025-11-20",
-          },
-        ]}
         estimatedDuration="2-12 semaines selon complexité"
       />
-      <BreadcrumbJsonLd
-        items={[
-          { name: "Accueil", url: "https://rln-consulting.com" },
-          { name: "Services", url: "https://rln-consulting.com/services" },
-          {
-            name: "Développement Web",
-            url: "https://rln-consulting.com/services/developpement",
-          },
-        ]}
-      />
+      <BreadcrumbJsonLd items={breadcrumbItems} />
       <FAQPageJsonLd questions={serviceFaqs["developpement"]} />
 
       {/* Hero */}
       <section className="py-20 lg:py-28 bg-gradient-to-br from-primary/5 via-background to-accent/5">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <Breadcrumbs
+            items={breadcrumbItems.slice(1).map((item, index, arr) =>
+              index < arr.length - 1
+                ? { label: item.name, href: new URL(item.url).pathname }
+                : { label: item.name }
+            )}
+            className="mb-6"
+          />
           <div className="max-w-3xl mx-auto text-center">
             <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary mb-6">
               <Code className="h-4 w-4" />
@@ -184,7 +175,7 @@ export default function DeveloppementPage() {
               <Button
                 asChild
                 size="lg"
-                className="bg-accent hover:bg-accent/90"
+                variant="accent"
               >
                 <Link href="/contact">
                   Discutons de votre projet
@@ -211,7 +202,7 @@ export default function DeveloppementPage() {
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   <strong>Site vitrine : 2 000€ à 5 000€</strong>. E-commerce : 5 000€ à 15 000€.
                   Application sur mesure : 10 000€ à 50 000€+. Nos sites Next.js atteignent
-                  <strong> 98/100 sur PageSpeed</strong> (vs 45/100 moyenne WordPress).
+                  <strong> 90+ sur PageSpeed</strong> (vs ~45 pour un WordPress moyen).
                 </p>
               </div>
               <div className="bg-background rounded-xl p-6 shadow-sm">

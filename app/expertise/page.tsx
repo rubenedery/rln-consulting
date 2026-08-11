@@ -149,7 +149,7 @@ export default function ExpertisePage() {
               <Button
                 asChild
                 size="lg"
-                className="bg-accent hover:bg-accent/90"
+                variant="accent"
               >
                 <Link href="/contact">
                   Discutons de votre projet

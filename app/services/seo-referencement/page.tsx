@@ -4,6 +4,7 @@ import { ArrowRight, BarChart2, FileText, Globe, MapPin, Search, TrendingUp } fr
 import { Button } from "@/components/ui/button"
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { ServiceJsonLd, BreadcrumbJsonLd, FAQPageJsonLd } from "@/components/seo"
+import { Breadcrumbs } from "@/components/ui/breadcrumbs"
 import { CTA, FAQ } from "@/components/sections"
 import { serviceFaqs } from "@/lib/content"
 
@@ -70,6 +71,12 @@ const results = [
 ]
 
 export default function SeoReferencementPage() {
+  const breadcrumbItems = [
+    { name: "Accueil", url: "https://rln-consulting.com" },
+    { name: "Services", url: "https://rln-consulting.com/services" },
+    { name: "SEO & Référencement", url: "https://rln-consulting.com/services/seo-referencement" },
+  ]
+
   return (
     <>
       <ServiceJsonLd
@@ -77,17 +84,19 @@ export default function SeoReferencementPage() {
         description="Stratégie SEO complète pour améliorer votre visibilité sur Google. Audit SEO, optimisation on-page, SEO local."
         url="https://rln-consulting.com/services/seo-referencement"
       />
-      <BreadcrumbJsonLd
-        items={[
-          { name: "Accueil", url: "https://rln-consulting.com" },
-          { name: "Services", url: "https://rln-consulting.com/services" },
-          { name: "SEO & Référencement", url: "https://rln-consulting.com/services/seo-referencement" },
-        ]}
-      />
+      <BreadcrumbJsonLd items={breadcrumbItems} />
       <FAQPageJsonLd questions={serviceFaqs["seo-referencement"]} />
 
       <section className="py-20 lg:py-28 bg-gradient-to-br from-primary/5 via-background to-accent/5">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <Breadcrumbs
+            items={breadcrumbItems.slice(1).map((item, index, arr) =>
+              index < arr.length - 1
+                ? { label: item.name, href: new URL(item.url).pathname }
+                : { label: item.name }
+            )}
+            className="mb-6"
+          />
           <div className="max-w-3xl mx-auto text-center">
             <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary mb-6">
               <Search className="h-4 w-4" />
@@ -101,7 +110,7 @@ export default function SeoReferencementPage() {
               Audit, optimisation et suivi des résultats inclus.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button asChild size="lg" className="bg-accent hover:bg-accent/90">
+              <Button asChild size="lg" variant="accent">
                 <Link href="/contact">
                   Audit SEO gratuit
                   <ArrowRight className="ml-2 h-4 w-4" />

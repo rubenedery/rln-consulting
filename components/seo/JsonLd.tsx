@@ -3,7 +3,7 @@ import { siteConfig } from "@/lib/constants"
 import { faqData } from "@/lib/content"
 
 /**
- * WebSite Schema - Active la boîte de recherche sitelinks dans Google
+ * WebSite Schema
  */
 export function WebSiteJsonLd() {
   const jsonLd = {
@@ -19,14 +19,6 @@ export function WebSiteJsonLd() {
       "@id": `${siteConfig.url}/#organization`,
     },
     inLanguage: "fr-FR",
-    potentialAction: {
-      "@type": "SearchAction",
-      target: {
-        "@type": "EntryPoint",
-        urlTemplate: `${siteConfig.url}/blog?q={search_term_string}`,
-      },
-      "query-input": "required name=search_term_string",
-    },
   }
 
   return (
@@ -70,13 +62,13 @@ export function OrganizationJsonLd({ url = siteConfig.url }: OrganizationJsonLdP
       telephone: siteConfig.contact.phone.replace(/\s/g, "-"),
       contactType: "customer service",
       email: siteConfig.contact.email,
-      availableLanguage: ["French", "English"],
+      availableLanguage: ["French"],
     },
     sameAs: [
       siteConfig.social.linkedin,
       siteConfig.social.twitter,
       siteConfig.social.github,
-    ],
+    ].filter(Boolean),
     founder: {
       "@type": "Person",
       name: siteConfig.founder.name,
@@ -85,7 +77,7 @@ export function OrganizationJsonLd({ url = siteConfig.url }: OrganizationJsonLdP
     foundingDate: "2020",
     numberOfEmployees: {
       "@type": "QuantitativeValue",
-      value: 5,
+      value: 1,
     },
     areaServed: [
       {
@@ -246,10 +238,8 @@ export function LocalBusinessJsonLd({ url = siteConfig.url }: LocalBusinessJsonL
     image: `${url}/og-image.png`,
     address: {
       "@type": "PostalAddress",
-      streetAddress: "",
       addressLocality: "Paris",
       addressRegion: "Île-de-France",
-      postalCode: "75000",
       addressCountry: "FR",
     },
     geo: {
@@ -284,14 +274,7 @@ export function LocalBusinessJsonLd({ url = siteConfig.url }: LocalBusinessJsonL
       siteConfig.social.linkedin,
       siteConfig.social.twitter,
       siteConfig.social.github,
-    ],
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.9",
-      reviewCount: "50",
-      bestRating: "5",
-      worstRating: "1",
-    },
+    ].filter(Boolean),
   }
 
   return (
@@ -670,7 +653,7 @@ export function CityLocalBusinessJsonLd({
       siteConfig.social.linkedin,
       siteConfig.social.twitter,
       siteConfig.social.github,
-    ],
+    ].filter(Boolean),
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: `Services digitaux à ${cityName}`,
@@ -765,7 +748,7 @@ export function PersonJsonLd({
   name = siteConfig.founder.name,
   jobTitle = siteConfig.founder.role,
   url = siteConfig.url,
-  image = `${siteConfig.url}/images/team/ruben-edery.jpg`,
+  image,
   sameAs = [
     siteConfig.founder.social.linkedin,
     siteConfig.founder.social.twitter,
@@ -795,12 +778,14 @@ export function PersonJsonLd({
     name,
     jobTitle,
     url,
-    image: {
-      "@type": "ImageObject",
-      url: image,
-      width: 400,
-      height: 400,
-    },
+    ...(image && {
+      image: {
+        "@type": "ImageObject",
+        url: image,
+        width: 400,
+        height: 400,
+      },
+    }),
     description,
     sameAs,
     worksFor: {

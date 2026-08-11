@@ -1,5 +1,4 @@
 export { Hero } from "./Hero"
-export { ClientLogos } from "./ClientLogos"
 export { ServicesPreview } from "./ServicesPreview"
 export { AIServices } from "./AIServices"
 export { Testimonials } from "./Testimonials"

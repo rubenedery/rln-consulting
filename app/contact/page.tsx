@@ -91,9 +91,9 @@ export default function ContactPage() {
                         <info.icon className="h-5 w-5 text-primary" />
                       </div>
                       <div>
-                        <h3 className="font-medium text-foreground">
+                        <p className="font-medium text-foreground">
                           {info.title}
-                        </h3>
+                        </p>
                         {info.href ? (
                           <a
                             href={info.href}

@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
+import { m, AnimatePresence } from "framer-motion"
 import { ChevronDown, HelpCircle } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { faqData, type FAQItem } from "@/lib/content"
@@ -10,13 +10,17 @@ interface FAQProps {
   items?: FAQItem[]
   showTitle?: boolean
   maxItems?: number
+  /** "h1" sur la page /faq dédiée (le titre y est le titre principal), "h2" partout ailleurs */
+  headingLevel?: "h1" | "h2"
 }
 
 export function FAQ({
   items = faqData,
   showTitle = true,
   maxItems,
+  headingLevel = "h2",
 }: FAQProps) {
+  const Heading = headingLevel
   const [openIndex, setOpenIndex] = useState<number | null>(null)
   const displayItems = maxItems ? items.slice(0, maxItems) : items
 
@@ -33,9 +37,9 @@ export function FAQ({
               <HelpCircle className="h-4 w-4" />
               FAQ
             </span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+            <Heading className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
               Questions fréquentes
-            </h2>
+            </Heading>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               Retrouvez les réponses aux questions les plus courantes sur nos
               services et notre façon de travailler.
@@ -69,7 +73,7 @@ export function FAQ({
                 </button>
                 <AnimatePresence initial={false}>
                   {openIndex === index && (
-                    <motion.div
+                    <m.div
                       id={`faq-answer-${index}`}
                       role="region"
                       aria-labelledby={`faq-question-${index}`}
@@ -83,7 +87,7 @@ export function FAQ({
                           {item.answer}
                         </p>
                       </div>
-                    </motion.div>
+                    </m.div>
                   )}
                 </AnimatePresence>
               </div>

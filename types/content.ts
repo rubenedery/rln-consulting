@@ -111,7 +111,7 @@ export interface TeamMember {
   name: string
   role: string
   bio: string
-  image: string
+  image?: string
   social?: {
     linkedin?: string
     twitter?: string

@@ -2,7 +2,7 @@
 
 import { useEffect } from "react"
 import Link from "next/link"
-import { motion } from "framer-motion"
+import { m } from "framer-motion"
 import { AlertTriangle, RefreshCw, Home } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
@@ -20,20 +20,20 @@ export default function Error({
 
   return (
     <div className="min-h-[60vh] flex items-center justify-center px-4">
-      <motion.div
+      <m.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         className="text-center"
       >
-        <motion.div
+        <m.div
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
           className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-destructive/10"
         >
           <AlertTriangle className="h-10 w-10 text-destructive" />
-        </motion.div>
+        </m.div>
 
         <h1 className="text-4xl font-bold text-foreground mb-4">
           Une erreur est survenue
@@ -62,7 +62,7 @@ export default function Error({
             </Link>
           </Button>
         </div>
-      </motion.div>
+      </m.div>
     </div>
   )
 }

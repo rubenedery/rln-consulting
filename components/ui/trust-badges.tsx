@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { m } from "framer-motion"
 import { Shield, Lock, Star, CheckCircle, Award } from "lucide-react"
 import { cn } from "@/lib/utils"
 
@@ -17,13 +17,13 @@ const badges = [
   },
   {
     icon: Star,
-    label: "4.9/5",
-    description: "Avis clients",
+    label: "50+ projets",
+    description: "Livrés depuis 2020",
   },
   {
     icon: Award,
-    label: "Expert Certifié",
-    description: "Google Partner",
+    label: "Réponse 24h",
+    description: "Devis gratuit",
   },
 ]
 
@@ -74,7 +74,7 @@ export function TrustBadges({
   }
 
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0, y: 10 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -84,7 +84,7 @@ export function TrustBadges({
       )}
     >
       {badges.map((badge, index) => (
-        <motion.div
+        <m.div
           key={badge.label}
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -101,9 +101,9 @@ export function TrustBadges({
               <p className="text-xs text-muted-foreground">{badge.description}</p>
             )}
           </div>
-        </motion.div>
+        </m.div>
       ))}
-    </motion.div>
+    </m.div>
   )
 }
 

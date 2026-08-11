@@ -5,7 +5,7 @@ description: "Mise en place d'une stratégie d'acquisition multi-canal pour une 
 date: "2026-09-20"
 services: ["Google Ads", "LinkedIn Ads", "Stratégie Marketing"]
 industry: "SaaS / Tech"
-image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=630&fit=crop&q=80"
+image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=1200&h=630&fit=crop&q=80"
 results:
   - metric: "Coût par lead"
     before: "185€"

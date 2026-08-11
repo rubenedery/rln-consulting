@@ -389,7 +389,7 @@ export function ContactForm() {
       <Button
         type="submit"
         size="lg"
-        className="w-full bg-accent hover:bg-accent/90 disabled:opacity-70"
+        variant="accent" className="w-full disabled:opacity-70"
         disabled={isSubmitting}
       >
         {isSubmitting ? (

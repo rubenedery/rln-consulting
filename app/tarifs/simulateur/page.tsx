@@ -43,7 +43,6 @@ export default function SimulateurPage() {
         applicationCategory="BusinessApplication"
         operatingSystem="Web"
         offers={{ price: 0, priceCurrency: "EUR" }}
-        aggregateRating={{ ratingValue: 4.8, ratingCount: 127 }}
       />
 
       <section className="py-12 lg:py-20">

@@ -5,6 +5,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Navbar, Footer } from "@/components/layout"
 import { Toaster } from "@/components/ui/toaster"
 import { ThemeProvider } from "@/components/providers/theme-provider"
+import { MotionProvider } from "@/components/providers/motion-provider"
 import { SkipLinks } from "@/components/ui/skip-links"
 import { CookieBanner } from "@/components/ui/cookie-banner"
 import { GoogleAnalytics, MetaPixel } from "@/components/analytics"
@@ -130,12 +131,14 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <SkipLinks />
-          <Navbar />
-          <main id="main-content" className="flex-1 pt-16">{children}</main>
-          <Footer />
-          <Toaster />
-          <CookieBanner />
+          <MotionProvider>
+            <SkipLinks />
+            <Navbar />
+            <main id="main-content" className="flex-1 pt-16">{children}</main>
+            <Footer />
+            <Toaster />
+            <CookieBanner />
+          </MotionProvider>
         </ThemeProvider>
         <Analytics />
         <SpeedInsights />

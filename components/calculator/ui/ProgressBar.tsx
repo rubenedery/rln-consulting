@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { m } from "framer-motion"
 import { cn } from "@/lib/utils"
 import { useCalculator } from "../CalculatorContext"
 
@@ -27,7 +27,7 @@ export function ProgressBar({ className }: ProgressBarProps) {
 
       {/* Progress bar */}
       <div className="relative h-2 bg-muted rounded-full overflow-hidden">
-        <motion.div
+        <m.div
           className="absolute inset-y-0 left-0 bg-gradient-to-r from-primary to-accent rounded-full"
           initial={{ width: 0 }}
           animate={{ width: `${progress}%` }}
@@ -39,7 +39,7 @@ export function ProgressBar({ className }: ProgressBarProps) {
       <div className="hidden sm:flex items-center justify-between mt-4">
         {Array.from({ length: totalSteps }).map((_, index) => (
           <div key={index} className="flex flex-col items-center">
-            <motion.div
+            <m.div
               className={cn(
                 "w-3 h-3 rounded-full transition-colors duration-300",
                 index <= currentStep

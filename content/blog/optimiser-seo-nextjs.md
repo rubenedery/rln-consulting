@@ -5,7 +5,7 @@ date: "2026-03-15"
 author: "Ruben Edery"
 category: "seo"
 tags: ["nextjs", "seo", "performance", "react"]
-image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=630&fit=crop&q=80"
+image: "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=1200&h=630&fit=crop&q=80"
 ---
 
 ## Pourquoi le SEO est crucial pour votre site Next.js

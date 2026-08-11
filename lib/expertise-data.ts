@@ -182,7 +182,7 @@ export const expertises: Expertise[] = [
     slug: "react",
     name: "React",
     title: "Développeur React Expert | Applications Web Paris",
-    metaDescription: "Expert React.js à Paris. Développement d'applications web modernes, composants réutilisables et interfaces performantes. 5+ ans d'expérience.",
+    metaDescription: "Expert React.js à Paris. Développement d'applications web modernes, composants réutilisables et interfaces performantes. Depuis 2020.",
     category: "frontend",
     icon: "Atom",
     heroDescription: "Développement d'interfaces utilisateur modernes et réactives avec la bibliothèque JavaScript #1. Composants réutilisables, state management et performance.",

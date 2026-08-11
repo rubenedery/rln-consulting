@@ -1,5 +1,6 @@
 import fs from "fs"
 import path from "path"
+import { cache } from "react"
 import matter from "gray-matter"
 import readingTime from "reading-time"
 import type {
@@ -16,35 +17,31 @@ const CONTENT_PATH = path.join(process.cwd(), "content")
 const BLOG_PATH = path.join(CONTENT_PATH, "blog")
 const CASE_STUDIES_PATH = path.join(CONTENT_PATH, "case-studies")
 
-// Ensure directories exist
-function ensureDirectoryExists(dirPath: string): void {
-  if (!fs.existsSync(dirPath)) {
-    fs.mkdirSync(dirPath, { recursive: true })
-  }
-}
+// Les fonctions de lecture sont mémoïsées avec cache() de React : les lectures
+// disque sont dédupliquées par rendu (pas de cache process qui casserait le
+// rechargement en dev). Écrire sur le FS au rendu est interdit en serverless :
+// on retourne simplement une liste vide si le dossier de contenu manque.
 
 // Get all blog post slugs
-export function getBlogSlugs(): string[] {
-  ensureDirectoryExists(BLOG_PATH)
+export const getBlogSlugs = cache((): string[] => {
+  if (!fs.existsSync(BLOG_PATH)) return []
   return fs
     .readdirSync(BLOG_PATH)
     .filter((file) => file.endsWith(".md") || file.endsWith(".mdx"))
     .map((file) => file.replace(/\.mdx?$/, ""))
-}
+})
 
 // Get all case study slugs
-export function getCaseStudySlugs(): string[] {
-  ensureDirectoryExists(CASE_STUDIES_PATH)
+export const getCaseStudySlugs = cache((): string[] => {
+  if (!fs.existsSync(CASE_STUDIES_PATH)) return []
   return fs
     .readdirSync(CASE_STUDIES_PATH)
     .filter((file) => file.endsWith(".md") || file.endsWith(".mdx"))
     .map((file) => file.replace(/\.mdx?$/, ""))
-}
+})
 
 // Get blog post by slug
-export function getBlogPost(slug: string): BlogPost | null {
-  ensureDirectoryExists(BLOG_PATH)
-
+export const getBlogPost = cache((slug: string): BlogPost | null => {
   const mdPath = path.join(BLOG_PATH, `${slug}.md`)
   const mdxPath = path.join(BLOG_PATH, `${slug}.mdx`)
 
@@ -69,14 +66,14 @@ export function getBlogPost(slug: string): BlogPost | null {
     author: data.author || "RLN Consulting",
     category: (data.category || "developpement") as BlogCategory,
     tags: data.tags || [],
-    image: data.image || "/images/blog/default.jpg",
+    image: data.image || "/og-image.png",
     content,
     readingTime: Math.ceil(stats.minutes),
   }
-}
+})
 
 // Get all blog posts metadata (for listings)
-export function getAllBlogPosts(): BlogPostMeta[] {
+export const getAllBlogPosts = cache((): BlogPostMeta[] => {
   const slugs = getBlogSlugs()
   const posts = slugs
     .map((slug) => {
@@ -92,7 +89,7 @@ export function getAllBlogPosts(): BlogPostMeta[] {
   return posts.sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
   )
-}
+})
 
 // Get blog posts by category
 export function getBlogPostsByCategory(category: BlogCategory): BlogPostMeta[] {
@@ -126,9 +123,7 @@ export function getAllBlogTags(): string[] {
 }
 
 // Get case study by slug
-export function getCaseStudy(slug: string): CaseStudy | null {
-  ensureDirectoryExists(CASE_STUDIES_PATH)
-
+export const getCaseStudy = cache((slug: string): CaseStudy | null => {
   const mdPath = path.join(CASE_STUDIES_PATH, `${slug}.md`)
   const mdxPath = path.join(CASE_STUDIES_PATH, `${slug}.mdx`)
 
@@ -152,15 +147,15 @@ export function getCaseStudy(slug: string): CaseStudy | null {
     date: data.date || "",
     services: data.services || [],
     industry: data.industry || "",
-    image: data.image || "/images/case-studies/default.jpg",
+    image: data.image || "/og-image.png",
     content,
     results: (data.results || []) as CaseStudyResult[],
     testimonial: data.testimonial as CaseStudyTestimonial | undefined,
   }
-}
+})
 
 // Get all case studies metadata (for listings)
-export function getAllCaseStudies(): CaseStudyMeta[] {
+export const getAllCaseStudies = cache((): CaseStudyMeta[] => {
   const slugs = getCaseStudySlugs()
   const studies = slugs
     .map((slug) => {
@@ -176,7 +171,7 @@ export function getAllCaseStudies(): CaseStudyMeta[] {
   return studies.sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
   )
-}
+})
 
 // Get case studies by service
 export function getCaseStudiesByService(service: string): CaseStudyMeta[] {

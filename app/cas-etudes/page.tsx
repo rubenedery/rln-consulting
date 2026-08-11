@@ -49,7 +49,8 @@ export default function CaseStudiesPage() {
             </p>
           </div>
 
-          {/* Case studies grid */}
+          {/* Case studies grid — h2 sr-only : les cartes titrent en h3 */}
+          <h2 className="sr-only">Tous les cas d&apos;études</h2>
           {caseStudies.length > 0 ? (
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {caseStudies.map((caseStudy) => (

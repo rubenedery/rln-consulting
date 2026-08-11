@@ -5,7 +5,7 @@ date: "2026-04-02"
 author: "Ruben Edery"
 category: "strategie"
 tags: ["agence web", "paris", "comparatif", "guide", "développement web", "marketing digital"]
-image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&h=630&fit=crop&q=80"
+image: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&h=630&fit=crop&q=80"
 ---
 
 ## Les meilleures agences web à Paris en 2026

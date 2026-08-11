@@ -35,6 +35,7 @@ import {
   FAQPageJsonLd,
   SpeakableJsonLd,
 } from "@/components/seo"
+import { Breadcrumbs } from "@/components/ui/breadcrumbs"
 import { CTA, FAQ } from "@/components/sections"
 import {
   getExpertiseBySlug,
@@ -129,6 +130,12 @@ export default async function ExpertiseTechPage({ params }: PageProps) {
     .filter((e) => e.slug !== expertise.slug)
     .slice(0, 3)
 
+  const breadcrumbItems = [
+    { name: "Accueil", url: baseUrl },
+    { name: "Expertises", url: `${baseUrl}/expertise` },
+    { name: expertise.name, url: `${baseUrl}/expertise/${expertise.slug}` },
+  ]
+
   return (
     <>
       <ServiceJsonLd
@@ -138,27 +145,9 @@ export default async function ExpertiseTechPage({ params }: PageProps) {
         minPrice={expertise.pricing.minPrice}
         maxPrice={expertise.pricing.maxPrice}
         features={expertise.features}
-        aggregateRating={{
-          ratingValue: 4.9,
-          reviewCount: 35,
-        }}
-        reviews={[
-          {
-            author: "Client satisfait",
-            reviewBody: `Excellent travail sur notre projet ${expertise.name}. Équipe réactive et résultats au rendez-vous.`,
-            ratingValue: 5,
-            datePublished: "2026-02-15",
-          },
-        ]}
         estimatedDuration={expertise.answerFirst.duration.answer.split(".")[0]}
       />
-      <BreadcrumbJsonLd
-        items={[
-          { name: "Accueil", url: baseUrl },
-          { name: "Expertises", url: `${baseUrl}/expertise` },
-          { name: expertise.name, url: `${baseUrl}/expertise/${expertise.slug}` },
-        ]}
-      />
+      <BreadcrumbJsonLd items={breadcrumbItems} />
       <FAQPageJsonLd questions={expertise.faqs} />
       <SpeakableJsonLd
         url={`${baseUrl}/expertise/${expertise.slug}`}
@@ -169,26 +158,14 @@ export default async function ExpertiseTechPage({ params }: PageProps) {
       <section className="py-20 lg:py-28 bg-gradient-to-br from-primary/5 via-background to-accent/5">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           {/* Breadcrumb */}
-          <nav className="mb-8" aria-label="Fil d'Ariane">
-            <ol className="flex items-center gap-2 text-sm text-muted-foreground">
-              <li>
-                <Link href="/" className="hover:text-primary transition-colors">
-                  Accueil
-                </Link>
-              </li>
-              <li>/</li>
-              <li>
-                <Link
-                  href="/expertise"
-                  className="hover:text-primary transition-colors"
-                >
-                  Expertises
-                </Link>
-              </li>
-              <li>/</li>
-              <li className="text-foreground font-medium">{expertise.name}</li>
-            </ol>
-          </nav>
+          <Breadcrumbs
+            items={breadcrumbItems.slice(1).map((item, index, arr) =>
+              index < arr.length - 1
+                ? { label: item.name, href: new URL(item.url).pathname }
+                : { label: item.name }
+            )}
+            className="mb-6"
+          />
 
           <div className="max-w-4xl mx-auto text-center">
             <div className="flex items-center justify-center gap-3 mb-6">
@@ -238,7 +215,7 @@ export default async function ExpertiseTechPage({ params }: PageProps) {
               <Button
                 asChild
                 size="lg"
-                className="bg-accent hover:bg-accent/90"
+                variant="accent"
               >
                 <Link href="/contact">
                   Discutons de votre projet {expertise.name}
@@ -477,7 +454,7 @@ export default async function ExpertiseTechPage({ params }: PageProps) {
                   {expertise.pricing.details}
                 </p>
               )}
-              <Button asChild size="lg" className="bg-accent hover:bg-accent/90">
+              <Button asChild size="lg" variant="accent">
                 <Link href="/contact">
                   Demander un devis personnalisé
                   <ArrowRight className="ml-2 h-4 w-4" />

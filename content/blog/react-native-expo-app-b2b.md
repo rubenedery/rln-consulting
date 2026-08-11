@@ -5,7 +5,7 @@ date: "2026-03-30"
 author: "Ruben Edery"
 category: "developpement"
 tags: ["react-native", "expo", "mobile", "b2b", "offline", "typescript"]
-image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=1200&h=630&fit=crop&q=80"
+image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&h=630&fit=crop&q=80"
 ---
 
 ## Pourquoi React Native + Expo pour une Application B2B ?

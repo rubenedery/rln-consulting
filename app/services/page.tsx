@@ -95,7 +95,7 @@ export default function ServicesPage() {
             <Button
               asChild
               size="lg"
-              className="bg-accent hover:bg-accent/90"
+              variant="accent"
             >
               <Link href="/contact">
                 Discutons de votre projet
@@ -248,7 +248,7 @@ export default function ServicesPage() {
               <Button
                 asChild
                 size="lg"
-                className="w-full bg-accent hover:bg-accent/90"
+                variant="accent" className="w-full"
               >
                 <Link href="/contact">
                   Demander un devis personnalisé

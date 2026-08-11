@@ -448,7 +448,7 @@ export const glossaryTerms: GlossaryTerm[] = [
     definition:
       "Modèle de langage large (LLM) développé par OpenAI, capable de comprendre et générer du texte avec une intelligence proche de l'humain.",
     longDescription:
-      "GPT-4 excelle en rédaction, analyse, code, et raisonnement logique. Fenêtre de contexte de 128K tokens (environ 100 pages). Accessible via l'API OpenAI (0.01-0.03$/1K tokens). Cas d'usage entreprise : automatisation de la rédaction, analyse de documents, assistance client, génération de code. GPT-4o (omni) ajoute la compréhension d'images et l'audio. GPT-4 Turbo offre un meilleur rapport qualité/prix.",
+      "Les modèles GPT d'OpenAI excellent en rédaction, analyse, code et raisonnement logique. Grande fenêtre de contexte (128K tokens et plus selon les versions). Accessibles via l'API OpenAI avec une tarification au token. Cas d'usage entreprise : automatisation de la rédaction, analyse de documents, assistance client, génération de code. Les déclinaisons multimodales ajoutent la compréhension d'images et l'audio.",
     category: "ia",
     relatedTerms: ["llm", "claude", "chatbot-ia", "prompt"],
     relatedServices: ["/services/ia-entreprise"],
@@ -459,7 +459,7 @@ export const glossaryTerms: GlossaryTerm[] = [
     definition:
       "Assistant IA développé par Anthropic, conçu pour être utile, inoffensif et honnête, avec une fenêtre de contexte exceptionnelle.",
     longDescription:
-      "Claude 3.5 Sonnet offre le meilleur rapport performance/prix en 2026. Fenêtre de contexte de 200K tokens (150+ pages). Excellente compréhension des nuances et instructions complexes. Moins de hallucinations que les concurrents. API disponible via Anthropic ou Amazon Bedrock. Idéal pour l'analyse de documents longs, le support client, et les tâches nécessitant précision et fiabilité.",
+      "La famille de modèles Claude (Opus, Sonnet, Haiku) permet d'arbitrer entre performance et coût selon le cas d'usage. Grande fenêtre de contexte (200K tokens, soit 150+ pages). Excellente compréhension des nuances et instructions complexes. API disponible via Anthropic, Amazon Bedrock ou Google Vertex AI. Idéal pour l'analyse de documents longs, le support client, et les tâches nécessitant précision et fiabilité.",
     category: "ia",
     relatedTerms: ["llm", "gpt-4", "chatbot-ia", "rag"],
     relatedServices: ["/services/ia-entreprise"],

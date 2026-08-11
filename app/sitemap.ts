@@ -1,5 +1,5 @@
 import { MetadataRoute } from "next"
-import { getBlogSlugs, getCaseStudySlugs, getBlogPost, getCaseStudy } from "@/lib/mdx"
+import { getAllBlogPosts, getAllCaseStudies } from "@/lib/mdx"
 import { getAllSectorSlugs } from "@/lib/sectors-data"
 import { cities } from "@/lib/cities-data"
 import { getAllGlossarySlugs } from "@/lib/glossary-data"
@@ -153,48 +153,27 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "yearly",
       priority: 0.3,
     },
-    {
-      url: `${baseUrl}/llms.txt`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/feed.xml`,
-      lastModified: new Date(),
-      changeFrequency: "daily",
-      priority: 0.6,
-    },
   ]
 
-  const blogSlugs = getBlogSlugs()
-  const blogPages: MetadataRoute.Sitemap = blogSlugs.map((slug) => {
-    const post = getBlogPost(slug)
-    const postDate = post?.date ? new Date(post.date) : new Date()
-
-    const isGuide = slug.includes("guide") || slug.includes("comment") || slug.includes("tutorial")
-    const isComparison = slug.includes("vs") || slug.includes("comparatif")
+  const blogPages: MetadataRoute.Sitemap = getAllBlogPosts().map((post) => {
+    const isGuide =
+      post.slug.includes("guide") || post.slug.includes("comment") || post.slug.includes("tutorial")
+    const isComparison = post.slug.includes("vs") || post.slug.includes("comparatif")
 
     return {
-      url: `${baseUrl}/blog/${slug}`,
-      lastModified: postDate,
+      url: `${baseUrl}/blog/${post.slug}`,
+      lastModified: post.date ? new Date(post.date) : new Date(),
       changeFrequency: "monthly" as const,
       priority: isGuide || isComparison ? 0.8 : 0.7,
     }
   })
 
-  const caseStudySlugs = getCaseStudySlugs()
-  const caseStudyPages: MetadataRoute.Sitemap = caseStudySlugs.map((slug) => {
-    const study = getCaseStudy(slug)
-    const studyDate = study?.date ? new Date(study.date) : new Date()
-
-    return {
-      url: `${baseUrl}/cas-etudes/${slug}`,
-      lastModified: studyDate,
-      changeFrequency: "monthly" as const,
-      priority: 0.8,
-    }
-  })
+  const caseStudyPages: MetadataRoute.Sitemap = getAllCaseStudies().map((study) => ({
+    url: `${baseUrl}/cas-etudes/${study.slug}`,
+    lastModified: study.date ? new Date(study.date) : new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  }))
 
   const sectorSlugs = getAllSectorSlugs()
   const sectorPages: MetadataRoute.Sitemap = sectorSlugs.map((slug) => ({

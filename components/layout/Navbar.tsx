@@ -3,8 +3,7 @@
 import * as React from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { Menu, ChevronDown, X } from "lucide-react"
-import { motion, AnimatePresence } from "framer-motion"
+import { Menu, X } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import {
@@ -14,6 +13,14 @@ import {
   SheetClose,
   SheetTitle,
 } from "@/components/ui/sheet"
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu"
 import { ThemeToggle } from "@/components/ui/theme-toggle"
 import { track_whatsapp_click, track_cta_click } from "@/components/analytics"
 
@@ -53,12 +60,12 @@ const navigation = [
   { name: "Tarifs", href: "/tarifs" },
   { name: "Cas d'études", href: "/cas-etudes" },
   { name: "Blog", href: "/blog" },
+  { name: "À propos", href: "/a-propos" },
 ]
 
 export function Navbar() {
   const pathname = usePathname()
   const [isScrolled, setIsScrolled] = React.useState(false)
-  const [openDropdown, setOpenDropdown] = React.useState<string | null>(null)
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -91,78 +98,68 @@ export function Navbar() {
             </span>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex md:items-center md:space-x-1">
-            {navigation.map((item) => (
-              <div
-                key={item.name}
-                className="relative"
-                onMouseEnter={() => item.children && setOpenDropdown(item.name)}
-                onMouseLeave={() => setOpenDropdown(null)}
-              >
-                {item.children ? (
-                  <>
-                    <button
+          {/* Desktop Navigation — Radix NavigationMenu : ouverture clavier/clic,
+              aria-expanded, Escape et gestion du focus fournis nativement */}
+          <NavigationMenu viewport={false} className="hidden md:flex">
+            <NavigationMenuList className="md:space-x-1">
+              {navigation.map((item) =>
+                item.children ? (
+                  <NavigationMenuItem key={item.name}>
+                    <NavigationMenuTrigger
                       className={cn(
-                        "flex items-center gap-1 px-3 py-2 text-sm font-medium rounded-md transition-colors",
+                        "h-auto bg-transparent px-3 py-2 text-sm font-medium",
+                        "hover:bg-transparent focus:bg-transparent data-[state=open]:bg-transparent data-[state=open]:hover:bg-transparent data-[state=open]:focus:bg-transparent",
                         isActive(item.href)
-                          ? "text-primary"
-                          : "text-muted-foreground hover:text-foreground"
+                          ? "text-primary hover:text-primary focus:text-primary data-[state=open]:text-primary"
+                          : "text-muted-foreground hover:text-foreground focus:text-foreground data-[state=open]:text-foreground"
                       )}
                     >
                       {item.name}
-                      <ChevronDown
-                        className={cn(
-                          "h-4 w-4 transition-transform",
-                          openDropdown === item.name && "rotate-180"
-                        )}
-                      />
-                    </button>
-                    <AnimatePresence>
-                      {openDropdown === item.name && (
-                        <motion.div
-                          initial={{ opacity: 0, y: -10 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          exit={{ opacity: 0, y: -10 }}
-                          transition={{ duration: 0.15 }}
-                          className="absolute left-0 top-full pt-2"
-                        >
-                          <div className="w-56 rounded-lg border border-border bg-background p-2 shadow-lg">
-                            {item.children.map((child) => (
+                    </NavigationMenuTrigger>
+                    <NavigationMenuContent className="p-2">
+                      <ul className="w-56">
+                        {item.children.map((child) => (
+                          <li key={child.href}>
+                            <NavigationMenuLink asChild>
                               <Link
-                                key={child.href}
                                 href={child.href}
                                 className={cn(
                                   "block rounded-md px-3 py-2 text-sm transition-colors",
+                                  "hover:bg-muted hover:text-foreground focus:bg-muted focus:text-foreground",
                                   isActive(child.href)
                                     ? "bg-primary/10 text-primary"
-                                    : "text-muted-foreground hover:bg-muted hover:text-foreground"
+                                    : "text-muted-foreground"
                                 )}
                               >
                                 {child.name}
                               </Link>
-                            ))}
-                          </div>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </>
+                            </NavigationMenuLink>
+                          </li>
+                        ))}
+                      </ul>
+                    </NavigationMenuContent>
+                  </NavigationMenuItem>
                 ) : (
-                  <Link
-                    href={item.href}
-                    className={cn(
-                      "px-3 py-2 text-sm font-medium rounded-md transition-colors",
-                      isActive(item.href)
-                        ? "text-primary"
-                        : "text-muted-foreground hover:text-foreground"
-                    )}
-                  >
-                    {item.name}
-                  </Link>
-                )}
-              </div>
-            ))}
-          </div>
+                  <NavigationMenuItem key={item.name}>
+                    <NavigationMenuLink asChild>
+                      <Link
+                        href={item.href}
+                        className={cn(
+                          "block rounded-md px-3 py-2 text-sm font-medium transition-colors",
+                          "hover:bg-transparent focus:bg-transparent",
+                          isActive(item.href)
+                            ? "text-primary hover:text-primary focus:text-primary"
+                            : "text-muted-foreground hover:text-foreground focus:text-foreground"
+                        )}
+                      >
+                        {item.name}
+                      </Link>
+                    </NavigationMenuLink>
+                  </NavigationMenuItem>
+                )
+              )}
+            </NavigationMenuList>
+          </NavigationMenu>
 
           {/* Theme Toggle + CTA Buttons */}
           <div className="hidden md:flex md:items-center md:gap-2">

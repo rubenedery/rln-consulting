@@ -163,7 +163,6 @@ export const testimonials: Testimonial[] = [
     author: "Yohan Jaoui",
     role: "Dirigeant",
     company: "YJ Consulting",
-    image: "/images/testimonials/yohan.jpg",
     rating: 5,
     result: "x3 leads qualifiés",
   },
@@ -174,7 +173,6 @@ export const testimonials: Testimonial[] = [
     author: "Ethan Edery",
     role: "Expert-Comptable",
     company: "Cabinet Trust",
-    image: "/images/testimonials/ethan.jpg",
     rating: 5,
     result: "80% tâches automatisées",
   },
@@ -185,7 +183,6 @@ export const testimonials: Testimonial[] = [
     author: "Jean-Baptiste",
     role: "Directeur Commercial",
     company: "JB Solutions",
-    image: "/images/testimonials/jb.jpg",
     rating: 5,
     result: "x2 efficacité commerciale",
   },
@@ -195,8 +192,7 @@ export const testimonials: Testimonial[] = [
       "RLN Consulting a développé des outils internes qui ont transformé notre façon de travailler. L'intégration avec nos systèmes existants s'est faite sans accroc.",
     author: "Sophie",
     role: "Digital Project Manager",
-    company: "Rimowa",
-    image: "/images/testimonials/sophie.jpg",
+    company: "Maison de bagagerie premium",
     rating: 5,
     result: "Intégration réussie",
   },
@@ -207,7 +203,6 @@ export const testimonials: Testimonial[] = [
     author: "David",
     role: "CEO",
     company: "FastDelivery",
-    image: "/images/testimonials/david.jpg",
     rating: 5,
     result: "70% support automatisé",
   },
@@ -219,8 +214,7 @@ export const teamMembers: TeamMember[] = [
     id: "ruben-edery",
     name: "Ruben Edery",
     role: "Fondateur & Lead Developer",
-    bio: "Développeur full-stack avec plus de 8 ans d'expérience dans la création d'applications web performantes. Expert Next.js et React.",
-    image: "/images/team/ruben.jpg",
+    bio: "Fondateur de RLN Consulting en 2020, développeur full-stack spécialisé dans la création d'applications web performantes. Expert Next.js et React.",
     social: {
       linkedin: "https://linkedin.com/in/rubenedery",
       github: "https://github.com/rubenedery",
@@ -260,7 +254,7 @@ export const companyValues = [
 // Company stats
 export const companyStats = [
   { value: "50+", label: "Projets livrés" },
-  { value: "8+", label: "Années d'expérience" },
+  { value: "2020", label: "Actifs depuis" },
   { value: "95%", label: "Clients satisfaits" },
   { value: "24h", label: "Temps de réponse" },
 ]
@@ -288,7 +282,7 @@ export const serviceFaqs: Record<string, FAQItem[]> = {
     },
     {
       question: "Pourquoi choisir Next.js pour mon site web ?",
-      answer: "Next.js offre des performances supérieures : nos sites atteignent en moyenne 98/100 sur PageSpeed (vs 45/100 pour WordPress moyen). Les sites < 2 secondes de chargement génèrent +200% de conversions (Portent 2025). Next.js est utilisé par Netflix, TikTok, Notion et 30% des sites Fortune 500. Le SSR et SSG améliorent significativement le SEO.",
+      answer: "Next.js offre des performances supérieures : nos sites atteignent des scores PageSpeed de 90+ (vs ~45 pour un WordPress moyen). Les sites < 2 secondes de chargement génèrent +200% de conversions (Portent 2025). Next.js est utilisé par Netflix, TikTok, Notion et 30% des sites Fortune 500. Le SSR et SSG améliorent significativement le SEO.",
       category: "services",
     },
     {

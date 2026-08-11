@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { m } from "framer-motion"
 import { GraduationCap, Plug } from "lucide-react"
 import { useCalculator } from "../CalculatorContext"
 import { OptionCard, OptionCardCompact } from "../ui/OptionCard"
@@ -11,7 +11,7 @@ export function StepAIOptions() {
   const { state, dispatch } = useCalculator()
 
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -30,7 +30,7 @@ export function StepAIOptions() {
 
         <div className="grid gap-4 sm:grid-cols-3 max-w-4xl mx-auto">
           {aiComplexityOptions.map((option, index) => (
-            <motion.div
+            <m.div
               key={option.value}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -49,7 +49,7 @@ export function StepAIOptions() {
                   })
                 }
               />
-            </motion.div>
+            </m.div>
           ))}
         </div>
       </div>
@@ -63,7 +63,7 @@ export function StepAIOptions() {
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2 max-w-2xl mx-auto">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3 }}
@@ -78,9 +78,9 @@ export function StepAIOptions() {
                 dispatch({ type: "SET_AI_TRAINING", payload: !state.ai.training })
               }
             />
-          </motion.div>
+          </m.div>
 
-          <motion.div
+          <m.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.35 }}
@@ -95,9 +95,9 @@ export function StepAIOptions() {
                 dispatch({ type: "SET_AI_INTEGRATION", payload: !state.ai.integration })
               }
             />
-          </motion.div>
+          </m.div>
         </div>
       </div>
-    </motion.div>
+    </m.div>
   )
 }

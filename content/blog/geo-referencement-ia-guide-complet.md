@@ -5,7 +5,7 @@ date: "2026-04-03"
 author: "Ruben Edery"
 category: "geo"
 tags: ["geo", "référencement ia", "chatgpt", "perplexity", "llm", "seo"]
-image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&h=630&fit=crop&q=80"
+image: "https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?w=1200&h=630&fit=crop&q=80"
 ---
 
 ## Qu'est-ce que le GEO (Generative Engine Optimization) ?

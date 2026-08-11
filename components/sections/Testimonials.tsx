@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { m } from "framer-motion"
 import { Quote, Star, TrendingUp } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { containerVariants, itemVariants } from "@/lib/animations"
@@ -11,7 +11,7 @@ export function Testimonials() {
     <section className="py-20 lg:py-28">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -28,10 +28,10 @@ export function Testimonials() {
             Découvrez les retours de nos clients satisfaits et leurs résultats
             après avoir travaillé avec nous.
           </p>
-        </motion.div>
+        </m.div>
 
         {/* Testimonials grid */}
-        <motion.div
+        <m.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -39,7 +39,7 @@ export function Testimonials() {
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           {testimonials.map((testimonial) => (
-            <motion.div key={testimonial.id} variants={itemVariants}>
+            <m.div key={testimonial.id} variants={itemVariants}>
               <Card className="h-full border-border/50 hover:border-primary/30 transition-colors relative">
                 {/* Result badge */}
                 {testimonial.result && (
@@ -95,9 +95,9 @@ export function Testimonials() {
                   </div>
                 </CardContent>
               </Card>
-            </motion.div>
+            </m.div>
           ))}
-        </motion.div>
+        </m.div>
       </div>
     </section>
   )

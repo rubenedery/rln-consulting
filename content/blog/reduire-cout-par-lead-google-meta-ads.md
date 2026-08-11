@@ -5,7 +5,7 @@ date: "2026-03-30"
 author: "Ruben Edery"
 category: "marketing"
 tags: ["google-ads", "meta-ads", "facebook-ads", "cpl", "roas", "publicite"]
-image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=630&fit=crop&q=80"
+image: "https://images.unsplash.com/photo-1533750349088-cd871a92f312?w=1200&h=630&fit=crop&q=80"
 ---
 
 ## Votre coût par lead explose ? Voici comment inverser la tendance

@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
 import { BlogPostingJsonLd, BreadcrumbJsonLd } from "@/components/seo"
+import { Breadcrumbs } from "@/components/ui/breadcrumbs"
 import { CTA } from "@/components/sections"
 import { ArticleCard } from "@/components/blog"
 import { MarkdownContent } from "@/components/markdown"
@@ -84,22 +85,31 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     .filter((p) => p.category === post.category && p.slug !== post.slug)
     .slice(0, 3)
 
+  const breadcrumbItems = [
+    { name: "Accueil", url: "https://rln-consulting.com" },
+    { name: "Blog", url: "https://rln-consulting.com/blog" },
+    { name: post.title, url: `https://rln-consulting.com/blog/${post.slug}` },
+  ]
+
   return (
     <>
       <BlogPostingJsonLd
         post={post}
         url={`https://rln-consulting.com/blog/${post.slug}`}
       />
-      <BreadcrumbJsonLd
-        items={[
-          { name: "Accueil", url: "https://rln-consulting.com" },
-          { name: "Blog", url: "https://rln-consulting.com/blog" },
-          { name: post.title, url: `https://rln-consulting.com/blog/${post.slug}` },
-        ]}
-      />
+      <BreadcrumbJsonLd items={breadcrumbItems} />
 
       <article className="py-12 lg:py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <Breadcrumbs
+            items={breadcrumbItems.slice(1).map((item, index, arr) =>
+              index < arr.length - 1
+                ? { label: item.name, href: new URL(item.url).pathname }
+                : { label: item.name }
+            )}
+            className="mb-6"
+          />
+
           {/* Back link */}
           <Button asChild variant="ghost" className="mb-8">
             <Link href="/blog">

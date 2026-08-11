@@ -5,7 +5,7 @@ date: "2026-04-02"
 author: "Ruben Edery"
 category: "strategie"
 tags: ["prix site web", "tarif", "budget", "site vitrine", "e-commerce", "application web"]
-image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=630&fit=crop&q=80"
+image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&h=630&fit=crop&q=80"
 ---
 
 ## Combien coûte un site web en 2026 ?

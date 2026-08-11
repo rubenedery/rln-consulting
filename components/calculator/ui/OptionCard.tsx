@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { m } from "framer-motion"
 import { Check } from "lucide-react"
 import { cn } from "@/lib/utils"
 
@@ -26,7 +26,7 @@ export function OptionCard({
   className,
 }: OptionCardProps) {
   return (
-    <motion.button
+    <m.button
       type="button"
       onClick={onClick}
       className={cn(
@@ -48,7 +48,7 @@ export function OptionCard({
       )}
 
       {/* Selection indicator */}
-      <motion.div
+      <m.div
         className={cn(
           "absolute top-4 right-4 w-6 h-6 rounded-full border-2 flex items-center justify-center",
           selected
@@ -61,15 +61,15 @@ export function OptionCard({
         transition={{ duration: 0.15 }}
       >
         {selected && (
-          <motion.div
+          <m.div
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ duration: 0.2 }}
           >
             <Check className="w-4 h-4 text-primary-foreground" />
-          </motion.div>
+          </m.div>
         )}
-      </motion.div>
+      </m.div>
 
       {/* Content */}
       <div className="flex items-start gap-4 w-full pr-10">
@@ -112,7 +112,7 @@ export function OptionCard({
           </span>
         </div>
       )}
-    </motion.button>
+    </m.button>
   )
 }
 
@@ -137,7 +137,7 @@ export function OptionCardCompact({
   className,
 }: OptionCardCompactProps) {
   return (
-    <motion.button
+    <m.button
       type="button"
       onClick={onClick}
       className={cn(
@@ -152,7 +152,7 @@ export function OptionCardCompact({
       transition={{ duration: 0.1 }}
     >
       {/* Checkbox */}
-      <motion.div
+      <m.div
         className={cn(
           "flex-shrink-0 w-5 h-5 rounded border-2 flex items-center justify-center",
           selected
@@ -161,15 +161,15 @@ export function OptionCardCompact({
         )}
       >
         {selected && (
-          <motion.div
+          <m.div
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ duration: 0.15 }}
           >
             <Check className="w-3 h-3 text-primary-foreground" />
-          </motion.div>
+          </m.div>
         )}
-      </motion.div>
+      </m.div>
 
       {/* Icon */}
       {Icon && (
@@ -204,6 +204,6 @@ export function OptionCardCompact({
           {price}
         </span>
       )}
-    </motion.button>
+    </m.button>
   )
 }

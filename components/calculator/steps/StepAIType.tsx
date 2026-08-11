@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { m } from "framer-motion"
 import { useCalculator } from "../CalculatorContext"
 import { OptionCard } from "../ui/OptionCard"
 import { aiSolutionOptions } from "@/lib/pricing-data"
@@ -14,7 +14,7 @@ export function StepAIType() {
   }
 
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -31,7 +31,7 @@ export function StepAIType() {
 
       <div className="grid gap-4 sm:grid-cols-2 max-w-3xl mx-auto">
         {aiSolutionOptions.map((option, index) => (
-          <motion.div
+          <m.div
             key={option.value}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -46,9 +46,9 @@ export function StepAIType() {
               popular={option.popular}
               onClick={() => handleSelect(option.value)}
             />
-          </motion.div>
+          </m.div>
         ))}
       </div>
-    </motion.div>
+    </m.div>
   )
 }

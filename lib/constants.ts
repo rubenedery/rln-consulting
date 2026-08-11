@@ -15,10 +15,11 @@ export const siteConfig = {
   },
 
   social: {
-    // TODO: Remplacer par les vrais liens sociaux
-    linkedin: "https://linkedin.com/company/rln-consulting",
-    twitter: "https://twitter.com/rlnconsulting",
-    github: "https://github.com/rlnconsulting",
+    // Laisser vide tant que les profils n'existent pas : les consommateurs
+    // (footer, sameAs JSON-LD) filtrent les valeurs vides.
+    linkedin: "",
+    twitter: "",
+    github: "",
   },
 
   founder: {

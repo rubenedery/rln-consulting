@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { motion } from "framer-motion"
+import { m } from "framer-motion"
 import Link from "next/link"
 import { ArrowRight, Check, RotateCcw, Sparkles } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -54,21 +54,21 @@ export function StepResults() {
   const contactUrl = `/contact?${contactParams.toString()}`
 
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       className="space-y-8"
     >
       <div className="text-center mb-8">
-        <motion.div
+        <m.div
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           transition={{ type: "spring", stiffness: 200, damping: 15 }}
           className="w-16 h-16 bg-success/10 rounded-full flex items-center justify-center mx-auto mb-4"
         >
           <Sparkles className="w-8 h-8 text-success" />
-        </motion.div>
+        </m.div>
         <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-3">
           Votre estimation
         </h2>
@@ -78,7 +78,7 @@ export function StepResults() {
       </div>
 
       {/* Main price card */}
-      <motion.div
+      <m.div
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.2 }}
@@ -90,12 +90,12 @@ export function StepResults() {
                 Estimation {priceEstimate.isRecurring ? "mensuelle" : ""}
               </p>
               <div className="flex items-baseline justify-center gap-2">
-                <motion.span
+                <m.span
                   className="text-5xl sm:text-6xl font-bold text-foreground"
                   key={animatedTotal}
                 >
                   {animatedTotal.toLocaleString("fr-FR")}
-                </motion.span>
+                </m.span>
                 <span className="text-2xl text-muted-foreground">€</span>
                 {priceEstimate.isRecurring && (
                   <span className="text-lg text-muted-foreground">/mois</span>
@@ -107,10 +107,10 @@ export function StepResults() {
             </div>
           </CardContent>
         </Card>
-      </motion.div>
+      </m.div>
 
       {/* Price breakdown */}
-      <motion.div
+      <m.div
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.4 }}
@@ -122,10 +122,10 @@ export function StepResults() {
             <BreakdownItem key={index} item={item} index={index} />
           ))}
         </div>
-      </motion.div>
+      </m.div>
 
       {/* CTA Buttons */}
-      <motion.div
+      <m.div
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.6 }}
@@ -150,18 +150,18 @@ export function StepResults() {
           <RotateCcw className="mr-2 h-4 w-4" />
           Recommencer
         </Button>
-      </motion.div>
+      </m.div>
 
       {/* Disclaimer */}
-      <motion.p
+      <m.p
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.8 }}
         className="text-center text-xs text-muted-foreground max-w-md mx-auto"
       >
         Cette estimation est donnée à titre indicatif. Le prix final dépendra des spécificités de votre projet après analyse détaillée.
-      </motion.p>
-    </motion.div>
+      </m.p>
+    </m.div>
   )
 }
 
@@ -170,7 +170,7 @@ function BreakdownItem({ item, index }: { item: PriceBreakdownItem; index: numbe
   const isDiscount = item.type === "discount"
 
   return (
-    <motion.div
+    <m.div
       initial={{ x: -20, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
       transition={{ delay: 0.5 + index * 0.05 }}
@@ -187,6 +187,6 @@ function BreakdownItem({ item, index }: { item: PriceBreakdownItem; index: numbe
       >
         {isDiscount ? "" : "+"}{item.amount.toLocaleString("fr-FR")}€
       </span>
-    </motion.div>
+    </m.div>
   )
 }

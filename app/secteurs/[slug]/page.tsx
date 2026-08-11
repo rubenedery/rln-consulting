@@ -16,6 +16,7 @@ import { Badge } from "@/components/ui/badge"
 import { Separator } from "@/components/ui/separator"
 import { WebPageJsonLd, BreadcrumbJsonLd, FAQPageJsonLd } from "@/components/seo"
 import { TrustBadges } from "@/components/ui/trust-badges"
+import { Breadcrumbs } from "@/components/ui/breadcrumbs"
 import {
   sectors,
   getSectorBySlug,
@@ -105,6 +106,12 @@ export default async function SectorPage({ params }: PageProps) {
     answer: faq.answer,
   }))
 
+  const breadcrumbItems = [
+    { name: "Accueil", url: "https://rln-consulting.com" },
+    { name: "Secteurs", url: "https://rln-consulting.com/secteurs" },
+    { name: sector.name, url: `https://rln-consulting.com/secteurs/${sector.slug}` },
+  ]
+
   return (
     <>
       {/* SEO JSON-LD */}
@@ -113,18 +120,20 @@ export default async function SectorPage({ params }: PageProps) {
         description={sector.metaDescription}
         url={`https://rln-consulting.com/secteurs/${sector.slug}`}
       />
-      <BreadcrumbJsonLd
-        items={[
-          { name: "Accueil", url: "https://rln-consulting.com" },
-          { name: "Secteurs", url: "https://rln-consulting.com/secteurs" },
-          { name: sector.name, url: `https://rln-consulting.com/secteurs/${sector.slug}` },
-        ]}
-      />
+      <BreadcrumbJsonLd items={breadcrumbItems} />
       <FAQPageJsonLd questions={faqJsonLd} />
 
       {/* Hero Section */}
       <section className="py-16 lg:py-24 bg-gradient-to-b from-primary/5 to-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <Breadcrumbs
+            items={breadcrumbItems.slice(1).map((item, index, arr) =>
+              index < arr.length - 1
+                ? { label: item.name, href: new URL(item.url).pathname }
+                : { label: item.name }
+            )}
+            className="mb-6"
+          />
           <div className="max-w-4xl mx-auto text-center">
             <Badge variant="secondary" className="mb-4">
               Site web pour {sector.namePlural.toLowerCase()}

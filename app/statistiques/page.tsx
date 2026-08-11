@@ -173,8 +173,8 @@ const rlnStats = [
     icon: Percent,
   },
   {
-    value: "98/100",
-    label: "score PageSpeed moyen de nos sites Next.js",
+    value: "90+",
+    label: "score PageSpeed visé sur nos sites Next.js",
     icon: Zap,
   },
   {
