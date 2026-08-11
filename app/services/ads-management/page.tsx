@@ -18,6 +18,9 @@ import { CTA, FAQ } from "@/components/sections"
 import { serviceFaqs } from "@/lib/content"
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/services/ads-management",
+  },
   title: "Gestion Publicités | Facebook Ads & Google Ads",
   description:
     "Gestion et optimisation de vos campagnes publicitaires Facebook Ads, Google Ads et LinkedIn Ads. Stratégie, création, A/B testing et reporting.",

@@ -20,6 +20,9 @@ import { CTA, FAQ } from "@/components/sections"
 import { serviceFaqs } from "@/lib/content"
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/services/ia-entreprise",
+  },
   title: "IA pour Entreprises | Chatbots, Automatisation & Intégration",
   description:
     "Intégrez l'intelligence artificielle dans votre entreprise. Chatbots, automatisation des tâches, analyse de données et assistants IA sur mesure.",

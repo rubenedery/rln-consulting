@@ -7,6 +7,9 @@ import { FAQ, CTA } from "@/components/sections"
 import { faqData } from "@/lib/content"
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/faq",
+  },
   title: "FAQ | Questions Fréquentes",
   description:
     "Retrouvez les réponses aux questions les plus courantes sur nos services de développement web et gestion publicitaire. Tarifs, délais, processus.",

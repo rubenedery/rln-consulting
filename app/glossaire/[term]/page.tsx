@@ -62,7 +62,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       type: "article",
     },
     alternates: {
-      canonical: `${baseUrl}/glossaire/${term.slug}`,
+      canonical: `/glossaire/${term.slug}`,
     },
   }
 }

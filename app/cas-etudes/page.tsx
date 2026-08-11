@@ -5,6 +5,9 @@ import { WebPageJsonLd, BreadcrumbJsonLd } from "@/components/seo"
 import { CTA } from "@/components/sections"
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/cas-etudes",
+  },
   title: "Cas d'Études | Nos Réalisations et Résultats Clients",
   description:
     "Découvrez nos cas d'études détaillés : développement web, marketing digital et optimisation de performance. Résultats concrets et mesurables.",

@@ -4,6 +4,13 @@ import { WebPageJsonLd, BreadcrumbJsonLd } from "@/components/seo"
 import { BlogList } from "./BlogList"
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/blog",
+    // Redéclaré ici car définir `alternates` remplace intégralement celui du layout
+    types: {
+      "application/rss+xml": "https://rln-consulting.com/feed.xml",
+    },
+  },
   title: "Blog | Articles sur le Développement Web et Marketing Digital",
   description:
     "Découvrez nos articles sur le développement web, le SEO, le marketing digital et les dernières tendances tech. Conseils et tutoriels pratiques.",

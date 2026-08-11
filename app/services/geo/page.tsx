@@ -20,6 +20,9 @@ import { ServiceJsonLd, BreadcrumbJsonLd, FAQPageJsonLd } from "@/components/seo
 import { CTA } from "@/components/sections"
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/services/geo",
+  },
   title: "GEO - Référencement IA | Optimisation pour ChatGPT, Perplexity & Google AI",
   description:
     "Optimisez votre visibilité sur les moteurs de recherche IA. Soyez cité par ChatGPT, Perplexity et Google AI Overview grâce au Generative Engine Optimization (GEO).",

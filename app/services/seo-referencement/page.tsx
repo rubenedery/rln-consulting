@@ -8,6 +8,9 @@ import { CTA, FAQ } from "@/components/sections"
 import { serviceFaqs } from "@/lib/content"
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/services/seo-referencement",
+  },
   title: "SEO & Référencement | Apparaissez en Premier sur Google",
   description:
     "Stratégie SEO complète pour améliorer votre visibilité sur Google. Audit SEO, optimisation on-page, SEO local, stratégie de contenu.",

@@ -110,12 +110,20 @@ const nextConfig: NextConfig = {
   // Redirections (ex: anciennes URLs)
   async redirects() {
     return [
-      // Rediriger les anciennes URLs si nécessaire
-      // {
-      //   source: "/ancien-chemin",
-      //   destination: "/nouveau-chemin",
-      //   permanent: true,
-      // },
+      // www → apex : le site ne doit exister que sous un seul hôte,
+      // sinon Google indexe deux versions concurrentes
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.rln-consulting.com" }],
+        destination: "https://rln-consulting.com/:path*",
+        permanent: true,
+      },
+      // Ancienne page portfolio devenue cas-etudes
+      {
+        source: "/portfolio",
+        destination: "/cas-etudes",
+        permanent: true,
+      },
     ]
   },
 

@@ -20,6 +20,9 @@ import { Badge } from "@/components/ui/badge"
 import { WebPageJsonLd, BreadcrumbJsonLd } from "@/components/seo"
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/statistiques",
+  },
   title: "Statistiques & Benchmarks 2026 | Marketing Digital, Web & IA",
   description:
     "Données et statistiques clés du digital en 2026 : taux de conversion, coûts d'acquisition, ROI marketing, performance web. Benchmarks sectoriels pour guider vos décisions.",

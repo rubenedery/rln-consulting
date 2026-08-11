@@ -8,6 +8,9 @@ import { CTA, FAQ } from "@/components/sections"
 import { serviceFaqs } from "@/lib/content"
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/services/email-marketing",
+  },
   title: "Email Marketing & Automation | Convertissez vos prospects",
   description:
     "Stratégies d'email marketing et automatisation. Séquences automatisées, newsletters, lead nurturing. Convertissez et fidélisez vos prospects.",

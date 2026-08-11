@@ -9,6 +9,9 @@ import { sectors, categoryLabels, getSectorsByCategory } from "@/lib/sectors-dat
 import type { Sector } from "@/types/sectors"
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/secteurs",
+  },
   title: "Sites Web par Secteur d'Activité | Solutions Métier",
   description:
     "Découvrez nos solutions web adaptées à votre secteur : restaurants, avocats, médecins, artisans, e-commerce... 30+ métiers accompagnés.",

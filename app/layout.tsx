@@ -104,7 +104,8 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://rln-consulting.com",
+    // Pas de canonical ici : il serait hérité par TOUTES les pages sans canonical propre,
+    // ce qui indiquerait à Google qu'elles sont des doublons de la page d'accueil.
     types: {
       "application/rss+xml": "https://rln-consulting.com/feed.xml",
       "text/plain": "https://rln-consulting.com/llms.txt",

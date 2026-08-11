@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     type: "website",
   },
   alternates: {
-    canonical: `${baseUrl}/glossaire`,
+    canonical: "/glossaire",
   },
 }
 

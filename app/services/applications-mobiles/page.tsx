@@ -8,6 +8,9 @@ import { CTA, FAQ } from "@/components/sections"
 import { serviceFaqs } from "@/lib/content"
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/services/applications-mobiles",
+  },
   title: "Applications Mobiles | iOS & Android Sur Mesure",
   description:
     "Développement d'applications mobiles iOS et Android. Apps natives ou cross-platform avec React Native et Flutter. Publication sur les stores.",

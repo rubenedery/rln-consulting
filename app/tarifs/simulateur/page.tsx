@@ -6,6 +6,9 @@ import { WebPageJsonLd, BreadcrumbJsonLd, SoftwareApplicationJsonLd } from "@/co
 import { PriceCalculator } from "@/components/calculator/PriceCalculator"
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/tarifs/simulateur",
+  },
   title: "Simulateur de Prix | Estimez votre projet digital",
   description:
     "Obtenez une estimation instantanée pour votre projet web, publicité ou IA. Calculateur interactif gratuit et sans engagement.",

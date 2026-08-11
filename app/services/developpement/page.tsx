@@ -8,6 +8,9 @@ import { CTA, FAQ } from "@/components/sections"
 import { serviceFaqs } from "@/lib/content"
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/services/developpement",
+  },
   title: "Développement Web | Next.js, React & Applications Sur Mesure",
   description:
     "Services de développement web sur mesure. Création de sites vitrines, e-commerce et applications web avec Next.js, React et TypeScript. Optimisation performance et SEO.",

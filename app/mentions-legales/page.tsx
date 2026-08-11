@@ -2,6 +2,9 @@ import type { Metadata } from "next"
 import { WebPageJsonLd, BreadcrumbJsonLd } from "@/components/seo"
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/mentions-legales",
+  },
   title: "Mentions Légales",
   description:
     "Mentions légales de RLN Consulting. Informations sur l'éditeur, l'hébergeur et les conditions d'utilisation du site.",

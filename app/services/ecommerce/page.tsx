@@ -8,6 +8,9 @@ import { CTA, FAQ } from "@/components/sections"
 import { serviceFaqs } from "@/lib/content"
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/services/ecommerce",
+  },
   title: "E-commerce | Boutiques en Ligne Performantes",
   description:
     "Création de boutiques en ligne e-commerce. Shopify, WooCommerce ou sur mesure. Paiement sécurisé, gestion des stocks, Click & Collect.",

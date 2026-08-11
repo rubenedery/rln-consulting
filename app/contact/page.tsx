@@ -11,6 +11,9 @@ import { CalendlyWidget } from "@/components/ui/calendly-widget"
 import { TrustBadges } from "@/components/ui/trust-badges"
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/contact",
+  },
   title: "Contact | Discutons de Votre Projet",
   description:
     "Contactez RLN Consulting pour discuter de votre projet web ou marketing digital. Devis gratuit et réponse sous 24h.",

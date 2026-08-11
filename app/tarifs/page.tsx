@@ -8,6 +8,9 @@ import { WebPageJsonLd, BreadcrumbJsonLd } from "@/components/seo"
 import { TrustBadges } from "@/components/ui/trust-badges"
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/tarifs",
+  },
   title: "Tarifs | Nos Forfaits de Développement Web et Marketing",
   description:
     "Découvrez nos forfaits de développement web et marketing digital. Des solutions adaptées à chaque budget, du site vitrine à l'application sur mesure.",

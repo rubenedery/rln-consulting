@@ -2,6 +2,9 @@ import type { Metadata } from "next"
 import { WebPageJsonLd, BreadcrumbJsonLd } from "@/components/seo"
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/confidentialite",
+  },
   title: "Politique de Confidentialité",
   description:
     "Politique de confidentialité de RLN Consulting. Découvrez comment nous collectons, utilisons et protégeons vos données personnelles conformément au RGPD.",

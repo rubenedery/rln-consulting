@@ -86,7 +86,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       url: `https://rln-consulting.com/secteurs/${sector.slug}`,
     },
     alternates: {
-      canonical: `https://rln-consulting.com/secteurs/${sector.slug}`,
+      canonical: `/secteurs/${sector.slug}`,
     },
   }
 }

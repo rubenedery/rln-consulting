@@ -28,6 +28,9 @@ import { CTA } from "@/components/sections"
 import { getAllExpertises } from "@/lib/expertise-data"
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/expertise",
+  },
   title: "Expertises Techniques | Développeurs Next.js, React, Node.js Paris",
   description:
     "Nos expertises techniques : Next.js, React, TypeScript, Shopify, Node.js, Tailwind CSS, PostgreSQL et IA Générative. Développeurs experts à Paris pour vos projets web.",

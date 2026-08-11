@@ -10,6 +10,13 @@ import {
 } from "@/components/sections"
 import { WebSiteJsonLd, OrganizationJsonLd, LocalBusinessJsonLd } from "@/components/seo"
 import { getAllCaseStudies } from "@/lib/mdx"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "/",
+  },
+}
 
 export default function HomePage() {
   const caseStudies = getAllCaseStudies()

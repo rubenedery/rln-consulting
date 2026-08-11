@@ -8,6 +8,9 @@ import { CTA } from "@/components/sections"
 import { services } from "@/lib/content"
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/services",
+  },
   title: "Services | Développement Web, Publicités, IA & Référencement IA (GEO)",
   description:
     "Découvrez nos services : développement web (Next.js, React), gestion publicitaire, intégration IA et GEO (Generative Engine Optimization) pour être cité par ChatGPT et Perplexity.",

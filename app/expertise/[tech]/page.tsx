@@ -108,7 +108,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       ],
     },
     alternates: {
-      canonical: `${baseUrl}/expertise/${expertise.slug}`,
+      canonical: `/expertise/${expertise.slug}`,
     },
   }
 }

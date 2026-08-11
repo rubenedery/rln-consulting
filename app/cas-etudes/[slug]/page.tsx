@@ -38,6 +38,9 @@ export async function generateMetadata({
   return {
     title: `${caseStudy.title} | Cas d'étude`,
     description: caseStudy.description,
+    alternates: {
+      canonical: `/cas-etudes/${caseStudy.slug}`,
+    },
     openGraph: {
       title: caseStudy.title,
       description: caseStudy.description,

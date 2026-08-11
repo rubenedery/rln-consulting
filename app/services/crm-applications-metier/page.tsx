@@ -8,6 +8,9 @@ import { CTA, FAQ } from "@/components/sections"
 import { serviceFaqs } from "@/lib/content"
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/services/crm-applications-metier",
+  },
   title: "CRM & Applications Métier | Solutions Sur Mesure",
   description:
     "Développement de CRM et applications métier sur mesure. Tableaux de bord, gestion pipeline, automatisations. Solutions adaptées à vos processus.",

@@ -17,6 +17,9 @@ import { CTA } from "@/components/sections"
 import { companyStats, companyValues, teamMembers } from "@/lib/content"
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/a-propos",
+  },
   title: "À Propos | Notre Histoire et Notre Équipe",
   description:
     "Découvrez l'histoire de RLN Consulting, notre équipe et nos valeurs. Une agence web passionnée par le développement et le marketing digital.",

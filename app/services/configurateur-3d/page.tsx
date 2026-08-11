@@ -8,6 +8,9 @@ import { CTA, FAQ } from "@/components/sections"
 import { serviceFaqs } from "@/lib/content"
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/services/configurateur-3d",
+  },
   title: "Configurateurs 3D | Personnalisation Produits en Temps Réel",
   description:
     "Développement de configurateurs 3D interactifs pour personnaliser vos produits : lunettes, valises, meubles, bijoux. Visualisation temps réel et intégration e-commerce.",
