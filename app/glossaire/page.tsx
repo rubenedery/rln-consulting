@@ -10,8 +10,9 @@ import {
   type GlossaryCategory,
 } from "@/lib/glossary-data"
 import { WebPageJsonLd, BreadcrumbJsonLd, ItemListJsonLd } from "@/components/seo"
+import { siteConfig } from "@/lib/constants"
 
-const baseUrl = "https://rln-consulting.com"
+const baseUrl = siteConfig.url
 
 export const metadata: Metadata = {
   title: "Glossaire Marketing Digital & Développement Web",

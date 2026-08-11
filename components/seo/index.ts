@@ -11,7 +11,6 @@ export {
   BreadcrumbJsonLd,
   // Nouveaux schémas pour optimisation LLM
   PersonJsonLd,
-  HowToJsonLd,
   DefinedTermJsonLd,
   SoftwareApplicationJsonLd,
   SpeakableJsonLd,

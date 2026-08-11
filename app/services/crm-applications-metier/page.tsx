@@ -7,6 +7,7 @@ import { ServiceJsonLd, BreadcrumbJsonLd, FAQPageJsonLd } from "@/components/seo
 import { Breadcrumbs } from "@/components/ui/breadcrumbs"
 import { CTA, FAQ } from "@/components/sections"
 import { serviceFaqs } from "@/lib/content"
+import { siteConfig } from "@/lib/constants"
 
 export const metadata: Metadata = {
   alternates: {
@@ -26,7 +27,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "CRM & Applications Métier | RLN Consulting",
     description: "Solutions CRM et applications métier sur mesure pour votre entreprise.",
-    url: "https://rln-consulting.com/services/crm-applications-metier",
+    url: `${siteConfig.url}/services/crm-applications-metier`,
   },
 }
 
@@ -77,9 +78,9 @@ const technologies = [
 
 export default function CrmApplicationsMetierPage() {
   const breadcrumbItems = [
-    { name: "Accueil", url: "https://rln-consulting.com" },
-    { name: "Services", url: "https://rln-consulting.com/services" },
-    { name: "CRM & Applications Métier", url: "https://rln-consulting.com/services/crm-applications-metier" },
+    { name: "Accueil", url: siteConfig.url },
+    { name: "Services", url: `${siteConfig.url}/services` },
+    { name: "CRM & Applications Métier", url: `${siteConfig.url}/services/crm-applications-metier` },
   ]
 
   return (
@@ -87,7 +88,7 @@ export default function CrmApplicationsMetierPage() {
       <ServiceJsonLd
         name="CRM & Applications Métier"
         description="Développement de CRM et applications métier sur mesure. Tableaux de bord, gestion pipeline, automatisations."
-        url="https://rln-consulting.com/services/crm-applications-metier"
+        url={`${siteConfig.url}/services/crm-applications-metier`}
       />
       <BreadcrumbJsonLd items={breadcrumbItems} />
       <FAQPageJsonLd questions={serviceFaqs["crm-applications-metier"]} />

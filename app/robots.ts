@@ -1,7 +1,8 @@
 import { MetadataRoute } from "next"
+import { siteConfig } from "@/lib/constants"
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = "https://rln-consulting.com"
+  const baseUrl = siteConfig.url
 
   return {
     rules: [

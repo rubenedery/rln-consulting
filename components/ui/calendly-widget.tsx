@@ -121,28 +121,3 @@ export function CalendlyWidget({
   )
 }
 
-// Composant pour intégration inline (embed)
-interface CalendlyEmbedProps {
-  url?: string
-  height?: string
-  className?: string
-}
-
-export function CalendlyEmbed({
-  url = DEFAULT_CALENDLY_URL,
-  height = "700px",
-  className,
-}: CalendlyEmbedProps) {
-  return (
-    <div className={cn("w-full", className)}>
-      <iframe
-        src={url}
-        width="100%"
-        height={height}
-        frameBorder="0"
-        title="Réserver un rendez-vous avec RLN Consulting"
-        className="rounded-lg border border-border"
-      />
-    </div>
-  )
-}

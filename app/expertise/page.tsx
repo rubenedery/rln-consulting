@@ -26,6 +26,7 @@ import {
 import { WebPageJsonLd, BreadcrumbJsonLd, ItemListJsonLd } from "@/components/seo"
 import { CTA } from "@/components/sections"
 import { getAllExpertises } from "@/lib/expertise-data"
+import { siteConfig } from "@/lib/constants"
 
 export const metadata: Metadata = {
   alternates: {
@@ -49,7 +50,7 @@ export const metadata: Metadata = {
     title: "Expertises Techniques | RLN Consulting",
     description:
       "Développeurs experts Next.js, React, Node.js et IA Générative à Paris. Solutions sur-mesure pour PME et startups.",
-    url: "https://rln-consulting.com/expertise",
+    url: `${siteConfig.url}/expertise`,
     images: [
       {
         url: "/api/og?title=Expertises+Techniques&description=Next.js%2C+React%2C+Node.js%2C+IA+G%C3%A9n%C3%A9rative&type=service",
@@ -111,12 +112,12 @@ export default function ExpertisePage() {
       <WebPageJsonLd
         title="Expertises Techniques - RLN Consulting"
         description="Nos expertises techniques : Next.js, React, TypeScript, Shopify, Node.js, Tailwind CSS, PostgreSQL et IA Générative."
-        url="https://rln-consulting.com/expertise"
+        url={`${siteConfig.url}/expertise`}
       />
       <BreadcrumbJsonLd
         items={[
-          { name: "Accueil", url: "https://rln-consulting.com" },
-          { name: "Expertises", url: "https://rln-consulting.com/expertise" },
+          { name: "Accueil", url: siteConfig.url },
+          { name: "Expertises", url: `${siteConfig.url}/expertise` },
         ]}
       />
       <ItemListJsonLd
@@ -124,7 +125,7 @@ export default function ExpertisePage() {
         items={expertises.map((exp, index) => ({
           position: index + 1,
           name: exp.name,
-          url: `https://rln-consulting.com/expertise/${exp.slug}`,
+          url: `${siteConfig.url}/expertise/${exp.slug}`,
         }))}
       />
 

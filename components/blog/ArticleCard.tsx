@@ -1,7 +1,7 @@
 import Link from "next/link"
-import Image from "next/image"
 import { Calendar, Clock, User } from "lucide-react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { CardImage } from "@/components/ui/card-image"
 import { Badge } from "@/components/ui/badge"
 import { blogCategories, type BlogPostMeta } from "@/types"
 
@@ -37,22 +37,13 @@ export function ArticleCard({ post, searchQuery = "" }: ArticleCardProps) {
   return (
     <Link href={`/blog/${post.slug}`}>
       <Card className="h-full overflow-hidden hover:shadow-lg transition-all duration-300 group border-border/50 hover:border-primary/30">
-        {/* Image */}
-        <div className="aspect-video bg-muted relative overflow-hidden">
-          <Image
-            src={post.image}
-            alt={post.title}
-            fill
-            className="object-cover transition-transform duration-300 group-hover:scale-105"
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-          <div className="absolute top-4 left-4">
+        <CardImage src={post.image} alt={post.title} gradientClassName="from-black/40">
+          <div className="absolute top-4 left-4 z-20">
             <Badge variant="secondary" className="bg-primary text-primary-foreground">
               {blogCategories[post.category]}
             </Badge>
           </div>
-        </div>
+        </CardImage>
 
         <CardHeader className="pb-2">
           <CardTitle className="text-lg group-hover:text-primary transition-colors line-clamp-2">

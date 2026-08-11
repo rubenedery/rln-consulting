@@ -2,7 +2,7 @@ import { getAllBlogPosts } from "@/lib/mdx"
 import { getAllCaseStudies } from "@/lib/mdx"
 import { siteConfig } from "@/lib/constants"
 
-const baseUrl = "https://rln-consulting.com"
+const baseUrl = siteConfig.url
 
 function escapeXml(text: string): string {
   return text

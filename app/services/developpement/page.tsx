@@ -7,6 +7,7 @@ import { ServiceJsonLd, BreadcrumbJsonLd, FAQPageJsonLd } from "@/components/seo
 import { Breadcrumbs } from "@/components/ui/breadcrumbs"
 import { CTA, FAQ } from "@/components/sections"
 import { serviceFaqs } from "@/lib/content"
+import { siteConfig } from "@/lib/constants"
 
 export const metadata: Metadata = {
   alternates: {
@@ -29,7 +30,7 @@ export const metadata: Metadata = {
     title: "Développement Web | RLN Consulting",
     description:
       "Services de développement web sur mesure avec Next.js et React.",
-    url: "https://rln-consulting.com/services/developpement",
+    url: `${siteConfig.url}/services/developpement`,
     images: [{ url: "/api/og?title=D%C3%A9veloppement+Web&description=Next.js%2C+React+%26+Applications+Sur+Mesure&type=service", width: 1200, height: 630 }],
   },
 }
@@ -117,11 +118,11 @@ const process = [
 
 export default function DeveloppementPage() {
   const breadcrumbItems = [
-    { name: "Accueil", url: "https://rln-consulting.com" },
-    { name: "Services", url: "https://rln-consulting.com/services" },
+    { name: "Accueil", url: siteConfig.url },
+    { name: "Services", url: `${siteConfig.url}/services` },
     {
       name: "Développement Web",
-      url: "https://rln-consulting.com/services/developpement",
+      url: `${siteConfig.url}/services/developpement`,
     },
   ]
 
@@ -130,7 +131,7 @@ export default function DeveloppementPage() {
       <ServiceJsonLd
         name="Développement Web - Sites & Applications Sur Mesure"
         description="Services de développement web sur mesure avec Next.js et React. Création de sites vitrines (à partir de 2 000€), e-commerce (à partir de 5 000€) et applications web personnalisées. Optimisation SEO et performance incluses."
-        url="https://rln-consulting.com/services/developpement"
+        url={`${siteConfig.url}/services/developpement`}
         minPrice={2000}
         maxPrice={50000}
         features={[

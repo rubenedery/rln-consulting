@@ -6,6 +6,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Badge } from "@/components/ui/badge"
 import { WebPageJsonLd, BreadcrumbJsonLd } from "@/components/seo"
 import { TrustBadges } from "@/components/ui/trust-badges"
+import { siteConfig } from "@/lib/constants"
 
 export const metadata: Metadata = {
   alternates: {
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
     title: "Tarifs et Forfaits | RLN Consulting",
     description:
       "Forfaits flexibles pour votre projet digital. Devis gratuit et sans engagement.",
-    url: "https://rln-consulting.com/tarifs",
+    url: `${siteConfig.url}/tarifs`,
     images: [{ url: "/api/og?title=Tarifs+%26+Forfaits&description=Des+solutions+adapt%C3%A9es+%C3%A0+chaque+budget%2C+du+site+vitrine+%C3%A0+l%27application+sur+mesure&type=tarifs", width: 1200, height: 630 }],
   },
 }
@@ -136,12 +137,12 @@ export default function TarifsPage() {
       <WebPageJsonLd
         title="Tarifs et Forfaits | RLN Consulting"
         description="Nos forfaits de développement web et marketing digital. Solutions adaptées à chaque budget."
-        url="https://rln-consulting.com/tarifs"
+        url={`${siteConfig.url}/tarifs`}
       />
       <BreadcrumbJsonLd
         items={[
-          { name: "Accueil", url: "https://rln-consulting.com" },
-          { name: "Tarifs", url: "https://rln-consulting.com/tarifs" },
+          { name: "Accueil", url: siteConfig.url },
+          { name: "Tarifs", url: `${siteConfig.url}/tarifs` },
         ]}
       />
 

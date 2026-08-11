@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import { WebPageJsonLd, BreadcrumbJsonLd } from "@/components/seo"
+import { siteConfig } from "@/lib/constants"
 
 export const metadata: Metadata = {
   alternates: {
@@ -20,12 +21,12 @@ export default function ConfidentialitePage() {
       <WebPageJsonLd
         title="Politique de Confidentialité - RLN Consulting"
         description="Politique de confidentialité et protection des données personnelles"
-        url="https://rln-consulting.com/confidentialite"
+        url={`${siteConfig.url}/confidentialite`}
       />
       <BreadcrumbJsonLd
         items={[
-          { name: "Accueil", url: "https://rln-consulting.com" },
-          { name: "Politique de Confidentialité", url: "https://rln-consulting.com/confidentialite" },
+          { name: "Accueil", url: siteConfig.url },
+          { name: "Politique de Confidentialité", url: `${siteConfig.url}/confidentialite` },
         ]}
       />
 

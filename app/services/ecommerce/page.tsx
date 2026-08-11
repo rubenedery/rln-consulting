@@ -7,6 +7,7 @@ import { ServiceJsonLd, BreadcrumbJsonLd, FAQPageJsonLd } from "@/components/seo
 import { Breadcrumbs } from "@/components/ui/breadcrumbs"
 import { CTA, FAQ } from "@/components/sections"
 import { serviceFaqs } from "@/lib/content"
+import { siteConfig } from "@/lib/constants"
 
 export const metadata: Metadata = {
   alternates: {
@@ -26,7 +27,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "E-commerce | RLN Consulting",
     description: "Création de boutiques en ligne e-commerce performantes.",
-    url: "https://rln-consulting.com/services/ecommerce",
+    url: `${siteConfig.url}/services/ecommerce`,
   },
 }
 
@@ -76,9 +77,9 @@ const platforms = [
 
 export default function EcommercePage() {
   const breadcrumbItems = [
-    { name: "Accueil", url: "https://rln-consulting.com" },
-    { name: "Services", url: "https://rln-consulting.com/services" },
-    { name: "E-commerce", url: "https://rln-consulting.com/services/ecommerce" },
+    { name: "Accueil", url: siteConfig.url },
+    { name: "Services", url: `${siteConfig.url}/services` },
+    { name: "E-commerce", url: `${siteConfig.url}/services/ecommerce` },
   ]
 
   return (
@@ -86,7 +87,7 @@ export default function EcommercePage() {
       <ServiceJsonLd
         name="E-commerce - Boutiques en Ligne Performantes"
         description="Création de boutiques e-commerce Shopify (3 000€-8 000€) ou WooCommerce (5 000€-15 000€). Optimisations qui augmentent le taux de conversion de 20-40%. Paiement sécurisé Stripe, gestion stocks, Click & Collect."
-        url="https://rln-consulting.com/services/ecommerce"
+        url={`${siteConfig.url}/services/ecommerce`}
         minPrice={3000}
         maxPrice={50000}
         features={[

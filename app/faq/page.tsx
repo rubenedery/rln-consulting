@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { WebPageJsonLd, BreadcrumbJsonLd, FAQPageJsonLd } from "@/components/seo"
 import { FAQ, CTA } from "@/components/sections"
+import { siteConfig } from "@/lib/constants"
 
 export const metadata: Metadata = {
   alternates: {
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "FAQ | RLN Consulting",
     description: "Questions fréquentes sur nos services de développement web et marketing digital.",
-    url: "https://rln-consulting.com/faq",
+    url: `${siteConfig.url}/faq`,
   },
 }
 
@@ -25,12 +26,12 @@ export default function FAQPage() {
       <WebPageJsonLd
         title="FAQ - RLN Consulting"
         description="Questions fréquentes sur nos services"
-        url="https://rln-consulting.com/faq"
+        url={`${siteConfig.url}/faq`}
       />
       <BreadcrumbJsonLd
         items={[
-          { name: "Accueil", url: "https://rln-consulting.com" },
-          { name: "FAQ", url: "https://rln-consulting.com/faq" },
+          { name: "Accueil", url: siteConfig.url },
+          { name: "FAQ", url: `${siteConfig.url}/faq` },
         ]}
       />
       <FAQPageJsonLd />

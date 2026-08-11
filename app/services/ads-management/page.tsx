@@ -17,6 +17,7 @@ import { ServiceJsonLd, BreadcrumbJsonLd, FAQPageJsonLd } from "@/components/seo
 import { Breadcrumbs } from "@/components/ui/breadcrumbs"
 import { CTA, FAQ } from "@/components/sections"
 import { serviceFaqs } from "@/lib/content"
+import { siteConfig } from "@/lib/constants"
 
 export const metadata: Metadata = {
   alternates: {
@@ -39,7 +40,7 @@ export const metadata: Metadata = {
     title: "Gestion Publicités | RLN Consulting",
     description:
       "Gestion et optimisation de vos campagnes publicitaires Facebook Ads et Google Ads.",
-    url: "https://rln-consulting.com/services/ads-management",
+    url: `${siteConfig.url}/services/ads-management`,
     images: [{ url: "/api/og?title=Gestion+Publicit%C3%A9s&description=Facebook+Ads+%26+Google+Ads+-+Strat%C3%A9gie%2C+Cr%C3%A9ation+%26+Optimisation&type=service", width: 1200, height: 630 }],
   },
 }
@@ -115,11 +116,11 @@ const results = [
 
 export default function AdsManagementPage() {
   const breadcrumbItems = [
-    { name: "Accueil", url: "https://rln-consulting.com" },
-    { name: "Services", url: "https://rln-consulting.com/services" },
+    { name: "Accueil", url: siteConfig.url },
+    { name: "Services", url: `${siteConfig.url}/services` },
     {
       name: "Gestion Publicités",
-      url: "https://rln-consulting.com/services/ads-management",
+      url: `${siteConfig.url}/services/ads-management`,
     },
   ]
 
@@ -128,7 +129,7 @@ export default function AdsManagementPage() {
       <ServiceJsonLd
         name="Gestion Publicités Google Ads & Meta Ads"
         description="Gestion et optimisation de vos campagnes publicitaires Facebook Ads, Google Ads et LinkedIn Ads. ROI moyen de 320% et coût par lead divisé par 2 en 3 mois. Honoraires à partir de 500€/mois."
-        url="https://rln-consulting.com/services/ads-management"
+        url={`${siteConfig.url}/services/ads-management`}
         minPrice={500}
         maxPrice={5000}
         features={[

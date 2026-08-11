@@ -43,8 +43,9 @@ import {
   getAllExpertises,
   type ExpertiseCategory,
 } from "@/lib/expertise-data"
+import { siteConfig } from "@/lib/constants"
 
-const baseUrl = "https://rln-consulting.com"
+const baseUrl = siteConfig.url
 
 const iconMap: Record<string, React.ElementType> = {
   Layers: Layers,

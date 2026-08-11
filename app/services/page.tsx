@@ -6,6 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { WebPageJsonLd, BreadcrumbJsonLd } from "@/components/seo"
 import { CTA } from "@/components/sections"
 import { services } from "@/lib/content"
+import { siteConfig } from "@/lib/constants"
 
 export const metadata: Metadata = {
   alternates: {
@@ -29,7 +30,7 @@ export const metadata: Metadata = {
     title: "Services | RLN Consulting",
     description:
       "Services de développement web et gestion de campagnes publicitaires.",
-    url: "https://rln-consulting.com/services",
+    url: `${siteConfig.url}/services`,
     images: [{ url: "/api/og?title=Nos+Services&description=D%C3%A9veloppement+Web%2C+Marketing+Digital+%26+IA+pour+Entreprises&type=service", width: 1200, height: 630 }],
   },
 }
@@ -66,12 +67,12 @@ export default function ServicesPage() {
       <WebPageJsonLd
         title="Services - RLN Consulting"
         description="Services de développement web et gestion de campagnes publicitaires"
-        url="https://rln-consulting.com/services"
+        url={`${siteConfig.url}/services`}
       />
       <BreadcrumbJsonLd
         items={[
-          { name: "Accueil", url: "https://rln-consulting.com" },
-          { name: "Services", url: "https://rln-consulting.com/services" },
+          { name: "Accueil", url: siteConfig.url },
+          { name: "Services", url: `${siteConfig.url}/services` },
         ]}
       />
 

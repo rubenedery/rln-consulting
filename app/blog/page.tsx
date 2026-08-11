@@ -2,13 +2,14 @@ import type { Metadata } from "next"
 import { getAllBlogPosts } from "@/lib/mdx"
 import { WebPageJsonLd, BreadcrumbJsonLd } from "@/components/seo"
 import { BlogList } from "./BlogList"
+import { siteConfig } from "@/lib/constants"
 
 export const metadata: Metadata = {
   alternates: {
     canonical: "/blog",
     // Redéclaré ici car définir `alternates` remplace intégralement celui du layout
     types: {
-      "application/rss+xml": "https://rln-consulting.com/feed.xml",
+      "application/rss+xml": `${siteConfig.url}/feed.xml`,
     },
   },
   title: "Blog | Articles sur le Développement Web et Marketing Digital",
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
     title: "Blog | RLN Consulting",
     description:
       "Articles sur le développement web, le SEO et le marketing digital.",
-    url: "https://rln-consulting.com/blog",
+    url: `${siteConfig.url}/blog`,
   },
 }
 
@@ -30,12 +31,12 @@ export default function BlogPage() {
       <WebPageJsonLd
         title="Blog RLN Consulting"
         description="Articles sur le développement web, le SEO et le marketing digital."
-        url="https://rln-consulting.com/blog"
+        url={`${siteConfig.url}/blog`}
       />
       <BreadcrumbJsonLd
         items={[
-          { name: "Accueil", url: "https://rln-consulting.com" },
-          { name: "Blog", url: "https://rln-consulting.com/blog" },
+          { name: "Accueil", url: siteConfig.url },
+          { name: "Blog", url: `${siteConfig.url}/blog` },
         ]}
       />
 

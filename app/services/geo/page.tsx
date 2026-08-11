@@ -19,6 +19,7 @@ import { Badge } from "@/components/ui/badge"
 import { ServiceJsonLd, BreadcrumbJsonLd, FAQPageJsonLd } from "@/components/seo"
 import { Breadcrumbs } from "@/components/ui/breadcrumbs"
 import { CTA } from "@/components/sections"
+import { siteConfig } from "@/lib/constants"
 
 export const metadata: Metadata = {
   alternates: {
@@ -42,7 +43,7 @@ export const metadata: Metadata = {
     title: "GEO - Référencement IA | RLN Consulting",
     description:
       "Soyez cité par ChatGPT, Perplexity et Google AI Overview. Stratégie GEO complète pour maximiser votre visibilité sur les moteurs IA.",
-    url: "https://rln-consulting.com/services/geo",
+    url: `${siteConfig.url}/services/geo`,
     images: [{ url: "/api/og?title=GEO+-+R%C3%A9f%C3%A9rencement+IA&description=Optimisation+pour+ChatGPT%2C+Perplexity+%26+Google+AI&type=service", width: 1200, height: 630 }],
   },
 }
@@ -200,11 +201,11 @@ const deliverables = [
 
 export default function GEOPage() {
   const breadcrumbItems = [
-    { name: "Accueil", url: "https://rln-consulting.com" },
-    { name: "Services", url: "https://rln-consulting.com/services" },
+    { name: "Accueil", url: siteConfig.url },
+    { name: "Services", url: `${siteConfig.url}/services` },
     {
       name: "GEO - Référencement IA",
-      url: "https://rln-consulting.com/services/geo",
+      url: `${siteConfig.url}/services/geo`,
     },
   ]
 
@@ -213,7 +214,7 @@ export default function GEOPage() {
       <ServiceJsonLd
         name="GEO - Référencement IA (Generative Engine Optimization)"
         description="Service d'optimisation pour les moteurs de recherche IA. Soyez cité par ChatGPT, Perplexity et Google AI Overview grâce au Generative Engine Optimization. Audit, stratégie de contenu, données structurées et monitoring."
-        url="https://rln-consulting.com/services/geo"
+        url={`${siteConfig.url}/services/geo`}
       />
       <BreadcrumbJsonLd items={breadcrumbItems} />
       <FAQPageJsonLd questions={faqItems} />

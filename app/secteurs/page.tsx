@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge"
 import { WebPageJsonLd, BreadcrumbJsonLd } from "@/components/seo"
 import { sectors, categoryLabels, getSectorsByCategory } from "@/lib/sectors-data"
 import type { Sector } from "@/types/sectors"
+import { siteConfig } from "@/lib/constants"
 
 export const metadata: Metadata = {
   alternates: {
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
     title: "Sites Web par Secteur | RLN Consulting",
     description:
       "Solutions web sur mesure pour chaque métier. Découvrez nos offres par secteur d'activité.",
-    url: "https://rln-consulting.com/secteurs",
+    url: `${siteConfig.url}/secteurs`,
   },
 }
 
@@ -38,12 +39,12 @@ export default function SecteursPage() {
       <WebPageJsonLd
         title="Sites Web par Secteur d'Activité | RLN Consulting"
         description="Solutions web sur mesure pour chaque métier. 30+ secteurs accompagnés."
-        url="https://rln-consulting.com/secteurs"
+        url={`${siteConfig.url}/secteurs`}
       />
       <BreadcrumbJsonLd
         items={[
-          { name: "Accueil", url: "https://rln-consulting.com" },
-          { name: "Secteurs", url: "https://rln-consulting.com/secteurs" },
+          { name: "Accueil", url: siteConfig.url },
+          { name: "Secteurs", url: `${siteConfig.url}/secteurs` },
         ]}
       />
 

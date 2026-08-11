@@ -18,6 +18,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { WebPageJsonLd, BreadcrumbJsonLd } from "@/components/seo"
+import { siteConfig } from "@/lib/constants"
 
 export const metadata: Metadata = {
   alternates: {
@@ -37,7 +38,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Statistiques & Benchmarks 2026 | RLN Consulting",
     description: "Données clés du digital pour guider vos décisions stratégiques.",
-    url: "https://rln-consulting.com/statistiques",
+    url: `${siteConfig.url}/statistiques`,
   },
 }
 
@@ -234,12 +235,12 @@ export default function StatistiquesPage() {
       <WebPageJsonLd
         title="Statistiques & Benchmarks Digital 2026"
         description="Données et statistiques clés du marketing digital, e-commerce et IA en 2026. Benchmarks sectoriels pour guider vos décisions stratégiques."
-        url="https://rln-consulting.com/statistiques"
+        url={`${siteConfig.url}/statistiques`}
       />
       <BreadcrumbJsonLd
         items={[
-          { name: "Accueil", url: "https://rln-consulting.com" },
-          { name: "Statistiques", url: "https://rln-consulting.com/statistiques" },
+          { name: "Accueil", url: siteConfig.url },
+          { name: "Statistiques", url: `${siteConfig.url}/statistiques` },
         ]}
       />
 

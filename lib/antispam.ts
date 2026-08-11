@@ -3,7 +3,11 @@
  * 3 layers: honeypot, timer, rate limiting
  */
 
-// --- Rate Limiter (in-memory, resets on deploy) ---
+// --- Rate Limiter (in-memory) ---
+// Best-effort uniquement : sur Vercel, chaque instance lambda a sa propre Map
+// et l'état disparaît au gel de l'instance. Les protections effectives sont le
+// honeypot et le timer. Pour un rate-limit fiable, passer par Vercel WAF ou un
+// store partagé (Upstash) — non justifié au volume actuel.
 
 interface RateLimitEntry {
   count: number
@@ -14,12 +18,25 @@ const rateLimitMap = new Map<string, RateLimitEntry>()
 
 const RATE_LIMIT_WINDOW_MS = 60 * 60 * 1000 // 1 hour
 const RATE_LIMIT_MAX_REQUESTS = 5 // max submissions per window
+const CLEANUP_THRESHOLD = 1000 // purge paresseuse au-delà de ce nombre d'entrées
+
+// Un setInterval ne survit pas au gel d'une instance serverless : la purge se
+// fait paresseusement lors des appels, quand la Map grossit trop.
+function pruneExpiredEntries(now: number): void {
+  if (rateLimitMap.size <= CLEANUP_THRESHOLD) return
+  for (const [ip, entry] of rateLimitMap) {
+    if (now > entry.resetAt) {
+      rateLimitMap.delete(ip)
+    }
+  }
+}
 
 /**
  * Check if an IP has exceeded the rate limit
  */
 export function isRateLimited(ip: string): boolean {
   const now = Date.now()
+  pruneExpiredEntries(now)
   const entry = rateLimitMap.get(ip)
 
   if (!entry || now > entry.resetAt) {
@@ -29,18 +46,6 @@ export function isRateLimited(ip: string): boolean {
 
   entry.count++
   return entry.count > RATE_LIMIT_MAX_REQUESTS
-}
-
-// Clean up old entries every 10 minutes to prevent memory leak
-if (typeof setInterval !== "undefined") {
-  setInterval(() => {
-    const now = Date.now()
-    for (const [ip, entry] of rateLimitMap) {
-      if (now > entry.resetAt) {
-        rateLimitMap.delete(ip)
-      }
-    }
-  }, 10 * 60 * 1000)
 }
 
 // --- Honeypot Check ---

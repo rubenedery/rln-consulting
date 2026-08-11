@@ -1,11 +1,11 @@
 "use client"
 
 import Link from "next/link"
-import Image from "next/image"
 import { m } from "framer-motion"
 import { ArrowRight, TrendingUp } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
+import { CardImage } from "@/components/ui/card-image"
 import { Badge } from "@/components/ui/badge"
 import { containerVariants, itemVariants } from "@/lib/animations"
 import type { CaseStudyMeta } from "@/types"
@@ -57,22 +57,17 @@ export function CaseStudiesPreview({ caseStudies }: CaseStudiesPreviewProps) {
             <m.div key={study.slug} variants={itemVariants}>
               <Link href={`/cas-etudes/${study.slug}`}>
                 <Card className="h-full overflow-hidden hover:shadow-lg transition-all duration-300 group border-border/50">
-                  {/* Image */}
-                  <div className="relative aspect-video bg-muted overflow-hidden">
-                    <Image
-                      src={study.image}
-                      alt={study.title}
-                      fill
-                      className="object-cover transition-transform duration-300 group-hover:scale-105"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />
+                  <CardImage
+                    src={study.image}
+                    alt={study.title}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  >
                     <div className="absolute bottom-4 left-4 right-4 z-20">
                       <Badge variant="secondary" className="bg-accent text-accent-foreground">
                         {study.industry}
                       </Badge>
                     </div>
-                  </div>
+                  </CardImage>
 
                   <CardContent className="pt-6">
                     {/* Client */}

@@ -13,6 +13,7 @@ import { CTA } from "@/components/sections"
 import { ArticleCard } from "@/components/blog"
 import { MarkdownContent } from "@/components/markdown"
 import { blogCategories } from "@/types"
+import { siteConfig } from "@/lib/constants"
 
 interface BlogPostPageProps {
   params: Promise<{
@@ -52,7 +53,7 @@ export async function generateMetadata({
       publishedTime: post.date,
       authors: [post.author],
       tags: post.tags,
-      url: `https://rln-consulting.com/blog/${post.slug}`,
+      url: `${siteConfig.url}/blog/${post.slug}`,
       images: [
         {
           url: `/api/og?title=${encodeURIComponent(post.title)}&description=${encodeURIComponent(post.description)}&type=blog`,
@@ -86,16 +87,16 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     .slice(0, 3)
 
   const breadcrumbItems = [
-    { name: "Accueil", url: "https://rln-consulting.com" },
-    { name: "Blog", url: "https://rln-consulting.com/blog" },
-    { name: post.title, url: `https://rln-consulting.com/blog/${post.slug}` },
+    { name: "Accueil", url: siteConfig.url },
+    { name: "Blog", url: `${siteConfig.url}/blog` },
+    { name: post.title, url: `${siteConfig.url}/blog/${post.slug}` },
   ]
 
   return (
     <>
       <BlogPostingJsonLd
         post={post}
-        url={`https://rln-consulting.com/blog/${post.slug}`}
+        url={`${siteConfig.url}/blog/${post.slug}`}
       />
       <BreadcrumbJsonLd items={breadcrumbItems} />
 

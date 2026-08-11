@@ -7,6 +7,7 @@ import { ServiceJsonLd, BreadcrumbJsonLd, FAQPageJsonLd } from "@/components/seo
 import { Breadcrumbs } from "@/components/ui/breadcrumbs"
 import { CTA, FAQ } from "@/components/sections"
 import { serviceFaqs } from "@/lib/content"
+import { siteConfig } from "@/lib/constants"
 
 export const metadata: Metadata = {
   alternates: {
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Email Marketing & Automation | RLN Consulting",
     description: "Stratégies d'email marketing et automatisation pour convertir vos prospects.",
-    url: "https://rln-consulting.com/services/email-marketing",
+    url: `${siteConfig.url}/services/email-marketing`,
   },
 }
 
@@ -76,9 +77,9 @@ const technologies = [
 
 export default function EmailMarketingPage() {
   const breadcrumbItems = [
-    { name: "Accueil", url: "https://rln-consulting.com" },
-    { name: "Services", url: "https://rln-consulting.com/services" },
-    { name: "Email Marketing & Automation", url: "https://rln-consulting.com/services/email-marketing" },
+    { name: "Accueil", url: siteConfig.url },
+    { name: "Services", url: `${siteConfig.url}/services` },
+    { name: "Email Marketing & Automation", url: `${siteConfig.url}/services/email-marketing` },
   ]
 
   return (
@@ -86,7 +87,7 @@ export default function EmailMarketingPage() {
       <ServiceJsonLd
         name="Email Marketing & Automation"
         description="Stratégies d'email marketing et automatisation. Séquences automatisées, newsletters, lead nurturing."
-        url="https://rln-consulting.com/services/email-marketing"
+        url={`${siteConfig.url}/services/email-marketing`}
       />
       <BreadcrumbJsonLd items={breadcrumbItems} />
       <FAQPageJsonLd questions={serviceFaqs["email-marketing"]} />

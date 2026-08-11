@@ -1,7 +1,7 @@
 import Link from "next/link"
-import Image from "next/image"
 import { ArrowRight } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
+import { CardImage } from "@/components/ui/card-image"
 import { Badge } from "@/components/ui/badge"
 import type { CaseStudyMeta } from "@/types"
 
@@ -13,22 +13,13 @@ export function CaseStudyCard({ caseStudy }: CaseStudyCardProps) {
   return (
     <Link href={`/cas-etudes/${caseStudy.slug}`}>
       <Card className="h-full overflow-hidden hover:shadow-lg transition-all duration-300 group border-border/50 hover:border-primary/30">
-        {/* Image */}
-        <div className="aspect-video bg-muted relative overflow-hidden">
-          <Image
-            src={caseStudy.image}
-            alt={caseStudy.title}
-            fill
-            className="object-cover transition-transform duration-300 group-hover:scale-105"
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />
+        <CardImage src={caseStudy.image} alt={caseStudy.title}>
           <div className="absolute bottom-4 left-4 right-4 z-20">
             <Badge variant="secondary" className="bg-accent text-accent-foreground">
               {caseStudy.industry}
             </Badge>
           </div>
-        </div>
+        </CardImage>
 
         <CardContent className="pt-6">
           {/* Client */}

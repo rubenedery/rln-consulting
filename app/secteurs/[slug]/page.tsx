@@ -40,6 +40,7 @@ import {
   Smartphone,
 } from "lucide-react"
 import type { DigitalServiceType } from "@/types/sectors"
+import { siteConfig } from "@/lib/constants"
 
 const service_icons: Record<DigitalServiceType, React.ElementType> = {
   site_web: Globe,
@@ -84,7 +85,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     openGraph: {
       title: sector.metaTitle,
       description: sector.metaDescription,
-      url: `https://rln-consulting.com/secteurs/${sector.slug}`,
+      url: `${siteConfig.url}/secteurs/${sector.slug}`,
     },
     alternates: {
       canonical: `/secteurs/${sector.slug}`,
@@ -107,9 +108,9 @@ export default async function SectorPage({ params }: PageProps) {
   }))
 
   const breadcrumbItems = [
-    { name: "Accueil", url: "https://rln-consulting.com" },
-    { name: "Secteurs", url: "https://rln-consulting.com/secteurs" },
-    { name: sector.name, url: `https://rln-consulting.com/secteurs/${sector.slug}` },
+    { name: "Accueil", url: siteConfig.url },
+    { name: "Secteurs", url: `${siteConfig.url}/secteurs` },
+    { name: sector.name, url: `${siteConfig.url}/secteurs/${sector.slug}` },
   ]
 
   return (
@@ -118,7 +119,7 @@ export default async function SectorPage({ params }: PageProps) {
       <WebPageJsonLd
         title={sector.metaTitle}
         description={sector.metaDescription}
-        url={`https://rln-consulting.com/secteurs/${sector.slug}`}
+        url={`${siteConfig.url}/secteurs/${sector.slug}`}
       />
       <BreadcrumbJsonLd items={breadcrumbItems} />
       <FAQPageJsonLd questions={faqJsonLd} />

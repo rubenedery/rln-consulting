@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# RLN Consulting — Site vitrine
 
-## Getting Started
+Site de l'agence [rln-consulting.com](https://rln-consulting.com) : développement web, acquisition (Google/Meta Ads), IA pour entreprises et SEO/GEO. Fortement orienté SEO programmatique (~170 URLs générées : secteurs, villes, expertises, glossaire, blog).
 
-First, run the development server:
+## Stack
+
+- **Next.js 16** (App Router, React Server Components) + React 19, TypeScript strict
+- **Tailwind CSS v4** en configuration CSS-first : pas de `tailwind.config`, tout est dans `app/globals.css` (`@theme inline` + variables CSS)
+- **shadcn/ui** (style new-york) + primitives `radix-ui`, icônes `lucide-react`
+- **framer-motion** via `LazyMotion` (`components/providers/motion-provider.tsx`) — utiliser `m.` et non `motion.`
+- Thème clair/sombre via `next-themes` (classe sur `<html>`)
+- Emails transactionnels via **Resend** (contact + lead magnet)
+- Déploiement **Vercel** (`@vercel/analytics`, `@vercel/speed-insights`)
+
+## Démarrage
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev    # http://localhost:3000
+npm run build  # build SSG complet (~170 pages) — sert aussi de vérification
+npm run lint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Variables d'environnement
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Variable | Rôle |
+|---|---|
+| `RESEND_API_KEY` | Envoi des emails (contact, lead magnet). **Sans elle, les routes API répondent 500** (échec bruyant volontaire, pas de faux succès). |
+| `RESEND_FROM_EMAIL` | Expéditeur (domaine vérifié dans Resend obligatoire). |
+| `NEXT_PUBLIC_GA_MEASUREMENT_ID` | Google Analytics 4 (inactif si absente). |
+| `NEXT_PUBLIC_GOOGLE_ADS_ID` | Suivi conversions Google Ads. |
+| `NEXT_PUBLIC_META_PIXEL_ID` | Meta Pixel (inactif si absente). |
+| `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` | Balise de vérification Search Console. |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Arborescence
 
-## Learn More
+- `app/` — pages App Router ; chaque page définit son **canonical** (jamais dans le layout : il serait hérité partout)
+- `content/blog/*.md`, `content/case-studies/*.md` — contenu Markdown (frontmatter via `gray-matter`, lu par `lib/mdx.ts` avec `cache()` React)
+- `lib/*-data.ts` — données des pages générées : `sectors-data` (~35 secteurs), `cities-data` (12 villes), `expertise-data` (8 technos), `glossary-data` (49 termes), `pricing-data` (simulateur)
+- `lib/content.ts` — services, témoignages, FAQ, stats
+- `components/seo/JsonLd.tsx` — générateurs de données structurées (Organization, LocalBusiness, FAQ, Breadcrumb…)
+- `components/sections/` — blocs de page ; `components/calculator/` — simulateur de prix multi-étapes
 
-To learn more about Next.js, take a look at the following resources:
+## Notes
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Les images d'articles sont des URLs Unsplash externes (une image unique par article). Option future : les rapatrier dans `public/images/` (prévoir alors `remotePatterns`/headers de cache dans `next.config.ts`).
+- L'anti-spam des formulaires (`lib/antispam.ts`) repose sur honeypot + timer ; le rate-limit mémoire est best-effort en serverless.
+- SEO : `app/sitemap.ts`, `app/robots.ts` (crawlers IA autorisés explicitement), `public/llms.txt`, flux RSS `app/feed.xml/route.ts`.

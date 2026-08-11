@@ -4,9 +4,10 @@ import { getAllSectorSlugs } from "@/lib/sectors-data"
 import { cities } from "@/lib/cities-data"
 import { getAllGlossarySlugs } from "@/lib/glossary-data"
 import { getExpertiseSlugs } from "@/lib/expertise-data"
+import { siteConfig } from "@/lib/constants"
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://rln-consulting.com"
+  const baseUrl = siteConfig.url
 
   const staticPages: MetadataRoute.Sitemap = [
     {

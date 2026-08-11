@@ -10,6 +10,7 @@ import { SkipLinks } from "@/components/ui/skip-links"
 import { CookieBanner } from "@/components/ui/cookie-banner"
 import { GoogleAnalytics, MetaPixel } from "@/components/analytics"
 import "./globals.css"
+import { siteConfig } from "@/lib/constants"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,7 +27,7 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://rln-consulting.com"),
+  metadataBase: new URL(siteConfig.url),
   title: {
     default: "RLN Consulting | Agence Développement Web & Marketing Digital Paris",
     template: "%s | RLN Consulting",
@@ -45,7 +46,7 @@ export const metadata: Metadata = {
     "marketing digital",
     "agence digitale",
   ],
-  authors: [{ name: "Ruben Edery", url: "https://rln-consulting.com" }],
+  authors: [{ name: "Ruben Edery", url: siteConfig.url }],
   creator: "RLN Consulting",
   publisher: "RLN Consulting",
   // Meta tags pour optimisation LLM/AI
@@ -65,7 +66,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "fr_FR",
-    url: "https://rln-consulting.com",
+    url: siteConfig.url,
     siteName: "RLN Consulting",
     title: "RLN Consulting | Agence Développement Web & Marketing Digital Paris",
     description:
@@ -108,8 +109,8 @@ export const metadata: Metadata = {
     // Pas de canonical ici : il serait hérité par TOUTES les pages sans canonical propre,
     // ce qui indiquerait à Google qu'elles sont des doublons de la page d'accueil.
     types: {
-      "application/rss+xml": "https://rln-consulting.com/feed.xml",
-      "text/plain": "https://rln-consulting.com/llms.txt",
+      "application/rss+xml": `${siteConfig.url}/feed.xml`,
+      "text/plain": `${siteConfig.url}/llms.txt`,
     },
   },
   category: "technology",

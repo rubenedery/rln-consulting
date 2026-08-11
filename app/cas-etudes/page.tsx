@@ -3,6 +3,7 @@ import { getAllCaseStudies } from "@/lib/mdx"
 import { CaseStudyCard } from "@/components/case-studies"
 import { WebPageJsonLd, BreadcrumbJsonLd } from "@/components/seo"
 import { CTA } from "@/components/sections"
+import { siteConfig } from "@/lib/constants"
 
 export const metadata: Metadata = {
   alternates: {
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Cas d'Études | RLN Consulting",
     description: "Nos réalisations et résultats clients en développement web et marketing digital.",
-    url: "https://rln-consulting.com/cas-etudes",
+    url: `${siteConfig.url}/cas-etudes`,
   },
 }
 
@@ -26,12 +27,12 @@ export default function CaseStudiesPage() {
       <WebPageJsonLd
         title="Cas d'Études RLN Consulting"
         description="Nos réalisations et résultats clients en développement web et marketing digital."
-        url="https://rln-consulting.com/cas-etudes"
+        url={`${siteConfig.url}/cas-etudes`}
       />
       <BreadcrumbJsonLd
         items={[
-          { name: "Accueil", url: "https://rln-consulting.com" },
-          { name: "Cas d'études", url: "https://rln-consulting.com/cas-etudes" },
+          { name: "Accueil", url: siteConfig.url },
+          { name: "Cas d'études", url: `${siteConfig.url}/cas-etudes` },
         ]}
       />
 

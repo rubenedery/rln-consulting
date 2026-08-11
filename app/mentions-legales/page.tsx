@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import { WebPageJsonLd, BreadcrumbJsonLd } from "@/components/seo"
+import { siteConfig } from "@/lib/constants"
 
 export const metadata: Metadata = {
   alternates: {
@@ -20,12 +21,12 @@ export default function MentionsLegalesPage() {
       <WebPageJsonLd
         title="Mentions Légales - RLN Consulting"
         description="Mentions légales de RLN Consulting"
-        url="https://rln-consulting.com/mentions-legales"
+        url={`${siteConfig.url}/mentions-legales`}
       />
       <BreadcrumbJsonLd
         items={[
-          { name: "Accueil", url: "https://rln-consulting.com" },
-          { name: "Mentions Légales", url: "https://rln-consulting.com/mentions-legales" },
+          { name: "Accueil", url: siteConfig.url },
+          { name: "Mentions Légales", url: `${siteConfig.url}/mentions-legales` },
         ]}
       />
 

@@ -7,6 +7,7 @@ import { ServiceJsonLd, BreadcrumbJsonLd, FAQPageJsonLd } from "@/components/seo
 import { Breadcrumbs } from "@/components/ui/breadcrumbs"
 import { CTA, FAQ } from "@/components/sections"
 import { serviceFaqs } from "@/lib/content"
+import { siteConfig } from "@/lib/constants"
 
 export const metadata: Metadata = {
   alternates: {
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Applications Mobiles | RLN Consulting",
     description: "Développement d'applications mobiles iOS et Android sur mesure.",
-    url: "https://rln-consulting.com/services/applications-mobiles",
+    url: `${siteConfig.url}/services/applications-mobiles`,
   },
 }
 
@@ -77,9 +78,9 @@ const technologies = [
 
 export default function ApplicationsMobilesPage() {
   const breadcrumbItems = [
-    { name: "Accueil", url: "https://rln-consulting.com" },
-    { name: "Services", url: "https://rln-consulting.com/services" },
-    { name: "Applications Mobiles", url: "https://rln-consulting.com/services/applications-mobiles" },
+    { name: "Accueil", url: siteConfig.url },
+    { name: "Services", url: `${siteConfig.url}/services` },
+    { name: "Applications Mobiles", url: `${siteConfig.url}/services/applications-mobiles` },
   ]
 
   return (
@@ -87,7 +88,7 @@ export default function ApplicationsMobilesPage() {
       <ServiceJsonLd
         name="Applications Mobiles"
         description="Développement d'applications mobiles iOS et Android. Apps natives ou cross-platform avec React Native et Flutter."
-        url="https://rln-consulting.com/services/applications-mobiles"
+        url={`${siteConfig.url}/services/applications-mobiles`}
       />
       <BreadcrumbJsonLd items={breadcrumbItems} />
       <FAQPageJsonLd questions={serviceFaqs["applications-mobiles"]} />

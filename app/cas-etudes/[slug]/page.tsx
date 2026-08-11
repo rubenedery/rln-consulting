@@ -12,6 +12,7 @@ import { CaseStudyJsonLd, BreadcrumbJsonLd } from "@/components/seo"
 import { Breadcrumbs } from "@/components/ui/breadcrumbs"
 import { ResultsMetrics, CaseStudyCard } from "@/components/case-studies"
 import { CTA } from "@/components/sections"
+import { siteConfig } from "@/lib/constants"
 
 interface CaseStudyPageProps {
   params: Promise<{
@@ -46,7 +47,7 @@ export async function generateMetadata({
       title: caseStudy.title,
       description: caseStudy.description,
       type: "article",
-      url: `https://rln-consulting.com/cas-etudes/${caseStudy.slug}`,
+      url: `${siteConfig.url}/cas-etudes/${caseStudy.slug}`,
       images: [
         {
           url: `/api/og?title=${encodeURIComponent(caseStudy.title)}&description=${encodeURIComponent(caseStudy.description)}&type=cas-etude`,
@@ -80,11 +81,11 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
     .slice(0, 2)
 
   const breadcrumbItems = [
-    { name: "Accueil", url: "https://rln-consulting.com" },
-    { name: "Cas d'études", url: "https://rln-consulting.com/cas-etudes" },
+    { name: "Accueil", url: siteConfig.url },
+    { name: "Cas d'études", url: `${siteConfig.url}/cas-etudes` },
     {
       name: caseStudy.title,
-      url: `https://rln-consulting.com/cas-etudes/${caseStudy.slug}`,
+      url: `${siteConfig.url}/cas-etudes/${caseStudy.slug}`,
     },
   ]
 
@@ -92,7 +93,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
     <>
       <CaseStudyJsonLd
         caseStudy={caseStudy}
-        url={`https://rln-consulting.com/cas-etudes/${caseStudy.slug}`}
+        url={`${siteConfig.url}/cas-etudes/${caseStudy.slug}`}
       />
       <BreadcrumbJsonLd items={breadcrumbItems} />
 

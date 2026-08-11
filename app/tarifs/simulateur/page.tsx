@@ -4,6 +4,7 @@ import { ArrowLeft } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { WebPageJsonLd, BreadcrumbJsonLd, SoftwareApplicationJsonLd } from "@/components/seo"
 import { PriceCalculator } from "@/components/calculator/PriceCalculator"
+import { siteConfig } from "@/lib/constants"
 
 export const metadata: Metadata = {
   alternates: {
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
     title: "Simulateur de Prix | RLN Consulting",
     description:
       "Estimez le coût de votre projet digital en quelques clics. Site web, gestion de publicités, solutions IA.",
-    url: "https://rln-consulting.com/tarifs/simulateur",
+    url: `${siteConfig.url}/tarifs/simulateur`,
   },
 }
 
@@ -26,20 +27,20 @@ export default function SimulateurPage() {
       <WebPageJsonLd
         title="Simulateur de Prix | RLN Consulting"
         description="Estimez le coût de votre projet digital en quelques clics."
-        url="https://rln-consulting.com/tarifs/simulateur"
+        url={`${siteConfig.url}/tarifs/simulateur`}
       />
       <BreadcrumbJsonLd
         items={[
-          { name: "Accueil", url: "https://rln-consulting.com" },
-          { name: "Tarifs", url: "https://rln-consulting.com/tarifs" },
-          { name: "Simulateur", url: "https://rln-consulting.com/tarifs/simulateur" },
+          { name: "Accueil", url: siteConfig.url },
+          { name: "Tarifs", url: `${siteConfig.url}/tarifs` },
+          { name: "Simulateur", url: `${siteConfig.url}/tarifs/simulateur` },
         ]}
       />
       {/* Schema SoftwareApplication pour le calculateur de prix */}
       <SoftwareApplicationJsonLd
         name="Simulateur de Tarifs RLN Consulting"
         description="Calculateur interactif pour estimer le coût de votre projet digital : site web, e-commerce, application mobile, campagnes publicitaires ou solutions IA. Estimation gratuite et instantanée."
-        url="https://rln-consulting.com/tarifs/simulateur"
+        url={`${siteConfig.url}/tarifs/simulateur`}
         applicationCategory="BusinessApplication"
         operatingSystem="Web"
         offers={{ price: 0, priceCurrency: "EUR" }}

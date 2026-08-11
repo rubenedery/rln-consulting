@@ -7,6 +7,7 @@ import { ServiceJsonLd, BreadcrumbJsonLd, FAQPageJsonLd } from "@/components/seo
 import { Breadcrumbs } from "@/components/ui/breadcrumbs"
 import { CTA, FAQ } from "@/components/sections"
 import { serviceFaqs } from "@/lib/content"
+import { siteConfig } from "@/lib/constants"
 
 export const metadata: Metadata = {
   alternates: {
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "SEO & Référencement | RLN Consulting",
     description: "Stratégie SEO complète pour apparaître en premier sur Google.",
-    url: "https://rln-consulting.com/services/seo-referencement",
+    url: `${siteConfig.url}/services/seo-referencement`,
   },
 }
 
@@ -72,9 +73,9 @@ const results = [
 
 export default function SeoReferencementPage() {
   const breadcrumbItems = [
-    { name: "Accueil", url: "https://rln-consulting.com" },
-    { name: "Services", url: "https://rln-consulting.com/services" },
-    { name: "SEO & Référencement", url: "https://rln-consulting.com/services/seo-referencement" },
+    { name: "Accueil", url: siteConfig.url },
+    { name: "Services", url: `${siteConfig.url}/services` },
+    { name: "SEO & Référencement", url: `${siteConfig.url}/services/seo-referencement` },
   ]
 
   return (
@@ -82,7 +83,7 @@ export default function SeoReferencementPage() {
       <ServiceJsonLd
         name="SEO & Référencement"
         description="Stratégie SEO complète pour améliorer votre visibilité sur Google. Audit SEO, optimisation on-page, SEO local."
-        url="https://rln-consulting.com/services/seo-referencement"
+        url={`${siteConfig.url}/services/seo-referencement`}
       />
       <BreadcrumbJsonLd items={breadcrumbItems} />
       <FAQPageJsonLd questions={serviceFaqs["seo-referencement"]} />

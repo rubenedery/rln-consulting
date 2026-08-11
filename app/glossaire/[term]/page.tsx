@@ -14,8 +14,9 @@ import {
 } from "@/lib/glossary-data"
 import { DefinedTermJsonLd, BreadcrumbJsonLd, SpeakableJsonLd } from "@/components/seo"
 import { Breadcrumbs } from "@/components/ui/breadcrumbs"
+import { siteConfig } from "@/lib/constants"
 
-const baseUrl = "https://rln-consulting.com"
+const baseUrl = siteConfig.url
 
 const categoryIcons: Record<GlossaryCategory, string> = {
   developpement: "💻",

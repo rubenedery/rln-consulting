@@ -7,6 +7,7 @@ import { ServiceJsonLd, BreadcrumbJsonLd, FAQPageJsonLd } from "@/components/seo
 import { Breadcrumbs } from "@/components/ui/breadcrumbs"
 import { CTA, FAQ } from "@/components/sections"
 import { serviceFaqs } from "@/lib/content"
+import { siteConfig } from "@/lib/constants"
 
 export const metadata: Metadata = {
   alternates: {
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Configurateurs 3D | RLN Consulting",
     description: "Configurateurs 3D interactifs pour personnaliser vos produits en temps réel.",
-    url: "https://rln-consulting.com/services/configurateur-3d",
+    url: `${siteConfig.url}/services/configurateur-3d`,
   },
 }
 
@@ -83,9 +84,9 @@ const technologies = [
 
 export default function Configurateur3DPage() {
   const breadcrumbItems = [
-    { name: "Accueil", url: "https://rln-consulting.com" },
-    { name: "Services", url: "https://rln-consulting.com/services" },
-    { name: "Configurateurs 3D", url: "https://rln-consulting.com/services/configurateur-3d" },
+    { name: "Accueil", url: siteConfig.url },
+    { name: "Services", url: `${siteConfig.url}/services` },
+    { name: "Configurateurs 3D", url: `${siteConfig.url}/services/configurateur-3d` },
   ]
 
   return (
@@ -93,7 +94,7 @@ export default function Configurateur3DPage() {
       <ServiceJsonLd
         name="Configurateurs 3D"
         description="Développement de configurateurs 3D interactifs pour personnaliser vos produits en temps réel."
-        url="https://rln-consulting.com/services/configurateur-3d"
+        url={`${siteConfig.url}/services/configurateur-3d`}
       />
       <BreadcrumbJsonLd items={breadcrumbItems} />
       <FAQPageJsonLd questions={serviceFaqs["configurateur-3d"]} />

@@ -456,7 +456,7 @@ export function BlogPostingJsonLd({ post, url }: BlogPostingJsonLdProps) {
     description: post.description,
     image: post.image.startsWith("http")
       ? post.image
-      : `https://rln-consulting.com${post.image}`,
+      : `${siteConfig.url}${post.image}`,
     url,
     datePublished: post.date,
     dateModified: post.date,
@@ -469,7 +469,7 @@ export function BlogPostingJsonLd({ post, url }: BlogPostingJsonLdProps) {
       name: "RLN Consulting",
       logo: {
         "@type": "ImageObject",
-        url: "https://rln-consulting.com/logo.png",
+        url: `${siteConfig.url}/logo.png`,
       },
     },
     mainEntityOfPage: {
@@ -567,7 +567,7 @@ export function WebPageJsonLd({ title, description, url }: WebPageJsonLdProps) {
     isPartOf: {
       "@type": "WebSite",
       name: "RLN Consulting",
-      url: "https://rln-consulting.com",
+      url: siteConfig.url,
     },
     publisher: {
       "@type": "Organization",
@@ -815,97 +815,6 @@ export function PersonJsonLd({
         credentialCategory: "Professional Certification",
       },
     ],
-  }
-
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-    />
-  )
-}
-
-/**
- * HowTo Schema - Structure les guides et tutoriels pour les rich snippets
- * Optimisé pour les réponses directes des LLM et AI Overviews
- */
-interface HowToStep {
-  name: string
-  text: string
-  url?: string
-  image?: string
-}
-
-interface HowToJsonLdProps {
-  name: string
-  description: string
-  steps: HowToStep[]
-  totalTime?: string // Format ISO 8601 (ex: "PT30M" pour 30 minutes)
-  estimatedCost?: {
-    value: number | string
-    currency?: string
-  }
-  image?: string
-  tool?: string[]
-  supply?: string[]
-}
-
-export function HowToJsonLd({
-  name,
-  description,
-  steps,
-  totalTime,
-  estimatedCost,
-  image,
-  tool,
-  supply,
-}: HowToJsonLdProps) {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "HowTo",
-    name,
-    description,
-    ...(totalTime && { totalTime }),
-    ...(image && {
-      image: {
-        "@type": "ImageObject",
-        url: image.startsWith("http") ? image : `${siteConfig.url}${image}`,
-      },
-    }),
-    ...(estimatedCost && {
-      estimatedCost: {
-        "@type": "MonetaryAmount",
-        currency: estimatedCost.currency || "EUR",
-        value: estimatedCost.value,
-      },
-    }),
-    ...(tool && {
-      tool: tool.map((t) => ({
-        "@type": "HowToTool",
-        name: t,
-      })),
-    }),
-    ...(supply && {
-      supply: supply.map((s) => ({
-        "@type": "HowToSupply",
-        name: s,
-      })),
-    }),
-    step: steps.map((step, index) => ({
-      "@type": "HowToStep",
-      position: index + 1,
-      name: step.name,
-      text: step.text,
-      ...(step.url && { url: step.url }),
-      ...(step.image && {
-        image: {
-          "@type": "ImageObject",
-          url: step.image.startsWith("http")
-            ? step.image
-            : `${siteConfig.url}${step.image}`,
-        },
-      }),
-    })),
   }
 
   return (

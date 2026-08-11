@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Contact | RLN Consulting",
     description: "Contactez-nous pour discuter de votre projet digital.",
-    url: "https://rln-consulting.com/contact",
+    url: `${siteConfig.url}/contact`,
   },
 }
 
@@ -57,12 +57,12 @@ export default function ContactPage() {
       <WebPageJsonLd
         title="Contactez RLN Consulting"
         description="Contactez-nous pour discuter de votre projet web ou marketing digital."
-        url="https://rln-consulting.com/contact"
+        url={`${siteConfig.url}/contact`}
       />
       <BreadcrumbJsonLd
         items={[
-          { name: "Accueil", url: "https://rln-consulting.com" },
-          { name: "Contact", url: "https://rln-consulting.com/contact" },
+          { name: "Accueil", url: siteConfig.url },
+          { name: "Contact", url: `${siteConfig.url}/contact` },
         ]}
       />
 

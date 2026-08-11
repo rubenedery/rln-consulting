@@ -19,6 +19,7 @@ import { ServiceJsonLd, BreadcrumbJsonLd, FAQPageJsonLd } from "@/components/seo
 import { Breadcrumbs } from "@/components/ui/breadcrumbs"
 import { CTA, FAQ } from "@/components/sections"
 import { serviceFaqs } from "@/lib/content"
+import { siteConfig } from "@/lib/constants"
 
 export const metadata: Metadata = {
   alternates: {
@@ -41,7 +42,7 @@ export const metadata: Metadata = {
     title: "IA pour Entreprises | RLN Consulting",
     description:
       "Transformez votre entreprise avec l'intelligence artificielle. Chatbots, automatisation et solutions sur mesure.",
-    url: "https://rln-consulting.com/services/ia-entreprise",
+    url: `${siteConfig.url}/services/ia-entreprise`,
     images: [{ url: "/api/og?title=IA+pour+Entreprises&description=Chatbots%2C+Automatisation+%26+Int%C3%A9gration+IA+Sur+Mesure&type=service", width: 1200, height: 630 }],
   },
 }
@@ -156,11 +157,11 @@ const process_steps = [
 
 export default function IAEntreprisePage() {
   const breadcrumbItems = [
-    { name: "Accueil", url: "https://rln-consulting.com" },
-    { name: "Services", url: "https://rln-consulting.com/services" },
+    { name: "Accueil", url: siteConfig.url },
+    { name: "Services", url: `${siteConfig.url}/services` },
     {
       name: "IA pour Entreprises",
-      url: "https://rln-consulting.com/services/ia-entreprise",
+      url: `${siteConfig.url}/services/ia-entreprise`,
     },
   ]
 
@@ -169,7 +170,7 @@ export default function IAEntreprisePage() {
       <ServiceJsonLd
         name="IA pour Entreprises - Chatbots & Automatisation"
         description="Intégration d'intelligence artificielle pour entreprises. Chatbots GPT-4/Claude à partir de 3 000€, automatisation -60% tickets support. Solutions RAG formées sur vos données avec confidentialité garantie."
-        url="https://rln-consulting.com/services/ia-entreprise"
+        url={`${siteConfig.url}/services/ia-entreprise`}
         minPrice={3000}
         maxPrice={30000}
         features={[

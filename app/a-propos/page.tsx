@@ -15,6 +15,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { WebPageJsonLd, BreadcrumbJsonLd, PersonJsonLd, OrganizationJsonLd } from "@/components/seo"
 import { CTA } from "@/components/sections"
 import { companyStats, companyValues, teamMembers } from "@/lib/content"
+import { siteConfig } from "@/lib/constants"
 
 export const metadata: Metadata = {
   alternates: {
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
     title: "À Propos | RLN Consulting",
     description:
       "Découvrez l'histoire de RLN Consulting et notre équipe passionnée.",
-    url: "https://rln-consulting.com/a-propos",
+    url: `${siteConfig.url}/a-propos`,
   },
 }
 
@@ -44,12 +45,12 @@ export default function AboutPage() {
       <WebPageJsonLd
         title="À Propos de RLN Consulting"
         description="Découvrez l'histoire de RLN Consulting, notre équipe et nos valeurs."
-        url="https://rln-consulting.com/a-propos"
+        url={`${siteConfig.url}/a-propos`}
       />
       <BreadcrumbJsonLd
         items={[
-          { name: "Accueil", url: "https://rln-consulting.com" },
-          { name: "À Propos", url: "https://rln-consulting.com/a-propos" },
+          { name: "Accueil", url: siteConfig.url },
+          { name: "À Propos", url: `${siteConfig.url}/a-propos` },
         ]}
       />
       {/* Schema PersonJsonLd pour E-E-A-T - Établit l'autorité du fondateur */}
