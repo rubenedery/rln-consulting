@@ -31,21 +31,32 @@ function pruneExpiredEntries(now: number): void {
   }
 }
 
+interface RateLimitOptions {
+  max?: number
+  windowMs?: number
+}
+
 /**
- * Check if an IP has exceeded the rate limit
+ * Check if an IP has exceeded the rate limit.
+ * `scope` sépare les compteurs par formulaire (contact vs audit…).
  */
-export function isRateLimited(ip: string): boolean {
+export function isRateLimited(
+  ip: string,
+  { max = RATE_LIMIT_MAX_REQUESTS, windowMs = RATE_LIMIT_WINDOW_MS }: RateLimitOptions = {},
+  scope = "default"
+): boolean {
   const now = Date.now()
   pruneExpiredEntries(now)
-  const entry = rateLimitMap.get(ip)
+  const key = `${scope}:${ip}`
+  const entry = rateLimitMap.get(key)
 
   if (!entry || now > entry.resetAt) {
-    rateLimitMap.set(ip, { count: 1, resetAt: now + RATE_LIMIT_WINDOW_MS })
+    rateLimitMap.set(key, { count: 1, resetAt: now + windowMs })
     return false
   }
 
   entry.count++
-  return entry.count > RATE_LIMIT_MAX_REQUESTS
+  return entry.count > max
 }
 
 // --- Honeypot Check ---
@@ -86,7 +97,8 @@ export function getClientIp(request: Request): string {
  */
 export function validateAntiSpam(
   request: Request,
-  body: Record<string, unknown>
+  body: Record<string, unknown>,
+  rateLimit?: { max?: number; windowMs?: number; scope?: string }
 ): string | null {
   // 1. Honeypot
   if (isHoneypotFilled(body._gotcha)) {
@@ -100,7 +112,7 @@ export function validateAntiSpam(
 
   // 3. Rate limit
   const ip = getClientIp(request)
-  if (isRateLimited(ip)) {
+  if (isRateLimited(ip, rateLimit, rateLimit?.scope)) {
     return "rate_limited"
   }
 

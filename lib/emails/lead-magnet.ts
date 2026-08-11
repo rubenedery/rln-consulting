@@ -95,7 +95,7 @@ export function generateGuideHtml(): string {
             <p style="margin: 0 0 12px; font-size: 15px; color: #475569;">
               Vous voulez un diagnostic personnalisé de votre site ?
             </p>
-            <a href="${siteConfig.url}/contact" style="display: inline-block; background: #f59e0b; color: #1e293b; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: 600;">
+            <a href="${siteConfig.url}/audit-gratuit" style="display: inline-block; background: #f59e0b; color: #1e293b; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: 600;">
               Demander un audit gratuit
             </a>
           </div>

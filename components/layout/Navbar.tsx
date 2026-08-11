@@ -57,6 +57,7 @@ const navigation = [
       { name: "E-commerce", href: "/services/ecommerce" },
     ],
   },
+  { name: "Audit gratuit", href: "/audit-gratuit" },
   { name: "Tarifs", href: "/tarifs" },
   { name: "Cas d'études", href: "/cas-etudes" },
   { name: "Blog", href: "/blog" },

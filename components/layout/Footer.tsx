@@ -21,6 +21,7 @@ const footerLinks = {
     { name: "E-commerce", href: "/services/ecommerce" },
   ],
   resources: [
+    { name: "Audit gratuit de votre site", href: "/audit-gratuit" },
     { name: "Tarifs", href: "/tarifs" },
     { name: "Simulateur de prix", href: "/tarifs/simulateur" },
     { name: "Blog", href: "/blog" },
