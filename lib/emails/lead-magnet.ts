@@ -52,7 +52,7 @@ const guideItems: GuideItem[] = [
  * Email envoyé au prospect : le guide complet directement dans le corps du message.
  * TODO: joindre le PDF quand disponible via attachments: [{ filename, content }] (base64)
  */
-export function generateGuideHtml(): string {
+export function generateGuideHtml(optInSectionHtml = ""): string {
   const itemsHtml = guideItems
     .map(
       (item, index) => `
@@ -99,6 +99,7 @@ export function generateGuideHtml(): string {
               Demander un audit gratuit
             </a>
           </div>
+          ${optInSectionHtml}
         </div>
 
         <p style="text-align: center; color: #94a3b8; font-size: 12px; margin-top: 20px;">

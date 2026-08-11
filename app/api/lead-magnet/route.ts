@@ -7,6 +7,8 @@ import {
   generateGuideHtml,
   generateLeadNotificationHtml,
 } from "@/lib/emails/lead-magnet"
+import { generateOptInSectionHtml } from "@/lib/emails/nurturing"
+import { createNewsletterToken } from "@/lib/newsletter-token"
 
 const leadMagnetSchema = z.object({
   email: z.string().email("Email invalide"),
@@ -44,13 +46,22 @@ export async function POST(request: Request) {
     const from =
       process.env.RESEND_FROM_EMAIL || `contact@${new URL(siteConfig.url).host}`
 
+    // Double opt-in : l'email du guide contient un lien de confirmation signé
+    // vers la séquence de conseils (rien n'est envoyé sans ce clic explicite)
+    const confirmToken = createNewsletterToken(email)
+    const optInSection = confirmToken
+      ? generateOptInSectionHtml(
+          `${siteConfig.url}/api/newsletter/confirm?token=${confirmToken}`
+        )
+      : ""
+
     // Resend v6 ne throw pas sur une erreur API : elle est retournée dans `error`
     const [guideResult, notifyResult] = await Promise.all([
       resend.emails.send({
         from,
         to: email,
         subject: "Votre guide : 10 erreurs qui tuent la conversion",
-        html: generateGuideHtml(),
+        html: generateGuideHtml(optInSection),
       }),
       resend.emails.send({
         from,

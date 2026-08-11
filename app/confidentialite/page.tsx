@@ -160,7 +160,7 @@ export default function ConfidentialitePage() {
                 <li><strong>Google Analytics</strong> : analyse du trafic (sous réserve de consentement)</li>
                 <li><strong>Microsoft Clarity</strong> : cartes de chaleur et enregistrements de sessions anonymisés, saisies masquées (sous réserve de consentement)</li>
                 <li><strong>Vercel Analytics</strong> : analyse du trafic (données anonymisées)</li>
-                <li><strong>Resend</strong> : envoi d&apos;emails transactionnels (si activé)</li>
+                <li><strong>Resend</strong> : envoi d&apos;emails transactionnels et, avec votre double confirmation explicite, de nos emails de conseils (désinscription en un clic dans chaque email)</li>
               </ul>
               <p className="text-muted-foreground mt-4">
                 Nous ne vendons jamais vos données personnelles à des tiers.

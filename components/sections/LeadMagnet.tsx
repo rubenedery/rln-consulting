@@ -53,6 +53,8 @@ export function LeadMagnet() {
       })
 
       if (response.ok) {
+        // Évite que le popup exit-intent re-propose le guide à un inscrit
+        localStorage.setItem("rln_lead_subscribed", "1")
         track_lead_magnet()
         setIsSuccess(true)
         toast({
