@@ -90,6 +90,22 @@ export function track_cta_click(ctaName: string, location: string) {
   track_event("cta_click", "engagement", `${ctaName}_${location}`)
 }
 
+/** Track free site audit request as a lead conversion */
+export function track_audit_request() {
+  track_event("audit_request", "audit", "free_site_audit")
+  track_event("generate_lead", "audit", "audit_form")
+}
+
+/** Track exit-intent popup lifecycle */
+export function track_exit_intent(action: "shown" | "converted" | "dismissed") {
+  track_event(`exit_intent_${action}`, "exit_intent")
+}
+
+/** Track price simulator completion */
+export function track_simulator_complete(estimatedPrice?: number) {
+  track_event("simulator_complete", "simulator", "price_estimate", estimatedPrice)
+}
+
 /** Track WhatsApp click */
 export function track_whatsapp_click() {
   track_event("whatsapp_click", "whatsapp", "navbar_whatsapp")

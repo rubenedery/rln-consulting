@@ -8,7 +8,12 @@ export {
   track_whatsapp_click,
   track_phone_click,
   track_email_click,
+  track_audit_request,
+  track_exit_intent,
+  track_simulator_complete,
 } from "./GoogleAnalytics"
+
+export { Clarity } from "./Clarity"
 
 export {
   MetaPixel,

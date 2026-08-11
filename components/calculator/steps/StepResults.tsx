@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { useCalculator } from "../CalculatorContext"
 import { calculatePrice, serviceOptions } from "@/lib/pricing-data"
+import { track_simulator_complete } from "@/components/analytics"
 import type { PriceBreakdownItem } from "@/types/calculator"
 
 // Animated counter hook
@@ -43,6 +44,12 @@ export function StepResults() {
   const { state, reset } = useCalculator()
   const priceEstimate = calculatePrice(state)
   const animatedTotal = useAnimatedCounter(priceEstimate.total)
+
+  useEffect(() => {
+    track_simulator_complete(priceEstimate.total)
+    // Un seul event par affichage des résultats, pas à chaque re-render
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   const serviceName = serviceOptions.find((s) => s.value === state.service)?.label || ""
 

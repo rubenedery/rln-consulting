@@ -63,11 +63,12 @@ const nextConfig: NextConfig = {
             key: "Content-Security-Policy",
             value: [
               "default-src 'self'",
-              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://va.vercel-scripts.com",
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://va.vercel-scripts.com https://www.clarity.ms https://*.clarity.ms https://connect.facebook.net",
               "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
-              "img-src 'self' data: blob: https://images.unsplash.com https://*.cloudinary.com https://avatars.githubusercontent.com https://www.google-analytics.com",
+              "img-src 'self' data: blob: https://images.unsplash.com https://*.cloudinary.com https://avatars.githubusercontent.com https://www.google-analytics.com https://*.clarity.ms https://www.facebook.com",
               "font-src 'self' https://fonts.gstatic.com",
-              "connect-src 'self' https://www.google-analytics.com https://vitals.vercel-insights.com https://va.vercel-scripts.com",
+              // analytics.google.com + *.google-analytics.com : endpoints régionaux GA4
+              "connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://analytics.google.com https://vitals.vercel-insights.com https://va.vercel-scripts.com https://*.clarity.ms https://www.facebook.com",
               "frame-src 'self' https://calendly.com",
               "frame-ancestors 'none'",
               "base-uri 'self'",

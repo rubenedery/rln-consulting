@@ -2,17 +2,17 @@
 
 import { useEffect, useState } from "react"
 import Script from "next/script"
-import { hasAnalyticsConsent } from "@/lib/cookie-consent"
+import { hasMarketingConsent } from "@/lib/cookie-consent"
 
 const META_PIXEL_ID = process.env.NEXT_PUBLIC_META_PIXEL_ID
 
 export function MetaPixel() {
-  const [consentGiven, setConsentGiven] = useState(() => hasAnalyticsConsent())
+  const [consentGiven, setConsentGiven] = useState(() => hasMarketingConsent())
 
   useEffect(() => {
     const handler = (e: Event) => {
       const detail = (e as CustomEvent).detail
-      setConsentGiven(detail?.analytics ?? false)
+      setConsentGiven(detail?.marketing ?? false)
     }
     window.addEventListener("cookie-consent-update", handler)
     return () => window.removeEventListener("cookie-consent-update", handler)
@@ -52,25 +52,25 @@ export function MetaPixel() {
 }
 
 export function track_meta_lead() {
-  if (typeof window !== "undefined" && hasAnalyticsConsent()) {
+  if (typeof window !== "undefined" && hasMarketingConsent()) {
     window.fbq?.("track", "Lead")
   }
 }
 
 export function track_meta_contact() {
-  if (typeof window !== "undefined" && hasAnalyticsConsent()) {
+  if (typeof window !== "undefined" && hasMarketingConsent()) {
     window.fbq?.("track", "Contact")
   }
 }
 
 export function track_meta_complete_registration() {
-  if (typeof window !== "undefined" && hasAnalyticsConsent()) {
+  if (typeof window !== "undefined" && hasMarketingConsent()) {
     window.fbq?.("track", "CompleteRegistration")
   }
 }
 
 export function track_meta_custom(eventName: string, params?: Record<string, unknown>) {
-  if (typeof window !== "undefined" && hasAnalyticsConsent()) {
+  if (typeof window !== "undefined" && hasMarketingConsent()) {
     window.fbq?.("trackCustom", eventName, params)
   }
 }

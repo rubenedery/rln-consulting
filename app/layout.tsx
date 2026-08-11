@@ -8,7 +8,7 @@ import { ThemeProvider } from "@/components/providers/theme-provider"
 import { MotionProvider } from "@/components/providers/motion-provider"
 import { SkipLinks } from "@/components/ui/skip-links"
 import { CookieBanner } from "@/components/ui/cookie-banner"
-import { GoogleAnalytics, MetaPixel } from "@/components/analytics"
+import { GoogleAnalytics, MetaPixel, Clarity } from "@/components/analytics"
 import "./globals.css"
 import { siteConfig } from "@/lib/constants"
 
@@ -145,6 +145,7 @@ export default function RootLayout({
         <SpeedInsights />
         <GoogleAnalytics />
         <MetaPixel />
+        <Clarity />
       </body>
     </html>
   )
