@@ -10,8 +10,9 @@ import { Separator } from "@/components/ui/separator"
 import { BlogPostingJsonLd, BreadcrumbJsonLd, FAQPageJsonLd } from "@/components/seo"
 import { Breadcrumbs } from "@/components/ui/breadcrumbs"
 import { CTA } from "@/components/sections"
-import { ArticleCard } from "@/components/blog"
+import { ArticleCard, BlogCTA } from "@/components/blog"
 import { MarkdownContent } from "@/components/markdown"
+import { splitAfterNthH2 } from "@/lib/blog-cta"
 import { blogCategories } from "@/types"
 import { siteConfig } from "@/lib/constants"
 
@@ -82,6 +83,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   // FAQ de l'article (section "## FAQ" du markdown) pour le JSON-LD FAQPage
   const articleFaqs = extractFaqFromMarkdown(post.content)
+  const [contentBeforeCta, contentAfterCta] = splitAfterNthH2(post.content)
 
   // Get related posts (same category, excluding current)
   const allPosts = getAllBlogPosts()
@@ -172,12 +174,22 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             </div>
           </div>
 
-          {/* Content */}
+          {/* Content — coupé après le 2e h2 pour insérer un CTA contextuel */}
           <div className="max-w-3xl mx-auto">
             <MarkdownContent
-              content={post.content}
+              content={contentBeforeCta}
               className="prose prose-lg max-w-none prose-headings:text-foreground prose-p:text-muted-foreground prose-a:text-primary prose-strong:text-foreground"
             />
+            {contentAfterCta && (
+              <>
+                <BlogCTA category={post.category} placement="middle" />
+                <MarkdownContent
+                  content={contentAfterCta}
+                  className="prose prose-lg max-w-none prose-headings:text-foreground prose-p:text-muted-foreground prose-a:text-primary prose-strong:text-foreground"
+                />
+              </>
+            )}
+            <BlogCTA category={post.category} placement="end" />
 
             {/* Tags */}
             <Separator className="my-12" />
