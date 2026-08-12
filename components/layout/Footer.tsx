@@ -24,7 +24,6 @@ const footerLinks = {
     { name: "Audit gratuit de votre site", href: "/audit-gratuit" },
     { name: "Tarifs", href: "/tarifs" },
     { name: "Simulateur de prix", href: "/tarifs/simulateur" },
-    { name: "Quittance de loyer (générateur)", href: "/outils/quittance-de-loyer" },
     { name: "Blog", href: "/blog" },
     { name: "Cas d'études", href: "/cas-etudes" },
     { name: "FAQ", href: "/faq" },

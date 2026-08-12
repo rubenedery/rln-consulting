@@ -64,9 +64,6 @@ export interface Sector {
 
   faqs: SectorFAQ[]
 
-  /** Outils gratuits du site pertinents pour ce métier (bloc conditionnel du template) */
-  relatedTools?: { name: string; href: string; description: string }[]
-
   category: "commerce" | "services" | "sante" | "artisanat" | "tech" | "autre"
 
   icon: string

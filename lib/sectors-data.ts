@@ -381,14 +381,6 @@ export const sectors: Sector[] = [
     name: "Agence Immobilière",
     namePlural: "Agences Immobilières",
     icon: "Home",
-    relatedTools: [
-      {
-        name: "Générateur de quittance de loyer",
-        href: "/outils/quittance-de-loyer",
-        description:
-          "Créez gratuitement des quittances conformes pour vos locataires — sans inscription.",
-      },
-    ],
     category: "services",
     metaTitle: "Site Web Agence Immobilière | Portail Annonces",
     metaDescription: "Création site internet agence immobilière. Portail d'annonces, estimation en ligne, génération de mandats. Solution complète.",

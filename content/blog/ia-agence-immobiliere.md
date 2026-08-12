@@ -128,6 +128,6 @@ Pour des questions factuelles et la prise de rendez-vous, oui — ce qu'ils n'ac
 
 ## Conclusion
 
-L'IA en agence immobilière n'est ni un gadget ni une menace pour le métier : c'est un levier qui redonne aux négociateurs du temps de terrain et capte les leads que la concurrence laisse refroidir. La bonne approche est progressive — un cas d'usage à fort volume, un pilote mesuré, puis l'extension. Côté gestion locative, commencez simple : notre [générateur de quittance de loyer gratuit](/outils/quittance-de-loyer) automatise déjà un document mensuel récurrent.
+L'IA en agence immobilière n'est ni un gadget ni une menace pour le métier : c'est un levier qui redonne aux négociateurs du temps de terrain et capte les leads que la concurrence laisse refroidir. La bonne approche est progressive — un cas d'usage à fort volume, un pilote mesuré, puis l'extension.
 
 RLN Consulting conçoit des assistants IA sur mesure pour les professionnels de l'immobilier, intégrés à vos outils existants. **Parlons de vos volumes de leads et de vos priorités : [contactez-nous](/contact) pour un diagnostic gratuit de votre potentiel d'automatisation.**
