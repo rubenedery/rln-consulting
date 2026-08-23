@@ -28,9 +28,22 @@ function CardHeader({ className, ...props }: React.ComponentProps<"div">) {
   )
 }
 
-function CardTitle({ className, ...props }: React.ComponentProps<"div">) {
+/**
+ * `as` permet de rendre le titre comme un vrai heading.
+ *
+ * Le défaut reste `div` : une carte n'est pas toujours une section du document
+ * (une carte de formulaire ou de statistique n'a rien à faire dans le sommaire).
+ * Mais quand la grille de cartes EST le contenu de la section — la liste des
+ * services, par exemple — les rendre en `div` aplatit la hiérarchie, et les
+ * agents comme les lecteurs d'écran perdent le plan de la page.
+ */
+function CardTitle({
+  className,
+  as: Component = "div",
+  ...props
+}: React.ComponentProps<"div"> & { as?: "div" | "h2" | "h3" | "h4" }) {
   return (
-    <div
+    <Component
       data-slot="card-title"
       className={cn("leading-none font-semibold", className)}
       {...props}

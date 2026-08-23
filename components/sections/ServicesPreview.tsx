@@ -71,7 +71,9 @@ export function ServicesPreview() {
                     <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-3">
                       <IconComponent className="h-5 w-5 text-primary" />
                     </div>
-                    <CardTitle className="text-lg">{service.title}</CardTitle>
+                    <CardTitle as="h3" className="text-lg">
+                      {service.title}
+                    </CardTitle>
                     <CardDescription className="text-sm line-clamp-2">
                       {service.description}
                     </CardDescription>

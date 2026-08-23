@@ -40,6 +40,18 @@ const nextConfig: NextConfig = {
             value: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
           },
           {
+            // Négociation de contenu : la représentation dépend de l'en-tête
+            // Accept (HTML ou markdown), un CDN qui l'ignore servirait la
+            // mauvaise variante depuis son cache.
+            // Portée réelle vérifiée en build de production : cet en-tête
+            // s'applique aux route handlers (/llms.txt, /sitemap.xml…), mais Next
+            // réécrit le Vary des pages pré-rendues pour y mettre le sien (rsc,
+            // next-router-*). Les réponses markdown, elles, le portent toujours —
+            // c'est la variante négociée, donc celle qui doit être différenciée.
+            key: "Vary",
+            value: "Accept",
+          },
+          {
             key: "X-Content-Type-Options",
             value: "nosniff",
           },
@@ -99,6 +111,13 @@ const nextConfig: NextConfig = {
         source: "/agence-web-:city",
         destination: "/agence-web/:city",
       },
+      // Emplacement conventionnel des consignes machine (à côté de security.txt).
+      // Un dossier `.well-known` dans app/ serait ignoré par le routeur, d'où la
+      // réécriture vers la route qui génère réellement le fichier.
+      {
+        source: "/.well-known/agent-instructions.md",
+        destination: "/agent-instructions.md",
+      },
     ]
   },
 
@@ -125,6 +144,14 @@ const nextConfig: NextConfig = {
         destination: "/secteurs/videaste",
         permanent: true,
       },
+      // Chemins anglophones des « pages d'ancrage de confiance » : agents et
+      // annuaires vérifient l'existence d'une entreprise en tapant /about et
+      // /privacy avant de la recommander, sans deviner nos URLs françaises.
+      { source: "/about", destination: "/a-propos", permanent: true },
+      { source: "/about-us", destination: "/a-propos", permanent: true },
+      { source: "/privacy", destination: "/confidentialite", permanent: true },
+      { source: "/privacy-policy", destination: "/confidentialite", permanent: true },
+      { source: "/legal", destination: "/mentions-legales", permanent: true },
     ]
   },
 

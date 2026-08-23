@@ -324,17 +324,6 @@ interface ServiceJsonLdProps {
   minPrice?: number
   maxPrice?: number
   features?: string[]
-  aggregateRating?: {
-    ratingValue: number
-    reviewCount: number
-    bestRating?: number
-  }
-  reviews?: Array<{
-    author: string
-    reviewBody: string
-    ratingValue: number
-    datePublished?: string
-  }>
   estimatedDuration?: string
 }
 
@@ -347,8 +336,6 @@ export function ServiceJsonLd({
   minPrice,
   maxPrice,
   features,
-  aggregateRating,
-  reviews,
   estimatedDuration,
 }: ServiceJsonLdProps) {
   const jsonLd = {
@@ -386,32 +373,6 @@ export function ServiceJsonLd({
         validFrom: new Date().toISOString().split("T")[0],
       },
     },
-    ...(aggregateRating && {
-      aggregateRating: {
-        "@type": "AggregateRating",
-        ratingValue: aggregateRating.ratingValue,
-        reviewCount: aggregateRating.reviewCount,
-        bestRating: aggregateRating.bestRating || 5,
-        worstRating: 1,
-      },
-    }),
-    ...(reviews && reviews.length > 0 && {
-      review: reviews.map((review) => ({
-        "@type": "Review",
-        author: {
-          "@type": "Person",
-          name: review.author,
-        },
-        reviewBody: review.reviewBody,
-        reviewRating: {
-          "@type": "Rating",
-          ratingValue: review.ratingValue,
-          bestRating: 5,
-          worstRating: 1,
-        },
-        ...(review.datePublished && { datePublished: review.datePublished }),
-      })),
-    }),
     ...(estimatedDuration && {
       providerMobility: estimatedDuration,
     }),
@@ -987,6 +948,12 @@ interface ItemListJsonLdProps {
     position?: number
   }>
   itemListOrder?: "ItemListOrderAscending" | "ItemListOrderDescending" | "ItemListUnordered"
+  /**
+   * Type schema.org des éléments listés. "Thing" reste le défaut générique, mais
+   * une liste de prestations décrite en "Service" est comprise par les moteurs
+   * comme une offre, pas comme une collection d'objets quelconques.
+   */
+  itemType?: "Thing" | "Service" | "Article" | "Product"
 }
 
 export function ItemListJsonLd({
@@ -994,6 +961,7 @@ export function ItemListJsonLd({
   description,
   items,
   itemListOrder = "ItemListUnordered",
+  itemType = "Thing",
 }: ItemListJsonLdProps) {
   const jsonLd = {
     "@context": "https://schema.org",
@@ -1006,8 +974,12 @@ export function ItemListJsonLd({
       "@type": "ListItem",
       position: item.position || index + 1,
       item: {
-        "@type": "Thing",
+        "@type": itemType,
         name: item.name,
+        ...(itemType === "Service" && {
+          provider: { "@type": "Organization", name: siteConfig.name, url: siteConfig.url },
+          areaServed: { "@type": "Country", name: "France" },
+        }),
         url: item.url,
         ...(item.description && { description: item.description }),
         ...(item.image && {
