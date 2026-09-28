@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     "lexique digital",
   ],
   openGraph: {
-    title: "Glossaire Marketing Digital & Développement Web | RLN Consulting",
+    title: "Glossaire Marketing Digital & Développement Web | Agence RLN",
     description:
       "50+ définitions techniques pour comprendre le développement web, le marketing digital et l'IA. Ressource gratuite par RLN Consulting.",
     url: `${baseUrl}/glossaire`,
@@ -40,14 +40,14 @@ export const metadata: Metadata = {
 }
 
 const categoryIcons: Record<GlossaryCategory, string> = {
-  developpement: "💻",
-  marketing: "📈",
-  seo: "🔍",
-  ecommerce: "🛒",
-  ia: "🤖",
-  design: "🎨",
-  analytics: "📊",
-  infrastructure: "☁️",
+  developpement: "DEV",
+  marketing: "MKT",
+  seo: "SEO",
+  ecommerce: "SHOP",
+  ia: "IA",
+  design: "UI",
+  analytics: "DATA",
+  infrastructure: "INFRA",
 }
 
 export default function GlossairePage() {
@@ -108,15 +108,15 @@ export default function GlossairePage() {
 
       <div className="container mx-auto px-4 py-12">
         {/* Header */}
-        <header className="text-center mb-12">
+        <header className="mb-12">
           <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-4">
             <BookOpen className="h-4 w-4" />
             Ressource éducative
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+          <h1 className="v-display text-5xl sm:text-7xl lg:text-[88px] mb-4">
             Glossaire Marketing Digital & Développement Web
           </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl">
             Plus de <strong>50 définitions</strong> pour comprendre le développement web, le
             marketing digital, le SEO, l&apos;e-commerce et l&apos;intelligence artificielle.
             Ressource gratuite par RLN Consulting.
@@ -140,7 +140,7 @@ export default function GlossairePage() {
 
         {/* Termes populaires */}
         <section className="mb-16">
-          <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
+          <h2 className="text-2xl font-semibold mb-6 flex items-center gap-2">
             <Search className="h-6 w-6 text-primary" />
             Termes les plus recherchés
           </h2>
@@ -153,7 +153,7 @@ export default function GlossairePage() {
                       <CardHeader className="pb-2">
                         <div className="flex items-center justify-between">
                           <Badge variant="outline">
-                            {categoryIcons[term.category]} {glossaryCategories[term.category].name}
+                            <span className="font-mono">{categoryIcons[term.category]}</span> · {glossaryCategories[term.category].name}
                           </Badge>
                         </div>
                         <CardTitle className="text-lg">{term.term}</CardTitle>
@@ -172,7 +172,7 @@ export default function GlossairePage() {
 
         {/* Catégories */}
         <section className="mb-16">
-          <h2 className="text-2xl font-bold mb-6">Parcourir par catégorie</h2>
+          <h2 className="text-2xl font-semibold mb-6">Parcourir par catégorie</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {(Object.keys(glossaryCategories) as GlossaryCategory[]).map((category) => {
               const terms = getGlossaryTermsByCategory(category)
@@ -180,7 +180,7 @@ export default function GlossairePage() {
                 <Card key={category} className="hover:border-primary transition-colors">
                   <CardHeader className="pb-2">
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <span className="text-2xl">{categoryIcons[category]}</span>
+                      <span className="font-mono text-xs text-primary">{categoryIcons[category]}</span>
                       {glossaryCategories[category].name}
                     </CardTitle>
                   </CardHeader>
@@ -198,11 +198,11 @@ export default function GlossairePage() {
 
         {/* Liste alphabétique complète */}
         <section>
-          <h2 className="text-2xl font-bold mb-6">Tous les termes (A-Z)</h2>
+          <h2 className="text-2xl font-semibold mb-6">Tous les termes (A-Z)</h2>
           <div className="space-y-12">
             {letters.map((letter) => (
               <div key={letter} id={`letter-${letter}`} className="scroll-mt-24">
-                <h3 className="text-3xl font-bold text-primary mb-4 pb-2 border-b">{letter}</h3>
+                <h3 className="text-3xl font-semibold text-primary mb-4 pb-2 border-b">{letter}</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                   {termsByLetter[letter].map((term) => (
                     <Link
@@ -222,7 +222,7 @@ export default function GlossairePage() {
                         <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors flex-shrink-0 mt-1" />
                       </div>
                       <Badge variant="secondary" className="mt-2 text-xs">
-                        {categoryIcons[term.category]} {glossaryCategories[term.category].name}
+                        <span className="font-mono">{categoryIcons[term.category]}</span> · {glossaryCategories[term.category].name}
                       </Badge>
                     </Link>
                   ))}
@@ -233,9 +233,9 @@ export default function GlossairePage() {
         </section>
 
         {/* CTA */}
-        <section className="mt-16 text-center bg-muted rounded-2xl p-8">
-          <h2 className="text-2xl font-bold mb-4">Besoin d&apos;aide pour votre projet digital ?</h2>
-          <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+        <section className="mt-16 text-center bg-muted rounded-lg p-8">
+          <h2 className="text-2xl font-semibold mb-4">Besoin d&apos;aide pour votre projet digital ?</h2>
+          <p className="text-muted-foreground mb-6 max-w-2xl">
             RLN Consulting accompagne les PME et startups dans leur transformation digitale :
             développement web, marketing digital, solutions IA.
           </p>

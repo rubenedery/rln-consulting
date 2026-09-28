@@ -67,11 +67,11 @@ export function AuditForm() {
 
   if (isSuccess) {
     return (
-      <div className="bg-card border border-border rounded-2xl p-8 shadow-lg text-center animate-fade-in-up">
+      <div className="bg-card border border-border rounded-lg p-8 shadow-lift text-center animate-fade-in-up">
         <div className="w-16 h-16 rounded-full bg-success/10 flex items-center justify-center mx-auto mb-6">
           <CheckCircle className="h-8 w-8 text-success" />
         </div>
-        <h2 className="text-2xl font-bold text-foreground mb-4">
+        <h2 className="text-2xl font-semibold text-foreground mb-4">
           Audit en cours !
         </h2>
         <p className="text-muted-foreground">
@@ -83,7 +83,7 @@ export function AuditForm() {
   }
 
   return (
-    <div className="bg-card border border-border rounded-2xl p-8 shadow-lg animate-fade-in-up [animation-delay:200ms]">
+    <div className="bg-card border border-border rounded-lg p-8 shadow-lift animate-fade-in-up [animation-delay:200ms]">
       <form onSubmit={handleSubmit} className="space-y-4">
         {/* Honeypot - invisible to users, bots fill this */}
         <div className="absolute opacity-0 top-0 left-0 h-0 w-0 -z-10" aria-hidden="true">
@@ -163,7 +163,7 @@ export function AuditForm() {
         </Button>
 
         <p className="text-xs text-center text-muted-foreground">
-          🔒 Gratuit, sans engagement. Pas de spam, promis.
+          Gratuit, sans engagement. Pas de spam, promis.
         </p>
       </form>
     </div>

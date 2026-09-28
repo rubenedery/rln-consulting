@@ -92,12 +92,12 @@ export function LeadMagnet() {
           <m.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="max-w-2xl mx-auto text-center"
+            className="max-w-3xl"
           >
             <div className="w-16 h-16 rounded-full bg-success/10 flex items-center justify-center mx-auto mb-6">
               <CheckCircle className="h-8 w-8 text-success" />
             </div>
-            <h3 className="text-2xl font-bold text-foreground mb-4">
+            <h3 className="text-2xl font-semibold text-foreground mb-4">
               Votre guide est en route !
             </h3>
             <p className="text-muted-foreground">
@@ -111,7 +111,7 @@ export function LeadMagnet() {
   }
 
   return (
-    <section className="py-16 lg:py-20 bg-gradient-to-br from-primary/5 via-background to-accent/5 border-y border-border/50">
+    <section className="overflow-hidden py-24 lg:py-32 bg-secondary">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -123,14 +123,14 @@ export function LeadMagnet() {
               transition={{ duration: 0.5 }}
             >
               {/* Badge */}
-              <div className="inline-flex items-center gap-2 rounded-full bg-accent/10 px-4 py-1.5 text-sm font-medium text-accent mb-6">
+              <div className="inline-flex items-center gap-2 rounded-full bg-secondary px-4 py-1.5 font-mono text-xs text-foreground mb-6">
                 <Download className="h-4 w-4" />
                 Ressource gratuite
               </div>
 
-              <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+              <h2 className="v-display text-4xl sm:text-6xl text-foreground mb-4">
                 Guide gratuit : 10 erreurs qui tuent la{" "}
-                <span className="text-primary">conversion</span> de votre site
+                <span className="v-em text-primary">conversion</span> de votre site
               </h2>
 
               <p className="text-lg text-muted-foreground mb-8">
@@ -157,10 +157,10 @@ export function LeadMagnet() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="bg-card border border-border rounded-2xl p-8 shadow-lg"
+              className="bg-card border border-border rounded-lg p-8 shadow-lift"
             >
               {/* Preview mockup */}
-              <div className="flex items-center justify-center gap-4 mb-8 p-6 bg-muted/50 rounded-xl">
+              <div className="flex items-center justify-center gap-4 mb-8 p-6 bg-muted/50 rounded-lg">
                 <div className="w-16 h-20 bg-primary/10 rounded-lg flex items-center justify-center">
                   <FileText className="h-8 w-8 text-primary" />
                 </div>
@@ -212,7 +212,7 @@ export function LeadMagnet() {
                 <Button
                   type="submit"
                   size="lg"
-                  className="w-full bg-accent hover:bg-accent/90 text-accent-foreground"
+                  className="w-full"
                   disabled={isLoading}
                 >
                   {isLoading ? (
@@ -229,7 +229,7 @@ export function LeadMagnet() {
                 </Button>
 
                 <p className="text-xs text-center text-muted-foreground">
-                  🔒 Vos données sont protégées. Pas de spam, promis.
+                  Vos données sont protégées. Pas de spam, promis.
                 </p>
               </form>
             </m.div>

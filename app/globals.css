@@ -1,124 +1,90 @@
 @import "tailwindcss";
 
+/*
+ * Agence RLN — design system « recto / verso »
+ * Design system : https://claude.ai/artifact/8vaSEWAfDTpvoHxQZv4ddR
+ * Clair = « Recto », sombre = « Verso ». Une seule couleur de marque : le bleu Klein.
+ */
 :root {
   /* Les contrôles natifs (scrollbars, formulaires) suivent le thème actif */
-  color-scheme: light dark;
-
-  /* Base colors */
-  --background: 0 0% 100%;
-  --foreground: 222.2 84% 4.9%;
-
-  /* Card colors */
-  --card: 0 0% 100%;
-  --card-foreground: 222.2 84% 4.9%;
-
-  /* Popover colors */
+  color-scheme: light;
+  --background: 220 14% 96%;        /* paper  #F2F3F5 */
+  --foreground: 223 24% 6%;         /* ink    #0B0D12 */
+  --card: 0 0% 100%;                /* surface #FFFFFF */
+  --card-foreground: 223 24% 6%;
   --popover: 0 0% 100%;
-  --popover-foreground: 222.2 84% 4.9%;
-
-  /* Primary: Dark Blue (#1e3a8a) */
-  --primary: 224 64% 33%;
-  --primary-foreground: 210 40% 98%;
-
-  /* Secondary */
-  --secondary: 210 40% 96%;
-  --secondary-foreground: 222.2 84% 4.9%;
-
-  /* Muted */
-  --muted: 210 40% 96%;
-  --muted-foreground: 215.4 16.3% 46.9%;
-
-  /* Accent: Orange (#f59e0b) */
-  --accent: 38 92% 50%;
-  --accent-foreground: 222.2 84% 4.9%;
-
-  /* Destructive */
-  --destructive: 0 84.2% 60.2%;
+  --popover-foreground: 223 24% 6%;
+  --primary: 236 100% 56%;          /* klein  #1F2BFF */
+  --primary-foreground: 0 0% 100%;
+  --secondary: 233 100% 95%;        /* klein-50 #E4E7FF */
+  --secondary-foreground: 223 24% 6%;
+  --muted: 220 14% 92%;             /* surface-sunken #E8EAEE */
+  --muted-foreground: 225 10% 39%;  /* ink-muted #5A5F6E */
+  --accent: 236 100% 56%;           /* l'ancien orange devient Klein */
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 72% 45%;
   --destructive-foreground: 0 0% 100%;
-
-  /* Success */
-  --success: 142 76% 36%;
+  --success: 152 60% 32%;
   --success-foreground: 0 0% 100%;
-
-  /* Border and input */
-  --border: 214.3 31.8% 91.4%;
-  --input: 214.3 31.8% 91.4%;
-
-  /* Ring */
-  --ring: 224 64% 33%;
-
-  /* Radius */
-  --radius: 0.5rem;
-
-  /* Sidebar */
+  --border: 227 13% 87%;            /* line #D9DBE2 */
+  --input: 226 9% 60%;              /* line-strong #8E93A3 */
+  --ring: 236 100% 56%;
+  --radius: 0.875rem;
+  --klein-50: 233 100% 95%;
+  --klein-200: 234 100% 89%;
+  --signal: 11 79% 49%;
   --sidebar: 0 0% 100%;
-  --sidebar-foreground: 222.2 84% 4.9%;
-  --sidebar-primary: 224 64% 33%;
-  --sidebar-primary-foreground: 210 40% 98%;
-  --sidebar-accent: 38 92% 50%;
-  --sidebar-accent-foreground: 222.2 84% 4.9%;
-  --sidebar-border: 214.3 31.8% 91.4%;
-  --sidebar-ring: 224 64% 33%;
-
-  /* Chart colors */
-  --chart-1: 224 64% 33%;
-  --chart-2: 38 92% 50%;
-  --chart-3: 197 37% 24%;
-  --chart-4: 43 74% 66%;
-  --chart-5: 27 87% 67%;
+  --sidebar-foreground: 223 24% 6%;
+  --sidebar-primary: 236 100% 56%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 233 100% 95%;
+  --sidebar-accent-foreground: 223 24% 6%;
+  --sidebar-border: 227 13% 87%;
+  --sidebar-ring: 236 100% 56%;
+  --chart-1: 236 100% 56%;
+  --chart-2: 234 100% 89%;
+  --chart-3: 223 24% 6%;
+  --chart-4: 226 9% 60%;
+  --chart-5: 233 100% 95%;
+  --shadow-lift: 0 1px 0 rgb(11 13 18 / 0.04), 0 12px 32px -12px rgb(11 13 18 / 0.18);
+  --ease-verso: cubic-bezier(.7, 0, .2, 1);
 }
 
-/* Dark mode via next-themes (class-based) */
 .dark {
-  /* Base colors - Dark mode */
-  --background: 222.2 84% 4.9%;
-  --foreground: 210 40% 98%;
-
-  /* Card colors - Dark mode (légèrement plus clair que le fond pour rester discernable) */
-  --card: 222.2 47% 9%;
-  --card-foreground: 210 40% 98%;
-
-  /* Popover colors - Dark mode */
-  --popover: 222.2 47% 9%;
-  --popover-foreground: 210 40% 98%;
-
-  /* Primary stays same */
-  --primary: 224 64% 50%;
-  --primary-foreground: 210 40% 98%;
-
-  /* Secondary - Dark mode */
-  --secondary: 217.2 32.6% 17.5%;
-  --secondary-foreground: 210 40% 98%;
-
-  /* Muted - Dark mode */
-  --muted: 217.2 32.6% 17.5%;
-  --muted-foreground: 215 20.2% 65.1%;
-
-  /* Accent: l'orange reste identique, mais le texte posé dessus doit être
-     sombre (comme en light) — le blanc donnait un contraste de ~2:1 */
-  --accent: 38 92% 50%;
-  --accent-foreground: 222.2 84% 4.9%;
-
-  /* Success - Dark mode (plus clair pour le contraste) */
-  --success: 142 70% 45%;
-  --success-foreground: 0 0% 100%;
-
-  /* Border and input - Dark mode */
-  --border: 217.2 32.6% 17.5%;
-  --input: 217.2 32.6% 17.5%;
-
-  /* Ring : bleu clair, visible sur fond sombre (la valeur light est quasi invisible ici) */
-  --ring: 224 76% 65%;
-
-  /* Sidebar - Dark mode */
-  --sidebar: 222.2 84% 4.9%;
-  --sidebar-foreground: 210 40% 98%;
-  --sidebar-primary: 224 64% 50%;
-  --sidebar-primary-foreground: 210 40% 98%;
-  --sidebar-accent: 38 92% 50%;
-  --sidebar-accent-foreground: 222.2 84% 4.9%;
-  --sidebar-border: 217.2 32.6% 17.5%;
-  --sidebar-ring: 224 76% 65%;
+  --background: 230 23% 5%;         /* #0A0B10 */
+  --foreground: 223 29% 94%;        /* #EDEFF4 */
+  --card: 227 18% 10%;              /* #14161D */
+  --card-foreground: 223 29% 94%;
+  --popover: 227 18% 10%;
+  --popover-foreground: 223 29% 94%;
+  --primary: 236 100% 67%;          /* #5560FF */
+  --primary-foreground: 0 0% 100%;
+  --secondary: 234 40% 17%;         /* #1A1D3D */
+  --secondary-foreground: 223 29% 94%;
+  --muted: 228 16% 13%;
+  --muted-foreground: 226 11% 63%;  /* #959AAB */
+  --accent: 236 100% 67%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 70% 55%;
+  --destructive-foreground: 0 0% 100%;
+  --success: 152 55% 50%;
+  --success-foreground: 230 23% 5%;
+  --border: 227 16% 17%;            /* #252833 */
+  --input: 227 11% 39%;
+  --ring: 236 100% 77%;
+  --klein-50: 234 40% 17%;
+  --klein-200: 235 50% 33%;
+  --signal: 13 100% 67%;
+  --sidebar: 227 18% 10%;
+  --sidebar-foreground: 223 29% 94%;
+  --sidebar-primary: 236 100% 67%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 234 40% 17%;
+  --sidebar-accent-foreground: 223 29% 94%;
+  --sidebar-border: 227 16% 17%;
+  --sidebar-ring: 236 100% 77%;
+  --shadow-lift: 0 1px 0 rgb(255 255 255 / 0.04), 0 16px 40px -12px rgb(0 0 0 / 0.6);
+  color-scheme: dark;
 }
 
 @theme inline {
@@ -157,8 +123,14 @@
   --color-chart-4: hsl(var(--chart-4));
   --color-chart-5: hsl(var(--chart-5));
 
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-klein-50: hsl(var(--klein-50));
+  --color-klein-200: hsl(var(--klein-200));
+  --color-signal: hsl(var(--signal));
+
+  --font-sans: var(--font-instrument-sans);
+  --font-mono: var(--font-jetbrains-mono);
+  --font-display: var(--font-bricolage);
+  --font-serif: var(--font-instrument-serif);
 
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -169,7 +141,21 @@
 body {
   background: var(--color-background);
   color: var(--color-foreground);
-  font-family: var(--font-sans), system-ui, sans-serif;
+  font-family: var(--font-instrument-sans), "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Titres : Bricolage Grotesque, serrés — partout sur le site */
+h1, h2, h3, h4 {
+  font-family: var(--font-bricolage), "Helvetica Neue", Arial, sans-serif;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+h1 { letter-spacing: -0.04em; }
+
+:where(a, button, input, textarea, select, [tabindex]):focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
 }
 
 /* Smooth scrolling — uniquement si l'utilisateur n'a pas réduit les animations */
@@ -181,7 +167,7 @@ body {
 
 /* Selection color */
 ::selection {
-  background: hsl(var(--accent) / 0.3);
+  background: hsl(var(--primary) / 0.2);
 }
 
 /* Marquee animation for client logos */
@@ -228,6 +214,34 @@ body {
   }
 }
 
+/* ================= Articles (blog, cas clients) =================
+   Styles écrits à la main : le plugin @tailwindcss/typography n'est pas installé,
+   les classes .prose n'avaient donc aucun effet. */
+.prose { color: hsl(var(--foreground)); font-size: 1.0625rem; line-height: 1.75; max-width: 70ch; }
+.prose.max-w-none { max-width: none; }
+.prose > * + * { margin-top: 1.1em; }
+.prose p { color: hsl(var(--muted-foreground)); }
+.prose h2 { font-family: var(--font-bricolage), "Helvetica Neue", Arial, sans-serif; font-weight: 600; font-size: 2rem; line-height: 1.1; letter-spacing: -0.03em; margin-top: 2.2em; margin-bottom: .6em; color: hsl(var(--foreground)); }
+.prose h3 { font-family: var(--font-bricolage), "Helvetica Neue", Arial, sans-serif; font-weight: 600; font-size: 1.4rem; line-height: 1.2; letter-spacing: -0.02em; margin-top: 1.8em; margin-bottom: .4em; color: hsl(var(--foreground)); }
+.prose h4 { font-weight: 600; font-size: 1.1rem; margin-top: 1.5em; color: hsl(var(--foreground)); }
+.prose strong { color: hsl(var(--foreground)); font-weight: 600; }
+.prose a { color: hsl(var(--primary)); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+.prose a:hover { text-decoration-thickness: 2px; }
+.prose ul, .prose ol { padding-left: 1.4em; color: hsl(var(--muted-foreground)); }
+.prose ul { list-style: none; padding-left: 0; }
+.prose ul > li { position: relative; padding-left: 1.5em; }
+.prose ul > li::before { content: ""; position: absolute; left: .2em; top: .72em; width: 8px; height: 8px; background: hsl(var(--primary)); clip-path: polygon(0 0, 65% 0, 100% 35%, 100% 100%, 0 100%); }
+.prose ol { list-style: decimal; }
+.prose ol > li::marker { color: hsl(var(--primary)); font-family: var(--font-jetbrains-mono), monospace; font-size: .9em; }
+.prose li + li { margin-top: .4em; }
+.prose blockquote { margin-left: 0; padding: .2em 0 .2em 1.2em; border-left: 2px solid hsl(var(--primary)); font-family: var(--font-instrument-serif), Georgia, serif; font-style: italic; font-size: 1.35em; line-height: 1.35; color: hsl(var(--foreground)); }
+.prose code { font-family: var(--font-jetbrains-mono), monospace; font-size: .88em; background: hsl(var(--muted)); padding: .15em .4em; border-radius: 6px; }
+.prose pre { background: #0B0D12; color: #EDEFF4; padding: 1.1em 1.3em; border-radius: 10px; overflow-x: auto; font-size: .88em; line-height: 1.7; }
+.prose pre code { background: none; padding: 0; color: inherit; }
+.prose hr { border: 0; border-top: 1px solid hsl(var(--border)); margin: 2.5em 0; }
+.prose img { border-radius: 10px; }
+.prose table { font-size: .95em; }
+
 /* Prose table styles for markdown content */
 .prose table {
   width: 100%;
@@ -248,4 +262,83 @@ body {
 
 .prose tr:nth-child(even) {
   background-color: hsl(var(--muted) / 0.3);
+}
+
+/* ================= Agence RLN : utilitaires de marque ================= */
+.v-em { font-family: var(--font-instrument-serif), Georgia, serif; font-style: italic; font-weight: 400; letter-spacing: -0.01em; }
+.v-label { font-family: var(--font-jetbrains-mono), ui-monospace, monospace; font-size: 12px; line-height: 1.4; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: hsl(var(--muted-foreground)); }
+.v-display { font-family: var(--font-bricolage), "Helvetica Neue", Arial, sans-serif; font-weight: 600; letter-spacing: -0.045em; line-height: .92; }
+.shadow-lift { box-shadow: var(--shadow-lift); }
+
+/* Révélation des lignes du hero */
+.v-line { display: block; overflow: hidden; padding-bottom: .06em; }
+.v-line > span { display: inline-block; animation: v-rise .9s var(--ease-verso) both; }
+.v-line:nth-child(2) > span { animation-delay: .08s; }
+@keyframes v-rise { from { transform: translateY(105%); } to { transform: none; } }
+
+/* Grille de points qui suit le pointeur */
+.v-dots { position: absolute; inset: 0; pointer-events: none;
+  background-image: radial-gradient(circle, hsl(var(--primary)) 1.4px, transparent 1.6px); background-size: 24px 24px;
+  -webkit-mask-image: radial-gradient(circle 260px at var(--mx, 70%) var(--my, 40%), #000, transparent);
+          mask-image: radial-gradient(circle 260px at var(--mx, 70%) var(--my, 40%), #000, transparent); }
+
+/* Coin replié (signe de la marque) */
+.v-fold { position: absolute; top: 0; right: 0; width: 32px; height: 32px;
+  background: linear-gradient(225deg, hsl(var(--background)) 50%, hsl(var(--klein-200)) 50%);
+  transition: width .35s var(--ease-verso), height .35s var(--ease-verso); }
+.group:hover > .v-fold { width: 56px; height: 56px; }
+
+/* Carte qui se retourne */
+.v-flip { perspective: 1400px; }
+.v-flip__in { position: relative; width: 100%; height: 100%; transform-style: preserve-3d; transition: transform .7s var(--ease-verso); }
+.v-flip:hover .v-flip__in, .v-flip:focus-visible .v-flip__in, .v-flip[data-flipped="true"] .v-flip__in { transform: rotateY(180deg); }
+.v-face { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+.v-face--back { transform: rotateY(180deg); }
+
+/* Libellé de bouton qui roule */
+.v-roll { display: inline-grid; height: 1.1em; overflow: hidden; line-height: 1.1; }
+.v-roll > span { grid-area: 1 / 1; transition: transform .35s var(--ease-verso); }
+.v-roll > span + span { transform: translateY(110%); }
+.group:hover .v-roll > span:first-child { transform: translateY(-110%); }
+.group:hover .v-roll > span + span { transform: none; }
+
+/* Pastille « disponible » */
+.v-dot { width: 8px; height: 8px; border-radius: 50%; background: hsl(var(--signal)); animation: v-pulse 2s infinite; flex-shrink: 0; }
+@keyframes v-pulse { 0% { box-shadow: 0 0 0 0 hsl(var(--signal)); } 70%, 100% { box-shadow: 0 0 0 7px transparent; } }
+
+/* Bandeaux défilants */
+.v-marquee { display: flex; overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+.v-marquee__track { display: flex; flex-shrink: 0; align-items: center; animation: v-marq 40s linear infinite; }
+.v-marquee--rev .v-marquee__track { animation-direction: reverse; animation-duration: 55s; }
+@keyframes v-marq { to { transform: translateX(-100%); } }
+
+/* Démos vivantes du bento */
+.v-scrollpage { animation: v-scrollpage 14s var(--ease-verso) infinite; }
+@keyframes v-scrollpage { 0%, 12% { transform: translateY(0); } 45%, 60% { transform: translateY(-46%); } 92%, 100% { transform: translateY(0); } }
+.v-msg { animation: v-pop .5s var(--ease-verso) both; }
+.v-msg:nth-child(2) { animation-delay: .6s; } .v-msg:nth-child(3) { animation-delay: 1.4s; } .v-msg:nth-child(4) { animation-delay: 2.2s; } .v-msg:nth-child(5) { animation-delay: 3s; }
+@keyframes v-pop { from { opacity: 0; transform: translateY(10px) scale(.98); } to { opacity: 1; transform: none; } }
+.v-typing i { width: 6px; height: 6px; border-radius: 50%; background: hsl(var(--muted-foreground)); animation: v-blink 1.2s infinite; }
+.v-typing i:nth-child(2) { animation-delay: .15s; } .v-typing i:nth-child(3) { animation-delay: .3s; }
+@keyframes v-blink { 0%, 60%, 100% { opacity: .25; transform: none; } 30% { opacity: 1; transform: translateY(-3px); } }
+.v-scene { perspective: 900px; }
+.v-cube { position: relative; width: 140px; height: 140px; transform-style: preserve-3d; animation: v-spin 12s linear infinite; }
+.v-cube > i { position: absolute; inset: 0; border-radius: 14px; background: var(--c, #1F2BFF); transition: background .5s var(--ease-verso); }
+.v-cube > i:nth-child(1) { transform: translateZ(70px); }
+.v-cube > i:nth-child(2) { transform: rotateY(180deg) translateZ(70px); filter: brightness(.7); }
+.v-cube > i:nth-child(3) { transform: rotateY(90deg) translateZ(70px); filter: brightness(.85); }
+.v-cube > i:nth-child(4) { transform: rotateY(-90deg) translateZ(70px); filter: brightness(.8); }
+.v-cube > i:nth-child(5) { transform: rotateX(90deg) translateZ(70px); filter: brightness(1.15); }
+.v-cube > i:nth-child(6) { transform: rotateX(-90deg) translateZ(70px); filter: brightness(.6); }
+@keyframes v-spin { from { transform: rotateX(-22deg) rotateY(0); } to { transform: rotateX(-22deg) rotateY(360deg); } }
+.v-kmove { animation: v-kmove 7s var(--ease-verso) infinite; }
+@keyframes v-kmove { 0%, 15% { transform: translateX(0); } 40%, 55% { transform: translateX(calc(100% + 12px)); } 80%, 100% { transform: translateX(calc(200% + 24px)); } }
+.v-bar { transform-origin: left center; animation: v-grow 1.4s .3s var(--ease-verso) both; }
+@keyframes v-grow { from { transform: scaleX(0); } to { transform: none; } }
+.v-caret { display: inline-block; width: 8px; height: 16px; background: currentColor; vertical-align: middle; margin-left: 4px; animation: v-caret 1s steps(1) infinite; }
+@keyframes v-caret { 50% { opacity: 0; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .v-line > span, .v-marquee__track, .v-scrollpage, .v-msg, .v-typing i, .v-cube, .v-kmove, .v-bar, .v-dot, .v-caret { animation: none !important; }
+  .v-flip__in, .v-roll > span, .v-fold { transition: none !important; }
 }

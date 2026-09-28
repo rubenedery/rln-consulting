@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   description:
     "Retrouvez les réponses aux questions les plus courantes sur nos services de développement web et gestion publicitaire. Tarifs, délais, processus.",
   openGraph: {
-    title: "FAQ | RLN Consulting",
+    title: "FAQ | Agence RLN",
     description: "Questions fréquentes sur nos services de développement web et marketing digital.",
     url: `${siteConfig.url}/faq`,
   },

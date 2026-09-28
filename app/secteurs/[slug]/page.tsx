@@ -130,7 +130,7 @@ export default async function SectorPage({ params }: PageProps) {
       <FAQPageJsonLd questions={faqJsonLd} />
 
       {/* Hero Section */}
-      <section className="py-16 lg:py-24 bg-gradient-to-b from-primary/5 to-background">
+      <section className="py-16 lg:py-24 ">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs
             items={breadcrumbItems.slice(1).map((item, index, arr) =>
@@ -140,21 +140,21 @@ export default async function SectorPage({ params }: PageProps) {
             )}
             className="mb-6"
           />
-          <div className="max-w-4xl mx-auto text-center">
+          <div className="max-w-4xl">
             <Badge variant="secondary" className="mb-4">
               Site web pour {sector.namePlural.toLowerCase()}
             </Badge>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-foreground mb-6">
+            <h1 className="v-display text-5xl sm:text-7xl lg:text-[88px] text-foreground mb-6">
               {sector.headline}
             </h1>
-            <p className="text-lg sm:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl text-muted-foreground mb-8 max-w-2xl">
               {sector.subheadline}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 asChild
                 size="lg"
-                className="bg-accent hover:bg-accent/90 text-accent-foreground"
+                
               >
                 <Link href="/contact">
                   Demander un devis gratuit
@@ -177,11 +177,11 @@ export default async function SectorPage({ params }: PageProps) {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <div className="flex items-center gap-3 mb-8">
-              <div className="w-12 h-12 rounded-xl bg-destructive/10 flex items-center justify-center">
+              <div className="w-12 h-12 rounded-lg bg-destructive/10 flex items-center justify-center">
                 <Target className="h-6 w-6 text-destructive" />
               </div>
               <div>
-                <h2 className="text-2xl font-bold text-foreground">
+                <h2 className="text-2xl font-semibold text-foreground">
                   Les défis des {sector.namePlural.toLowerCase()}
                 </h2>
                 <p className="text-muted-foreground">
@@ -208,11 +208,11 @@ export default async function SectorPage({ params }: PageProps) {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <div className="flex items-center gap-3 mb-8">
-              <div className="w-12 h-12 rounded-xl bg-success/10 flex items-center justify-center">
+              <div className="w-12 h-12 rounded-lg bg-success/10 flex items-center justify-center">
                 <Lightbulb className="h-6 w-6 text-success" />
               </div>
               <div>
-                <h2 className="text-2xl font-bold text-foreground">
+                <h2 className="text-2xl font-semibold text-foreground">
                   Nos solutions pour les {sector.namePlural.toLowerCase()}
                 </h2>
                 <p className="text-muted-foreground">
@@ -246,7 +246,7 @@ export default async function SectorPage({ params }: PageProps) {
       <section className="py-16 lg:py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-2xl font-bold text-foreground mb-8 text-center">
+            <h2 className="text-2xl font-semibold text-foreground mb-8 text-center">
               Fonctionnalités spécifiques pour {sector.namePlural.toLowerCase()}
             </h2>
 
@@ -267,17 +267,17 @@ export default async function SectorPage({ params }: PageProps) {
       </section>
 
       {/* Digital Services Section */}
-      <section className="py-16 lg:py-20 bg-gradient-to-br from-accent/5 to-primary/5">
+      <section className="py-16 lg:py-20 bg-secondary">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-12">
-              <Badge variant="outline" className="mb-4 border-accent text-accent">
+            <div className="mb-12">
+              <Badge variant="outline" className="mb-4 border-accent text-primary">
                 Solutions digitales complètes
               </Badge>
-              <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">
+              <h2 className="text-3xl sm:text-4xl font-semibold tracking-[-0.03em] text-foreground mb-4">
                 Bien plus qu'un site web
               </h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-muted-foreground max-w-2xl">
                 Nous accompagnons les {sector.namePlural.toLowerCase()} avec un écosystème digital complet : site web, CRM sur mesure, application mobile et automatisations.
               </p>
             </div>
@@ -286,10 +286,10 @@ export default async function SectorPage({ params }: PageProps) {
             {(sector.digitalServices.includes("crm") || sector.digitalServices.includes("app_mobile")) && (
               <div className="grid md:grid-cols-2 gap-6 mb-8">
                 {sector.digitalServices.includes("crm") && (
-                  <Card className="border-2 border-primary/30 bg-gradient-to-br from-primary/5 to-transparent">
+                  <Card className="border-2 border-primary/30 ">
                     <CardHeader>
                       <div className="flex items-center gap-3">
-                        <div className="w-12 h-12 rounded-xl bg-primary flex items-center justify-center">
+                        <div className="w-12 h-12 rounded-lg bg-primary flex items-center justify-center">
                           <Users className="h-6 w-6 text-primary-foreground" />
                         </div>
                         <div>
@@ -312,14 +312,14 @@ export default async function SectorPage({ params }: PageProps) {
                   </Card>
                 )}
                 {sector.digitalServices.includes("app_mobile") && (
-                  <Card className="border-2 border-accent/30 bg-gradient-to-br from-accent/5 to-transparent">
+                  <Card className="border-2 border-klein-200 ">
                     <CardHeader>
                       <div className="flex items-center gap-3">
-                        <div className="w-12 h-12 rounded-xl bg-accent flex items-center justify-center">
-                          <Smartphone className="h-6 w-6 text-accent-foreground" />
+                        <div className="w-12 h-12 rounded-lg bg-primary flex items-center justify-center">
+                          <Smartphone className="h-6 w-6 text-primary-foreground" />
                         </div>
                         <div>
-                          <Badge className="mb-1 bg-accent/20 text-accent-foreground hover:bg-accent/30">Nouveauté</Badge>
+                          <Badge className="mb-1 bg-secondary text-primary-foreground hover:bg-accent/30">Nouveauté</Badge>
                           <CardTitle className="text-lg">Application Mobile</CardTitle>
                         </div>
                       </div>
@@ -350,7 +350,7 @@ export default async function SectorPage({ params }: PageProps) {
                     <Card key={service.type} className="border-border/50 hover:border-primary/30 transition-colors">
                       <CardHeader className="pb-3">
                         <div className="flex items-center gap-3">
-                          <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                          <div className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center">
                             <IconComponent className="h-5 w-5 text-primary" />
                           </div>
                           <CardTitle className="text-base">{service.title}</CardTitle>
@@ -394,7 +394,7 @@ export default async function SectorPage({ params }: PageProps) {
           <div className="max-w-4xl mx-auto">
             <div className="flex items-center justify-center gap-3 mb-12">
               <BarChart3 className="h-8 w-8" />
-              <h2 className="text-2xl font-bold">
+              <h2 className="text-2xl font-semibold">
                 Résultats pour nos clients {sector.namePlural.toLowerCase()}
               </h2>
             </div>
@@ -402,7 +402,7 @@ export default async function SectorPage({ params }: PageProps) {
             <div className="grid sm:grid-cols-3 gap-8">
               {sector.stats.map((stat, index) => (
                 <div key={index} className="text-center">
-                  <div className="text-4xl sm:text-5xl font-bold text-accent mb-2">
+                  <div className="text-4xl sm:text-5xl font-semibold text-primary mb-2">
                     {stat.value}
                   </div>
                   <div className="text-primary-foreground/80">
@@ -420,11 +420,11 @@ export default async function SectorPage({ params }: PageProps) {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto">
             <div className="flex items-center gap-3 mb-8">
-              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+              <div className="w-12 h-12 rounded-lg bg-secondary flex items-center justify-center">
                 <HelpCircle className="h-6 w-6 text-primary" />
               </div>
               <div>
-                <h2 className="text-2xl font-bold text-foreground">
+                <h2 className="text-2xl font-semibold text-foreground">
                   Questions fréquentes
                 </h2>
                 <p className="text-muted-foreground">
@@ -457,12 +457,12 @@ export default async function SectorPage({ params }: PageProps) {
       {aiProfile && (
         <section className="py-12 bg-primary/5 border-y border-primary/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-3xl mx-auto text-center">
-              <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary mb-4">
+            <div className="max-w-4xl">
+              <span className="v-label inline-flex items-center gap-2 !text-primary mb-4">
                 <Sparkles className="h-4 w-4" />
                 Nouveau
               </span>
-              <h2 className="text-2xl font-bold text-foreground mb-3">
+              <h2 className="text-2xl font-semibold text-foreground mb-3">
                 Intégrer l&apos;IA dans votre activité de {sector.name}
               </h2>
               <p className="text-muted-foreground mb-6">
@@ -493,9 +493,9 @@ export default async function SectorPage({ params }: PageProps) {
       {/* CTA Section */}
       <section className="py-16 lg:py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <Card className="max-w-2xl mx-auto bg-gradient-to-br from-primary/5 to-accent/5 border-primary/20">
+          <Card className="max-w-2xl mx-auto bg-secondary border-primary/20">
             <CardContent className="py-10 text-center">
-              <h2 className="text-2xl font-bold text-foreground mb-4">
+              <h2 className="text-2xl font-semibold text-foreground mb-4">
                 Prêt à développer votre activité de {sector.name.toLowerCase()} ?
               </h2>
               <p className="text-muted-foreground mb-6">
@@ -505,7 +505,7 @@ export default async function SectorPage({ params }: PageProps) {
                 <Button
                   asChild
                   size="lg"
-                  className="bg-accent hover:bg-accent/90 text-accent-foreground"
+                  
                 >
                   <Link href={`/contact?secteur=${sector.slug}`}>
                     Demander un devis gratuit
@@ -527,7 +527,7 @@ export default async function SectorPage({ params }: PageProps) {
       <section className="py-16 lg:py-20 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-xl font-bold text-foreground mb-6 text-center">
+            <h2 className="text-xl font-semibold text-foreground mb-6 text-center">
               Découvrez aussi nos solutions pour
             </h2>
             <div className="flex flex-wrap gap-2 justify-center">

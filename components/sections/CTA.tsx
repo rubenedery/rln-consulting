@@ -1,82 +1,50 @@
 "use client"
 
 import Link from "next/link"
-import { m } from "framer-motion"
-import { ArrowRight, Mail, Phone } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { track_cta_click, track_email_click, track_phone_click } from "@/components/analytics"
+import { track_cta_click, track_whatsapp_click } from "@/components/analytics"
+import { WHATSAPP_URL, WhatsAppIcon } from "@/components/ui/whatsapp"
 
 export function CTA() {
   return (
-    <section className="py-20 lg:py-28 bg-primary text-primary-foreground relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-72 h-72 bg-accent/20 rounded-full blur-3xl" />
-      </div>
-
+    <section className="py-24 lg:py-32" aria-labelledby="cta-title">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <m.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="max-w-3xl mx-auto text-center"
-        >
-          {/* Headline */}
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-            Prêt à lancer votre projet ?
-          </h2>
-
-          {/* Subheadline */}
-          <p className="text-lg text-primary-foreground/80 mb-10 max-w-xl mx-auto">
-            Discutons de vos objectifs et voyons comment nous pouvons vous aider
-            à les atteindre.
-          </p>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-            <Button
-              asChild
-              size="lg"
-              className="bg-accent hover:bg-accent/90 text-accent-foreground"
-              onClick={() => track_cta_click("contactez_nous", "cta_section")}
-            >
+        <div className="group relative grid items-end gap-10 overflow-hidden bg-primary px-6 py-14 text-primary-foreground sm:px-12 lg:grid-cols-[minmax(0,1fr)_auto] lg:px-20 lg:py-24">
+          <span className="v-fold !size-[72px] group-hover:!size-[96px]" aria-hidden="true" />
+          <div className="flex flex-col gap-5">
+            <span className="v-label !text-white/80">Nouveau projet</span>
+            <h2 id="cta-title" className="v-display text-6xl sm:text-8xl lg:text-[104px]">
+              Tournons <span className="v-em">la page.</span>
+            </h2>
+            <p className="max-w-[44ch] text-lg leading-relaxed text-white/90">
+              Racontez-nous votre projet en deux minutes. Réponse chiffrée sous 24 h ouvrées.
+            </p>
+          </div>
+          <div className="flex flex-col items-start gap-3 lg:items-end">
+            <Button asChild size="lg" variant="inverse" onClick={() => track_cta_click("demarrer_projet", "cta_section")}>
               <Link href="/contact">
-                Contactez-nous
-                <ArrowRight className="ml-2 h-4 w-4" />
+                <span className="v-roll">
+                  <span>Démarrer un projet</span>
+                  <span aria-hidden="true">Démarrer un projet</span>
+                </span>
+                <ArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
             </Button>
-            <Button
-              asChild
-              variant="outline"
-              size="lg"
-              className="border-white text-white hover:bg-white/20 bg-white/10"
-            >
-              <Link href="/cas-etudes">Voir nos réalisations</Link>
-            </Button>
-          </div>
-
-          {/* Contact info */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-8 text-sm text-primary-foreground/70">
             <a
-              href="mailto:ruben@rln-consulting.com"
-              className="flex items-center gap-2 hover:text-accent transition-colors"
-              onClick={() => track_email_click()}
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => track_whatsapp_click()}
+              className="inline-flex h-12 items-center gap-3 rounded-full bg-white/15 pr-5 pl-1.5 text-[15px] font-medium transition-colors hover:bg-white/25"
             >
-              <Mail className="h-4 w-4" />
-              ruben@rln-consulting.com
-            </a>
-            <a
-              href="tel:+33609866672"
-              className="flex items-center gap-2 hover:text-accent transition-colors"
-              onClick={() => track_phone_click()}
-            >
-              <Phone className="h-4 w-4" />
-              +33 6 09 86 66 72
+              <span className="grid size-9 place-items-center rounded-full bg-[#1FA855]">
+                <WhatsAppIcon className="size-4" />
+              </span>
+              Écrire sur WhatsApp
             </a>
           </div>
-        </m.div>
+        </div>
       </div>
     </section>
   )

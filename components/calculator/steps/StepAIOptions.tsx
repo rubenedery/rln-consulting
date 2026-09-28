@@ -20,7 +20,7 @@ export function StepAIOptions() {
       {/* Complexity selection */}
       <div>
         <div className="text-center mb-6">
-          <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-3">
+          <h2 className="text-3xl sm:text-4xl font-semibold tracking-[-0.03em] text-foreground mb-3">
             Niveau de complexité
           </h2>
           <p className="text-muted-foreground">
@@ -57,7 +57,7 @@ export function StepAIOptions() {
       {/* Additional options */}
       <div>
         <div className="text-center mb-6">
-          <h3 className="text-xl font-bold text-foreground mb-2">
+          <h3 className="text-xl font-semibold text-foreground mb-2">
             Options supplémentaires
           </h3>
         </div>

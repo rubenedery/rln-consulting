@@ -119,7 +119,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
           {/* Header */}
           <header className="max-w-4xl mx-auto mb-12">
             <div className="flex flex-wrap items-center gap-2 mb-4">
-              <Badge className="bg-accent text-accent-foreground">
+              <Badge className="bg-primary text-primary-foreground">
                 {caseStudy.industry}
               </Badge>
               {caseStudy.services.map((service) => (
@@ -129,7 +129,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
               ))}
             </div>
 
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-foreground mb-6">
+            <h1 className="v-display text-5xl sm:text-7xl lg:text-[88px] text-foreground mb-6">
               {caseStudy.title}
             </h1>
 
@@ -178,7 +178,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
           {/* Results */}
           {caseStudy.results.length > 0 && (
             <section className="max-w-5xl mx-auto mb-16">
-              <h2 className="text-2xl font-bold text-foreground mb-8 text-center">
+              <h2 className="text-2xl font-semibold text-foreground mb-8 text-center">
                 Résultats obtenus
               </h2>
               <ResultsMetrics results={caseStudy.results} />
@@ -224,12 +224,12 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
             <section className="max-w-3xl mx-auto mb-16">
               <Card className="bg-primary/5 border-primary/20">
                 <CardContent className="pt-8 pb-6">
-                  <Quote className="h-10 w-10 text-accent/50 mb-4" />
+                  <Quote className="h-10 w-10 text-primary/50 mb-4" />
                   <blockquote className="text-lg text-foreground mb-6 italic">
                     &ldquo;{caseStudy.testimonial.quote}&rdquo;
                   </blockquote>
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                    <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center">
                       <span className="text-sm font-medium text-primary">
                         {caseStudy.testimonial.author
                           .split(" ")
@@ -272,7 +272,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
       {relatedCaseStudies.length > 0 && (
         <section className="py-16 bg-muted/30">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-2xl font-bold text-foreground mb-8 text-center">
+            <h2 className="text-2xl font-semibold text-foreground mb-8 text-center">
               Autres cas d&apos;études
             </h2>
             <div className="grid sm:grid-cols-2 gap-8 max-w-4xl mx-auto">

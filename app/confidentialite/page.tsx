@@ -34,7 +34,7 @@ export default function ConfidentialitePage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
           {/* Header */}
           <div className="mb-12">
-            <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-foreground mb-4">
+            <h1 className="v-display text-5xl sm:text-7xl lg:text-[88px] text-foreground mb-4">
               Politique de Confidentialité
             </h1>
             <p className="text-muted-foreground">

@@ -113,16 +113,16 @@ export function TrustBadges({
 export function FooterTrustBadges({ className }: { className?: string }) {
   return (
     <div className={cn("flex flex-wrap items-center justify-center gap-6 py-4", className)}>
-      <div className="flex items-center gap-2 text-muted-foreground">
-        <Lock className="h-4 w-4 text-success" />
+      <div className="flex items-center gap-2 text-white/70">
+        <Lock className="h-4 w-4 text-[#8B93FF]" />
         <span className="text-sm">Paiement sécurisé</span>
       </div>
-      <div className="flex items-center gap-2 text-muted-foreground">
-        <Shield className="h-4 w-4 text-success" />
+      <div className="flex items-center gap-2 text-white/70">
+        <Shield className="h-4 w-4 text-[#8B93FF]" />
         <span className="text-sm">RGPD Compliant</span>
       </div>
-      <div className="flex items-center gap-2 text-muted-foreground">
-        <CheckCircle className="h-4 w-4 text-success" />
+      <div className="flex items-center gap-2 text-white/70">
+        <CheckCircle className="h-4 w-4 text-[#8B93FF]" />
         <span className="text-sm">Devis gratuit</span>
       </div>
     </div>

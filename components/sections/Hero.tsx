@@ -1,101 +1,103 @@
 "use client"
 
+import * as React from "react"
 import Link from "next/link"
-import { ArrowRight, Code, Target, Zap } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { track_cta_click } from "@/components/analytics"
 
-// Animations CSS pures (pas de framer-motion ici) : le h1 est l'élément LCP
-// de la home, il doit être peint sans attendre l'hydratation JavaScript.
 export function Hero() {
+  const ref = React.useRef<HTMLElement>(null)
+  const [flipped, setFlipped] = React.useState(false)
+
+  const onMove = (e: React.MouseEvent<HTMLElement>) => {
+    const el = ref.current
+    if (!el) return
+    const r = el.getBoundingClientRect()
+    el.style.setProperty("--mx", `${((e.clientX - r.left) / r.width) * 100}%`)
+    el.style.setProperty("--my", `${((e.clientY - r.top) / r.height) * 100}%`)
+  }
+
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-primary/5 via-background to-accent/5 py-20 lg:py-32">
-      {/* Background decoration */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
-      </div>
-
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center">
-          {/* Badge */}
-          <div className="mb-6 animate-fade-in-up">
-            <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
-              <Zap className="h-4 w-4" />
-              Agence Web & Marketing Digital
+    <section
+      ref={ref}
+      onMouseMove={onMove}
+      className="relative overflow-hidden"
+      aria-labelledby="hero-title"
+    >
+      <div className="v-dots hidden md:block" aria-hidden="true" />
+      <div className="container relative mx-auto grid gap-10 px-4 pt-14 pb-16 sm:px-6 lg:grid-cols-[minmax(0,1fr)_400px] lg:gap-x-16 lg:gap-y-12 lg:px-8 lg:pt-16 lg:pb-24">
+        <div className="flex flex-col gap-7 lg:col-span-2">
+          <span className="v-label inline-flex items-center gap-2">
+            <span className="v-dot" aria-hidden="true" />
+            Studio produit &amp; marque · Paris · 50+ projets livrés
+          </span>
+          <h1 id="hero-title" className="v-display text-[56px] sm:text-[88px] lg:text-[128px] xl:text-[152px]">
+            <span className="v-line"><span>On construit.</span></span>
+            <span className="v-line">
+              <span>
+                On fait <span className="v-em text-primary">connaître.</span>
+              </span>
             </span>
-          </div>
-
-          {/* Headline */}
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-foreground mb-6 animate-fade-in-up [animation-delay:100ms]">
-            Transformez vos idées en{" "}
-            <span className="text-primary">solutions digitales</span>{" "}
-            performantes
           </h1>
+        </div>
 
-          {/* Subheadline */}
-          <p className="text-lg sm:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto animate-fade-in-up [animation-delay:200ms]">
-            Développement web sur mesure et gestion de campagnes publicitaires
-            pour propulser votre entreprise vers le succès digital.
+        <div className="flex flex-col justify-start gap-8">
+          <p className="max-w-[40ch] text-lg leading-relaxed text-muted-foreground sm:text-xl">
+            Un associé tech, une associée marketing. Sites, apps, IA, 3D, SEO et acquisition, avec les mêmes
+            interlocuteurs du premier commit à la première vente.
           </p>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up [animation-delay:300ms]">
-            <Button
-              asChild
-              size="lg"
-              variant="accent"
-              onClick={() => track_cta_click("demarrer_projet", "hero")}
-            >
+          <div className="flex flex-wrap gap-3">
+            <Button asChild size="lg" onClick={() => track_cta_click("demarrer_projet", "hero")}>
               <Link href="/contact">
-                Démarrer un projet
-                <ArrowRight className="ml-2 h-4 w-4" />
+                <span className="v-roll">
+                  <span>Démarrer un projet</span>
+                  <span aria-hidden="true">Démarrer un projet</span>
+                </span>
+                <ArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
             </Button>
-            <Button asChild variant="outline" size="lg" onClick={() => track_cta_click("voir_realisations", "hero")}>
-              <Link href="/cas-etudes">Voir nos réalisations</Link>
+            <Button asChild size="lg" variant="outline">
+              <Link href="/cas-etudes">Voir les réalisations</Link>
             </Button>
           </div>
-
-          {/* Stats */}
-          <div className="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-8 animate-fade-in-up [animation-delay:400ms]">
-            {[
-              { value: "50+", label: "Projets livrés" },
-              { value: "2020", label: "Depuis" },
-              { value: "95%", label: "Satisfaction" },
-              { value: "24h", label: "Réponse" },
-            ].map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-3xl sm:text-4xl font-bold text-primary">
-                  {stat.value}
-                </div>
-                <div className="text-sm text-muted-foreground mt-1">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
 
-        {/* Service icons */}
-        <div className="mt-20 flex justify-center gap-8 lg:gap-16">
-          {[
-            { icon: Code, label: "Développement" },
-            { icon: Target, label: "Marketing" },
-            { icon: Zap, label: "Performance" },
-          ].map((item, index) => (
-            <div
-              key={index}
-              className="flex flex-col items-center gap-2 text-muted-foreground animate-fade-in-up"
-              style={{ animationDelay: `${500 + index * 100}ms` }}
-            >
-              <div className="p-3 rounded-full bg-primary/10">
-                <item.icon className="h-6 w-6 text-primary" />
-              </div>
-              <span className="text-sm font-medium">{item.label}</span>
-            </div>
-          ))}
-        </div>
+        <button
+          type="button"
+          onClick={() => setFlipped((f) => !f)}
+          data-flipped={flipped}
+          aria-pressed={flipped}
+          aria-label="Retourner la carte : ce qu'on construit, ce que ça rapporte"
+          className="v-flip relative hidden h-[340px] cursor-pointer text-left lg:block"
+        >
+          <span className="v-flip__in block">
+            <span className="v-face group flex flex-col gap-3 bg-primary p-8 text-primary-foreground">
+              <span className="v-fold" aria-hidden="true" />
+              <span className="v-label !text-white/80">Recto · ce qu&apos;on construit</span>
+              <span className="mt-2 font-mono text-sm leading-[1.9] text-white/90">
+                next.js · react native · three.js
+                <br />
+                openai · rag · automatisations
+                <br />
+                shopify headless · stripe
+                <br />
+                crm sur mesure · api
+              </span>
+              <span className="mt-auto font-display text-[44px] leading-none font-semibold tracking-[-0.03em]">Le produit.</span>
+              <span className="text-sm text-white/80">Survolez pour voir le verso</span>
+            </span>
+            <span className="v-face v-face--back flex flex-col gap-3 bg-[#0B0D12] p-8 text-white">
+              <span className="v-label !text-[#C8CDFF]">Verso · ce que ça rapporte</span>
+              <span className="mt-auto font-display text-[96px] leading-[0.9] font-semibold tracking-[-0.05em]">
+                +463<span className="v-em text-[#C8CDFF]">%</span>
+              </span>
+              <span className="text-[17px] leading-snug text-[#C8CDFF]">
+                de trafic organique pour une agence immobilière : 800 → 4 500 visites par mois.
+              </span>
+            </span>
+          </span>
+        </button>
       </div>
     </section>
   )

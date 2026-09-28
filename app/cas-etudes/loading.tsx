@@ -5,7 +5,7 @@ export default function CaseStudiesLoading() {
     <section className="py-20 lg:py-28">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header skeleton */}
-        <div className="max-w-2xl mx-auto text-center mb-16">
+        <div className="max-w-3xl mb-16">
           <Skeleton className="h-4 w-24 mx-auto mb-4" />
           <Skeleton className="h-12 w-3/4 mx-auto mb-4" />
           <Skeleton className="h-5 w-2/3 mx-auto" />

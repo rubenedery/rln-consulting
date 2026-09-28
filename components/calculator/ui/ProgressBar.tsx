@@ -28,7 +28,7 @@ export function ProgressBar({ className }: ProgressBarProps) {
       {/* Progress bar */}
       <div className="relative h-2 bg-muted rounded-full overflow-hidden">
         <m.div
-          className="absolute inset-y-0 left-0 bg-gradient-to-r from-primary to-accent rounded-full"
+          className="absolute inset-y-0 left-0 bg-primary rounded-full"
           initial={{ width: 0 }}
           animate={{ width: `${progress}%` }}
           transition={{ duration: 0.4, ease: "easeOut" }}

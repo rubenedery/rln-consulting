@@ -162,7 +162,7 @@ export default async function ExpertiseTechPage({ params }: PageProps) {
       />
 
       {/* Hero Section */}
-      <section className="py-20 lg:py-28 bg-gradient-to-br from-primary/5 via-background to-accent/5">
+      <section className="py-20 lg:py-28 ">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           {/* Breadcrumb */}
           <Breadcrumbs
@@ -174,20 +174,20 @@ export default async function ExpertiseTechPage({ params }: PageProps) {
             className="mb-6"
           />
 
-          <div className="max-w-4xl mx-auto text-center">
+          <div className="max-w-4xl">
             <div className="flex items-center justify-center gap-3 mb-6">
-              <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center">
+              <div className="w-16 h-16 rounded-lg bg-secondary flex items-center justify-center">
                 <Icon className="h-8 w-8 text-primary" />
               </div>
             </div>
-            <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary mb-6">
+            <span className="v-label inline-flex items-center gap-2 !text-primary mb-6">
               <Sparkles className="h-4 w-4" />
               {categoryLabels[expertise.category]}
             </span>
-            <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-foreground mb-6">
-              Expert <span className="text-primary">{expertise.name}</span>
+            <h1 className="v-display text-5xl sm:text-7xl lg:text-[88px] text-foreground mb-6">
+              Expert <span className="v-em text-primary">{expertise.name}</span>
             </h1>
-            <p className="hero-description text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+            <p className="hero-description text-lg text-muted-foreground mb-8 max-w-2xl">
               {expertise.heroDescription}
             </p>
 
@@ -218,7 +218,7 @@ export default async function ExpertiseTechPage({ params }: PageProps) {
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-3">
               <Button
                 asChild
                 size="lg"
@@ -241,40 +241,36 @@ export default async function ExpertiseTechPage({ params }: PageProps) {
       <section className="answer-first py-16 bg-primary/5 border-y border-primary/10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-2xl font-bold text-foreground mb-8 text-center">
+            <h2 className="text-2xl font-semibold text-foreground mb-8 text-center">
               Questions fréquentes sur {expertise.name}
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-background rounded-xl p-6 shadow-sm">
+              <div className="bg-background rounded-lg p-6 shadow-sm">
                 <h3 className="text-lg font-semibold text-foreground mb-3 flex items-center gap-2">
-                  <span className="text-xl">💰</span>
                   {expertise.answerFirst.cost.question}
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   {expertise.answerFirst.cost.answer}
                 </p>
               </div>
-              <div className="bg-background rounded-xl p-6 shadow-sm">
+              <div className="bg-background rounded-lg p-6 shadow-sm">
                 <h3 className="text-lg font-semibold text-foreground mb-3 flex items-center gap-2">
-                  <span className="text-xl">⏱️</span>
                   {expertise.answerFirst.duration.question}
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   {expertise.answerFirst.duration.answer}
                 </p>
               </div>
-              <div className="bg-background rounded-xl p-6 shadow-sm">
+              <div className="bg-background rounded-lg p-6 shadow-sm">
                 <h3 className="text-lg font-semibold text-foreground mb-3 flex items-center gap-2">
-                  <span className="text-xl">🚀</span>
                   {expertise.answerFirst.advantages.question}
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   {expertise.answerFirst.advantages.answer}
                 </p>
               </div>
-              <div className="bg-background rounded-xl p-6 shadow-sm">
+              <div className="bg-background rounded-lg p-6 shadow-sm">
                 <h3 className="text-lg font-semibold text-foreground mb-3 flex items-center gap-2">
-                  <span className="text-xl">🎯</span>
                   {expertise.answerFirst.useCase.question}
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
@@ -292,7 +288,7 @@ export default async function ExpertiseTechPage({ params }: PageProps) {
           <div className="max-w-4xl mx-auto">
             {/* Main Description */}
             <div className="mb-16">
-              <h2 className="text-3xl font-bold text-foreground mb-6">
+              <h2 className="text-3xl font-semibold text-foreground mb-6">
                 Notre expertise {expertise.name}
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
@@ -302,7 +298,7 @@ export default async function ExpertiseTechPage({ params }: PageProps) {
 
             {/* Features Grid */}
             <div className="mb-16">
-              <h3 className="text-2xl font-bold text-foreground mb-6">
+              <h3 className="text-2xl font-semibold text-foreground mb-6">
                 Ce que nous proposons
               </h3>
               <div className="grid sm:grid-cols-2 gap-4">
@@ -322,7 +318,7 @@ export default async function ExpertiseTechPage({ params }: PageProps) {
 
             {/* Use Cases */}
             <div className="mb-16">
-              <h3 className="text-2xl font-bold text-foreground mb-6">
+              <h3 className="text-2xl font-semibold text-foreground mb-6">
                 Cas d&apos;usage
               </h3>
               <div className="flex flex-wrap gap-3">
@@ -345,16 +341,16 @@ export default async function ExpertiseTechPage({ params }: PageProps) {
       <section className="py-16 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-2xl font-bold text-foreground mb-8 text-center">
+            <h2 className="text-2xl font-semibold text-foreground mb-8 text-center">
               {expertise.name} en chiffres
             </h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {expertise.stats.map((stat, index) => (
                 <div
                   key={index}
-                  className="bg-background rounded-xl p-6 text-center border border-border/50"
+                  className="bg-background rounded-lg p-6 text-center border border-border/50"
                 >
-                  <div className="text-3xl font-bold text-primary mb-2">
+                  <div className="text-3xl font-semibold text-primary mb-2">
                     {stat.value}
                   </div>
                   <div className="text-sm text-muted-foreground mb-1">
@@ -376,7 +372,7 @@ export default async function ExpertiseTechPage({ params }: PageProps) {
       <section className="py-20 lg:py-28">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-2xl font-bold text-foreground mb-6 text-center">
+            <h2 className="text-2xl font-semibold text-foreground mb-6 text-center">
               Stack technique complémentaire
             </h2>
             <p className="text-muted-foreground text-center mb-8">
@@ -400,7 +396,7 @@ export default async function ExpertiseTechPage({ params }: PageProps) {
       <section className="py-20 lg:py-28 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-foreground mb-4 text-center">
+            <h2 className="text-3xl font-semibold text-foreground mb-4 text-center">
               Projets réalisés avec {expertise.name}
             </h2>
             <p className="text-muted-foreground text-center mb-12">
@@ -444,12 +440,12 @@ export default async function ExpertiseTechPage({ params }: PageProps) {
       {/* Pricing */}
       <section className="py-20 lg:py-28">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-foreground mb-4">
+          <div className="max-w-3xl">
+            <h2 className="text-3xl font-semibold text-foreground mb-4">
               Tarifs {expertise.name}
             </h2>
-            <div className="bg-muted/30 rounded-2xl p-8 border border-border/50">
-              <div className="text-4xl font-bold text-primary mb-2">
+            <div className="bg-muted/30 rounded-lg p-8 border border-border/50">
+              <div className="text-4xl font-semibold text-primary mb-2">
                 {expertise.pricing.minPrice.toLocaleString("fr-FR")}€ -{" "}
                 {expertise.pricing.maxPrice.toLocaleString("fr-FR")}€
               </div>
@@ -480,7 +476,7 @@ export default async function ExpertiseTechPage({ params }: PageProps) {
         <section className="py-16 border-t border-border/50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-2xl font-bold text-foreground mb-6">
+              <h2 className="text-2xl font-semibold text-foreground mb-6">
                 Services associés
               </h2>
               <div className="flex flex-wrap gap-3">
@@ -506,11 +502,11 @@ export default async function ExpertiseTechPage({ params }: PageProps) {
       {expertise.slug === "ia-generative" && (
         <section className="py-16 bg-primary/5 border-y border-primary/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-2xl font-bold text-foreground mb-3">
+            <div className="max-w-4xl">
+              <h2 className="text-2xl font-semibold text-foreground mb-3">
                 L&apos;IA appliquée à votre métier
               </h2>
-              <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+              <p className="text-muted-foreground mb-6 max-w-2xl">
                 Expert-comptable, avocat, médecin, artisan, commerçant :
                 découvrez les cas d&apos;usage concrets de l&apos;IA générative
                 pour votre profession, avec coûts et ROI détaillés.
@@ -531,7 +527,7 @@ export default async function ExpertiseTechPage({ params }: PageProps) {
         <section className="py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-2xl font-bold text-foreground mb-6">
+              <h2 className="text-2xl font-semibold text-foreground mb-6">
                 Termes à connaître
               </h2>
               <div className="flex flex-wrap gap-3">
@@ -555,7 +551,7 @@ export default async function ExpertiseTechPage({ params }: PageProps) {
       <section className="py-16 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-2xl font-bold text-foreground mb-6">
+            <h2 className="text-2xl font-semibold text-foreground mb-6">
               Autres expertises
             </h2>
             <div className="grid sm:grid-cols-3 gap-6">
@@ -565,7 +561,7 @@ export default async function ExpertiseTechPage({ params }: PageProps) {
                   <Link key={related.slug} href={`/expertise/${related.slug}`}>
                     <Card className="h-full hover:border-primary/30 transition-colors cursor-pointer">
                       <CardHeader className="pb-2">
-                        <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-3">
+                        <div className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center mb-3">
                           <RelatedIcon className="h-5 w-5 text-primary" />
                         </div>
                         <CardTitle className="text-lg flex items-center justify-between">

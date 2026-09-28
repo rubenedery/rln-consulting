@@ -16,8 +16,8 @@ export function BlogCTA({ category, placement }: BlogCTAProps) {
   const cta = getBlogCta(category)
 
   return (
-    <aside className="my-10 rounded-2xl border border-primary/20 bg-primary/5 p-6 sm:p-8 not-prose">
-      <p className="text-xl font-bold text-foreground mb-2">{cta.title}</p>
+    <aside className="my-10 rounded-lg border border-primary/20 bg-primary/5 p-6 sm:p-8 not-prose">
+      <p className="text-xl font-semibold text-foreground mb-2">{cta.title}</p>
       <p className="text-muted-foreground mb-5">{cta.description}</p>
       <BlogCtaButton
         href={cta.href}

@@ -30,7 +30,7 @@ export function OptionCard({
       type="button"
       onClick={onClick}
       className={cn(
-        "relative flex flex-col items-start p-4 sm:p-6 rounded-xl border-2 text-left transition-colors w-full",
+        "relative flex flex-col items-start p-4 sm:p-6 rounded-lg border-2 text-left transition-colors w-full",
         selected
           ? "border-primary bg-primary/5"
           : "border-border/50 hover:border-primary/50 bg-card",
@@ -42,7 +42,7 @@ export function OptionCard({
     >
       {/* Popular badge */}
       {popular && (
-        <span className="absolute -top-3 right-4 px-3 py-1 text-xs font-medium bg-accent text-accent-foreground rounded-full">
+        <span className="absolute -top-3 right-4 px-3 py-1 text-xs font-medium bg-primary text-primary-foreground rounded-full">
           Populaire
         </span>
       )}

@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   description:
     "Découvrez nos forfaits de développement web et marketing digital. Des solutions adaptées à chaque budget, du site vitrine à l'application sur mesure.",
   openGraph: {
-    title: "Tarifs et Forfaits | RLN Consulting",
+    title: "Tarifs et Forfaits | Agence RLN",
     description:
       "Forfaits flexibles pour votre projet digital. Devis gratuit et sans engagement.",
     url: `${siteConfig.url}/tarifs`,
@@ -135,7 +135,7 @@ export default function TarifsPage() {
   return (
     <>
       <WebPageJsonLd
-        title="Tarifs et Forfaits | RLN Consulting"
+        title="Tarifs et Forfaits | Agence RLN"
         description="Nos forfaits de développement web et marketing digital. Solutions adaptées à chaque budget."
         url={`${siteConfig.url}/tarifs`}
       />
@@ -149,30 +149,30 @@ export default function TarifsPage() {
       <section className="py-20 lg:py-28">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
-          <div className="max-w-3xl mx-auto text-center mb-16">
+          <div className="max-w-4xl mb-16">
             <Badge variant="secondary" className="mb-4">
               Tarifs transparents
             </Badge>
-            <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-foreground mb-6">
+            <h1 className="v-display text-5xl sm:text-7xl lg:text-[88px] text-foreground mb-6">
               Des forfaits adaptés à{" "}
-              <span className="text-primary">vos ambitions</span>
+              <span className="v-em text-primary">vos ambitions</span>
             </h1>
             <p className="text-lg text-muted-foreground">
               Chaque projet est unique : nos tarifs sont personnalisés selon vos besoins.
               Contactez-nous pour un devis gratuit et sur mesure.
             </p>
-            <div className="mt-6 inline-flex items-center gap-2 rounded-lg bg-accent/10 px-5 py-3 text-sm font-medium text-accent">
+            <div className="mt-6 inline-flex items-center gap-2 rounded-lg bg-secondary px-5 py-3 text-sm font-medium text-primary">
               <Zap className="h-4 w-4" />
               Votre V1 livrée en 3 mois maximum, quel que soit le projet
             </div>
           </div>
 
           {/* Simulator CTA */}
-          <Card className="max-w-2xl mx-auto mb-16 bg-gradient-to-r from-primary/5 to-accent/5 border-primary/20">
+          <Card className="max-w-2xl mx-auto mb-16 bg-secondary border-primary/20">
             <CardContent className="py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
-                  <Calculator className="h-6 w-6 text-accent" />
+                <div className="w-12 h-12 rounded-lg bg-secondary flex items-center justify-center">
+                  <Calculator className="h-6 w-6 text-primary" />
                 </div>
                 <div>
                   <h2 className="font-semibold text-foreground">
@@ -185,7 +185,7 @@ export default function TarifsPage() {
               </div>
               <Button
                 asChild
-                className="bg-accent hover:bg-accent/90 text-accent-foreground shrink-0"
+                className="shrink-0"
               >
                 <Link href="/tarifs/simulateur">
                   Simuler mon prix
@@ -202,21 +202,21 @@ export default function TarifsPage() {
                 key={plan.id}
                 className={`relative flex flex-col ${
                   plan.popular
-                    ? "border-primary shadow-lg scale-105 lg:scale-110"
+                    ? "border-primary shadow-lift scale-105 lg:scale-110"
                     : "border-border/50"
                 }`}
               >
                 {/* Popular badge */}
                 {plan.popular && (
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                    <Badge className="bg-accent text-accent-foreground px-4 py-1">
+                    <Badge className="bg-primary text-primary-foreground px-4 py-1">
                       Le plus populaire
                     </Badge>
                   </div>
                 )}
 
                 <CardHeader className="text-center pb-2">
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                  <div className="w-12 h-12 rounded-lg bg-secondary flex items-center justify-center mx-auto mb-4">
                     <plan.icon className="h-6 w-6 text-primary" />
                   </div>
                   <CardTitle className="text-xl">{plan.name}</CardTitle>
@@ -234,7 +234,7 @@ export default function TarifsPage() {
                       </span>
                     )}
                     <div className="flex items-baseline justify-center gap-1">
-                      <span className="text-4xl font-bold text-foreground">
+                      <span className="text-4xl font-semibold text-foreground">
                         {plan.price}
                       </span>
                       {plan.price !== "Sur devis" && (
@@ -282,7 +282,7 @@ export default function TarifsPage() {
                     size="lg"
                     className={`w-full ${
                       plan.popular
-                        ? "bg-accent hover:bg-accent/90 text-accent-foreground"
+                        ? ""
                         : ""
                     }`}
                   >
@@ -298,7 +298,7 @@ export default function TarifsPage() {
 
           {/* Add-ons */}
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-2xl font-bold text-foreground text-center mb-8">
+            <h2 className="text-2xl font-semibold text-foreground text-center mb-8">
               Options & services complémentaires
             </h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -329,20 +329,20 @@ export default function TarifsPage() {
           <div className="mt-20 text-center">
             <Card className="max-w-2xl mx-auto bg-primary/5 border-primary/20">
               <CardContent className="py-10">
-                <h2 className="text-2xl font-bold text-foreground mb-4">
+                <h2 className="text-2xl font-semibold text-foreground mb-4">
                   Un projet en tête ? Parlons-en.
                 </h2>
                 <p className="text-muted-foreground mb-2">
                   Nos tarifs sont adaptés à la complexité de votre projet.
                   On échange, on comprend vos besoins, et on vous propose un prix juste.
                 </p>
-                <p className="text-sm font-medium text-accent mb-6">
+                <p className="text-sm font-medium text-primary mb-6">
                   V1 livrée en 3 mois maximum — c&apos;est notre engagement.
                 </p>
                 <Button
                   asChild
                   size="lg"
-                  className="bg-accent hover:bg-accent/90 text-accent-foreground"
+                  
                 >
                   <Link href="/contact">
                     Demander un devis gratuit

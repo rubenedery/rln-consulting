@@ -9,7 +9,7 @@ function emailShell(headerTitle: string, headerSubtitle: string, body: string, u
         <meta name="viewport" content="width=device-width, initial-scale=1">
       </head>
       <body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
-        <div style="background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); padding: 30px; border-radius: 8px 8px 0 0;">
+        <div style="background: #1F2BFF; padding: 30px; border-radius: 8px 8px 0 0;">
           <h1 style="color: white; margin: 0; font-size: 22px;">${headerTitle}</h1>
           <p style="color: rgba(255,255,255,0.9); margin: 10px 0 0;">${headerSubtitle}</p>
         </div>
@@ -27,7 +27,7 @@ function emailShell(headerTitle: string, headerSubtitle: string, body: string, u
 
 const ctaButton = (href: string, label: string) => `
   <div style="text-align: center; margin-top: 24px;">
-    <a href="${href}" style="display: inline-block; background: #f59e0b; color: #1e293b; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: 600;">
+    <a href="${href}" style="display: inline-block; background: #1F2BFF; color: #1e293b; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: 600;">
       ${label}
     </a>
   </div>
@@ -105,11 +105,11 @@ export function generateDay7Html(unsubscribeUrl: string): string {
 export function generateOptInSectionHtml(confirmUrl: string): string {
   return `
     <div style="margin-top: 28px; padding: 20px; background: #eff6ff; border-radius: 8px; border: 1px solid #bfdbfe; text-align: center;">
-      <p style="margin: 0 0 12px; font-size: 15px; color: #1e3a8a;">
+      <p style="margin: 0 0 12px; font-size: 15px; color: #1F2BFF;">
         <strong>Envie d'aller plus loin ?</strong> Recevez nos conseils concrets
         (conversion, SEO, acquisition) environ deux fois par mois.
       </p>
-      <a href="${confirmUrl}" style="display: inline-block; background: #1e3a8a; color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 600;">
+      <a href="${confirmUrl}" style="display: inline-block; background: #1F2BFF; color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 600;">
         Oui, je confirme mon inscription
       </a>
       <p style="margin: 10px 0 0; font-size: 12px; color: #64748b;">

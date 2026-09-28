@@ -1,5 +1,1 @@
-<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="32" height="32" rx="6" fill="#1e3a8a"/>
-  <text x="16" y="22" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">RLN</text>
-  <rect x="4" y="26" width="24" height="3" rx="1.5" fill="#f59e0b"/>
-</svg>
+<svg width="32" height="32" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><path d="M0 0H42L64 22V64H0Z" fill="#1F2BFF"/><path d="M42 0V22H64Z" fill="#C8CDFF"/></svg>

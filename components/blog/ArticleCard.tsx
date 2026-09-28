@@ -36,7 +36,7 @@ function highlightText(text: string, query: string): React.ReactNode {
 export function ArticleCard({ post, searchQuery = "" }: ArticleCardProps) {
   return (
     <Link href={`/blog/${post.slug}`}>
-      <Card className="h-full overflow-hidden hover:shadow-lg transition-all duration-300 group border-border/50 hover:border-primary/30">
+      <Card className="h-full overflow-hidden hover:shadow-lift hover:-translate-y-0.5 transition-all duration-300 group border-border/50 hover:border-primary/30">
         <CardImage src={post.image} alt={post.title} gradientClassName="from-black/40">
           <div className="absolute top-4 left-4 z-20">
             <Badge variant="secondary" className="bg-primary text-primary-foreground">
@@ -86,7 +86,7 @@ export function ArticleCard({ post, searchQuery = "" }: ArticleCardProps) {
                   <Badge
                     key={tag}
                     variant="outline"
-                    className={`text-xs ${isMatching ? "border-accent bg-accent/10" : ""}`}
+                    className={`text-xs ${isMatching ? "border-accent bg-secondary" : ""}`}
                   >
                     {tag}
                   </Badge>

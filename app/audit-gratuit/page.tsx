@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     "vérifier son site",
   ],
   openGraph: {
-    title: "Audit Gratuit de Site Web | RLN Consulting",
+    title: "Audit Gratuit de Site Web | Agence RLN",
     description:
       "Score de performance, SEO technique et sécurité : recevez l'audit complet de votre site par email en 2 minutes, gratuitement.",
     url: `${siteConfig.url}/audit-gratuit`,
@@ -70,7 +70,7 @@ export default function AuditGratuitPage() {
       />
       <BreadcrumbJsonLd items={breadcrumbItems} />
 
-      <section className="py-20 lg:py-28 bg-gradient-to-br from-primary/5 via-background to-accent/5">
+      <section className="py-20 lg:py-28 ">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs
             items={breadcrumbItems.slice(1).map((item) => ({ label: item.name }))}
@@ -78,13 +78,13 @@ export default function AuditGratuitPage() {
           />
           <div className="grid lg:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
             <div className="animate-fade-in-up">
-              <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary mb-6">
+              <span className="v-label inline-flex items-center gap-2 !text-primary mb-6">
                 <Search className="h-4 w-4" />
                 Outil gratuit
               </span>
-              <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-foreground mb-6">
+              <h1 className="v-display text-5xl sm:text-7xl lg:text-[88px] text-foreground mb-6">
                 Votre site vous fait-il{" "}
-                <span className="text-primary">perdre des clients</span> ?
+                <span className="v-em text-primary">perdre des clients</span> ?
               </h1>
               <p className="text-lg text-muted-foreground mb-8">
                 Recevez en 2 minutes un audit complet de votre site : performance
@@ -115,16 +115,16 @@ export default function AuditGratuitPage() {
       <section className="py-16 lg:py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold text-foreground text-center mb-12">
+            <h2 className="text-3xl font-semibold text-foreground text-center mb-12">
               Ce que l&apos;audit analyse
             </h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {analyzedItems.map((item) => (
                 <div
                   key={item.title}
-                  className="p-6 rounded-xl bg-card border border-border/50"
+                  className="p-6 rounded-lg bg-card border border-border/50"
                 >
-                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                  <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center mb-4">
                     <item.icon className="h-5 w-5 text-primary" />
                   </div>
                   <h3 className="font-semibold text-foreground mb-2">{item.title}</h3>

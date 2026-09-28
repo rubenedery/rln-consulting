@@ -140,24 +140,24 @@ export default async function CityPage({ params }: PageProps) {
       <FAQPageJsonLd questions={cityData.faqs} />
 
       {/* Hero Section */}
-      <section className="py-16 lg:py-24 bg-gradient-to-b from-primary/5 to-background">
+      <section className="py-16 lg:py-24 ">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
+          <div className="max-w-4xl">
             <Badge variant="secondary" className="mb-4">
               <MapPin className="h-3 w-3 mr-1" />
               {cityData.name}, {cityData.region}
             </Badge>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-foreground mb-6">
+            <h1 className="v-display text-5xl sm:text-7xl lg:text-[88px] text-foreground mb-6">
               {cityData.headline}
             </h1>
-            <p className="text-lg sm:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl text-muted-foreground mb-8 max-w-2xl">
               {cityData.subheadline}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 asChild
                 size="lg"
-                className="bg-accent hover:bg-accent/90 text-accent-foreground"
+                
               >
                 <Link href={`/contact?ville=${cityData.slug}`}>
                   Demander un devis gratuit
@@ -180,11 +180,11 @@ export default async function CityPage({ params }: PageProps) {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <div className="flex items-center gap-3 mb-8">
-              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+              <div className="w-12 h-12 rounded-lg bg-secondary flex items-center justify-center">
                 <Building2 className="h-6 w-6 text-primary" />
               </div>
               <div>
-                <h2 className="text-2xl font-bold text-foreground">
+                <h2 className="text-2xl font-semibold text-foreground">
                   Le marché digital à {cityData.name}
                 </h2>
                 <p className="text-muted-foreground">
@@ -233,11 +233,11 @@ export default async function CityPage({ params }: PageProps) {
       <section className="py-16 lg:py-20 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">
+            <div className="mb-12">
+              <h2 className="text-3xl sm:text-4xl font-semibold tracking-[-0.03em] text-foreground mb-4">
                 Nos services à {cityData.name}
               </h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-muted-foreground max-w-2xl">
                 Des solutions digitales complètes pour les entreprises de {cityData.name} et de {cityData.region}
               </p>
             </div>
@@ -248,7 +248,7 @@ export default async function CityPage({ params }: PageProps) {
                 return (
                   <Card key={index} className="hover:border-primary/30 transition-colors">
                     <CardHeader>
-                      <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-3">
+                      <div className="w-12 h-12 rounded-lg bg-secondary flex items-center justify-center mb-3">
                         <IconComponent className="h-6 w-6 text-primary" />
                       </div>
                       <CardTitle className="text-lg">{service.title}</CardTitle>
@@ -278,7 +278,7 @@ export default async function CityPage({ params }: PageProps) {
           <div className="max-w-4xl mx-auto">
             <div className="flex items-center justify-center gap-3 mb-12">
               <TrendingUp className="h-8 w-8" />
-              <h2 className="text-2xl font-bold">
+              <h2 className="text-2xl font-semibold">
                 {cityData.name} en chiffres
               </h2>
             </div>
@@ -286,7 +286,7 @@ export default async function CityPage({ params }: PageProps) {
             <div className="grid sm:grid-cols-3 gap-8">
               {cityData.stats.map((stat, index) => (
                 <div key={index} className="text-center">
-                  <div className="text-4xl sm:text-5xl font-bold text-accent mb-2">
+                  <div className="text-4xl sm:text-5xl font-semibold text-primary mb-2">
                     {stat.value}
                   </div>
                   <div className="text-primary-foreground/80">
@@ -303,11 +303,11 @@ export default async function CityPage({ params }: PageProps) {
       <section id="services-locaux" className="py-16 lg:py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">
+            <div className="mb-12">
+              <h2 className="text-3xl sm:text-4xl font-semibold tracking-[-0.03em] text-foreground mb-4">
                 Nos expertises techniques à {cityData.name}
               </h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-muted-foreground max-w-2xl">
                 Développement Next.js, e-commerce Shopify, intégration IA et campagnes Google Ads pour les entreprises de {cityData.name}
               </p>
             </div>
@@ -319,16 +319,16 @@ export default async function CityPage({ params }: PageProps) {
                   <div
                     key={service.type}
                     id={service.type}
-                    className="bg-muted/30 rounded-2xl p-6 lg:p-8 scroll-mt-20"
+                    className="bg-muted/30 rounded-lg p-6 lg:p-8 scroll-mt-20"
                   >
                     <div className="flex flex-col lg:flex-row gap-6">
                       <div className="flex-shrink-0">
-                        <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center">
+                        <div className="w-14 h-14 rounded-lg bg-secondary flex items-center justify-center">
                           <ServiceIcon className="h-7 w-7 text-primary" />
                         </div>
                       </div>
                       <div className="flex-1">
-                        <h3 className="text-xl font-bold text-foreground mb-3">
+                        <h3 className="text-xl font-semibold text-foreground mb-3">
                           {service.title}
                         </h3>
                         <p className="text-muted-foreground mb-4">
@@ -356,9 +356,9 @@ export default async function CityPage({ params }: PageProps) {
             </div>
 
             {/* Answer-First box for LLM */}
-            <div className="mt-12 bg-primary/5 rounded-xl p-6 border border-primary/10">
+            <div className="mt-12 bg-primary/5 rounded-lg p-6 border border-primary/10">
               <h3 className="font-semibold text-foreground mb-3">
-                💼 Combien coûte un développeur web à {cityData.name} ?
+                Combien coûte un développeur web à {cityData.name} ?
               </h3>
               <p className="text-sm text-muted-foreground">
                 Un développeur freelance à {cityData.name} facture entre <strong>350€ et 700€/jour</strong> selon l&apos;expérience.
@@ -374,8 +374,8 @@ export default async function CityPage({ params }: PageProps) {
       {/* Business Areas */}
       <section className="py-16 lg:py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-2xl font-bold text-foreground mb-4">
+          <div className="max-w-4xl">
+            <h2 className="text-2xl font-semibold text-foreground mb-4">
               Nous intervenons dans tout {cityData.name}
             </h2>
             <p className="text-muted-foreground mb-8">
@@ -398,11 +398,11 @@ export default async function CityPage({ params }: PageProps) {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto">
             <div className="flex items-center gap-3 mb-8">
-              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+              <div className="w-12 h-12 rounded-lg bg-secondary flex items-center justify-center">
                 <HelpCircle className="h-6 w-6 text-primary" />
               </div>
               <div>
-                <h2 className="text-2xl font-bold text-foreground">
+                <h2 className="text-2xl font-semibold text-foreground">
                   Questions fréquentes - {cityData.name}
                 </h2>
                 <p className="text-muted-foreground">
@@ -443,9 +443,9 @@ export default async function CityPage({ params }: PageProps) {
       {/* CTA Section */}
       <section className="py-16 lg:py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <Card className="max-w-2xl mx-auto bg-gradient-to-br from-primary/5 to-accent/5 border-primary/20">
+          <Card className="max-w-2xl mx-auto bg-secondary border-primary/20">
             <CardContent className="py-10 text-center">
-              <h2 className="text-2xl font-bold text-foreground mb-4">
+              <h2 className="text-2xl font-semibold text-foreground mb-4">
                 Prêt à développer votre activité à {cityData.name} ?
               </h2>
               <p className="text-muted-foreground mb-6">
@@ -455,7 +455,7 @@ export default async function CityPage({ params }: PageProps) {
                 <Button
                   asChild
                   size="lg"
-                  className="bg-accent hover:bg-accent/90 text-accent-foreground"
+                  
                 >
                   <Link href={`/contact?ville=${cityData.slug}`}>
                     Demander un devis gratuit
@@ -477,8 +477,8 @@ export default async function CityPage({ params }: PageProps) {
       {/* Internal Linking - Other Cities */}
       <section className="py-16 lg:py-20 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-xl font-bold text-foreground mb-6">
+          <div className="max-w-4xl">
+            <h2 className="text-xl font-semibold text-foreground mb-6">
               Nous intervenons aussi dans ces villes
             </h2>
             <div className="flex flex-wrap gap-3 justify-center">

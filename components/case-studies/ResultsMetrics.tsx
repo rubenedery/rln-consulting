@@ -66,7 +66,7 @@ export function ResultsMetrics({ results }: ResultsMetricsProps) {
                     <span className="text-sm text-muted-foreground">
                       Amélioration
                     </span>
-                    <span className={`text-lg font-bold ${trendColor}`}>
+                    <span className={`text-lg font-semibold ${trendColor}`}>
                       {result.improvement}
                     </span>
                   </div>

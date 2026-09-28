@@ -112,7 +112,7 @@ export function ExitIntentPopup() {
     <Dialog.Root open={open} onOpenChange={handleOpenChange}>
       <Dialog.Portal>
         <Dialog.Overlay className="fixed inset-0 z-[70] bg-black/50 animate-fade-in-up [animation-duration:200ms]" />
-        <Dialog.Content className="fixed left-1/2 top-1/2 z-[71] w-[calc(100vw-2rem)] max-w-md -translate-x-1/2 -translate-y-1/2 rounded-2xl border border-border bg-card p-8 shadow-2xl focus:outline-none">
+        <Dialog.Content className="fixed left-1/2 top-1/2 z-[71] w-[calc(100vw-2rem)] max-w-md -translate-x-1/2 -translate-y-1/2 rounded-lg border border-border bg-card p-8 shadow-2xl focus:outline-none">
           <Dialog.Close asChild>
             <button
               className="absolute right-4 top-4 rounded-full p-2 text-muted-foreground hover:bg-muted transition-colors"
@@ -127,7 +127,7 @@ export function ExitIntentPopup() {
               <div className="w-14 h-14 rounded-full bg-success/10 flex items-center justify-center mx-auto mb-4">
                 <CheckCircle className="h-7 w-7 text-success" />
               </div>
-              <Dialog.Title className="text-xl font-bold text-foreground mb-2">
+              <Dialog.Title className="text-xl font-semibold text-foreground mb-2">
                 Votre guide est en route !
               </Dialog.Title>
               <Dialog.Description className="text-sm text-muted-foreground">
@@ -136,10 +136,10 @@ export function ExitIntentPopup() {
             </div>
           ) : (
             <>
-              <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center mb-4">
-                <Download className="h-6 w-6 text-accent" />
+              <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center mb-4">
+                <Download className="h-6 w-6 text-primary" />
               </div>
-              <Dialog.Title className="text-xl font-bold text-foreground mb-2">
+              <Dialog.Title className="text-xl font-semibold text-foreground mb-2">
                 Une seconde ! Votre site convertit-il vraiment ?
               </Dialog.Title>
               <Dialog.Description className="text-sm text-muted-foreground mb-5">
@@ -195,7 +195,7 @@ export function ExitIntentPopup() {
                   )}
                 </Button>
                 <p className="text-xs text-center text-muted-foreground">
-                  🔒 Pas de spam, désinscription en un clic.
+                  Pas de spam, désinscription en un clic.
                 </p>
               </form>
             </>

@@ -76,7 +76,7 @@ export function StepResults() {
         >
           <Sparkles className="w-8 h-8 text-success" />
         </m.div>
-        <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-3">
+        <h2 className="text-3xl sm:text-4xl font-semibold tracking-[-0.03em] text-foreground mb-3">
           Votre estimation
         </h2>
         <p className="text-muted-foreground">
@@ -90,7 +90,7 @@ export function StepResults() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.2 }}
       >
-        <Card className="max-w-lg mx-auto border-primary/20 bg-gradient-to-br from-primary/5 to-accent/5">
+        <Card className="max-w-lg mx-auto border-primary/20 bg-secondary">
           <CardContent className="pt-8 pb-6">
             <div className="text-center">
               <p className="text-sm text-muted-foreground mb-2">
@@ -98,7 +98,7 @@ export function StepResults() {
               </p>
               <div className="flex items-baseline justify-center gap-2">
                 <m.span
-                  className="text-5xl sm:text-6xl font-bold text-foreground"
+                  className="text-5xl sm:text-6xl font-semibold text-foreground"
                   key={animatedTotal}
                 >
                   {animatedTotal.toLocaleString("fr-FR")}
@@ -141,7 +141,7 @@ export function StepResults() {
         <Button
           asChild
           size="lg"
-          className="bg-accent hover:bg-accent/90 text-accent-foreground flex-1"
+          className="flex-1"
         >
           <Link href={contactUrl}>
             Demander un devis précis

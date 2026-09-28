@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     "être cité par IA",
   ],
   openGraph: {
-    title: "GEO - Référencement IA | RLN Consulting",
+    title: "GEO - Référencement IA | Agence RLN",
     description:
       "Soyez cité par ChatGPT, Perplexity et Google AI Overview. Stratégie GEO complète pour maximiser votre visibilité sur les moteurs IA.",
     url: `${siteConfig.url}/services/geo`,
@@ -220,7 +220,7 @@ export default function GEOPage() {
       <FAQPageJsonLd questions={faqItems} />
 
       {/* Hero */}
-      <section className="py-20 lg:py-28 bg-gradient-to-br from-primary/5 via-background to-accent/5">
+      <section className="py-20 lg:py-28 ">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs
             items={breadcrumbItems.slice(1).map((item, index, arr) =>
@@ -230,21 +230,21 @@ export default function GEOPage() {
             )}
             className="mb-6"
           />
-          <div className="max-w-3xl mx-auto text-center">
-            <Badge variant="secondary" className="mb-6 bg-accent/10 text-accent">
+          <div className="max-w-4xl">
+            <Badge variant="secondary" className="mb-6 bg-secondary text-primary">
               <Search className="h-4 w-4 mr-2" />
               Generative Engine Optimization
             </Badge>
-            <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-foreground mb-6">
+            <h1 className="v-display text-5xl sm:text-7xl lg:text-[88px] text-foreground mb-6">
               Soyez cité par les{" "}
-              <span className="text-primary">moteurs IA</span>
+              <span className="v-em text-primary">moteurs IA</span>
             </h1>
             <p className="text-lg text-muted-foreground mb-10">
               ChatGPT, Perplexity, Google AI Overview — 40% des recherches passent
               désormais par l&apos;IA. Le GEO (Generative Engine Optimization) optimise
               votre contenu pour être la source que les IA choisissent de citer.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-3">
               <Button
                 asChild
                 size="lg"
@@ -266,11 +266,11 @@ export default function GEOPage() {
       {/* Services GEO */}
       <section className="py-20 lg:py-28">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+          <div className="mb-16">
+            <h2 className="v-display text-4xl sm:text-6xl text-foreground mb-4">
               Nos services GEO
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-muted-foreground max-w-2xl">
               Une approche complète pour maximiser votre visibilité sur les moteurs de recherche IA.
             </p>
           </div>
@@ -278,10 +278,10 @@ export default function GEOPage() {
             {geoServices.map((service, index) => (
               <Card
                 key={index}
-                className="border-border/50 hover:border-primary/30 transition-all hover:shadow-lg group"
+                className="border-border/50 hover:border-primary/30 transition-all hover:shadow-lift hover:-translate-y-0.5 group"
               >
                 <CardHeader>
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                  <div className="w-12 h-12 rounded-lg bg-secondary flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
                     <service.icon className="h-6 w-6 text-primary" />
                   </div>
                   <CardTitle>{service.title}</CardTitle>
@@ -291,7 +291,7 @@ export default function GEOPage() {
                   <ul className="space-y-2">
                     {service.benefits.map((benefit, i) => (
                       <li key={i} className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <Sparkles className="h-3 w-3 text-accent" />
+                        <Sparkles className="h-3 w-3 text-primary" />
                         {benefit}
                       </li>
                     ))}
@@ -306,11 +306,11 @@ export default function GEOPage() {
       {/* Cas d'usage */}
       <section className="py-20 lg:py-28 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+          <div className="mb-16">
+            <h2 className="v-display text-4xl sm:text-6xl text-foreground mb-4">
               Résultats concrets
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-muted-foreground max-w-2xl">
               Le GEO génère des résultats mesurables sur la visibilité IA de nos clients.
             </p>
           </div>
@@ -324,7 +324,7 @@ export default function GEOPage() {
                   <p className="text-sm text-muted-foreground mb-4">
                     {item.useCase}
                   </p>
-                  <p className="text-2xl font-bold text-accent">
+                  <p className="text-2xl font-semibold text-primary">
                     {item.result}
                   </p>
                 </CardContent>
@@ -339,7 +339,7 @@ export default function GEOPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
+              <h2 className="v-display text-4xl sm:text-6xl text-foreground mb-6">
                 Pourquoi investir dans le GEO maintenant ?
               </h2>
               <div className="space-y-6">
@@ -356,8 +356,8 @@ export default function GEOPage() {
                   </div>
                 </div>
                 <div className="flex gap-4">
-                  <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
-                    <Clock className="h-6 w-6 text-accent" />
+                  <div className="w-12 h-12 rounded-lg bg-secondary flex items-center justify-center flex-shrink-0">
+                    <Clock className="h-6 w-6 text-primary" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground mb-1">Avantage premier entrant</h3>
@@ -368,7 +368,7 @@ export default function GEOPage() {
                   </div>
                 </div>
                 <div className="flex gap-4">
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 rounded-lg bg-secondary flex items-center justify-center flex-shrink-0">
                     <Shield className="h-6 w-6 text-primary" />
                   </div>
                   <div>
@@ -381,7 +381,7 @@ export default function GEOPage() {
                 </div>
               </div>
             </div>
-            <div className="bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl p-8">
+            <div className="bg-secondary rounded-lg p-8">
               <h3 className="text-xl font-semibold text-foreground mb-6">
                 Notre stack technique GEO
               </h3>
@@ -403,11 +403,11 @@ export default function GEOPage() {
       {/* Ce que nous livrons */}
       <section className="py-20 lg:py-28 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+          <div className="mb-16">
+            <h2 className="v-display text-4xl sm:text-6xl text-foreground mb-4">
               Ce que nous livrons concrètement
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-muted-foreground max-w-2xl">
               Chaque prestation GEO inclut des livrables précis et mesurables.
             </p>
           </div>
@@ -417,8 +417,8 @@ export default function GEOPage() {
                 <ul className="space-y-4">
                   {deliverables.map((item, index) => (
                     <li key={index} className="flex items-start gap-3">
-                      <div className="w-6 h-6 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <Sparkles className="h-3 w-3 text-accent" />
+                      <div className="w-6 h-6 rounded-full bg-secondary flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <Sparkles className="h-3 w-3 text-primary" />
                       </div>
                       <span className="text-foreground">{item}</span>
                     </li>
@@ -433,18 +433,18 @@ export default function GEOPage() {
       {/* Méthodologie */}
       <section className="py-20 lg:py-28">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+          <div className="mb-16">
+            <h2 className="v-display text-4xl sm:text-6xl text-foreground mb-4">
               Notre méthodologie GEO
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-muted-foreground max-w-2xl">
               Une approche structurée en 4 étapes pour des résultats mesurables.
             </p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {processSteps.map((step, index) => (
               <div key={index} className="text-center">
-                <div className="text-5xl font-bold text-primary/20 mb-4">
+                <div className="text-5xl font-semibold text-primary/20 mb-4">
                   {step.step}
                 </div>
                 <h3 className="text-xl font-semibold text-foreground mb-2">
@@ -462,11 +462,11 @@ export default function GEOPage() {
       {/* FAQ */}
       <section className="py-20 lg:py-28 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+          <div className="mb-16">
+            <h2 className="v-display text-4xl sm:text-6xl text-foreground mb-4">
               Questions fréquentes sur le GEO
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-muted-foreground max-w-2xl">
               Tout ce que vous devez savoir sur le Generative Engine Optimization.
             </p>
           </div>

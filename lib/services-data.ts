@@ -199,7 +199,7 @@ export const services: ServiceData[] = [
         type: "answer-first",
         items: [
           {
-            heading: "💰 Combien coûte un site web ?",
+            heading: "Combien coûte un site web ?",
             body: [
               { strong: "Site vitrine : 2 000€ à 5 000€" },
               ". E-commerce : 5 000€ à 15 000€. Application sur mesure : 10 000€ à 50 000€+. Nos sites Next.js atteignent",
@@ -208,14 +208,14 @@ export const services: ServiceData[] = [
             ],
           },
           {
-            heading: "⏱️ Quel délai de réalisation ?",
+            heading: "Quel délai de réalisation ?",
             body: [
               { strong: "Site vitrine : 2-4 semaines" },
               ". E-commerce : 4-8 semaines. Application complexe : 2-4 mois. Statistique : 53% des visiteurs quittent un site si le chargement prend >3 secondes (Google 2025).",
             ],
           },
           {
-            heading: "🚀 Pourquoi Next.js ?",
+            heading: "Pourquoi Next.js ?",
             body: [
               "Sites ",
               { strong: "2-3x plus rapides" },
@@ -225,7 +225,7 @@ export const services: ServiceData[] = [
             ],
           },
           {
-            heading: "📱 Mobile-first inclus ?",
+            heading: "Mobile-first inclus ?",
             body: [
               "Oui, tous nos sites sont ",
               { strong: "mobile-first" },
@@ -383,7 +383,7 @@ export const services: ServiceData[] = [
         type: "answer-first",
         items: [
           {
-            heading: "💰 Combien coûte un site e-commerce ?",
+            heading: "Combien coûte un site e-commerce ?",
             body: [
               { strong: "Shopify : 3 000€ à 8 000€" },
               ". WooCommerce : 5 000€ à 15 000€. Sur mesure : 15 000€ à 50 000€+. Taux de conversion moyen France : 2.5%. Nos sites atteignent ",
@@ -392,7 +392,7 @@ export const services: ServiceData[] = [
             ],
           },
           {
-            heading: "🛒 Shopify ou WooCommerce ?",
+            heading: "Shopify ou WooCommerce ?",
             body: [
               { strong: "Shopify" },
               " : démarrage rapide, 29-299€/mois, hébergement inclus.",
@@ -401,7 +401,7 @@ export const services: ServiceData[] = [
             ],
           },
           {
-            heading: "📈 Comment augmenter mes ventes ?",
+            heading: "Comment augmenter mes ventes ?",
             body: [
               "Nos optimisations : ",
               { strong: "+20-40% conversions" },
@@ -411,7 +411,7 @@ export const services: ServiceData[] = [
             ],
           },
           {
-            heading: "💳 Paiement fractionné inclus ?",
+            heading: "Paiement fractionné inclus ?",
             body: [
               { strong: "Oui" },
               " : Stripe, PayPal, Apple Pay, Alma, Klarna. Statistique : le paiement 3x/4x augmente le panier moyen de ",

@@ -57,7 +57,7 @@ export default async function MerciPage({ searchParams }: MerciPageProps) {
           <div className={`w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 ${state.iconClass}`}>
             <Icon className="h-8 w-8" />
           </div>
-          <h1 className="text-3xl font-bold text-foreground mb-4">{state.title}</h1>
+          <h1 className="v-display text-5xl sm:text-7xl lg:text-[88px] text-foreground mb-4">{state.title}</h1>
           <p className="text-muted-foreground mb-8">{state.message}</p>
           <Button asChild variant="accent">
             <Link href="/">
