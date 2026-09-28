@@ -44,7 +44,7 @@ export function Hero() {
 
         <div className="flex flex-col justify-start gap-8">
           <p className="max-w-[40ch] text-lg leading-relaxed text-muted-foreground sm:text-xl">
-            Un associé tech, une associée marketing. Sites, apps, IA, 3D, SEO et acquisition, avec les mêmes
+            Un associé tech, une associée marketing. Sites, apps, SaaS, IA, 3D, SEO et acquisition, avec les mêmes
             interlocuteurs du premier commit à la première vente.
           </p>
           <div className="flex flex-wrap gap-3">

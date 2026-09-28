@@ -194,7 +194,7 @@ export default function AdsManagementPage() {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {results.map((result, index) => (
               <div key={index} className="text-center">
-                <div className="text-4xl sm:text-5xl font-semibold text-primary mb-2">
+                <div className="text-4xl sm:text-5xl font-semibold text-primary-foreground mb-2">
                   {result.value}
                 </div>
                 <div className="text-sm text-primary-foreground/80">

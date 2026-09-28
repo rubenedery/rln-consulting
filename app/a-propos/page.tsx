@@ -7,8 +7,6 @@ import {
   Linkedin,
   Sparkles,
   TrendingUp,
-  Twitter,
-  Github,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -81,10 +79,10 @@ export default function AboutPage() {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {companyStats.map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="text-4xl sm:text-5xl font-semibold text-primary mb-2">
+                <div className="font-display text-5xl sm:text-6xl font-semibold tracking-[-0.05em] leading-none text-primary-foreground mb-3">
                   {stat.value}
                 </div>
-                <div className="text-sm text-primary-foreground/80">
+                <div className="font-mono text-xs tracking-[0.08em] uppercase text-primary-foreground/75">
                   {stat.label}
                 </div>
               </div>
@@ -201,29 +199,10 @@ export default function AboutPage() {
                             href={member.social.linkedin}
                             target="_blank"
                             rel="noopener noreferrer"
+                            aria-label={`${member.name} sur LinkedIn`}
                             className="text-muted-foreground hover:text-primary transition-colors"
                           >
                             <Linkedin className="h-5 w-5" />
-                          </a>
-                        )}
-                        {member.social.twitter && (
-                          <a
-                            href={member.social.twitter}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-muted-foreground hover:text-primary transition-colors"
-                          >
-                            <Twitter className="h-5 w-5" />
-                          </a>
-                        )}
-                        {member.social.github && (
-                          <a
-                            href={member.social.github}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-muted-foreground hover:text-primary transition-colors"
-                          >
-                            <Github className="h-5 w-5" />
                           </a>
                         )}
                       </div>

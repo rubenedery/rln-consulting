@@ -78,6 +78,21 @@ export const services: Service[] = [
     href: "/services/applications-mobiles",
   },
   {
+    id: "developpement-saas",
+    title: "Développement SaaS",
+    description:
+      "MVP SaaS à partir de 4 900€ : comptes et équipes, abonnements Stripe, back-office et IA intégrée. On vous accompagne jusqu'aux premiers abonnés.",
+    features: [
+      "MVP en quelques semaines",
+      "Abonnements & facturation Stripe",
+      "Multi-tenant & rôles",
+      "Back-office d'administration",
+      "IA intégrée au produit",
+    ],
+    icon: "Cloud",
+    href: "/services/developpement-saas",
+  },
+  {
     id: "crm-applications-metier",
     title: "CRM & Applications Métier",
     description:
@@ -217,8 +232,6 @@ export const teamMembers: TeamMember[] = [
     bio: "Fondateur de RLN Consulting en 2020, développeur full-stack spécialisé dans la création d'applications web performantes. Expert Next.js et React.",
     social: {
       linkedin: "https://linkedin.com/in/rubenedery",
-      github: "https://github.com/rubenedery",
-      twitter: "https://twitter.com/rubenedery",
     },
   },
 ]

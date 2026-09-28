@@ -268,13 +268,13 @@ export default function StatistiquesPage() {
       <section className="py-16 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-semibold text-center mb-10">
-            Résultats RLN Consulting
+            Résultats Agence RLN
           </h2>
           <div className="grid grid-cols-2 lg:grid-cols-6 gap-6">
             {rlnStats.map((stat, index) => (
               <div key={index} className="text-center">
-                <stat.icon className="h-8 w-8 mx-auto mb-3 text-primary" />
-                <div className="text-3xl font-semibold text-primary mb-1">
+                <stat.icon className="h-8 w-8 mx-auto mb-3 text-primary-foreground/80" />
+                <div className="text-3xl font-semibold text-primary-foreground mb-1">
                   {stat.value}
                 </div>
                 <div className="text-sm text-primary-foreground/80">

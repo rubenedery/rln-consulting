@@ -207,9 +207,6 @@ h1 { letter-spacing: -0.04em; }
 }
 
 /* Reduced motion preference */
-@keyframes ring-sway { 0%, 100% { transform: rotate(-2.5deg) translateY(0); } 50% { transform: rotate(2.5deg) translateY(-6px); } }
-@keyframes ring-shine { 0%, 35% { transform: translateX(-30px); opacity: 0; } 50% { opacity: .6; } 70%, 100% { transform: translateX(110px); opacity: 0; } }
-@keyframes ring-twinkle { 0%, 100% { transform: scale(0); opacity: 0; } 45% { transform: scale(1); opacity: 1; } 70% { transform: scale(.2); opacity: 0; } }
 
 @media (prefers-reduced-motion: reduce) {
   .animate-marquee,

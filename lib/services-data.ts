@@ -574,6 +574,102 @@ export const services: ServiceData[] = [
     ],
   },
   {
+    slug: "developpement-saas",
+    breadcrumbName: "Développement SaaS",
+    meta: {
+      title: "Développement SaaS sur mesure | MVP à la mise à l'échelle",
+      description:
+        "Création de SaaS B2B et B2C : MVP en quelques semaines, abonnements Stripe, multi-tenant, espace admin, IA intégrée. Next.js, Supabase, PostgreSQL. À partir de 4 900€.",
+      keywords: [
+        "développement SaaS",
+        "créer un SaaS",
+        "agence SaaS",
+        "MVP SaaS",
+        "SaaS B2B",
+        "abonnement Stripe",
+        "application multi-tenant",
+      ],
+      ogTitle: "Développement SaaS | Agence RLN",
+      ogDescription: "Du MVP au SaaS qui encaisse ses premiers abonnements : produit, technique et acquisition.",
+    },
+    jsonLd: {
+      name: "Développement SaaS",
+      description:
+        "Conception et développement de logiciels SaaS : MVP, abonnements, multi-tenant, back-office, intégrations et IA.",
+      minPrice: 4900,
+      features: ["MVP", "Abonnements Stripe", "Multi-tenant", "Back-office", "API", "IA intégrée"],
+      estimatedDuration: "6 à 12 semaines pour un MVP",
+    },
+    hero: {
+      icon: Cloud,
+      badge: "Développement SaaS",
+      h1: {
+        before: "Votre SaaS, ",
+        highlight: "du MVP",
+        after: " aux premiers abonnés",
+      },
+      subtitle:
+        "On conçoit, développe et lance votre logiciel en ligne : un MVP centré sur l'essentiel, les abonnements qui tombent tout seuls, puis l'acquisition pour trouver vos premiers clients. À partir de 4 900 €.",
+      primaryCta: { label: "Parler de mon SaaS", href: "/contact" },
+      secondaryCta: { label: "Voir les réalisations", href: "/cas-etudes" },
+    },
+    sections: [
+      {
+        type: "features",
+        heading: "Tout ce qu'un SaaS doit savoir faire",
+        subtitle: "Les fondations sont prêtes dès le premier jour, vous investissez dans ce qui vous différencie.",
+        items: [
+          {
+            icon: Users,
+            title: "Comptes & équipes",
+            description: "Inscription, connexion sécurisée, invitations, rôles et espaces par client (multi-tenant).",
+          },
+          {
+            icon: CreditCard,
+            title: "Abonnements & facturation",
+            description: "Plans, essai gratuit, paiement récurrent et factures automatiques avec Stripe.",
+          },
+          {
+            icon: LayoutDashboard,
+            title: "Tableau de bord & back-office",
+            description: "Un produit clair pour vos utilisateurs, un espace admin pour piloter clients, plans et support.",
+          },
+          {
+            icon: Zap,
+            title: "IA intégrée",
+            description: "Assistants, génération de contenu, analyse de documents : l'IA au cœur de la valeur de votre produit.",
+          },
+          {
+            icon: Workflow,
+            title: "API & intégrations",
+            description: "API documentée, webhooks et connecteurs vers les outils de vos clients.",
+          },
+          {
+            icon: BarChart3,
+            title: "Mesure & croissance",
+            description: "Analytics produit, e-mails d'activation, onboarding guidé : on suit ce qui fait rester vos clients.",
+          },
+        ],
+      },
+      {
+        type: "process",
+        heading: "De l'idée aux premiers clients",
+        subtitle: "Un produit en ligne vite, puis des itérations guidées par vos utilisateurs.",
+        steps: [
+          { step: "01", title: "Cadrage", description: "Problème, cible, fonctionnalités indispensables : on définit un MVP qui tient en quelques semaines." },
+          { step: "02", title: "Design", description: "Parcours et maquettes cliquables, testés avant d'écrire la première ligne de code." },
+          { step: "03", title: "MVP", description: "Développement, abonnements, mise en production. Vos premiers utilisateurs sont en ligne." },
+          { step: "04", title: "Croissance", description: "Itérations, SEO, campagnes et e-mails d'activation pour trouver et garder vos clients." },
+        ],
+      },
+      {
+        type: "badges",
+        heading: "Technologies",
+        items: ["Next.js", "React", "TypeScript", "Node.js", "PostgreSQL", "Supabase", "Prisma", "Stripe", "Vercel", "OpenAI & Claude API"],
+      },
+    ],
+  },
+  {
     slug: "crm-applications-metier",
     breadcrumbName: "CRM & Applications Métier",
     meta: {

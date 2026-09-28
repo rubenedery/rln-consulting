@@ -12,6 +12,7 @@ import {
   Mail,
   ShoppingCart,
   Box,
+  Cloud,
   ArrowRight,
   Check,
 } from "lucide-react"
@@ -30,6 +31,7 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   Mail,
   ShoppingCart,
   Box,
+  Cloud,
 }
 
 export function ServicesPreview() {

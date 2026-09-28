@@ -286,7 +286,7 @@ export default async function CityPage({ params }: PageProps) {
             <div className="grid sm:grid-cols-3 gap-8">
               {cityData.stats.map((stat, index) => (
                 <div key={index} className="text-center">
-                  <div className="text-4xl sm:text-5xl font-semibold text-primary mb-2">
+                  <div className="text-4xl sm:text-5xl font-semibold text-primary-foreground mb-2">
                     {stat.value}
                   </div>
                   <div className="text-primary-foreground/80">

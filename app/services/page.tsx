@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import { ArrowRight, Code, Target, BrainCircuit, Search, Check, Sparkles } from "lucide-react"
+import { ArrowRight, Code, Target, BrainCircuit, Search, Check, Sparkles, Cloud } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { WebPageJsonLd, BreadcrumbJsonLd } from "@/components/seo"
@@ -40,6 +40,7 @@ const iconMap: Record<string, React.ElementType> = {
   Target: Target,
   BrainCircuit: BrainCircuit,
   Search: Search,
+  Cloud: Cloud,
 }
 
 const whyChooseUs = [

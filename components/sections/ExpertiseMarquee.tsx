@@ -1,6 +1,7 @@
 const expertises = [
   "Sites & e-commerce",
   "Apps mobiles",
+  "SaaS",
   "IA & chatbots",
   "Configurateurs 3D",
   "CRM sur mesure",
