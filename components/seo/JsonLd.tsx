@@ -1061,3 +1061,40 @@ export function HowToJsonLd({ name, description, steps, totalTime }: HowToJsonLd
     />
   )
 }
+
+// ============================================
+// VideoObject — showreel de la home
+// ============================================
+
+interface VideoJsonLdProps {
+  name: string
+  description: string
+  /** Chemins relatifs au site (ex. /videos/showreel.mp4) */
+  contentPath: string
+  thumbnailPath: string
+  uploadDate: string
+  /** Durée ISO 8601 (ex. PT30S) */
+  duration: string
+}
+
+export function VideoJsonLd({ name, description, contentPath, thumbnailPath, uploadDate, duration }: VideoJsonLdProps) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    name,
+    description,
+    thumbnailUrl: [`${siteConfig.url}${thumbnailPath}`],
+    contentUrl: `${siteConfig.url}${contentPath}`,
+    uploadDate,
+    duration,
+    inLanguage: "fr-FR",
+    publisher: { "@id": `${siteConfig.url}/#organization` },
+  }
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+    />
+  )
+}

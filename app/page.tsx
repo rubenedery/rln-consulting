@@ -1,5 +1,6 @@
 import {
   Hero,
+  Showreel,
   ExpertiseMarquee,
   ServicesBento,
   Included,
@@ -12,7 +13,7 @@ import {
   CTA,
   CaseStudiesPreview,
 } from "@/components/sections"
-import { WebSiteJsonLd, OrganizationJsonLd, LocalBusinessJsonLd, FAQPageJsonLd } from "@/components/seo"
+import { WebSiteJsonLd, OrganizationJsonLd, LocalBusinessJsonLd, FAQPageJsonLd, VideoJsonLd } from "@/components/seo"
 import { getAllCaseStudies } from "@/lib/mdx"
 import type { FAQItem } from "@/lib/content"
 import type { Metadata } from "next"
@@ -60,7 +61,16 @@ export default function HomePage() {
       <OrganizationJsonLd />
       <LocalBusinessJsonLd />
       <FAQPageJsonLd questions={homeFaqs} />
+      <VideoJsonLd
+        name="Showreel Agence RLN"
+        description="30 secondes de motion design aux couleurs de l'Agence RLN : sites, apps, IA, 3D, SEO et acquisition."
+        contentPath="/videos/showreel-agence-rln.mp4"
+        thumbnailPath="/videos/showreel-agence-rln.jpg"
+        uploadDate="2026-09-28"
+        duration="PT30S"
+      />
       <Hero />
+      <Showreel />
       <ExpertiseMarquee />
       <ServicesBento />
       <Included />
