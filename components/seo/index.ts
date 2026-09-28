@@ -16,4 +16,5 @@ export {
   SpeakableJsonLd,
   ItemListJsonLd,
   HowToJsonLd,
+  VideoJsonLd,
 } from "./JsonLd"
