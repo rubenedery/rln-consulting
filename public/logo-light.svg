@@ -1,4 +1,1 @@
-<svg width="200" height="48" viewBox="0 0 200 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <text x="0" y="35" font-family="system-ui, -apple-system, sans-serif" font-size="32" font-weight="700" fill="#93c5fd">RLN</text>
-  <text x="68" y="35" font-family="system-ui, -apple-system, sans-serif" font-size="32" font-weight="700" fill="#fbbf24">Consulting</text>
-</svg>
+<svg width="232" height="48" viewBox="0 0 232 48" xmlns="http://www.w3.org/2000/svg"><g transform="translate(0 6) scale(0.5625)"><path d="M0 0H42L64 22V64H0Z" fill="#1F2BFF"/><path d="M42 0V22H64Z" fill="#C8CDFF"/></g><text x="48" y="35" font-family="Georgia, serif" font-style="italic" font-size="30" fill="#8B93FF">agence</text><text x="150" y="35" font-family="system-ui, -apple-system, sans-serif" font-size="32" font-weight="700" letter-spacing="-1" fill="#FFFFFF">RLN</text></svg>

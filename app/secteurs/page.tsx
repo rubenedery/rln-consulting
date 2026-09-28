@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   description:
     "Découvrez nos solutions web adaptées à votre secteur : restaurants, avocats, médecins, artisans, e-commerce... 30+ métiers accompagnés.",
   openGraph: {
-    title: "Sites Web par Secteur | RLN Consulting",
+    title: "Sites Web par Secteur | Agence RLN",
     description:
       "Solutions web sur mesure pour chaque métier. Découvrez nos offres par secteur d'activité.",
     url: `${siteConfig.url}/secteurs`,
@@ -37,7 +37,7 @@ export default function SecteursPage() {
   return (
     <>
       <WebPageJsonLd
-        title="Sites Web par Secteur d'Activité | RLN Consulting"
+        title="Sites Web par Secteur d'Activité | Agence RLN"
         description="Solutions web sur mesure pour chaque métier. 30+ secteurs accompagnés."
         url={`${siteConfig.url}/secteurs`}
       />
@@ -51,13 +51,13 @@ export default function SecteursPage() {
       <section className="py-16 lg:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
-          <div className="max-w-3xl mx-auto text-center mb-16">
+          <div className="max-w-4xl mb-16">
             <Badge variant="secondary" className="mb-4">
               30+ secteurs d'activité
             </Badge>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-foreground mb-6">
+            <h1 className="v-display text-5xl sm:text-7xl lg:text-[88px] text-foreground mb-6">
               Des solutions adaptées à{" "}
-              <span className="text-primary">votre métier</span>
+              <span className="v-em text-primary">votre métier</span>
             </h1>
             <p className="text-lg text-muted-foreground">
               Chaque secteur a ses spécificités. Nous créons des sites web pensés
@@ -73,7 +73,7 @@ export default function SecteursPage() {
 
               return (
                 <div key={category}>
-                  <h2 className="text-2xl font-bold text-foreground mb-6">
+                  <h2 className="text-2xl font-semibold text-foreground mb-6">
                     {categoryLabels[category]}
                   </h2>
                   <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -83,7 +83,7 @@ export default function SecteursPage() {
                         href={`/secteurs/${sector.slug}`}
                         className="group"
                       >
-                        <Card className="h-full transition-all duration-200 hover:border-primary hover:shadow-md">
+                        <Card className="h-full transition-all duration-200 hover:border-primary hover:shadow-lift">
                           <CardHeader className="pb-2">
                             <CardTitle className="text-lg group-hover:text-primary transition-colors flex items-center justify-between">
                               {sector.name}
@@ -106,9 +106,9 @@ export default function SecteursPage() {
 
           {/* CTA */}
           <div className="mt-20 text-center">
-            <Card className="max-w-2xl mx-auto bg-gradient-to-br from-primary/5 to-accent/5 border-primary/20">
+            <Card className="max-w-2xl mx-auto bg-secondary border-primary/20">
               <CardContent className="py-10">
-                <h2 className="text-2xl font-bold text-foreground mb-4">
+                <h2 className="text-2xl font-semibold text-foreground mb-4">
                   Votre secteur n'est pas listé ?
                 </h2>
                 <p className="text-muted-foreground mb-6">
@@ -118,7 +118,7 @@ export default function SecteursPage() {
                 <Button
                   asChild
                   size="lg"
-                  className="bg-accent hover:bg-accent/90 text-accent-foreground"
+                  
                 >
                   <Link href="/contact">
                     Discutons de votre projet

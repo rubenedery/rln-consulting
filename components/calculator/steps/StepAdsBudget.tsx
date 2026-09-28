@@ -23,7 +23,7 @@ export function StepAdsBudget() {
       {/* Budget selection */}
       <div>
         <div className="text-center mb-6">
-          <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-3">
+          <h2 className="text-3xl sm:text-4xl font-semibold tracking-[-0.03em] text-foreground mb-3">
             Budget publicitaire mensuel
           </h2>
           <p className="text-muted-foreground">
@@ -66,7 +66,7 @@ export function StepAdsBudget() {
           />
           <div className="flex justify-between text-sm text-muted-foreground mt-2">
             <span>500€</span>
-            <span className="text-lg font-bold text-foreground">
+            <span className="text-lg font-semibold text-foreground">
               {state.ads.monthlyBudget.toLocaleString("fr-FR")}€/mois
             </span>
             <span>20 000€</span>
@@ -88,7 +88,7 @@ export function StepAdsBudget() {
       {/* Engagement period */}
       <div>
         <div className="text-center mb-6">
-          <h3 className="text-xl font-bold text-foreground mb-2">
+          <h3 className="text-xl font-semibold text-foreground mb-2">
             Durée d'engagement
           </h3>
           <p className="text-sm text-muted-foreground">

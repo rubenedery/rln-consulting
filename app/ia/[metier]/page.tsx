@@ -210,7 +210,7 @@ export default async function AiSectorPage({ params }: PageProps) {
       />
 
       {/* Hero Section */}
-      <section className="py-20 lg:py-28 bg-gradient-to-br from-primary/5 via-background to-accent/5">
+      <section className="py-20 lg:py-28 ">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs
             items={breadcrumbItems.slice(1).map((item, index, arr) =>
@@ -221,24 +221,24 @@ export default async function AiSectorPage({ params }: PageProps) {
             className="mb-6"
           />
 
-          <div className="max-w-4xl mx-auto text-center">
+          <div className="max-w-4xl">
             <div className="flex items-center justify-center gap-3 mb-6">
-              <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center">
+              <div className="w-16 h-16 rounded-lg bg-secondary flex items-center justify-center">
                 <Icon className="h-8 w-8 text-primary" />
               </div>
             </div>
-            <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary mb-6">
+            <span className="v-label inline-flex items-center gap-2 !text-primary mb-6">
               <Sparkles className="h-4 w-4" />
               IA pour {categoryLabels[profile.category]}
             </span>
-            <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-foreground mb-6">
+            <h1 className="v-display text-5xl sm:text-7xl lg:text-[88px] text-foreground mb-6">
               {profile.headline}
             </h1>
-            <p className="hero-description text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+            <p className="hero-description text-lg text-muted-foreground mb-8 max-w-2xl">
               {profile.subheadline}
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-3">
               <Button asChild size="lg" variant="accent">
                 <Link href={`/contact?secteur=${profile.sectorSlug}`}>
                   Discutons de votre projet IA
@@ -259,40 +259,36 @@ export default async function AiSectorPage({ params }: PageProps) {
       <section className="answer-first py-16 bg-primary/5 border-y border-primary/10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-2xl font-bold text-foreground mb-8 text-center">
+            <h2 className="text-2xl font-semibold text-foreground mb-8 text-center">
               L&apos;IA pour les {profile.namePlural} : l&apos;essentiel
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-background rounded-xl p-6 shadow-sm">
+              <div className="bg-background rounded-lg p-6 shadow-sm">
                 <h3 className="text-lg font-semibold text-foreground mb-3 flex items-center gap-2">
-                  <span className="text-xl">🤖</span>
                   {profile.answerFirst.what.question}
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   {profile.answerFirst.what.answer}
                 </p>
               </div>
-              <div className="bg-background rounded-xl p-6 shadow-sm">
+              <div className="bg-background rounded-lg p-6 shadow-sm">
                 <h3 className="text-lg font-semibold text-foreground mb-3 flex items-center gap-2">
-                  <span className="text-xl">💰</span>
                   {profile.answerFirst.cost.question}
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   {profile.answerFirst.cost.answer}
                 </p>
               </div>
-              <div className="bg-background rounded-xl p-6 shadow-sm">
+              <div className="bg-background rounded-lg p-6 shadow-sm">
                 <h3 className="text-lg font-semibold text-foreground mb-3 flex items-center gap-2">
-                  <span className="text-xl">⏱️</span>
                   {profile.answerFirst.duration.question}
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   {profile.answerFirst.duration.answer}
                 </p>
               </div>
-              <div className="bg-background rounded-xl p-6 shadow-sm">
+              <div className="bg-background rounded-lg p-6 shadow-sm">
                 <h3 className="text-lg font-semibold text-foreground mb-3 flex items-center gap-2">
-                  <span className="text-xl">📈</span>
                   {profile.answerFirst.roi.question}
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
@@ -308,7 +304,7 @@ export default async function AiSectorPage({ params }: PageProps) {
       <section className="py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-2xl font-bold text-foreground mb-8">
+            <h2 className="text-2xl font-semibold text-foreground mb-8">
               Ces situations vous parlent ?
             </h2>
             <div className="grid sm:grid-cols-2 gap-4">
@@ -317,7 +313,7 @@ export default async function AiSectorPage({ params }: PageProps) {
                   key={index}
                   className="flex items-start gap-3 bg-muted/50 rounded-lg p-4"
                 >
-                  <AlertCircle className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
+                  <AlertCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                   <p className="text-sm text-muted-foreground">{painPoint}</p>
                 </div>
               ))}
@@ -330,10 +326,10 @@ export default async function AiSectorPage({ params }: PageProps) {
       <section className="py-16 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-2xl font-bold text-foreground mb-3 text-center">
+            <h2 className="text-2xl font-semibold text-foreground mb-3 text-center">
               Ce que l&apos;IA peut automatiser pour vous
             </h2>
-            <p className="text-muted-foreground text-center mb-10 max-w-2xl mx-auto">
+            <p className="text-muted-foreground text-center mb-10 max-w-2xl">
               Des solutions concrètes, intégrées à vos outils existants et
               adaptées au quotidien des {profile.namePlural}.
             </p>
@@ -343,7 +339,7 @@ export default async function AiSectorPage({ params }: PageProps) {
                 return (
                   <Card key={useCase.type} className="h-full">
                     <CardHeader className="pb-2">
-                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-3">
+                      <div className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center mb-3">
                         <UseCaseIcon className="h-5 w-5 text-primary" />
                       </div>
                       <CardTitle className="text-lg">{useCase.title}</CardTitle>
@@ -375,14 +371,14 @@ export default async function AiSectorPage({ params }: PageProps) {
       <section className="py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-2xl font-bold text-foreground mb-8">
+            <h2 className="text-2xl font-semibold text-foreground mb-8">
               Exemples concrets chez les {profile.namePlural}
             </h2>
             <div className="space-y-6">
               {profile.concreteExamples.map((example, index) => (
                 <div
                   key={index}
-                  className="bg-background border border-border rounded-xl p-6 shadow-sm"
+                  className="bg-background border border-border rounded-lg p-6 shadow-sm"
                 >
                   <div className="flex flex-wrap items-start justify-between gap-3 mb-3">
                     <h3 className="text-lg font-semibold text-foreground">
@@ -408,13 +404,13 @@ export default async function AiSectorPage({ params }: PageProps) {
       <section className="py-16 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-2xl font-bold text-foreground mb-8">
+            <h2 className="text-2xl font-semibold text-foreground mb-8">
               Comment nous intégrons l&apos;IA chez vous
             </h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {steps.map((step, index) => (
                 <div key={index} className="relative">
-                  <div className="w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold mb-4">
+                  <div className="w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-semibold mb-4">
                     {index + 1}
                   </div>
                   <h3 className="font-semibold text-foreground mb-2">
@@ -437,13 +433,13 @@ export default async function AiSectorPage({ params }: PageProps) {
       <section className="py-16 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-2xl font-bold mb-10 text-center">
+            <h2 className="text-2xl font-semibold mb-10 text-center">
               L&apos;IA en chiffres
             </h2>
             <div className="grid sm:grid-cols-3 gap-8 text-center">
               {profile.roiStats.map((stat, index) => (
                 <div key={index}>
-                  <div className="text-4xl font-bold mb-2">{stat.value}</div>
+                  <div className="text-4xl font-semibold mb-2">{stat.value}</div>
                   <p className="text-sm opacity-90">{stat.label}</p>
                   {stat.source && (
                     <p className="text-xs opacity-70 mt-1">
@@ -461,7 +457,7 @@ export default async function AiSectorPage({ params }: PageProps) {
       <section className="py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-2xl font-bold text-foreground mb-8 text-center">
+            <h2 className="text-2xl font-semibold text-foreground mb-8 text-center">
               Vos questions sur l&apos;IA pour {profile.namePlural}
             </h2>
             <FAQ items={profile.faqs} showTitle={false} />
@@ -475,7 +471,7 @@ export default async function AiSectorPage({ params }: PageProps) {
           <div className="max-w-4xl mx-auto space-y-10">
             {/* Sector & services */}
             <div>
-              <h2 className="text-2xl font-bold text-foreground mb-6">
+              <h2 className="text-2xl font-semibold text-foreground mb-6">
                 Pour aller plus loin
               </h2>
               <div className="flex flex-wrap gap-3">

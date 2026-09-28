@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { m, AnimatePresence } from "framer-motion"
-import { ChevronDown, HelpCircle } from "lucide-react"
+import { Plus } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { faqData, type FAQItem } from "@/lib/content"
 
@@ -10,69 +10,61 @@ interface FAQProps {
   items?: FAQItem[]
   showTitle?: boolean
   maxItems?: number
+  title?: React.ReactNode
   /** "h1" sur la page /faq dédiée (le titre y est le titre principal), "h2" partout ailleurs */
   headingLevel?: "h1" | "h2"
 }
 
-export function FAQ({
-  items = faqData,
-  showTitle = true,
-  maxItems,
-  headingLevel = "h2",
-}: FAQProps) {
+export function FAQ({ items = faqData, showTitle = true, maxItems, title, headingLevel = "h2" }: FAQProps) {
   const Heading = headingLevel
-  const [openIndex, setOpenIndex] = useState<number | null>(null)
+  const [openIndex, setOpenIndex] = useState<number | null>(0)
   const displayItems = maxItems ? items.slice(0, maxItems) : items
 
-  const toggleItem = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index)
-  }
-
   return (
-    <section className="py-20 lg:py-28">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {showTitle && (
-          <div className="text-center mb-16">
-            <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary mb-4">
-              <HelpCircle className="h-4 w-4" />
-              FAQ
-            </span>
-            <Heading className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-              Questions fréquentes
+    <section className="py-24 lg:py-32" aria-labelledby={showTitle ? "faq-title" : undefined}>
+      <div className="container mx-auto grid gap-12 px-4 sm:px-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)] lg:gap-16 lg:px-8">
+        {showTitle ? (
+          <div className="flex flex-col gap-4">
+            <span className="v-label">Questions fréquentes</span>
+            <Heading id="faq-title" className="v-display text-5xl sm:text-6xl">
+              {title ?? (
+                <>
+                  Ce qu&apos;on nous <span className="v-em">demande.</span>
+                </>
+              )}
             </Heading>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Retrouvez les réponses aux questions les plus courantes sur nos
-              services et notre façon de travailler.
-            </p>
           </div>
+        ) : (
+          <div className="hidden lg:block" />
         )}
 
-        <div className="max-w-3xl mx-auto">
-          <div className="space-y-4">
-            {displayItems.map((item, index) => (
-              <div
-                key={index}
-                className="border border-border/50 rounded-lg overflow-hidden bg-card hover:border-primary/30 transition-colors"
-              >
-                <button
-                  id={`faq-question-${index}`}
-                  onClick={() => toggleItem(index)}
-                  className="flex items-center justify-between w-full px-6 py-4 text-left"
-                  aria-expanded={openIndex === index}
-                  aria-controls={`faq-answer-${index}`}
-                >
-                  <span className="font-medium text-foreground pr-4">
+        <div className="border-b border-border">
+          {displayItems.map((item, index) => {
+            const open = openIndex === index
+            return (
+              <div key={index} className="border-t border-border">
+                <h3 className="m-0">
+                  <button
+                    id={`faq-question-${index}`}
+                    onClick={() => setOpenIndex(open ? null : index)}
+                    className="flex w-full items-center justify-between gap-6 py-6 text-left font-display text-xl leading-snug font-semibold tracking-[-0.02em] sm:text-2xl"
+                    aria-expanded={open}
+                    aria-controls={`faq-answer-${index}`}
+                  >
                     {item.question}
-                  </span>
-                  <ChevronDown
-                    className={cn(
-                      "h-5 w-5 text-muted-foreground flex-shrink-0 transition-transform duration-200",
-                      openIndex === index && "rotate-180"
-                    )}
-                  />
-                </button>
+                    <span
+                      className={cn(
+                        "grid size-9 shrink-0 place-items-center rounded-full border border-input transition-all duration-300",
+                        open && "rotate-45 border-transparent bg-primary text-primary-foreground"
+                      )}
+                      aria-hidden="true"
+                    >
+                      <Plus className="size-4" />
+                    </span>
+                  </button>
+                </h3>
                 <AnimatePresence initial={false}>
-                  {openIndex === index && (
+                  {open && (
                     <m.div
                       id={`faq-answer-${index}`}
                       role="region"
@@ -80,19 +72,16 @@ export function FAQ({
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.2, ease: "easeInOut" }}
+                      transition={{ duration: 0.3, ease: [0.7, 0, 0.2, 1] }}
+                      className="overflow-hidden"
                     >
-                      <div className="px-6 pb-4">
-                        <p className="text-muted-foreground leading-relaxed">
-                          {item.answer}
-                        </p>
-                      </div>
+                      <p className="max-w-[62ch] pr-12 pb-7 text-[17px] leading-relaxed text-muted-foreground">{item.answer}</p>
                     </m.div>
                   )}
                 </AnimatePresence>
               </div>
-            ))}
-          </div>
+            )
+          })}
         </div>
       </div>
     </section>

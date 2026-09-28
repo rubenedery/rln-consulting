@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     "agence développement web",
   ],
   openGraph: {
-    title: "Expertises Techniques | RLN Consulting",
+    title: "Expertises Techniques | Agence RLN",
     description:
       "Développeurs experts Next.js, React, Node.js et IA Générative à Paris. Solutions sur-mesure pour PME et startups.",
     url: `${siteConfig.url}/expertise`,
@@ -130,15 +130,15 @@ export default function ExpertisePage() {
       />
 
       {/* Hero Section */}
-      <section className="py-20 lg:py-28 bg-gradient-to-br from-primary/5 via-background to-accent/5">
+      <section className="py-20 lg:py-28 ">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center">
-            <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary mb-6">
+          <div className="max-w-4xl">
+            <span className="v-label inline-flex items-center gap-2 !text-primary mb-6">
               <Sparkles className="h-4 w-4" />
               Expertises Techniques
             </span>
-            <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-foreground mb-6">
-              Technologies <span className="text-primary">maîtrisées</span>
+            <h1 className="v-display text-5xl sm:text-7xl lg:text-[88px] text-foreground mb-6">
+              Technologies <span className="v-em text-primary">maîtrisées</span>
             </h1>
             <p className="text-lg text-muted-foreground mb-10">
               De Next.js à l&apos;IA Générative, nous maîtrisons les technologies
@@ -173,10 +173,10 @@ export default function ExpertisePage() {
               const Icon = stat.icon
               return (
                 <div key={index} className="text-center">
-                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-3">
+                  <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center mx-auto mb-3">
                     <Icon className="h-6 w-6 text-primary" />
                   </div>
-                  <div className="text-3xl font-bold text-foreground">
+                  <div className="text-3xl font-semibold text-foreground">
                     {stat.value}
                   </div>
                   <div className="text-sm text-muted-foreground">
@@ -193,13 +193,13 @@ export default function ExpertisePage() {
       <section className="py-16 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-2xl font-bold text-foreground mb-8 text-center">
+            <h2 className="text-2xl font-semibold text-foreground mb-8 text-center">
               Questions fréquentes sur nos expertises
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-background rounded-xl p-6 border border-border/50">
+              <div className="bg-background rounded-lg p-6 border border-border/50">
                 <h3 className="font-semibold text-foreground mb-3 flex items-center gap-2">
-                  <span className="text-xl">💰</span> Combien coûte un
+                  Combien coûte un
                   développeur expert ?
                 </h3>
                 <p className="text-sm text-muted-foreground">
@@ -209,9 +209,9 @@ export default function ExpertisePage() {
                   application complète, et 20 000€+ pour des projets enterprise.
                 </p>
               </div>
-              <div className="bg-background rounded-xl p-6 border border-border/50">
+              <div className="bg-background rounded-lg p-6 border border-border/50">
                 <h3 className="font-semibold text-foreground mb-3 flex items-center gap-2">
-                  <span className="text-xl">⏱️</span> Quels sont les délais de
+                  Quels sont les délais de
                   développement ?
                 </h3>
                 <p className="text-sm text-muted-foreground">
@@ -221,9 +221,9 @@ export default function ExpertisePage() {
                   intégrations.
                 </p>
               </div>
-              <div className="bg-background rounded-xl p-6 border border-border/50">
+              <div className="bg-background rounded-lg p-6 border border-border/50">
                 <h3 className="font-semibold text-foreground mb-3 flex items-center gap-2">
-                  <span className="text-xl">🎯</span> Quelle technologie choisir
+                  Quelle technologie choisir
                   pour mon projet ?
                 </h3>
                 <p className="text-sm text-muted-foreground">
@@ -233,9 +233,9 @@ export default function ExpertisePage() {
                   personnalisée basée sur vos besoins.
                 </p>
               </div>
-              <div className="bg-background rounded-xl p-6 border border-border/50">
+              <div className="bg-background rounded-lg p-6 border border-border/50">
                 <h3 className="font-semibold text-foreground mb-3 flex items-center gap-2">
-                  <span className="text-xl">🤖</span> Comment intégrer l&apos;IA
+                  Comment intégrer l&apos;IA
                   dans mon entreprise ?
                 </h3>
                 <p className="text-sm text-muted-foreground">
@@ -253,11 +253,11 @@ export default function ExpertisePage() {
       {/* Expertises Grid */}
       <section className="py-20 lg:py-28">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+          <div className="mb-16">
+            <h2 className="v-display text-4xl sm:text-6xl text-foreground mb-4">
               Nos 8 expertises techniques
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-muted-foreground max-w-2xl">
               Chaque technologie est maîtrisée par notre équipe avec des années
               d&apos;expérience en production. Cliquez pour découvrir les détails,
               tarifs et projets réalisés.
@@ -270,12 +270,12 @@ export default function ExpertisePage() {
               return (
                 <Card
                   key={expertise.slug}
-                  className="relative overflow-hidden border-border/50 hover:border-primary/30 transition-all hover:shadow-lg group"
+                  className="relative overflow-hidden border-border/50 hover:border-primary/30 transition-all hover:shadow-lift hover:-translate-y-0.5 group"
                 >
                   <Link href={`/expertise/${expertise.slug}`}>
                     <CardHeader className="pb-3">
                       <div className="flex items-start justify-between">
-                        <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                        <div className="w-12 h-12 rounded-lg bg-secondary flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                           <Icon className="h-6 w-6 text-primary" />
                         </div>
                         <span className="text-xs font-medium text-muted-foreground bg-muted px-2 py-1 rounded-full">
@@ -301,7 +301,7 @@ export default function ExpertisePage() {
                       {/* Key stat */}
                       {expertise.stats[0] && (
                         <div className="bg-muted/50 rounded-lg p-3 mb-4">
-                          <div className="text-lg font-bold text-primary">
+                          <div className="text-lg font-semibold text-primary">
                             {expertise.stats[0].value}
                           </div>
                           <div className="text-xs text-muted-foreground">
@@ -327,11 +327,11 @@ export default function ExpertisePage() {
       {/* Stack Complémentaire */}
       <section className="py-20 lg:py-28 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+          <div className="mb-16">
+            <h2 className="v-display text-4xl sm:text-6xl text-foreground mb-4">
               Notre stack technique complète
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-muted-foreground max-w-2xl">
               Au-delà de nos 8 expertises principales, nous maîtrisons un
               écosystème complet d&apos;outils et technologies complémentaires.
             </p>
@@ -377,11 +377,11 @@ export default function ExpertisePage() {
       {/* Process Section */}
       <section className="py-20 lg:py-28">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+          <div className="mb-16">
+            <h2 className="v-display text-4xl sm:text-6xl text-foreground mb-4">
               Notre processus de développement
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-muted-foreground max-w-2xl">
               Une méthodologie éprouvée pour livrer des projets de qualité dans
               les délais et budgets convenus.
             </p>
@@ -415,8 +415,8 @@ export default function ExpertisePage() {
               },
             ].map((item) => (
               <div key={item.step} className="text-center">
-                <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                  <span className="text-lg font-bold text-primary">
+                <div className="w-14 h-14 rounded-full bg-secondary flex items-center justify-center mx-auto mb-4">
+                  <span className="text-lg font-semibold text-primary">
                     {item.step}
                   </span>
                 </div>

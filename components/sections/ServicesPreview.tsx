@@ -41,15 +41,15 @@ export function ServicesPreview() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-16"
+          className="mb-16"
         >
-          <span className="text-sm font-medium text-accent uppercase tracking-wider">
+          <span className="v-label !text-primary">
             Nos Services
           </span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mt-2 mb-4">
+          <h2 className="v-display text-4xl sm:text-6xl text-foreground mt-2 mb-4">
             Solutions complètes pour votre croissance digitale
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-muted-foreground max-w-2xl">
             De la conception à la mise en ligne, nous vous accompagnons à chaque
             étape de votre transformation numérique.
           </p>
@@ -66,9 +66,9 @@ export function ServicesPreview() {
             const IconComponent = iconMap[service.icon] || Code
             return (
               <m.div key={index} variants={itemVariants}>
-                <Card className="h-full hover:shadow-lg transition-shadow duration-300 border-border/50">
+                <Card className="h-full hover:shadow-lift hover:-translate-y-0.5 transition-shadow duration-300 border-border/50">
                   <CardHeader className="pb-3">
-                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-3">
+                    <div className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center mb-3">
                       <IconComponent className="h-5 w-5 text-primary" />
                     </div>
                     <CardTitle className="text-lg">{service.title}</CardTitle>
@@ -83,7 +83,7 @@ export function ServicesPreview() {
                           key={featureIndex}
                           className="flex items-center gap-2 text-xs text-muted-foreground"
                         >
-                          <Check className="h-3 w-3 text-accent flex-shrink-0" />
+                          <Check className="h-3 w-3 text-primary flex-shrink-0" />
                           {feature}
                         </li>
                       ))}

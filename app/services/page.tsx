@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     "IA entreprise",
   ],
   openGraph: {
-    title: "Services | RLN Consulting",
+    title: "Services | Agence RLN",
     description:
       "Services de développement web et gestion de campagnes publicitaires.",
     url: `${siteConfig.url}/services`,
@@ -77,16 +77,16 @@ export default function ServicesPage() {
       />
 
       {/* Hero */}
-      <section className="py-20 lg:py-28 bg-gradient-to-br from-primary/5 via-background to-accent/5">
+      <section className="py-20 lg:py-28 ">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center">
-            <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary mb-6">
+          <div className="max-w-4xl">
+            <span className="v-label inline-flex items-center gap-2 !text-primary mb-6">
               <Sparkles className="h-4 w-4" />
               Nos Services
             </span>
-            <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-foreground mb-6">
+            <h1 className="v-display text-5xl sm:text-7xl lg:text-[88px] text-foreground mb-6">
               Solutions digitales{" "}
-              <span className="text-primary">complètes</span>
+              <span className="v-em text-primary">complètes</span>
             </h1>
             <p className="text-lg text-muted-foreground mb-10">
               Du développement web à la gestion publicitaire, nous vous accompagnons
@@ -110,11 +110,11 @@ export default function ServicesPage() {
       {/* Services Grid */}
       <section className="py-20 lg:py-28">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+          <div className="mb-16">
+            <h2 className="v-display text-4xl sm:text-6xl text-foreground mb-4">
               Nos domaines d&apos;expertise
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-muted-foreground max-w-2xl">
               Deux pôles d&apos;expertise complémentaires pour maximiser votre présence digitale.
             </p>
           </div>
@@ -125,10 +125,10 @@ export default function ServicesPage() {
               return (
                 <Card
                   key={service.id}
-                  className="relative overflow-hidden border-border/50 hover:border-primary/30 transition-all hover:shadow-lg group"
+                  className="relative overflow-hidden border-border/50 hover:border-primary/30 transition-all hover:shadow-lift hover:-translate-y-0.5 group"
                 >
                   <CardHeader className="pb-4">
-                    <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                    <div className="w-14 h-14 rounded-lg bg-secondary flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
                       <Icon className="h-7 w-7 text-primary" />
                     </div>
                     <CardTitle className="text-2xl">{service.title}</CardTitle>
@@ -141,8 +141,8 @@ export default function ServicesPage() {
                     <ul className="space-y-3">
                       {service.features.map((feature, idx) => (
                         <li key={idx} className="flex items-start gap-3">
-                          <div className="w-5 h-5 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                            <Check className="h-3 w-3 text-accent" />
+                          <div className="w-5 h-5 rounded-full bg-secondary flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <Check className="h-3 w-3 text-primary" />
                           </div>
                           <span className="text-sm text-muted-foreground">
                             {feature}
@@ -152,7 +152,7 @@ export default function ServicesPage() {
                     </ul>
 
                     {/* CTA */}
-                    <Button asChild className="w-full group/btn">
+                    <Button asChild variant="outline" className="w-full group/btn">
                       <Link href={service.href}>
                         En savoir plus
                         <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
@@ -169,11 +169,11 @@ export default function ServicesPage() {
       {/* Why Choose Us */}
       <section className="py-20 lg:py-28 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+          <div className="mb-16">
+            <h2 className="v-display text-4xl sm:text-6xl text-foreground mb-4">
               Pourquoi nous choisir
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-muted-foreground max-w-2xl">
               Une approche centrée sur vos objectifs et vos résultats.
             </p>
           </div>
@@ -182,10 +182,10 @@ export default function ServicesPage() {
             {whyChooseUs.map((item, index) => (
               <div
                 key={index}
-                className="text-center p-6 rounded-xl bg-background border border-border/50 hover:border-primary/30 transition-colors"
+                className="text-center p-6 rounded-lg bg-background border border-border/50 hover:border-primary/30 transition-colors"
               >
-                <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-4">
-                  <span className="text-lg font-bold text-accent">
+                <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center mx-auto mb-4">
+                  <span className="text-lg font-semibold text-primary">
                     {String(index + 1).padStart(2, "0")}
                   </span>
                 </div>
@@ -204,24 +204,24 @@ export default function ServicesPage() {
       {/* Packages Section */}
       <section className="py-20 lg:py-28">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+          <div className="mb-16">
+            <h2 className="v-display text-4xl sm:text-6xl text-foreground mb-4">
               Une offre combinée
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-muted-foreground max-w-2xl">
               Bénéficiez d&apos;une approche globale en combinant nos deux expertises.
             </p>
           </div>
 
-          <Card className="max-w-2xl mx-auto border-accent/50 bg-gradient-to-br from-accent/5 to-primary/5">
+          <Card className="max-w-2xl mx-auto border-accent/50 bg-secondary">
             <CardHeader className="text-center">
               <div className="inline-flex items-center justify-center gap-4 mb-4">
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                <div className="w-12 h-12 rounded-lg bg-secondary flex items-center justify-center">
                   <Code className="h-6 w-6 text-primary" />
                 </div>
-                <span className="text-2xl font-bold text-muted-foreground">+</span>
-                <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
-                  <Target className="h-6 w-6 text-accent" />
+                <span className="text-2xl font-semibold text-muted-foreground">+</span>
+                <div className="w-12 h-12 rounded-lg bg-secondary flex items-center justify-center">
+                  <Target className="h-6 w-6 text-primary" />
                 </div>
               </div>
               <CardTitle className="text-2xl">Pack Croissance Digitale</CardTitle>
@@ -241,7 +241,7 @@ export default function ServicesPage() {
                   "Reporting mensuel",
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-center gap-2">
-                    <Check className="h-4 w-4 text-accent" />
+                    <Check className="h-4 w-4 text-primary" />
                     <span className="text-sm text-muted-foreground">{item}</span>
                   </li>
                 ))}

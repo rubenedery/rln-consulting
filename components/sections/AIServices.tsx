@@ -39,9 +39,9 @@ const stats = [
 
 export function AIServices() {
   return (
-    <section className="py-20 lg:py-28 bg-gradient-to-br from-primary/5 via-background to-accent/5 relative overflow-hidden">
+    <section className="py-20 lg:py-28  relative overflow-hidden">
       <div className="absolute inset-0 -z-10">
-        <div className="absolute top-20 right-10 w-72 h-72 bg-accent/10 rounded-full blur-3xl" />
+        <div className="absolute top-20 right-10 w-72 h-72 bg-secondary rounded-full blur-3xl" />
         <div className="absolute bottom-20 left-10 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
       </div>
 
@@ -51,17 +51,17 @@ export function AIServices() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-16"
+          className="mb-16"
         >
-          <Badge variant="secondary" className="mb-4 bg-accent/10 text-accent">
+          <Badge variant="secondary" className="mb-4 bg-secondary text-primary">
             <Sparkles className="h-4 w-4 mr-2" />
             Nouveau
           </Badge>
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+          <h2 className="v-display text-4xl sm:text-6xl text-foreground mb-4">
             Boostez votre entreprise avec{" "}
-            <span className="text-primary">l&apos;IA</span>
+            <span className="v-em text-primary">l&apos;IA</span>
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-muted-foreground max-w-2xl">
             Chatbots intelligents, automatisation des tâches, analyse de données...
             Nous intégrons l&apos;intelligence artificielle dans votre business.
           </p>
@@ -76,9 +76,9 @@ export function AIServices() {
         >
           {ai_features.map((feature, index) => (
             <m.div key={index} variants={itemVariants}>
-              <Card className="h-full border-border/50 hover:border-primary/30 transition-all hover:shadow-lg group text-center">
+              <Card className="h-full border-border/50 hover:border-primary/30 transition-all hover:shadow-lift hover:-translate-y-0.5 group text-center">
                 <CardContent className="pt-6">
-                  <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
+                  <div className="w-14 h-14 rounded-lg bg-secondary flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
                     <feature.icon className="h-7 w-7 text-primary" />
                   </div>
                   <h3 className="font-semibold text-foreground mb-2">
@@ -102,7 +102,7 @@ export function AIServices() {
         >
           {stats.map((stat, index) => (
             <div key={index} className="text-center">
-              <div className="text-3xl font-bold text-accent">{stat.value}</div>
+              <div className="text-3xl font-semibold text-primary">{stat.value}</div>
               <div className="text-sm text-muted-foreground">{stat.label}</div>
             </div>
           ))}
@@ -113,12 +113,12 @@ export function AIServices() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4"
+          className="flex flex-col sm:flex-row sm:items-center gap-3"
         >
           <Button
             asChild
             size="lg"
-            className="bg-accent hover:bg-accent/90 text-accent-foreground"
+            
           >
             <Link href="/services/ia-entreprise">
               Découvrir nos services IA

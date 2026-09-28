@@ -35,7 +35,7 @@ export default function Error({
           <AlertTriangle className="h-10 w-10 text-destructive" />
         </m.div>
 
-        <h1 className="text-4xl font-bold text-foreground mb-4">
+        <h1 className="v-display text-5xl sm:text-7xl lg:text-[88px] text-foreground mb-4">
           Une erreur est survenue
         </h1>
 
@@ -50,7 +50,7 @@ export default function Error({
           </p>
         )}
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <div className="flex flex-col sm:flex-row sm:items-center gap-3">
           <Button onClick={reset} variant="default">
             <RefreshCw className="mr-2 h-4 w-4" />
             Réessayer

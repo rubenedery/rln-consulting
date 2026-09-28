@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   description:
     "Combien coûte votre site internet ? Simulateur de prix gratuit : estimation instantanée pour site web, e-commerce, publicité ou IA. Sans inscription ni engagement.",
   openGraph: {
-    title: "Simulateur de Prix | RLN Consulting",
+    title: "Simulateur de Prix | Agence RLN",
     description:
       "Estimez le coût de votre projet digital en quelques clics. Site web, gestion de publicités, solutions IA.",
     url: `${siteConfig.url}/tarifs/simulateur`,
@@ -25,7 +25,7 @@ export default function SimulateurPage() {
   return (
     <>
       <WebPageJsonLd
-        title="Simulateur de Prix | RLN Consulting"
+        title="Simulateur de Prix | Agence RLN"
         description="Estimez le coût de votre projet digital en quelques clics."
         url={`${siteConfig.url}/tarifs/simulateur`}
       />
@@ -58,13 +58,13 @@ export default function SimulateurPage() {
           </Link>
 
           {/* Header */}
-          <div className="max-w-2xl mx-auto text-center mb-12">
+          <div className="max-w-3xl mb-12">
             <Badge variant="secondary" className="mb-4">
               Estimation gratuite
             </Badge>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-foreground mb-4">
+            <h1 className="v-display text-5xl sm:text-7xl lg:text-[88px] text-foreground mb-4">
               Simulateur de{" "}
-              <span className="text-primary">prix</span>
+              <span className="v-em text-primary">prix</span>
             </h1>
             <p className="text-lg text-muted-foreground">
               Obtenez une estimation personnalisée en quelques clics.

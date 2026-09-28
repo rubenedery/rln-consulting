@@ -19,14 +19,14 @@ import { siteConfig } from "@/lib/constants"
 const baseUrl = siteConfig.url
 
 const categoryIcons: Record<GlossaryCategory, string> = {
-  developpement: "💻",
-  marketing: "📈",
-  seo: "🔍",
-  ecommerce: "🛒",
-  ia: "🤖",
-  design: "🎨",
-  analytics: "📊",
-  infrastructure: "☁️",
+  developpement: "DEV",
+  marketing: "MKT",
+  seo: "SEO",
+  ecommerce: "SHOP",
+  ia: "IA",
+  design: "UI",
+  analytics: "DATA",
+  infrastructure: "INFRA",
 }
 
 interface PageProps {
@@ -114,14 +114,14 @@ export default async function GlossaryTermPage({ params }: PageProps) {
         <header className="mb-8">
           <div className="flex items-center gap-3 mb-4">
             <Badge variant="outline" className="text-sm">
-              {categoryIcons[term.category]} {glossaryCategories[term.category].name}
+              <span className="font-mono">{categoryIcons[term.category]}</span> · {glossaryCategories[term.category].name}
             </Badge>
             <Badge variant="secondary" className="text-sm">
               <BookOpen className="h-3 w-3 mr-1" />
               Définition
             </Badge>
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">{term.term}</h1>
+          <h1 className="v-display text-5xl sm:text-7xl lg:text-[88px] mb-4">{term.term}</h1>
 
           {/* Définition courte - Optimisée pour les featured snippets */}
           <div className="definition bg-primary/5 border-l-4 border-primary p-6 rounded-r-lg">
@@ -131,7 +131,7 @@ export default async function GlossaryTermPage({ params }: PageProps) {
 
         {/* Contenu principal */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-4">Explication détaillée</h2>
+          <h2 className="text-2xl font-semibold mb-4">Explication détaillée</h2>
           <div className="long-description prose prose-lg dark:prose-invert max-w-none">
             <p className="text-muted-foreground leading-relaxed whitespace-pre-line">
               {term.longDescription}
@@ -142,7 +142,7 @@ export default async function GlossaryTermPage({ params }: PageProps) {
         {/* Services liés */}
         {term.relatedServices && term.relatedServices.length > 0 && (
           <section className="mb-12">
-            <h2 className="text-2xl font-bold mb-4">Services RLN Consulting associés</h2>
+            <h2 className="text-2xl font-semibold mb-4">Services RLN Consulting associés</h2>
             <div className="flex flex-wrap gap-3">
               {term.relatedServices.map((serviceUrl) => {
                 const serviceName = serviceUrl.split("/").pop()?.replace(/-/g, " ") || ""
@@ -161,8 +161,8 @@ export default async function GlossaryTermPage({ params }: PageProps) {
 
         {/* Passerelle vers les guides IA par métier */}
         {term.category === "ia" && (
-          <section className="mb-12 bg-primary/5 border border-primary/10 rounded-xl p-6">
-            <h2 className="text-xl font-bold mb-2">
+          <section className="mb-12 bg-primary/5 border border-primary/10 rounded-lg p-6">
+            <h2 className="text-xl font-semibold mb-2">
               L&apos;IA appliquée à votre métier
             </h2>
             <p className="text-sm text-muted-foreground mb-4">
@@ -182,7 +182,7 @@ export default async function GlossaryTermPage({ params }: PageProps) {
         {/* Termes liés */}
         {relatedTerms.length > 0 && (
           <section className="mb-12">
-            <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
+            <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2">
               <Tag className="h-5 w-5 text-primary" />
               Termes associés
             </h2>
@@ -211,7 +211,7 @@ export default async function GlossaryTermPage({ params }: PageProps) {
         {/* Liens externes */}
         {term.externalLinks && term.externalLinks.length > 0 && (
           <section className="mb-12">
-            <h2 className="text-2xl font-bold mb-4">Ressources externes</h2>
+            <h2 className="text-2xl font-semibold mb-4">Ressources externes</h2>
             <ul className="space-y-2">
               {term.externalLinks.map((link, index) => (
                 <li key={index}>
@@ -242,11 +242,11 @@ export default async function GlossaryTermPage({ params }: PageProps) {
         </nav>
 
         {/* CTA */}
-        <section className="mt-12 bg-muted rounded-2xl p-8 text-center">
-          <h2 className="text-2xl font-bold mb-4">
+        <section className="mt-12 bg-muted rounded-lg p-8 text-center">
+          <h2 className="text-2xl font-semibold mb-4">
             Besoin d&apos;aide avec {term.term.toLowerCase()} ?
           </h2>
-          <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+          <p className="text-muted-foreground mb-6 max-w-2xl">
             RLN Consulting accompagne les entreprises dans leur transformation digitale. Discutons de
             votre projet.
           </p>

@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     "intégration IA",
   ],
   openGraph: {
-    title: "IA pour Entreprises | RLN Consulting",
+    title: "IA pour Entreprises | Agence RLN",
     description:
       "Transformez votre entreprise avec l'intelligence artificielle. Chatbots, automatisation et solutions sur mesure.",
     url: `${siteConfig.url}/services/ia-entreprise`,
@@ -202,7 +202,7 @@ export default function IAEntreprisePage() {
       <BreadcrumbJsonLd items={breadcrumbItems} />
       <FAQPageJsonLd questions={serviceFaqs["ia-entreprise"]} />
 
-      <section className="py-20 lg:py-28 bg-gradient-to-br from-primary/5 via-background to-accent/5">
+      <section className="py-20 lg:py-28 ">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs
             items={breadcrumbItems.slice(1).map((item, index, arr) =>
@@ -212,21 +212,21 @@ export default function IAEntreprisePage() {
             )}
             className="mb-6"
           />
-          <div className="max-w-3xl mx-auto text-center">
-            <Badge variant="secondary" className="mb-6 bg-accent/10 text-accent">
+          <div className="max-w-4xl">
+            <Badge variant="secondary" className="mb-6 bg-secondary text-primary">
               <BrainCircuit className="h-4 w-4 mr-2" />
               Intelligence Artificielle
             </Badge>
-            <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-foreground mb-6">
+            <h1 className="v-display text-5xl sm:text-7xl lg:text-[88px] text-foreground mb-6">
               L&apos;IA sur mesure pour{" "}
-              <span className="text-primary">votre entreprise</span>
+              <span className="v-em text-primary">votre entreprise</span>
             </h1>
             <p className="text-lg text-muted-foreground mb-10">
               Chatbots intelligents, automatisation des tâches, analyse de données...
               Nous intégrons l&apos;IA dans votre entreprise pour booster votre
               productivité et votre croissance.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-3">
               <Button
                 asChild
                 size="lg"
@@ -250,9 +250,9 @@ export default function IAEntreprisePage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <div className="grid md:grid-cols-2 gap-8">
-              <div className="bg-background rounded-xl p-6 shadow-sm">
+              <div className="bg-background rounded-lg p-6 shadow-sm">
                 <h2 className="text-lg font-semibold text-foreground mb-3">
-                  💰 Combien coûte un chatbot sur mesure ?
+                  Combien coûte un chatbot sur mesure ?
                 </h2>
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   <strong>Chatbot sur mesure : 3 000€ à 8 000€</strong> + 200-500€/mois maintenance.
@@ -260,9 +260,9 @@ export default function IAEntreprisePage() {
                   chatbot IA réduit les tickets support de <strong>70%</strong> (Gartner 2025).
                 </p>
               </div>
-              <div className="bg-background rounded-xl p-6 shadow-sm">
+              <div className="bg-background rounded-lg p-6 shadow-sm">
                 <h2 className="text-lg font-semibold text-foreground mb-3">
-                  🤖 GPT-4 ou Claude ?
+                  GPT-4 ou Claude ?
                 </h2>
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   <strong>GPT-4</strong> pour génération texte, <strong>Claude</strong> pour
@@ -270,9 +270,9 @@ export default function IAEntreprisePage() {
                   72% des entreprises prévoient d&apos;investir dans l&apos;IA en 2026 (McKinsey).
                 </p>
               </div>
-              <div className="bg-background rounded-xl p-6 shadow-sm">
+              <div className="bg-background rounded-lg p-6 shadow-sm">
                 <h2 className="text-lg font-semibold text-foreground mb-3">
-                  ⏱️ Quel délai de déploiement ?
+                  Quel délai de déploiement ?
                 </h2>
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   <strong>POC : 2 semaines</strong>. Chatbot simple : 2-4 semaines.
@@ -280,9 +280,9 @@ export default function IAEntreprisePage() {
                   seront gérées sans humain d&apos;ici 2027 (Gartner).
                 </p>
               </div>
-              <div className="bg-background rounded-xl p-6 shadow-sm">
+              <div className="bg-background rounded-lg p-6 shadow-sm">
                 <h2 className="text-lg font-semibold text-foreground mb-3">
-                  🔒 Mes données sont-elles sécurisées ?
+                  Mes données sont-elles sécurisées ?
                 </h2>
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   <strong>Oui</strong> : chiffrement TLS, hébergement Europe (RGPD), option
@@ -297,11 +297,11 @@ export default function IAEntreprisePage() {
 
       <section className="py-20 lg:py-28">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+          <div className="mb-16">
+            <h2 className="v-display text-4xl sm:text-6xl text-foreground mb-4">
               Nos services IA
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-muted-foreground max-w-2xl">
               Des solutions d&apos;intelligence artificielle adaptées à vos besoins métier.
             </p>
           </div>
@@ -309,10 +309,10 @@ export default function IAEntreprisePage() {
             {services.map((service, index) => (
               <Card
                 key={index}
-                className="border-border/50 hover:border-primary/30 transition-all hover:shadow-lg group"
+                className="border-border/50 hover:border-primary/30 transition-all hover:shadow-lift hover:-translate-y-0.5 group"
               >
                 <CardHeader>
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                  <div className="w-12 h-12 rounded-lg bg-secondary flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
                     <service.icon className="h-6 w-6 text-primary" />
                   </div>
                   <CardTitle>{service.title}</CardTitle>
@@ -322,7 +322,7 @@ export default function IAEntreprisePage() {
                   <ul className="space-y-2">
                     {service.benefits.map((benefit, i) => (
                       <li key={i} className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <Sparkles className="h-3 w-3 text-accent" />
+                        <Sparkles className="h-3 w-3 text-primary" />
                         {benefit}
                       </li>
                     ))}
@@ -336,11 +336,11 @@ export default function IAEntreprisePage() {
 
       <section className="py-20 lg:py-28 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+          <div className="mb-16">
+            <h2 className="v-display text-4xl sm:text-6xl text-foreground mb-4">
               Cas d&apos;usage concrets
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-muted-foreground max-w-2xl">
               L&apos;IA transforme tous les secteurs. Voici quelques exemples de résultats obtenus.
             </p>
           </div>
@@ -354,7 +354,7 @@ export default function IAEntreprisePage() {
                   <p className="text-sm text-muted-foreground mb-4">
                     {item.useCase}
                   </p>
-                  <p className="text-2xl font-bold text-accent">
+                  <p className="text-2xl font-semibold text-primary">
                     {item.result}
                   </p>
                 </CardContent>
@@ -368,7 +368,7 @@ export default function IAEntreprisePage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
+              <h2 className="v-display text-4xl sm:text-6xl text-foreground mb-6">
                 Pourquoi intégrer l&apos;IA maintenant ?
               </h2>
               <div className="space-y-6">
@@ -384,8 +384,8 @@ export default function IAEntreprisePage() {
                   </div>
                 </div>
                 <div className="flex gap-4">
-                  <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
-                    <Clock className="h-6 w-6 text-accent" />
+                  <div className="w-12 h-12 rounded-lg bg-secondary flex items-center justify-center flex-shrink-0">
+                    <Clock className="h-6 w-6 text-primary" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground mb-1">Gain de temps massif</h3>
@@ -395,7 +395,7 @@ export default function IAEntreprisePage() {
                   </div>
                 </div>
                 <div className="flex gap-4">
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 rounded-lg bg-secondary flex items-center justify-center flex-shrink-0">
                     <Shield className="h-6 w-6 text-primary" />
                   </div>
                   <div>
@@ -407,7 +407,7 @@ export default function IAEntreprisePage() {
                 </div>
               </div>
             </div>
-            <div className="bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl p-8">
+            <div className="bg-secondary rounded-lg p-8">
               <h3 className="text-xl font-semibold text-foreground mb-6">
                 Technologies maîtrisées
               </h3>
@@ -428,18 +428,18 @@ export default function IAEntreprisePage() {
 
       <section className="py-20 lg:py-28 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+          <div className="mb-16">
+            <h2 className="v-display text-4xl sm:text-6xl text-foreground mb-4">
               Notre approche
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-muted-foreground max-w-2xl">
               Une méthodologie pragmatique pour des résultats concrets.
             </p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {process_steps.map((step, index) => (
               <div key={index} className="text-center">
-                <div className="text-5xl font-bold text-primary/20 mb-4">
+                <div className="text-5xl font-semibold text-primary/20 mb-4">
                   {step.step}
                 </div>
                 <h3 className="text-xl font-semibold text-foreground mb-2">
@@ -457,11 +457,11 @@ export default function IAEntreprisePage() {
       {/* L'IA appliquée à votre métier */}
       <section className="py-16 bg-primary/5 border-y border-primary/10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-2xl font-bold text-foreground mb-3">
+          <div className="max-w-4xl">
+            <h2 className="text-2xl font-semibold text-foreground mb-3">
               L&apos;IA appliquée à votre métier
             </h2>
-            <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
+            <p className="text-muted-foreground mb-8 max-w-2xl">
               Chaque profession a ses propres cas d&apos;usage. Découvrez ce que
               l&apos;IA peut concrètement faire pour votre activité, avec les
               coûts et le retour sur investissement détaillés.

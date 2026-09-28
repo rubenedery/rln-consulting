@@ -11,7 +11,7 @@ const statusIcon: Record<CheckStatus, string> = {
 
 function scoreColor(score: number): string {
   if (score >= 80) return "#16a34a"
-  if (score >= 50) return "#f59e0b"
+  if (score >= 50) return "#1F2BFF"
   return "#dc2626"
 }
 
@@ -64,7 +64,7 @@ export function generateAuditReportHtml(result: AuditResult): string {
         <meta name="viewport" content="width=device-width, initial-scale=1">
       </head>
       <body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
-        <div style="background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); padding: 30px; border-radius: 8px 8px 0 0;">
+        <div style="background: #1F2BFF; padding: 30px; border-radius: 8px 8px 0 0;">
           <h1 style="color: white; margin: 0; font-size: 24px;">Audit de votre site</h1>
           <p style="color: rgba(255,255,255,0.9); margin: 10px 0 0; word-break: break-all;">${safeUrl}</p>
         </div>
@@ -90,7 +90,7 @@ export function generateAuditReportHtml(result: AuditResult): string {
               Vous voulez corriger ces points et gagner des clients avec votre site ?
               Nous vous expliquons quoi faire, gratuitement et sans engagement.
             </p>
-            <a href="${siteConfig.url}/contact?utm_source=audit" style="display: inline-block; background: #f59e0b; color: #1e293b; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: 600;">
+            <a href="${siteConfig.url}/contact?utm_source=audit" style="display: inline-block; background: #1F2BFF; color: #1e293b; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: 600;">
               Demander un devis gratuit
             </a>
           </div>
@@ -119,12 +119,12 @@ export function generateAuditNotificationHtml(
     <html>
       <head><meta charset="utf-8"></head>
       <body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
-        <h2 style="color: #1e3a8a;">Nouveau lead — audit gratuit</h2>
+        <h2 style="color: #1F2BFF;">Nouveau lead — audit gratuit</h2>
         <p style="font-size: 16px;">
           <strong>${escapedEmail}</strong> a demandé l'audit de
           <a href="${safeUrl}">${safeUrl}</a>${globalScore != null ? ` (score obtenu : <strong>${globalScore}/100</strong>)` : ""}.
         </p>
-        <a href="mailto:${escapedEmail}" style="display: inline-block; background: #f59e0b; color: #1e293b; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 600;">
+        <a href="mailto:${escapedEmail}" style="display: inline-block; background: #1F2BFF; color: #1e293b; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 600;">
           Écrire à ce prospect
         </a>
       </body>

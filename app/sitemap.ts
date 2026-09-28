@@ -23,6 +23,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     glossary: new Date("2026-08-11"),
     expertise: new Date("2026-08-11"),
     aiSectors: new Date("2026-08-11"),
+    referral: new Date("2026-09-28"),
   }
 
   const staticPages: MetadataRoute.Sitemap = [
@@ -31,6 +32,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: contentLastModified.staticPages,
       changeFrequency: "weekly",
       priority: 1,
+    },
+    {
+      url: `${baseUrl}/apport-affaires`,
+      lastModified: contentLastModified.referral,
+      changeFrequency: "monthly",
+      priority: 0.6,
     },
     {
       url: `${baseUrl}/services`,

@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   description:
     "Découvrez l'histoire de RLN Consulting, notre équipe et nos valeurs. Une agence web passionnée par le développement et le marketing digital.",
   openGraph: {
-    title: "À Propos | RLN Consulting",
+    title: "À Propos | Agence RLN",
     description:
       "Découvrez l'histoire de RLN Consulting et notre équipe passionnée.",
     url: `${siteConfig.url}/a-propos`,
@@ -59,12 +59,12 @@ export default function AboutPage() {
       <OrganizationJsonLd />
 
       {/* Hero */}
-      <section className="py-20 lg:py-28 bg-gradient-to-br from-primary/5 via-background to-accent/5">
+      <section className="py-20 lg:py-28 ">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-foreground mb-6">
+          <div className="max-w-4xl">
+            <h1 className="v-display text-5xl sm:text-7xl lg:text-[88px] text-foreground mb-6">
               Une agence{" "}
-              <span className="text-primary">passionnée</span> par le digital
+              <span className="v-em text-primary">passionnée</span> par le digital
             </h1>
             <p className="text-lg text-muted-foreground mb-10">
               Depuis 2020, nous accompagnons les entreprises dans leur
@@ -81,7 +81,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {companyStats.map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="text-4xl sm:text-5xl font-bold text-accent mb-2">
+                <div className="text-4xl sm:text-5xl font-semibold text-primary mb-2">
                   {stat.value}
                 </div>
                 <div className="text-sm text-primary-foreground/80">
@@ -97,7 +97,7 @@ export default function AboutPage() {
       <section className="py-20 lg:py-28">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-8 text-center">
+            <h2 className="v-display text-4xl sm:text-6xl text-foreground mb-8 text-center">
               Notre histoire
             </h2>
             <div className="prose prose-lg max-w-none text-muted-foreground">
@@ -127,11 +127,11 @@ export default function AboutPage() {
       {/* Values */}
       <section className="py-20 lg:py-28 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+          <div className="mb-16">
+            <h2 className="v-display text-4xl sm:text-6xl text-foreground mb-4">
               Nos valeurs
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-muted-foreground max-w-2xl">
               Les principes qui guident notre travail au quotidien.
             </p>
           </div>
@@ -145,7 +145,7 @@ export default function AboutPage() {
                   className="text-center border-border/50 hover:border-primary/30 transition-colors"
                 >
                   <CardContent className="pt-6">
-                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                    <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center mx-auto mb-4">
                       <Icon className="h-6 w-6 text-primary" />
                     </div>
                     <h3 className="font-semibold text-foreground mb-2">
@@ -165,11 +165,11 @@ export default function AboutPage() {
       {/* Team */}
       <section className="py-20 lg:py-28">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+          <div className="mb-16">
+            <h2 className="v-display text-4xl sm:text-6xl text-foreground mb-4">
               L&apos;équipe
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-muted-foreground max-w-2xl">
               Les experts derrière vos projets.
             </p>
           </div>
@@ -181,8 +181,8 @@ export default function AboutPage() {
               >
                 <CardContent className="pt-6">
                   <div className="flex flex-col items-center text-center">
-                    <div className="w-24 h-24 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                      <span className="text-2xl font-bold text-primary">
+                    <div className="w-24 h-24 rounded-full bg-secondary flex items-center justify-center mb-4">
+                      <span className="text-2xl font-semibold text-primary">
                         {member.name
                           .split(" ")
                           .map((n) => n[0])
@@ -192,7 +192,7 @@ export default function AboutPage() {
                     <h3 className="text-xl font-semibold text-foreground">
                       {member.name}
                     </h3>
-                    <p className="text-sm text-accent mb-4">{member.role}</p>
+                    <p className="text-sm text-primary mb-4">{member.role}</p>
                     <p className="text-muted-foreground mb-6">{member.bio}</p>
                     {member.social && (
                       <div className="flex gap-4">

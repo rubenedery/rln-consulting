@@ -47,7 +47,7 @@ function generateEmailHtml(rawData: ContactData): string {
         <meta name="viewport" content="width=device-width, initial-scale=1">
       </head>
       <body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
-        <div style="background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); padding: 30px; border-radius: 8px 8px 0 0;">
+        <div style="background: #1F2BFF; padding: 30px; border-radius: 8px 8px 0 0;">
           <h1 style="color: white; margin: 0; font-size: 24px;">Nouveau contact</h1>
           <p style="color: rgba(255,255,255,0.9); margin: 10px 0 0;">via ${siteConfig.url}</p>
         </div>
@@ -99,7 +99,7 @@ function generateEmailHtml(rawData: ContactData): string {
           </table>
 
           <div style="margin-top: 24px; padding-top: 16px; border-top: 1px solid #e2e8f0;">
-            <a href="mailto:${data.email}?subject=Re: Votre demande - ${siteConfig.name}" style="display: inline-block; background: #f59e0b; color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: 500;">
+            <a href="mailto:${data.email}?subject=Re: Votre demande - ${siteConfig.name}" style="display: inline-block; background: #1F2BFF; color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: 500;">
               Répondre à ${data.name}
             </a>
           </div>

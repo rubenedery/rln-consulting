@@ -12,10 +12,10 @@ interface CaseStudyCardProps {
 export function CaseStudyCard({ caseStudy }: CaseStudyCardProps) {
   return (
     <Link href={`/cas-etudes/${caseStudy.slug}`}>
-      <Card className="h-full overflow-hidden hover:shadow-lg transition-all duration-300 group border-border/50 hover:border-primary/30">
+      <Card className="h-full overflow-hidden hover:shadow-lift hover:-translate-y-0.5 transition-all duration-300 group border-border/50 hover:border-primary/30">
         <CardImage src={caseStudy.image} alt={caseStudy.title}>
           <div className="absolute bottom-4 left-4 right-4 z-20">
-            <Badge variant="secondary" className="bg-accent text-accent-foreground">
+            <Badge variant="secondary" className="bg-primary text-primary-foreground">
               {caseStudy.industry}
             </Badge>
           </div>
@@ -23,7 +23,7 @@ export function CaseStudyCard({ caseStudy }: CaseStudyCardProps) {
 
         <CardContent className="pt-6">
           {/* Client */}
-          <p className="text-sm text-accent font-medium mb-1">
+          <p className="text-sm text-primary font-medium mb-1">
             {caseStudy.client}
           </p>
 
@@ -51,7 +51,7 @@ export function CaseStudyCard({ caseStudy }: CaseStudyCardProps) {
             <div className="flex items-center gap-4 pt-4 border-t border-border">
               {caseStudy.results.slice(0, 2).map((result, index) => (
                 <div key={index} className="text-center">
-                  <div className="text-lg font-bold text-accent">
+                  <div className="text-lg font-semibold text-primary">
                     {result.improvement}
                   </div>
                   <div className="text-xs text-muted-foreground">

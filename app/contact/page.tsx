@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   description:
     "Contactez RLN Consulting pour discuter de votre projet web ou marketing digital. Devis gratuit et réponse sous 24h.",
   openGraph: {
-    title: "Contact | RLN Consulting",
+    title: "Contact | Agence RLN",
     description: "Contactez-nous pour discuter de votre projet digital.",
     url: `${siteConfig.url}/contact`,
   },
@@ -69,10 +69,10 @@ export default function ContactPage() {
       <section className="py-20 lg:py-28">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
-          <div className="max-w-2xl mx-auto text-center mb-16">
-            <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-foreground mb-6">
+          <div className="max-w-3xl mb-16">
+            <h1 className="v-display text-5xl sm:text-7xl lg:text-[88px] text-foreground mb-6">
               Discutons de votre{" "}
-              <span className="text-primary">projet</span>
+              <span className="v-em text-primary">projet</span>
             </h1>
             <p className="text-lg text-muted-foreground">
               Vous avez un projet en tête ? Contactez-nous pour en discuter.
@@ -87,7 +87,7 @@ export default function ContactPage() {
                 {contactInfo.map((info, index) => (
                   <Card key={index} className="border-border/50">
                     <CardContent className="flex items-start gap-4 pt-6">
-                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <div className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center flex-shrink-0">
                         <info.icon className="h-5 w-5 text-primary" />
                       </div>
                       <div>
@@ -129,7 +129,7 @@ export default function ContactPage() {
               </Card>
 
               {/* FAQ teaser */}
-              <Card className="mt-4 border-accent/30 bg-accent/5">
+              <Card className="mt-4 border-klein-200 bg-accent/5">
                 <CardHeader>
                   <CardTitle className="text-lg">Questions fréquentes</CardTitle>
                   <CardDescription>

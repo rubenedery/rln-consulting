@@ -21,7 +21,7 @@ export function StepWebFeatures() {
       className="space-y-6"
     >
       <div className="text-center mb-8">
-        <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-3">
+        <h2 className="text-3xl sm:text-4xl font-semibold tracking-[-0.03em] text-foreground mb-3">
           Quelles fonctionnalités ?
         </h2>
         <p className="text-muted-foreground">

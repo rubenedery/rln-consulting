@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     canonical: "/ia",
   },
   openGraph: {
-    title: "IA par Métier | RLN Consulting",
+    title: "IA par Métier | Agence RLN",
     description:
       "Cas d'usage IA concrets, coûts et ROI pour plus de 30 métiers : professions libérales, santé, commerce, artisanat.",
     url: `${baseUrl}/ia`,
@@ -80,19 +80,19 @@ export default function AiHubPage() {
       />
 
       {/* Hero */}
-      <section className="py-20 lg:py-28 bg-gradient-to-br from-primary/5 via-background to-accent/5">
+      <section className="py-20 lg:py-28 ">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs
             items={[{ label: "IA par métier" }]}
             className="mb-6"
           />
-          <div className="max-w-3xl mx-auto text-center">
-            <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary mb-6">
+          <div className="max-w-4xl">
+            <span className="v-label inline-flex items-center gap-2 !text-primary mb-6">
               <Sparkles className="h-4 w-4" />
               Intelligence artificielle appliquée
             </span>
-            <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-foreground mb-6">
-              L&apos;IA appliquée à <span className="text-primary">votre métier</span>
+            <h1 className="v-display text-5xl sm:text-7xl lg:text-[88px] text-foreground mb-6">
+              L&apos;IA appliquée à <span className="v-em text-primary">votre métier</span>
             </h1>
             <p className="hero-description text-lg text-muted-foreground mb-8">
               Chatbots, automatisation administrative, IA dans le CRM, analyse
@@ -100,7 +100,7 @@ export default function AiHubPage() {
               concrètement faire pour votre profession — avec les coûts réels et
               le retour sur investissement mesuré.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-3">
               <Button asChild size="lg" variant="accent">
                 <Link href="/contact">
                   Discutons de votre projet IA
@@ -119,7 +119,7 @@ export default function AiHubPage() {
       <section className="answer-first py-12 bg-primary/5 border-y border-primary/10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-xl font-bold text-foreground mb-3">
+            <h2 className="text-xl font-semibold text-foreground mb-3">
               Qu&apos;est-ce que l&apos;intégration IA métier ?
             </h2>
             <p className="text-muted-foreground text-sm leading-relaxed">
@@ -142,7 +142,7 @@ export default function AiHubPage() {
           <div className="max-w-5xl mx-auto space-y-12">
             {categories.map(({ category, profiles }) => (
               <div key={category}>
-                <h2 className="text-2xl font-bold text-foreground mb-6">
+                <h2 className="text-2xl font-semibold text-foreground mb-6">
                   {categoryLabels[category]}
                 </h2>
                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -173,9 +173,9 @@ export default function AiHubPage() {
       {/* Cross links */}
       <section className="py-12 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center">
+          <div className="max-w-4xl">
             <Brain className="h-8 w-8 text-primary mx-auto mb-4" />
-            <h2 className="text-xl font-bold text-foreground mb-3">
+            <h2 className="text-xl font-semibold text-foreground mb-3">
               Votre métier n&apos;est pas dans la liste ?
             </h2>
             <p className="text-muted-foreground text-sm mb-6">

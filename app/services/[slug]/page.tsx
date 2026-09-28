@@ -75,7 +75,7 @@ function ServiceSectionBlock({ section }: { section: ServiceSection }) {
             <div className="max-w-4xl mx-auto">
               <div className="grid md:grid-cols-2 gap-8">
                 {section.items.map((item, index) => (
-                  <div key={index} className="bg-background rounded-xl p-6 shadow-sm">
+                  <div key={index} className="bg-background rounded-lg p-6 shadow-sm">
                     <h2 className="text-lg font-semibold text-foreground mb-3">
                       {item.heading}
                     </h2>
@@ -93,12 +93,12 @@ function ServiceSectionBlock({ section }: { section: ServiceSection }) {
       return (
         <section className="py-20 lg:py-28">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+            <div className="mb-16">
+              <h2 className="v-display text-4xl sm:text-6xl text-foreground mb-4">
                 {section.heading}
               </h2>
               {section.subtitle && (
-                <p className="text-muted-foreground max-w-2xl mx-auto">
+                <p className="text-muted-foreground max-w-2xl">
                   {section.subtitle}
                 </p>
               )}
@@ -110,7 +110,7 @@ function ServiceSectionBlock({ section }: { section: ServiceSection }) {
                   className="border-border/50 hover:border-primary/30 transition-colors"
                 >
                   <CardHeader>
-                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                    <div className="w-12 h-12 rounded-lg bg-secondary flex items-center justify-center mb-4">
                       <feature.icon className="h-6 w-6 text-primary" />
                     </div>
                     <CardTitle>{feature.title}</CardTitle>
@@ -126,12 +126,12 @@ function ServiceSectionBlock({ section }: { section: ServiceSection }) {
       return (
         <section className="py-20 lg:py-28 bg-muted/30">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+            <div className="mb-16">
+              <h2 className="v-display text-4xl sm:text-6xl text-foreground mb-4">
                 {section.heading}
               </h2>
               {section.subtitle && (
-                <p className="text-muted-foreground max-w-2xl mx-auto">
+                <p className="text-muted-foreground max-w-2xl">
                   {section.subtitle}
                 </p>
               )}
@@ -153,18 +153,18 @@ function ServiceSectionBlock({ section }: { section: ServiceSection }) {
       return (
         <section className="py-20 lg:py-28">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+            <div className="mb-16">
+              <h2 className="v-display text-4xl sm:text-6xl text-foreground mb-4">
                 {section.heading}
               </h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-muted-foreground max-w-2xl">
                 {section.subtitle}
               </p>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {section.steps.map((step, index) => (
                 <div key={index} className="text-center">
-                  <div className="text-5xl font-bold text-primary/20 mb-4">
+                  <div className="text-5xl font-semibold text-primary/20 mb-4">
                     {step.step}
                   </div>
                   <h3 className="text-xl font-semibold text-foreground mb-2">
@@ -209,7 +209,7 @@ function ServiceSectionBlock({ section }: { section: ServiceSection }) {
             <div className="grid sm:grid-cols-3 gap-8">
               {section.items.map((stat, index) => (
                 <div key={index} className="text-center">
-                  <div className="text-4xl font-bold text-primary mb-2">
+                  <div className="text-4xl font-semibold text-primary mb-2">
                     {stat.value}
                   </div>
                   <div className="text-muted-foreground">{stat.label}</div>
@@ -256,7 +256,7 @@ export default async function ServicePage({ params }: PageProps) {
       <FAQPageJsonLd questions={serviceFaqs[service.slug]} />
 
       {/* Hero */}
-      <section className="py-20 lg:py-28 bg-gradient-to-br from-primary/5 via-background to-accent/5">
+      <section className="py-20 lg:py-28 ">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs
             items={breadcrumbItems.slice(1).map((item, index, arr) =>
@@ -266,20 +266,20 @@ export default async function ServicePage({ params }: PageProps) {
             )}
             className="mb-6"
           />
-          <div className="max-w-3xl mx-auto text-center">
-            <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary mb-6">
+          <div className="max-w-4xl">
+            <span className="v-label inline-flex items-center gap-2 !text-primary mb-6">
               <HeroIcon className="h-4 w-4" />
               {service.hero.badge}
             </span>
-            <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-foreground mb-6">
+            <h1 className="v-display text-5xl sm:text-7xl lg:text-[88px] text-foreground mb-6">
               {service.hero.h1.before}
-              <span className="text-primary">{service.hero.h1.highlight}</span>
+              <span className="v-em text-primary">{service.hero.h1.highlight}</span>
               {service.hero.h1.after}
             </h1>
             <p className="text-lg text-muted-foreground mb-10">
               {service.hero.subtitle}
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-3">
               <Button asChild size="lg" variant="accent">
                 <Link href={service.hero.primaryCta.href}>
                   {service.hero.primaryCta.label}

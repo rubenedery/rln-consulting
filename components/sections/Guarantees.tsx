@@ -43,8 +43,8 @@ export function Guarantees() {
           className="max-w-4xl mx-auto"
         >
           {/* Header */}
-          <m.div variants={itemVariants} className="text-center mb-10">
-            <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-3">
+          <m.div variants={itemVariants} className="mb-10">
+            <h2 className="text-3xl sm:text-4xl font-semibold tracking-[-0.03em] text-foreground mb-3">
               Nos engagements pour votre <span className="text-primary">sérénité</span>
             </h2>
             <p className="text-muted-foreground">
@@ -61,17 +61,17 @@ export function Guarantees() {
               <m.div
                 key={guarantee.title}
                 variants={itemVariants}
-                className="group relative p-6 rounded-2xl bg-card border border-border/50 hover:border-primary/30 hover:shadow-lg transition-all duration-300"
+                className="group relative p-6 rounded-lg bg-card border border-border/50 hover:border-primary/30 hover:shadow-lift hover:-translate-y-0.5 transition-all duration-300"
               >
                 {/* Highlight badge */}
                 <div className="absolute -top-3 right-4">
-                  <span className="inline-flex items-center rounded-full bg-accent px-3 py-1 text-xs font-semibold text-accent-foreground">
+                  <span className="inline-flex items-center rounded-full bg-primary px-3 py-1 text-xs font-semibold text-primary-foreground">
                     {guarantee.highlight}
                   </span>
                 </div>
 
                 {/* Icon */}
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                <div className="w-12 h-12 rounded-lg bg-secondary flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
                   <guarantee.icon className="h-6 w-6 text-primary" />
                 </div>
 

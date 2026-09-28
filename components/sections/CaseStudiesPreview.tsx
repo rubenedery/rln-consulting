@@ -1,124 +1,77 @@
-"use client"
-
 import Link from "next/link"
-import { m } from "framer-motion"
-import { ArrowRight, TrendingUp } from "lucide-react"
+import Image from "next/image"
+import { ArrowUpRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { CardImage } from "@/components/ui/card-image"
-import { Badge } from "@/components/ui/badge"
-import { containerVariants, itemVariants } from "@/lib/animations"
 import type { CaseStudyMeta } from "@/types"
 
 interface CaseStudiesPreviewProps {
   caseStudies: CaseStudyMeta[]
+  limit?: number
 }
 
-export function CaseStudiesPreview({ caseStudies }: CaseStudiesPreviewProps) {
-  // Show only first 3 case studies
-  const displayedCaseStudies = caseStudies.slice(0, 3)
-
-  if (displayedCaseStudies.length === 0) {
-    return null
-  }
+export function CaseStudiesPreview({ caseStudies, limit = 4 }: CaseStudiesPreviewProps) {
+  const displayed = caseStudies.slice(0, limit)
+  if (displayed.length === 0) return null
 
   return (
-    <section className="py-20 lg:py-28 bg-muted/30">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section header */}
-        <m.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-16"
-        >
-          <span className="text-sm font-medium text-accent uppercase tracking-wider">
-            Cas d&apos;études
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mt-2 mb-4">
-            Nos réalisations récentes
-          </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Découvrez comment nous avons aidé nos clients à atteindre leurs
-            objectifs avec des solutions sur mesure.
-          </p>
-        </m.div>
-
-        {/* Case studies grid */}
-        <m.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
-        >
-          {displayedCaseStudies.map((study) => (
-            <m.div key={study.slug} variants={itemVariants}>
-              <Link href={`/cas-etudes/${study.slug}`}>
-                <Card className="h-full overflow-hidden hover:shadow-lg transition-all duration-300 group border-border/50">
-                  <CardImage
-                    src={study.image}
-                    alt={study.title}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  >
-                    <div className="absolute bottom-4 left-4 right-4 z-20">
-                      <Badge variant="secondary" className="bg-accent text-accent-foreground">
-                        {study.industry}
-                      </Badge>
-                    </div>
-                  </CardImage>
-
-                  <CardContent className="pt-6">
-                    {/* Client */}
-                    <p className="text-sm text-muted-foreground mb-1">
-                      {study.client}
-                    </p>
-
-                    {/* Title */}
-                    <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors mb-2">
-                      {study.title}
-                    </h3>
-
-                    {/* Description */}
-                    <p className="text-sm text-muted-foreground line-clamp-2 mb-4">
-                      {study.description}
-                    </p>
-
-                    {/* Key result */}
-                    {study.results.length > 0 && (
-                      <div className="flex items-center gap-2 text-sm">
-                        <TrendingUp className="h-4 w-4 text-accent" />
-                        <span className="font-medium text-accent">
-                          {study.results[0].improvement}
-                        </span>
-                        <span className="text-muted-foreground">
-                          {study.results[0].metric}
-                        </span>
-                      </div>
-                    )}
-                  </CardContent>
-                </Card>
-              </Link>
-            </m.div>
-          ))}
-        </m.div>
-
-        {/* View all button */}
-        <m.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="text-center mt-12"
-        >
-          <Button asChild variant="outline" size="lg" className="group">
-            <Link href="/cas-etudes">
-              Voir tous nos cas d&apos;études
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Link>
+    <section className="pb-24 lg:pb-40" aria-labelledby="realisations-title">
+      <div className="container mx-auto flex flex-col gap-12 px-4 sm:px-6 lg:px-8">
+        <header className="flex flex-wrap items-end justify-between gap-6">
+          <div className="flex flex-col gap-4">
+            <span className="v-label">Réalisations</span>
+            <h2 id="realisations-title" className="v-display text-5xl sm:text-7xl">
+              Des preuves, <span className="v-em">pas des promesses.</span>
+            </h2>
+          </div>
+          <Button asChild variant="outline" size="lg">
+            <Link href="/cas-etudes">Tous les cas clients</Link>
           </Button>
-        </m.div>
+        </header>
+
+        <div className="grid gap-x-6 gap-y-14 md:grid-cols-2">
+          {displayed.map((study, idx) => (
+            <Link key={study.slug} href={`/cas-etudes/${study.slug}`} className="group flex flex-col gap-5">
+              <div className="relative aspect-[4/3] max-w-full overflow-hidden rounded-sm bg-muted">
+                <Image
+                  src={study.image}
+                  alt=""
+                  fill
+                  className="object-cover transition-transform duration-700 ease-[cubic-bezier(.7,0,.2,1)] group-hover:scale-[1.04]"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+                <div
+                  className={
+                    idx % 2 === 0
+                      ? "absolute inset-0 bg-primary/55 mix-blend-multiply"
+                      : "absolute inset-0 bg-[#0B0D12]/50 mix-blend-multiply"
+                  }
+                />
+                {study.results[0] && (
+                  <div className="absolute bottom-5 left-5 flex flex-col gap-1 text-white">
+                    <span className="font-display text-6xl leading-none font-semibold tracking-[-0.05em] sm:text-7xl">
+                      {study.results[0].improvement}
+                    </span>
+                    <span className="font-mono text-xs tracking-[0.06em] uppercase text-white/85">{study.results[0].metric}</span>
+                  </div>
+                )}
+                <span className="absolute top-5 right-5 grid size-11 place-items-center rounded-full bg-white text-[#0B0D12] transition-transform duration-300 group-hover:rotate-45">
+                  <ArrowUpRight className="size-5" aria-hidden="true" />
+                </span>
+              </div>
+              <div className="flex items-baseline justify-between gap-4">
+                <h3 className="text-2xl leading-tight font-semibold sm:text-[28px]">{study.title}</h3>
+                <span className="v-label shrink-0">{study.industry}</span>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {study.results.slice(0, 3).map((r) => (
+                  <span key={r.metric} className="inline-flex h-8 items-center rounded-full bg-secondary px-3 font-mono text-xs text-secondary-foreground">
+                    {r.metric} : {r.before} → {r.after}
+                  </span>
+                ))}
+              </div>
+            </Link>
+          ))}
+        </div>
       </div>
     </section>
   )

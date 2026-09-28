@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     "ROI publicité",
   ],
   openGraph: {
-    title: "Gestion Publicités | RLN Consulting",
+    title: "Gestion Publicités | Agence RLN",
     description:
       "Gestion et optimisation de vos campagnes publicitaires Facebook Ads et Google Ads.",
     url: `${siteConfig.url}/services/ads-management`,
@@ -88,22 +88,22 @@ const platforms = [
   {
     name: "Facebook Ads",
     description: "Touchez votre audience sur Facebook et Instagram",
-    icon: "📘",
+    icon: "META",
   },
   {
     name: "Google Ads",
     description: "Apparaissez en tête des résultats de recherche",
-    icon: "🔍",
+    icon: "SEA",
   },
   {
     name: "LinkedIn Ads",
     description: "Ciblez les décideurs B2B",
-    icon: "💼",
+    icon: "B2B",
   },
   {
     name: "TikTok Ads",
     description: "Engagez la génération Z",
-    icon: "🎵",
+    icon: "SOCIAL",
   },
 ]
 
@@ -146,7 +146,7 @@ export default function AdsManagementPage() {
       <FAQPageJsonLd questions={serviceFaqs["ads-management"]} />
 
       {/* Hero */}
-      <section className="py-20 lg:py-28 bg-gradient-to-br from-primary/5 via-background to-accent/5">
+      <section className="py-20 lg:py-28 ">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs
             items={breadcrumbItems.slice(1).map((item, index, arr) =>
@@ -156,21 +156,21 @@ export default function AdsManagementPage() {
             )}
             className="mb-6"
           />
-          <div className="max-w-3xl mx-auto text-center">
-            <span className="inline-flex items-center gap-2 rounded-full bg-accent/10 px-4 py-1.5 text-sm font-medium text-accent mb-6">
+          <div className="max-w-4xl">
+            <span className="inline-flex items-center gap-2 rounded-full bg-secondary px-4 py-1.5 font-mono text-xs text-foreground mb-6">
               <Target className="h-4 w-4" />
               Gestion Publicités
             </span>
-            <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-foreground mb-6">
+            <h1 className="v-display text-5xl sm:text-7xl lg:text-[88px] text-foreground mb-6">
               Maximisez votre{" "}
-              <span className="text-accent">ROI publicitaire</span>
+              <span className="v-em text-primary">ROI publicitaire</span>
             </h1>
             <p className="text-lg text-muted-foreground mb-10">
               Gestion experte de vos campagnes Facebook Ads, Google Ads et
               LinkedIn Ads. Stratégie personnalisée, optimisation continue et
               reporting transparent.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-3">
               <Button
                 asChild
                 size="lg"
@@ -195,7 +195,7 @@ export default function AdsManagementPage() {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {results.map((result, index) => (
               <div key={index} className="text-center">
-                <div className="text-4xl sm:text-5xl font-bold text-accent mb-2">
+                <div className="text-4xl sm:text-5xl font-semibold text-primary mb-2">
                   {result.value}
                 </div>
                 <div className="text-sm text-primary-foreground/80">
@@ -212,9 +212,9 @@ export default function AdsManagementPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <div className="grid md:grid-cols-2 gap-8">
-              <div className="bg-background rounded-xl p-6 shadow-sm">
+              <div className="bg-background rounded-lg p-6 shadow-sm">
                 <h2 className="text-lg font-semibold text-foreground mb-3">
-                  💰 Combien coûte la gestion Google Ads ?
+                  Combien coûte la gestion Google Ads ?
                 </h2>
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   <strong>À partir de 500€/mois</strong> (budgets jusqu&apos;à 3 000€), puis 10-15%
@@ -222,9 +222,9 @@ export default function AdsManagementPage() {
                   atteignent <strong>4-6%</strong> grâce à l&apos;optimisation continue.
                 </p>
               </div>
-              <div className="bg-background rounded-xl p-6 shadow-sm">
+              <div className="bg-background rounded-lg p-6 shadow-sm">
                 <h2 className="text-lg font-semibold text-foreground mb-3">
-                  📊 Quel budget minimum recommandé ?
+                  Quel budget minimum recommandé ?
                 </h2>
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   <strong>1 000€/mois Google Ads, 500€/mois Facebook Ads</strong>. Avec 1 000€/mois,
@@ -232,9 +232,9 @@ export default function AdsManagementPage() {
                   à 150€ (B2B SaaS) selon secteur.
                 </p>
               </div>
-              <div className="bg-background rounded-xl p-6 shadow-sm">
+              <div className="bg-background rounded-lg p-6 shadow-sm">
                 <h2 className="text-lg font-semibold text-foreground mb-3">
-                  ⏱️ En combien de temps vais-je voir des résultats ?
+                  En combien de temps vais-je voir des résultats ?
                 </h2>
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   <strong>Premiers leads en 48-72h</strong>. Optimisation complète : 4-8 semaines.
@@ -242,9 +242,9 @@ export default function AdsManagementPage() {
                   ROAS moyen : de 2x (mois 1) à 4x (mois 6).
                 </p>
               </div>
-              <div className="bg-background rounded-xl p-6 shadow-sm">
+              <div className="bg-background rounded-lg p-6 shadow-sm">
                 <h2 className="text-lg font-semibold text-foreground mb-3">
-                  🎯 Google Ads ou Facebook Ads ?
+                  Google Ads ou Facebook Ads ?
                 </h2>
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   <strong>Les deux, idéalement</strong>. 49% des acheteurs découvrent un produit sur
@@ -260,11 +260,11 @@ export default function AdsManagementPage() {
       {/* Features */}
       <section className="py-20 lg:py-28">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+          <div className="mb-16">
+            <h2 className="v-display text-4xl sm:text-6xl text-foreground mb-4">
               Nos services
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-muted-foreground max-w-2xl">
               Une gestion complète de vos campagnes publicitaires.
             </p>
           </div>
@@ -272,11 +272,11 @@ export default function AdsManagementPage() {
             {features.map((feature, index) => (
               <Card
                 key={index}
-                className="border-border/50 hover:border-accent/30 transition-colors"
+                className="border-border/50 hover:border-klein-200 transition-colors"
               >
                 <CardHeader>
-                  <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mb-4">
-                    <feature.icon className="h-6 w-6 text-accent" />
+                  <div className="w-12 h-12 rounded-lg bg-secondary flex items-center justify-center mb-4">
+                    <feature.icon className="h-6 w-6 text-primary" />
                   </div>
                   <CardTitle>{feature.title}</CardTitle>
                   <CardDescription>{feature.description}</CardDescription>
@@ -290,11 +290,11 @@ export default function AdsManagementPage() {
       {/* Platforms */}
       <section className="py-20 lg:py-28 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+          <div className="mb-16">
+            <h2 className="v-display text-4xl sm:text-6xl text-foreground mb-4">
               Plateformes gérées
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-muted-foreground max-w-2xl">
               Nous gérons vos campagnes sur toutes les plateformes majeures.
             </p>
           </div>
@@ -305,7 +305,7 @@ export default function AdsManagementPage() {
                 className="text-center border-border/50 hover:border-primary/30 transition-colors"
               >
                 <CardContent className="pt-6">
-                  <div className="text-4xl mb-4">{platform.icon}</div>
+                  <div className="mb-4 font-mono text-xs tracking-[0.08em] text-primary">{platform.icon}</div>
                   <h3 className="font-semibold text-foreground mb-2">
                     {platform.name}
                   </h3>
@@ -323,8 +323,8 @@ export default function AdsManagementPage() {
       <section className="py-20 lg:py-28">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+            <div className="mb-16">
+              <h2 className="v-display text-4xl sm:text-6xl text-foreground mb-4">
                 Comment ça marche
               </h2>
               <p className="text-muted-foreground">
@@ -359,7 +359,7 @@ export default function AdsManagementPage() {
                 },
               ].map((item, index) => (
                 <div key={index} className="flex gap-6">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center text-accent font-bold">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-primary font-semibold">
                     {item.step}
                   </div>
                   <div>

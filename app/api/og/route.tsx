@@ -3,28 +3,29 @@ import { type NextRequest } from "next/server"
 
 export const runtime = "edge"
 
+/**
+ * Image Open Graph aux couleurs de l'Agence RLN :
+ * fond encre, bleu Klein, signe « page au coin replié ».
+ */
 export async function GET(request: NextRequest) {
   const { searchParams } = request.nextUrl
 
-  const title = searchParams.get("title") || "RLN Consulting"
-  const description = searchParams.get("description") || "Agence Développement Web & Marketing Digital"
+  const title = searchParams.get("title") || "Agence RLN"
+  const description = searchParams.get("description") || "On construit vos produits digitaux, et on les fait connaître."
   const type = searchParams.get("type") || "default"
 
-  // Colors
-  const primary = "#2563eb" // blue-600
-  const accent = "#f59e0b" // amber-500
-  const bgDark = "#0f172a" // slate-900
+  const ink = "#0B0D12"
+  const klein = "#1F2BFF"
+  const kleinLight = "#8B93FF"
+  const kleinPale = "#C8CDFF"
 
-  // Type-specific accent colors and labels
-  const typeConfig: Record<string, { color: string; label: string }> = {
-    blog: { color: "#10b981", label: "Blog" },
-    "cas-etude": { color: "#8b5cf6", label: "Cas d'étude" },
-    service: { color: primary, label: "Service" },
-    tarifs: { color: accent, label: "Tarifs" },
-    default: { color: primary, label: "" },
+  const labels: Record<string, string> = {
+    blog: "Blog",
+    "cas-etude": "Cas client",
+    service: "Expertise",
+    tarifs: "Tarifs",
   }
-
-  const config = typeConfig[type] || typeConfig.default
+  const label = labels[type] || ""
 
   return new ImageResponse(
     (
@@ -34,166 +35,86 @@ export async function GET(request: NextRequest) {
           width: "100%",
           display: "flex",
           flexDirection: "column",
-          backgroundColor: bgDark,
-          padding: "60px",
+          backgroundColor: ink,
+          padding: "64px",
           fontFamily: "system-ui, sans-serif",
+          position: "relative",
         }}
       >
-        {/* Top bar with gradient */}
+        {/* Coin replié en haut à droite */}
+        <div style={{ position: "absolute", top: 0, right: 0, width: 220, height: 220, display: "flex", backgroundColor: klein }} />
         <div
           style={{
             position: "absolute",
             top: 0,
-            left: 0,
             right: 0,
-            height: "6px",
-            background: `linear-gradient(to right, ${primary}, ${accent})`,
+            width: 0,
+            height: 0,
             display: "flex",
+            borderTop: `90px solid ${ink}`,
+            borderLeft: `90px solid ${kleinPale}`,
           }}
         />
 
-        {/* Header */}
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            marginBottom: "40px",
-          }}
-        >
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "16px",
-            }}
-          >
-            <div
-              style={{
-                width: "48px",
-                height: "48px",
-                borderRadius: "12px",
-                background: `linear-gradient(135deg, ${primary}, ${accent})`,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                color: "white",
-                fontSize: "24px",
-                fontWeight: 700,
-              }}
-            >
-              R
-            </div>
-            <span
-              style={{
-                fontSize: "24px",
-                fontWeight: 700,
-                color: "#e2e8f0",
-              }}
-            >
-              RLN Consulting
-            </span>
-          </div>
-
-          {config.label && (
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                padding: "8px 20px",
-                borderRadius: "9999px",
-                backgroundColor: config.color + "20",
-                border: `1px solid ${config.color}40`,
-              }}
-            >
-              <span
-                style={{
-                  fontSize: "16px",
-                  fontWeight: 600,
-                  color: config.color,
-                }}
-              >
-                {config.label}
-              </span>
-            </div>
-          )}
+        <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
+          <svg width="44" height="44" viewBox="0 0 64 64">
+            <path d="M0 0H42L64 22V64H0Z" fill={klein} />
+            <path d="M42 0V22H64Z" fill={kleinPale} />
+          </svg>
+          <span style={{ fontSize: "30px", fontStyle: "italic", color: kleinLight }}>agence</span>
+          <span style={{ fontSize: "32px", fontWeight: 700, color: "#EDEFF4", letterSpacing: "-0.03em" }}>RLN</span>
         </div>
 
-        {/* Main content */}
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            flex: 1,
-            justifyContent: "center",
-          }}
-        >
+        <div style={{ display: "flex", flexDirection: "column", flex: 1, justifyContent: "center", maxWidth: "900px" }}>
+          {label && (
+            <span
+              style={{
+                fontSize: "18px",
+                letterSpacing: "0.12em",
+                textTransform: "uppercase",
+                color: kleinLight,
+                marginBottom: "20px",
+              }}
+            >
+              {label}
+            </span>
+          )}
           <h1
             style={{
-              fontSize: title.length > 60 ? "42px" : "52px",
-              fontWeight: 800,
-              color: "#f8fafc",
-              lineHeight: 1.2,
+              fontSize: title.length > 60 ? "48px" : "62px",
+              fontWeight: 700,
+              color: "#FFFFFF",
+              lineHeight: 1.05,
+              letterSpacing: "-0.03em",
               margin: 0,
               marginBottom: "24px",
-              maxWidth: "900px",
             }}
           >
             {title}
           </h1>
           {description && (
-            <p
-              style={{
-                fontSize: "22px",
-                color: "#94a3b8",
-                lineHeight: 1.5,
-                margin: 0,
-                maxWidth: "800px",
-              }}
-            >
-              {description.length > 120
-                ? description.slice(0, 120) + "..."
-                : description}
+            <p style={{ fontSize: "24px", color: "#959AAB", lineHeight: 1.45, margin: 0, maxWidth: "820px" }}>
+              {description.length > 120 ? description.slice(0, 120) + "…" : description}
             </p>
           )}
         </div>
 
-        {/* Footer */}
         <div
           style={{
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
-            borderTop: "1px solid #1e293b",
+            borderTop: "1px solid #252833",
             paddingTop: "24px",
+            fontSize: "18px",
+            color: "#959AAB",
           }}
         >
-          <span
-            style={{
-              fontSize: "18px",
-              color: "#64748b",
-            }}
-          >
-            rln-consulting.com
-          </span>
-          <div
-            style={{
-              display: "flex",
-              gap: "24px",
-              fontSize: "16px",
-              color: "#64748b",
-            }}
-          >
-            <span>Next.js</span>
-            <span>React</span>
-            <span>Google Ads</span>
-          </div>
+          <span>rln-consulting.com</span>
+          <span>Sites · Apps · IA · SEO · Acquisition</span>
         </div>
       </div>
     ),
-    {
-      width: 1200,
-      height: 630,
-    },
+    { width: 1200, height: 630 }
   )
 }

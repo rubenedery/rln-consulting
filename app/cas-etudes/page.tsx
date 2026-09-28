@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   description:
     "Découvrez nos cas d'études détaillés : développement web, marketing digital et optimisation de performance. Résultats concrets et mesurables.",
   openGraph: {
-    title: "Cas d'Études | RLN Consulting",
+    title: "Cas d'Études | Agence RLN",
     description: "Nos réalisations et résultats clients en développement web et marketing digital.",
     url: `${siteConfig.url}/cas-etudes`,
   },
@@ -39,9 +39,9 @@ export default function CaseStudiesPage() {
       <section className="py-20 lg:py-28">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
-          <div className="max-w-2xl mx-auto text-center mb-16">
-            <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-foreground mb-6">
-              Cas d&apos;<span className="text-primary">études</span>
+          <div className="max-w-3xl mb-16">
+            <h1 className="v-display text-5xl sm:text-7xl lg:text-[88px] text-foreground mb-6">
+              Cas d&apos;<span className="v-em text-primary">études</span>
             </h1>
             <p className="text-lg text-muted-foreground">
               Découvrez comment nous avons aidé nos clients à atteindre leurs

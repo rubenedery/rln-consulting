@@ -126,11 +126,11 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </Button>
 
           {/* Header */}
-          <header className="max-w-3xl mx-auto text-center mb-12">
+          <header className="max-w-4xl mb-12">
             <Badge className="mb-4 bg-primary text-primary-foreground">
               {blogCategories[post.category]}
             </Badge>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-foreground mb-6">
+            <h1 className="v-display text-5xl sm:text-7xl lg:text-[88px] text-foreground mb-6">
               {post.title}
             </h1>
             <p className="text-lg text-muted-foreground mb-8">
@@ -209,7 +209,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       {relatedPosts.length > 0 && (
         <section className="py-16 bg-muted/30">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-2xl font-bold text-foreground mb-8 text-center">
+            <h2 className="text-2xl font-semibold text-foreground mb-8 text-center">
               Articles similaires
             </h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">

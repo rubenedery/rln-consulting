@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     "statistiques web 2026",
   ],
   openGraph: {
-    title: "Statistiques & Benchmarks 2026 | RLN Consulting",
+    title: "Statistiques & Benchmarks 2026 | Agence RLN",
     description: "Données clés du digital pour guider vos décisions stratégiques.",
     url: `${siteConfig.url}/statistiques`,
   },
@@ -245,16 +245,16 @@ export default function StatistiquesPage() {
       />
 
       {/* Hero */}
-      <section className="py-20 lg:py-28 bg-gradient-to-br from-primary/5 via-background to-accent/5">
+      <section className="py-20 lg:py-28 ">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center">
+          <div className="max-w-4xl">
             <Badge variant="secondary" className="mb-6">
               <BarChart3 className="h-4 w-4 mr-2" />
               Données 2026
             </Badge>
-            <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-foreground mb-6">
+            <h1 className="v-display text-5xl sm:text-7xl lg:text-[88px] text-foreground mb-6">
               Statistiques & Benchmarks{" "}
-              <span className="text-primary">Digital</span>
+              <span className="v-em text-primary">Digital</span>
             </h1>
             <p className="text-lg text-muted-foreground mb-10">
               Les données clés du marketing digital, de la performance web et de
@@ -267,14 +267,14 @@ export default function StatistiquesPage() {
       {/* RLN Stats */}
       <section className="py-16 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-center mb-10">
+          <h2 className="text-2xl font-semibold text-center mb-10">
             Résultats RLN Consulting
           </h2>
           <div className="grid grid-cols-2 lg:grid-cols-6 gap-6">
             {rlnStats.map((stat, index) => (
               <div key={index} className="text-center">
-                <stat.icon className="h-8 w-8 mx-auto mb-3 text-accent" />
-                <div className="text-3xl font-bold text-accent mb-1">
+                <stat.icon className="h-8 w-8 mx-auto mb-3 text-primary" />
+                <div className="text-3xl font-semibold text-primary mb-1">
                   {stat.value}
                 </div>
                 <div className="text-sm text-primary-foreground/80">
@@ -291,7 +291,7 @@ export default function StatistiquesPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 mb-8">
             <Globe className="h-8 w-8 text-primary" />
-            <h2 className="text-3xl font-bold text-foreground">
+            <h2 className="text-3xl font-semibold text-foreground">
               Performance Web
             </h2>
           </div>
@@ -303,7 +303,7 @@ export default function StatistiquesPage() {
             {webStats.map((stat, index) => (
               <Card key={index} className="border-border/50">
                 <CardContent className="pt-6">
-                  <div className="text-4xl font-bold text-primary mb-3">
+                  <div className="text-4xl font-semibold text-primary mb-3">
                     {stat.value}
                   </div>
                   <p className="text-sm text-foreground mb-2">{stat.label}</p>
@@ -321,8 +321,8 @@ export default function StatistiquesPage() {
       <section className="py-20 lg:py-28 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 mb-8">
-            <Target className="h-8 w-8 text-accent" />
-            <h2 className="text-3xl font-bold text-foreground">
+            <Target className="h-8 w-8 text-primary" />
+            <h2 className="text-3xl font-semibold text-foreground">
               Marketing Digital
             </h2>
           </div>
@@ -334,7 +334,7 @@ export default function StatistiquesPage() {
             {marketingStats.map((stat, index) => (
               <Card key={index} className="border-border/50">
                 <CardContent className="pt-6">
-                  <div className="text-4xl font-bold text-accent mb-3">
+                  <div className="text-4xl font-semibold text-primary mb-3">
                     {stat.value}
                   </div>
                   <p className="text-sm text-foreground mb-2">{stat.label}</p>
@@ -353,7 +353,7 @@ export default function StatistiquesPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 mb-8">
             <ShoppingCart className="h-8 w-8 text-primary" />
-            <h2 className="text-3xl font-bold text-foreground">E-commerce</h2>
+            <h2 className="text-3xl font-semibold text-foreground">E-commerce</h2>
           </div>
           <p className="text-muted-foreground mb-10 max-w-2xl">
             Benchmarks e-commerce France 2026. Comparez vos performances aux
@@ -363,7 +363,7 @@ export default function StatistiquesPage() {
             {ecommerceStats.map((stat, index) => (
               <Card key={index} className="border-border/50">
                 <CardContent className="pt-6">
-                  <div className="text-4xl font-bold text-primary mb-3">
+                  <div className="text-4xl font-semibold text-primary mb-3">
                     {stat.value}
                   </div>
                   <p className="text-sm text-foreground mb-2">{stat.label}</p>
@@ -381,8 +381,8 @@ export default function StatistiquesPage() {
       <section className="py-20 lg:py-28 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 mb-8">
-            <LineChart className="h-8 w-8 text-accent" />
-            <h2 className="text-3xl font-bold text-foreground">
+            <LineChart className="h-8 w-8 text-primary" />
+            <h2 className="text-3xl font-semibold text-foreground">
               SEO & Référencement
             </h2>
           </div>
@@ -394,7 +394,7 @@ export default function StatistiquesPage() {
             {seoStats.map((stat, index) => (
               <Card key={index} className="border-border/50">
                 <CardContent className="pt-6">
-                  <div className="text-4xl font-bold text-accent mb-3">
+                  <div className="text-4xl font-semibold text-primary mb-3">
                     {stat.value}
                   </div>
                   <p className="text-sm text-foreground mb-2">{stat.label}</p>
@@ -413,7 +413,7 @@ export default function StatistiquesPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 mb-8">
             <BrainCircuit className="h-8 w-8 text-primary" />
-            <h2 className="text-3xl font-bold text-foreground">
+            <h2 className="text-3xl font-semibold text-foreground">
               Intelligence Artificielle
             </h2>
           </div>
@@ -425,7 +425,7 @@ export default function StatistiquesPage() {
             {iaStats.map((stat, index) => (
               <Card key={index} className="border-border/50">
                 <CardContent className="pt-6">
-                  <div className="text-4xl font-bold text-primary mb-3">
+                  <div className="text-4xl font-semibold text-primary mb-3">
                     {stat.value}
                   </div>
                   <p className="text-sm text-foreground mb-2">{stat.label}</p>
@@ -442,11 +442,11 @@ export default function StatistiquesPage() {
       {/* Benchmarks sectoriels */}
       <section className="py-20 lg:py-28 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-foreground mb-4">
+          <div className="mb-12">
+            <h2 className="text-3xl font-semibold text-foreground mb-4">
               Benchmarks par Secteur
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-muted-foreground max-w-2xl">
               Comparatif des KPIs moyens par secteur d&apos;activité pour évaluer
               vos performances.
             </p>
@@ -503,7 +503,7 @@ export default function StatistiquesPage() {
       <section className="py-20 lg:py-28">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold text-foreground mb-6">
+            <h2 className="text-3xl font-semibold text-foreground mb-6">
               Méthodologie
             </h2>
             <div className="prose prose-lg max-w-none text-muted-foreground">
@@ -530,8 +530,8 @@ export default function StatistiquesPage() {
       {/* CTA */}
       <section className="py-20 lg:py-28 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-6">
+          <div className="max-w-4xl">
+            <h2 className="v-display text-4xl sm:text-6xl mb-6">
               Vos performances sont-elles au niveau ?
             </h2>
             <p className="text-lg text-primary-foreground/80 mb-10">
@@ -541,7 +541,7 @@ export default function StatistiquesPage() {
             <Button
               asChild
               size="lg"
-              className="bg-accent hover:bg-accent/90 text-accent-foreground"
+              
             >
               <Link href="/contact">
                 Demander un audit gratuit
