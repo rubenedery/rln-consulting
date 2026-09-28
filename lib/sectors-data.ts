@@ -280,7 +280,7 @@ export const sectors: Sector[] = [
       },
       {
         question: "Comment fonctionne le configurateur de bagues ?",
-        answer: "Le client choisit le métal, la pierre, sa taille et la gravure, et voit le rendu en direct. Il vous envoie une demande de devis ou réserve un rendez-vous, avec sa configuration jointe. Le rendu peut aller d'une illustration comme sur cette page jusqu'à une vraie 3D de vos modèles.",
+        answer: "Le client choisit le métal, la pierre, sa taille et la gravure, et voit le rendu en direct. Il vous envoie une demande de devis ou réserve un rendez-vous, avec sa configuration jointe. Le rendu peut aller de simples visuels par combinaison jusqu'à une vraie 3D de vos modèles.",
       },
       {
         question: "Et pour le rachat d'or ?",

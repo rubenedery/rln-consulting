@@ -1,9 +1,9 @@
 import Link from "next/link"
 import { Calendar, Clock, User } from "lucide-react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { CardImage } from "@/components/ui/card-image"
+import { ArticleCover } from "./ArticleCover"
 import { Badge } from "@/components/ui/badge"
-import { blogCategories, type BlogPostMeta } from "@/types"
+import type { BlogPostMeta } from "@/types"
 
 interface ArticleCardProps {
   post: BlogPostMeta
@@ -37,13 +37,7 @@ export function ArticleCard({ post, searchQuery = "" }: ArticleCardProps) {
   return (
     <Link href={`/blog/${post.slug}`}>
       <Card className="h-full overflow-hidden hover:shadow-lift hover:-translate-y-0.5 transition-all duration-300 group border-border/50 hover:border-primary/30">
-        <CardImage src={post.image} alt={post.title} gradientClassName="from-black/40">
-          <div className="absolute top-4 left-4 z-20">
-            <Badge variant="secondary" className="bg-primary text-primary-foreground">
-              {blogCategories[post.category]}
-            </Badge>
-          </div>
-        </CardImage>
+        <ArticleCover slug={post.slug} category={post.category} className="border-b" />
 
         <CardHeader className="pb-2">
           <CardTitle className="text-lg group-hover:text-primary transition-colors line-clamp-2">

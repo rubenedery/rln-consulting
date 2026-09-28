@@ -20,11 +20,18 @@ import { Button } from "@/components/ui/button"
 import { Breadcrumbs } from "@/components/ui/breadcrumbs"
 import { CTA, FAQ } from "@/components/sections"
 import type { Sector } from "@/types/sectors"
-import { RingConfigurator } from "./RingConfigurator"
 
 /* ------------------------------------------------------------------ */
 /* Données de la page                                                  */
 /* ------------------------------------------------------------------ */
+
+const productSheet = [
+  { icon: Camera, label: "Zoom HD et vidéo 360°", detail: "Porté sur la main, lumière naturelle" },
+  { icon: ShieldCheck, label: "Poinçon et certificat de la pierre", detail: "Certificat téléchargeable en PDF" },
+  { icon: Ruler, label: "Guide des tailles intégré", detail: "Tour de doigt 48 à 60" },
+  { icon: PenLine, label: "Gravure personnalisée", detail: "Aperçu du texte avant commande" },
+  { icon: CreditCard, label: "Paiement en 3x ou 4x", detail: "Ou retrait sécurisé en boutique" },
+]
 
 const pains = [
   { k: "01", title: "L'éclat se perd en photo", text: "Une bague à plusieurs milliers d'euros présentée comme un produit de catalogue. Le client ne ressent rien." },
@@ -159,7 +166,40 @@ export function BijouterieLanding({ sector, breadcrumbs }: BijouterieLandingProp
                 ))}
               </ul>
             </div>
-            <RingConfigurator />
+            {/* Fiche produit type */}
+            <figure className="relative m-0 overflow-hidden rounded-lg border bg-card p-6 shadow-lift sm:p-7">
+              <span className="v-fold" aria-hidden="true" />
+              <figcaption className="v-label mb-5">Une fiche produit qui rassure · exemple</figcaption>
+              <div className="flex flex-col gap-1.5 border-b pb-5">
+                <span className="font-mono text-[11px] tracking-[0.06em] text-muted-foreground uppercase">
+                  Collection Fiançailles · pièce unique
+                </span>
+                <strong className="font-display text-2xl leading-tight font-semibold tracking-[-0.02em]">
+                  Solitaire saphir, or jaune 750‰
+                </strong>
+              </div>
+              <ul className="flex flex-col divide-y">
+                {productSheet.map((row) => (
+                  <li key={row.label} className="grid grid-cols-[28px_minmax(0,1fr)] items-start gap-3 py-3.5">
+                    <span className="grid size-7 place-items-center rounded-full bg-secondary text-primary">
+                      <row.icon className="size-3.5" aria-hidden="true" />
+                    </span>
+                    <span className="flex flex-col gap-0.5">
+                      <span className="text-[15px] font-medium">{row.label}</span>
+                      <span className="font-mono text-[11px] text-muted-foreground">{row.detail}</span>
+                    </span>
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-4 grid gap-2 sm:grid-cols-2">
+                <span className="inline-flex h-11 items-center justify-center gap-2 rounded-full bg-primary px-4 text-sm font-medium text-primary-foreground">
+                  <CalendarCheck className="size-4" aria-hidden="true" /> Réserver un essayage
+                </span>
+                <span className="inline-flex h-11 items-center justify-center rounded-full border px-4 text-sm font-medium">
+                  Ajouter au panier
+                </span>
+              </div>
+            </figure>
           </div>
         </div>
       </section>
@@ -252,9 +292,9 @@ export function BijouterieLanding({ sector, breadcrumbs }: BijouterieLandingProp
                 </div>
               </div>
               <Button asChild variant="inverse" className="self-start lg:self-auto">
-                <Link href="#bj-hero">
-                  Essayer le configurateur
-                  <ArrowUpRight className="transition-transform duration-300 group-hover:-translate-y-0.5" aria-hidden="true" />
+                <Link href="/contact">
+                  Parler de mon projet
+                  <ArrowRight className="transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true" />
                 </Link>
               </Button>
             </li>

@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation"
 import Link from "next/link"
-import Image from "next/image"
+import { ArticleCover } from "@/components/blog/ArticleCover"
 import type { Metadata } from "next"
 import { ArrowLeft, Calendar, Clock, User, Tag } from "lucide-react"
 import { getBlogPost, getBlogSlugs, getAllBlogPosts, extractFaqFromMarkdown } from "@/lib/mdx"
@@ -162,16 +162,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
           {/* Featured image */}
           <div className="max-w-4xl mx-auto mb-12">
-            <div className="aspect-video bg-muted rounded-lg relative overflow-hidden">
-              <Image
-                src={post.image}
-                alt={post.title}
-                fill
-                className="object-cover rounded-lg"
-                sizes="(max-width: 768px) 100vw, 896px"
-                priority
-              />
-            </div>
+            <ArticleCover slug={post.slug} category={post.category} size="hero" className="rounded-lg border" />
           </div>
 
           {/* Content — coupé après le 2e h2 pour insérer un CTA contextuel */}
