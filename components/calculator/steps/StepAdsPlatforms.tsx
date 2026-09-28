@@ -59,7 +59,7 @@ export function StepAdsPlatforms() {
             {state.ads.platforms.length} plateforme{state.ads.platforms.length > 1 ? "s" : ""} sélectionnée{state.ads.platforms.length > 1 ? "s" : ""}
           </p>
           <p className="text-lg font-semibold text-primary mt-1">
-            {state.ads.platforms.length * 500}€/mois (gestion)
+            dès {state.ads.platforms.length * 290}€/mois (gestion)
           </p>
         </m.div>
       )}

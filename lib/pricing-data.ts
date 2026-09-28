@@ -72,14 +72,14 @@ export const webProjectOptions: SelectOption<WebProjectType>[] = [
     label: "Site Vitrine",
     description: "1 à 5 pages pour présenter votre activité",
     icon: Layout,
-    price: "999€",
+    price: "dès 990€",
   },
   {
     value: "avance",
     label: "Site Avancé",
     description: "6 à 15 pages avec fonctionnalités étendues",
     icon: Globe,
-    price: "4 000€",
+    price: "dès 1 990€",
     popular: true,
   },
   {
@@ -87,14 +87,14 @@ export const webProjectOptions: SelectOption<WebProjectType>[] = [
     label: "E-commerce",
     description: "Boutique en ligne complète",
     icon: ShoppingCart,
-    price: "6 000€",
+    price: "dès 2 490€",
   },
   {
     value: "webapp",
     label: "Application Web",
     description: "Solution sur mesure avec dashboard",
     icon: AppWindow,
-    price: "10 000€",
+    price: "dès 4 900€",
   },
 ]
 
@@ -104,49 +104,49 @@ export const webFeatureOptions: SelectOption<WebFeature>[] = [
     label: "Blog",
     description: "Section actualités avec CMS",
     icon: BookOpen,
-    price: "+800€",
+    price: "+300€",
   },
   {
     value: "espace_membre",
     label: "Espace Membre",
     description: "Connexion et profils utilisateurs",
     icon: Users,
-    price: "+1 500€",
+    price: "+900€",
   },
   {
     value: "multilingue",
     label: "Multilingue",
     description: "Support de plusieurs langues",
     icon: Languages,
-    price: "+600€/langue",
+    price: "+290€/langue",
   },
   {
     value: "calendrier",
     label: "Calendrier / Réservations",
     description: "Système de prise de RDV",
     icon: Calendar,
-    price: "+1 200€",
+    price: "+490€",
   },
   {
     value: "crm",
     label: "Intégration CRM",
     description: "HubSpot, Salesforce, etc.",
     icon: Database,
-    price: "+1 000€",
+    price: "+490€",
   },
   {
     value: "paiement",
     label: "Paiement en ligne",
     description: "Stripe, PayPal intégrés",
     icon: CreditCard,
-    price: "+800€",
+    price: "+390€",
   },
   {
     value: "analytics",
     label: "Analytics avancé",
     description: "Dashboard personnalisé",
     icon: BarChart3,
-    price: "+600€",
+    price: "+190€",
   },
 ]
 
@@ -163,7 +163,7 @@ export const webDesignOptions: SelectOption<DesignLevel>[] = [
     label: "Premium",
     description: "Design personnalisé + animations",
     icon: Award,
-    price: "+2 000€",
+    price: "+900€",
     popular: true,
   },
   {
@@ -171,7 +171,7 @@ export const webDesignOptions: SelectOption<DesignLevel>[] = [
     label: "Haut de Gamme",
     description: "Design unique par un DA senior",
     icon: Crown,
-    price: "+4 000€",
+    price: "+1 900€",
   },
 ]
 
@@ -208,32 +208,32 @@ export const adsPlatformOptions: SelectOption<AdsPlatform>[] = [
     value: "google",
     label: "Google Ads",
     description: "Search, Display, YouTube",
-    price: "500€/mois",
+    price: "dès 290€/mois",
   },
   {
     value: "facebook",
     label: "Facebook Ads",
     description: "Feed, Stories, Messenger",
-    price: "500€/mois",
+    price: "dès 290€/mois",
     popular: true,
   },
   {
     value: "instagram",
     label: "Instagram Ads",
     description: "Feed, Stories, Reels",
-    price: "500€/mois",
+    price: "dès 290€/mois",
   },
   {
     value: "linkedin",
     label: "LinkedIn Ads",
     description: "B2B et recrutement",
-    price: "500€/mois",
+    price: "dès 290€/mois",
   },
   {
     value: "tiktok",
     label: "TikTok Ads",
     description: "Vidéos courtes virales",
-    price: "500€/mois",
+    price: "dès 290€/mois",
   },
 ]
 
@@ -275,7 +275,7 @@ export const aiSolutionOptions: SelectOption<AISolutionType>[] = [
     label: "Chatbot IA",
     description: "Service client automatisé 24/7",
     icon: MessageSquare,
-    price: "3 000€",
+    price: "dès 1 490€",
     popular: true,
   },
   {
@@ -283,21 +283,21 @@ export const aiSolutionOptions: SelectOption<AISolutionType>[] = [
     label: "Assistant Interne",
     description: "IA pour vos équipes (docs, FAQ)",
     icon: Bot,
-    price: "5 000€",
+    price: "dès 2 490€",
   },
   {
     value: "automatisation",
     label: "Automatisation",
     description: "Workflows et processus IA",
     icon: Cog,
-    price: "4 000€",
+    price: "dès 1 490€",
   },
   {
     value: "analyse",
     label: "Analyse de données",
     description: "Extraction et insights IA",
     icon: BarChart3,
-    price: "6 000€",
+    price: "dès 2 990€",
   },
 ]
 
@@ -330,24 +330,24 @@ export const aiComplexityOptions: SelectOption<AIComplexity>[] = [
 export const PRICING = {
   web: {
     projectTypes: {
-      vitrine: 999,
-      avance: 4000,
-      ecommerce: 6000,
-      webapp: 10000,
+      vitrine: 990,
+      avance: 1990,
+      ecommerce: 2490,
+      webapp: 4900,
     },
     features: {
-      blog: 800,
-      espace_membre: 1500,
-      multilingue: 600, // per language
-      calendrier: 1200,
-      crm: 1000,
-      paiement: 800,
-      analytics: 600,
+      blog: 300,
+      espace_membre: 900,
+      multilingue: 290, // per language
+      calendrier: 490,
+      crm: 490,
+      paiement: 390,
+      analytics: 190,
     },
     design: {
       standard: 0,
-      premium: 2000,
-      haut_de_gamme: 4000,
+      premium: 900,
+      haut_de_gamme: 1900,
     },
     timeline: {
       normal: 1,
@@ -357,7 +357,7 @@ export const PRICING = {
     maintenance: 150, // monthly
   },
   ads: {
-    platformBase: 500, // per platform per month
+    platformBase: 290, // per platform per month
     managementFee: 0.12, // 12% of ad spend
     discounts: {
       mensuel: 0,
@@ -368,18 +368,18 @@ export const PRICING = {
   },
   ai: {
     solutionTypes: {
-      chatbot: 3000,
-      assistant: 5000,
-      automatisation: 4000,
-      analyse: 6000,
+      chatbot: 1490,
+      assistant: 2490,
+      automatisation: 1490,
+      analyse: 2990,
     },
     complexity: {
       simple: 1,
       moyen: 1.5,
       complexe: 2.5,
     },
-    training: 1500,
-    integration: 2000,
+    training: 490,
+    integration: 990,
   },
 } as const
 

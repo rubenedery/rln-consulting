@@ -169,9 +169,8 @@ export const services: ServiceData[] = [
     jsonLd: {
       name: "Développement Web - Sites & Applications Sur Mesure",
       description:
-        "Services de développement web sur mesure avec Next.js et React. Création de sites vitrines (à partir de 2 000€), e-commerce (à partir de 5 000€) et applications web personnalisées. Optimisation SEO et performance incluses.",
-      minPrice: 2000,
-      maxPrice: 50000,
+        "Services de développement web sur mesure avec Next.js et React. Création de sites vitrines (à partir de 990€), e-commerce (à partir de 2 490€) et applications web personnalisées (à partir de 4 900€). Optimisation SEO et performance incluses.",
+      minPrice: 990,
       features: [
         "Sites vitrines Next.js",
         "E-commerce Shopify & sur mesure",
@@ -201,8 +200,8 @@ export const services: ServiceData[] = [
           {
             heading: "Combien coûte un site web ?",
             body: [
-              { strong: "Site vitrine : 2 000€ à 5 000€" },
-              ". E-commerce : 5 000€ à 15 000€. Application sur mesure : 10 000€ à 50 000€+. Nos sites Next.js atteignent",
+              { strong: "Site vitrine dès 990€" },
+              ". E-commerce dès 2 490€. Application sur mesure dès 4 900€. Nos sites Next.js atteignent",
               { strong: " 90+ sur PageSpeed" },
               " (vs ~45 pour un WordPress moyen).",
             ],
@@ -353,9 +352,8 @@ export const services: ServiceData[] = [
     jsonLd: {
       name: "E-commerce - Boutiques en Ligne Performantes",
       description:
-        "Création de boutiques e-commerce Shopify (3 000€-8 000€) ou WooCommerce (5 000€-15 000€). Optimisations qui augmentent le taux de conversion de 20-40%. Paiement sécurisé Stripe, gestion stocks, Click & Collect.",
-      minPrice: 3000,
-      maxPrice: 50000,
+        "Création de boutiques e-commerce Shopify, WooCommerce ou sur mesure, à partir de 2 490€. Optimisations qui augmentent le taux de conversion de 20-40%. Paiement sécurisé Stripe, gestion stocks, Click & Collect.",
+      minPrice: 2490,
       features: [
         "Boutique Shopify clé en main",
         "E-commerce WooCommerce",
@@ -385,8 +383,8 @@ export const services: ServiceData[] = [
           {
             heading: "Combien coûte un site e-commerce ?",
             body: [
-              { strong: "Shopify : 3 000€ à 8 000€" },
-              ". WooCommerce : 5 000€ à 15 000€. Sur mesure : 15 000€ à 50 000€+. Taux de conversion moyen France : 2.5%. Nos sites atteignent ",
+              { strong: "Boutique dès 2 490€" },
+              ", sur Shopify, WooCommerce ou en sur mesure. Taux de conversion moyen France : 2.5%. Nos sites atteignent ",
               { strong: "3.5-5%" },
               " grâce à l'optimisation UX.",
             ],

@@ -81,7 +81,7 @@ export const expertises: Expertise[] = [
     answerFirst: {
       cost: {
         question: "Combien coûte un développeur Next.js ?",
-        answer: "Un développeur Next.js freelance facture entre 400€ et 800€/jour selon l'expérience. Une agence comme RLN Consulting propose des projets Next.js de 3 000€ à 50 000€ selon la complexité. Un site vitrine Next.js démarre à 3 000€, une application web complète à 8 000€."
+        answer: "Un développeur Next.js freelance facture entre 400€ et 800€/jour selon l'expérience. Chez nous, un site vitrine Next.js démarre à 990€ et une application web sur mesure à 4 900€."
       },
       duration: {
         question: "Combien de temps pour développer un site Next.js ?",
@@ -168,10 +168,10 @@ export const expertises: Expertise[] = [
     ],
 
     pricing: {
-      minPrice: 3000,
+      minPrice: 990,
       maxPrice: 50000,
       unit: "projet",
-      details: "Site vitrine : 3 000-8 000€ | Application web : 8 000-25 000€ | SaaS complexe : 25 000-50 000€+"
+      details: "Site vitrine dès 990€ | Application web dès 4 900€ | SaaS sur devis"
     },
 
     relatedServices: ["/services/developpement", "/services/ecommerce"],
@@ -190,7 +190,7 @@ export const expertises: Expertise[] = [
     answerFirst: {
       cost: {
         question: "Combien coûte un développeur React ?",
-        answer: "Un développeur React junior facture 300-450€/jour, un senior 500-800€/jour. En agence, un projet React démarre à 2 500€ pour une interface simple, 5 000-15 000€ pour une application complète. Les tarifs varient selon la complexité et les intégrations requises."
+        answer: "Un développeur React junior facture 300-450€/jour, un senior 500-800€/jour. Chez nous, une interface React démarre à 990€ et une application complète à 4 900€. Le devis dépend de la complexité et des intégrations."
       },
       duration: {
         question: "Combien de temps pour développer une app React ?",
@@ -277,10 +277,10 @@ export const expertises: Expertise[] = [
     ],
 
     pricing: {
-      minPrice: 2500,
+      minPrice: 990,
       maxPrice: 40000,
       unit: "projet",
-      details: "Interface simple : 2 500-5 000€ | Application complète : 5 000-15 000€ | Projet enterprise : 15 000-40 000€+"
+      details: "Interface dès 990€ | Application complète dès 4 900€ | Projet enterprise sur devis"
     },
 
     relatedServices: ["/services/developpement", "/services/applications-mobiles"],
@@ -299,7 +299,7 @@ export const expertises: Expertise[] = [
     answerFirst: {
       cost: {
         question: "Le TypeScript coûte-t-il plus cher que JavaScript ?",
-        answer: "Le développement TypeScript ajoute environ 10-15% au temps initial, soit un surcoût de 500-2 000€ sur un projet moyen. Mais le ROI est positif : -40% de bugs en production, maintenance facilitée, et onboarding développeurs accéléré. Sur 2 ans, vous économisez généralement 20-30% en maintenance."
+        answer: "Le développement TypeScript ajoute environ 10-15% au temps initial, un surcoût modeste sur un projet moyen. Mais le ROI est positif : -40% de bugs en production, maintenance facilitée, et onboarding développeurs accéléré. Sur 2 ans, vous économisez généralement 20-30% en maintenance."
       },
       duration: {
         question: "Combien de temps pour migrer vers TypeScript ?",
@@ -385,7 +385,7 @@ export const expertises: Expertise[] = [
     ],
 
     pricing: {
-      minPrice: 2000,
+      minPrice: 990,
       maxPrice: 35000,
       unit: "projet",
       details: "Nouveau projet TypeScript : coût standard | Migration JS → TS : +10-20% sur le projet initial"
@@ -407,7 +407,7 @@ export const expertises: Expertise[] = [
     answerFirst: {
       cost: {
         question: "Combien coûte un site Shopify ?",
-        answer: "Un site Shopify avec thème premium personnalisé coûte 2 000-5 000€. Un développement sur-mesure avec thème custom démarre à 5 000€ et peut atteindre 20 000€+ pour des fonctionnalités avancées. L'abonnement Shopify Basic est à 36€/mois, Plus à partir de 2 000€/mois."
+        answer: "Une boutique Shopify personnalisée démarre à 2 490€, un développement sur mesure avec thème custom à 4 900€. L'abonnement Shopify Basic est à 36€/mois, Plus à partir de 2 000€/mois."
       },
       duration: {
         question: "Combien de temps pour créer une boutique Shopify ?",
@@ -494,10 +494,10 @@ export const expertises: Expertise[] = [
     ],
 
     pricing: {
-      minPrice: 2000,
+      minPrice: 2490,
       maxPrice: 25000,
       unit: "projet",
-      details: "Thème personnalisé : 2 000-5 000€ | Développement sur-mesure : 5 000-15 000€ | Shopify Plus : 15 000-25 000€+"
+      details: "Boutique Shopify dès 2 490€ | Développement sur mesure dès 4 900€ | Shopify Plus sur devis"
     },
 
     relatedServices: ["/services/ecommerce", "/services/developpement"],
@@ -516,7 +516,7 @@ export const expertises: Expertise[] = [
     answerFirst: {
       cost: {
         question: "Combien coûte un développeur Node.js ?",
-        answer: "Un développeur Node.js facture 400-700€/jour en freelance. En agence, un projet API Node.js démarre à 3 000€ pour une API simple, 8 000-20 000€ pour un backend complet avec authentification, bases de données et intégrations tierces."
+        answer: "Un développeur Node.js facture 400-700€/jour en freelance. Chez nous, une API Node.js démarre à 1 490€ et un backend complet (authentification, base de données, intégrations) à 4 900€."
       },
       duration: {
         question: "Combien de temps pour développer une API Node.js ?",
@@ -602,10 +602,10 @@ export const expertises: Expertise[] = [
     ],
 
     pricing: {
-      minPrice: 3000,
+      minPrice: 1490,
       maxPrice: 30000,
       unit: "projet",
-      details: "API simple : 3 000-6 000€ | Backend complet : 8 000-20 000€ | Architecture microservices : 20 000-30 000€+"
+      details: "API simple dès 1 490€ | Backend complet dès 4 900€ | Architecture microservices sur devis"
     },
 
     relatedServices: ["/services/developpement", "/services/crm-applications-metier"],
@@ -710,10 +710,10 @@ export const expertises: Expertise[] = [
     ],
 
     pricing: {
-      minPrice: 1500,
+      minPrice: 990,
       maxPrice: 15000,
       unit: "projet",
-      details: "Intégration landing : 1 500-3 000€ | Application complète : 5 000-12 000€ | Design system : 10 000-15 000€"
+      details: "Intégration landing dès 990€ | Application complète dès 4 900€ | Design system sur devis"
     },
 
     relatedServices: ["/services/developpement", "/services/design-ux-ui"],
@@ -732,7 +732,7 @@ export const expertises: Expertise[] = [
     answerFirst: {
       cost: {
         question: "Combien coûte l'expertise PostgreSQL ?",
-        answer: "La conception d'un schéma de base de données coûte 1 000-5 000€ selon la complexité. L'optimisation de performances (audit + implémentation) : 2 000-8 000€. La maintenance mensuelle : 500-2 000€/mois. PostgreSQL lui-même est gratuit et open-source."
+        answer: "La conception d'un schéma de base de données démarre à 490€, l'optimisation de performances (audit + mise en œuvre) à 990€. PostgreSQL lui-même est gratuit et open-source."
       },
       duration: {
         question: "Combien de temps pour concevoir une base PostgreSQL ?",
@@ -818,10 +818,10 @@ export const expertises: Expertise[] = [
     ],
 
     pricing: {
-      minPrice: 1000,
+      minPrice: 490,
       maxPrice: 15000,
       unit: "projet",
-      details: "Conception schéma : 1 000-5 000€ | Optimisation : 2 000-8 000€ | Migration : 3 000-10 000€"
+      details: "Conception de schéma dès 490€ | Optimisation dès 990€ | Migration sur devis"
     },
 
     relatedServices: ["/services/developpement", "/services/crm-applications-metier"],
@@ -840,7 +840,7 @@ export const expertises: Expertise[] = [
     answerFirst: {
       cost: {
         question: "Combien coûte l'intégration d'IA générative ?",
-        answer: "Un chatbot IA basique coûte 3 000-8 000€. Une solution d'automatisation avec RAG (Retrieval Augmented Generation) : 8 000-25 000€. Un projet IA sur-mesure complexe : 25 000-50 000€+. L'utilisation des APIs (OpenAI, Anthropic) ajoute 50-500€/mois selon le volume."
+        answer: "Un chatbot IA démarre à 1 490€, une solution avec RAG (Retrieval Augmented Generation) à 2 490€. Les projets plus complexes sont chiffrés sur devis. L'utilisation des APIs (OpenAI, Anthropic) ajoute 50-500€/mois selon le volume."
       },
       duration: {
         question: "Combien de temps pour intégrer l'IA générative ?",
@@ -927,10 +927,10 @@ export const expertises: Expertise[] = [
     ],
 
     pricing: {
-      minPrice: 3000,
+      minPrice: 1490,
       maxPrice: 50000,
       unit: "projet",
-      details: "Chatbot simple : 3 000-8 000€ | Solution RAG : 8 000-25 000€ | Projet complexe : 25 000-50 000€+"
+      details: "Chatbot IA dès 1 490€ | Solution RAG dès 2 490€ | Projet complexe sur devis"
     },
 
     relatedServices: ["/services/ia-entreprise", "/services/crm-applications-metier"],

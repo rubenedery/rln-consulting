@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   },
   title: "IA sur Mesure pour Entreprises | Chatbots & Automatisation",
   description:
-    "IA sur mesure pour votre entreprise : chatbots sur mesure, automatisation des tâches, analyse de données et assistants IA intégrés à vos outils. POC en 2 semaines, dès 3 000€.",
+    "IA sur mesure pour votre entreprise : chatbots sur mesure, automatisation des tâches, analyse de données et assistants IA intégrés à vos outils. POC en 2 semaines, dès 1 490€.",
   keywords: [
     "IA sur mesure entreprise",
     "chatbot sur mesure entreprise",
@@ -185,10 +185,9 @@ export default function IAEntreprisePage() {
     <>
       <ServiceJsonLd
         name="IA pour Entreprises - Chatbots & Automatisation"
-        description="Intégration d'intelligence artificielle pour entreprises. Chatbots GPT-4/Claude à partir de 3 000€, automatisation -60% tickets support. Solutions RAG formées sur vos données avec confidentialité garantie."
+        description="Intégration d'intelligence artificielle pour entreprises. Chatbots GPT-4/Claude à partir de 1 490€, automatisation -60% tickets support. Solutions RAG formées sur vos données avec confidentialité garantie."
         url={`${siteConfig.url}/services/ia-entreprise`}
-        minPrice={3000}
-        maxPrice={30000}
+        minPrice={1490}
         features={[
           "Chatbots IA intelligents 24/7",
           "Intégration GPT-4 et Claude",
@@ -255,8 +254,8 @@ export default function IAEntreprisePage() {
                   Combien coûte un chatbot sur mesure ?
                 </h2>
                 <p className="text-muted-foreground text-sm leading-relaxed">
-                  <strong>Chatbot sur mesure : 3 000€ à 8 000€</strong> + 200-500€/mois maintenance.
-                  Assistant IA avancé (RAG, entraîné sur vos données) : 10 000€ à 30 000€. Un
+                  <strong>Chatbot sur mesure dès 1 490€</strong>. Assistant IA entraîné sur vos
+                  données (RAG) dès 2 490€. Un
                   chatbot IA réduit les tickets support de <strong>70%</strong> (Gartner 2025).
                 </p>
               </div>

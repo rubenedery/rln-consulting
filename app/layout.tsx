@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     template: "%s | Agence RLN",
   },
   description:
-    "RLN Consulting est une agence web française fondée en 2020, spécialisée en développement Next.js/React et gestion Google Ads/Meta Ads. Services : création de sites web (à partir de 1 500€), e-commerce, applications web, CRM sur mesure et intégration IA pour entreprises.",
+    "RLN Consulting est une agence web française fondée en 2020, spécialisée en développement Next.js/React et gestion Google Ads/Meta Ads. Services : création de sites web (à partir de 990€), e-commerce, applications web, CRM sur mesure et intégration IA pour entreprises.",
   keywords: [
     "agence développement web paris",
     "agence web france",
@@ -85,7 +85,7 @@ export const metadata: Metadata = {
     siteName: "Agence RLN",
     title: "Agence RLN | Développement web, IA & marketing digital à Paris",
     description:
-      "Agence RLN : agence web française (fondée en 2020). Développement Next.js/React, e-commerce, CRM sur mesure, Google Ads et Meta Ads. Tarifs à partir de 1 500€.",
+      "Agence RLN : agence web française (fondée en 2020). Développement Next.js/React, e-commerce, CRM sur mesure, Google Ads et Meta Ads. Tarifs à partir de 990€.",
     images: [
       {
         url: "/api/og?title=RLN+Consulting&description=Agence+D%C3%A9veloppement+Web+%26+Marketing+Digital+Paris",
@@ -98,7 +98,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Agence RLN | Développement web & marketing digital Paris",
-    description: "Agence web française : développement Next.js/React, e-commerce, CRM, Google Ads et Meta Ads. Tarifs à partir de 1 500€.",
+    description: "Agence web française : développement Next.js/React, e-commerce, CRM, Google Ads et Meta Ads. Tarifs à partir de 990€.",
     images: ["/api/og?title=RLN+Consulting&description=Agence+D%C3%A9veloppement+Web+%26+Marketing+Digital+Paris"],
     creator: "@rlnconsulting",
   },

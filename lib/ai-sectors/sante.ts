@@ -28,7 +28,7 @@ export const aiSectorProfilesSante: AiSectorProfile[] = [
       cost: {
         question: "Combien coûte l'IA pour un médecin ?",
         answer:
-          "Un assistant de transcription médicale conforme se situe entre 80 et 250 € par mois par praticien. Un projet sur mesure — standard vocal intelligent branché sur votre agenda, automatisation des courriers dans votre logiciel métier — représente 6 000 à 25 000 € selon la taille du cabinet et les intégrations.",
+          "Un assistant de transcription médicale conforme se situe entre 80 et 250 € par mois par praticien. Un projet sur mesure — standard vocal intelligent branché sur votre agenda, automatisation des courriers dans votre logiciel métier — représente un projet à partir de 1 490 €.",
       },
       duration: {
         question: "Combien de temps pour équiper un cabinet médical ?",
@@ -140,7 +140,7 @@ export const aiSectorProfilesSante: AiSectorProfile[] = [
       cost: {
         question: "Combien coûte l'IA pour un cabinet dentaire ?",
         answer:
-          "Les outils SaaS (rappels intelligents, aide à la rédaction de devis, transcription) se situent entre 60 et 300 € par mois. Un projet sur mesure — génération de devis branchée sur votre logiciel, suivi automatisé des plans de traitement multi-séances — représente 5 000 à 20 000 € selon le périmètre.",
+          "Les outils SaaS (rappels intelligents, aide à la rédaction de devis, transcription) se situent entre 60 et 300 € par mois. Un projet sur mesure — génération de devis branchée sur votre logiciel, suivi automatisé des plans de traitement multi-séances — représente un projet à partir de 1 490 €.",
       },
       duration: {
         question: "Combien de temps pour équiper un cabinet dentaire ?",
@@ -247,7 +247,7 @@ export const aiSectorProfilesSante: AiSectorProfile[] = [
       cost: {
         question: "Combien coûte l'IA pour un kinésithérapeute ?",
         answer:
-          "Un assistant de rédaction de bilans et de fiches d'exercices se situe entre 50 et 150 € par mois. Une automatisation sur mesure du suivi des prescriptions et du planning, intégrée à votre logiciel de facturation, représente un projet de 5 000 à 12 000 € — souvent mutualisé entre praticiens d'un même cabinet.",
+          "Un assistant de rédaction de bilans et de fiches d'exercices se situe entre 50 et 150 € par mois. Une automatisation sur mesure du suivi des prescriptions et du planning, intégrée à votre logiciel de facturation, représente un projet à partir de 1 490 € — souvent mutualisé entre praticiens d'un même cabinet.",
       },
       duration: {
         question: "Combien de temps pour équiper un cabinet de kiné ?",
@@ -326,7 +326,7 @@ export const aiSectorProfilesSante: AiSectorProfile[] = [
       {
         question: "Combien de temps pour rentabiliser l'investissement ?",
         answer:
-          "Pour un praticien qui rédige 15 bilans par mois, le gain de temps couvre un abonnement de 100 € dès le premier mois. Pour une automatisation sur mesure autour de 8 000 €, les séances récupérées et le temps administratif économisé amortissent le projet en 8 à 12 mois.",
+          "Pour un praticien qui rédige 15 bilans par mois, le gain de temps couvre un abonnement de 100 € dès le premier mois. Pour une automatisation sur mesure à partir de 1 490 €, les séances récupérées et le temps administratif économisé amortissent le projet en 8 à 12 mois.",
       },
     ],
   },
@@ -352,7 +352,7 @@ export const aiSectorProfilesSante: AiSectorProfile[] = [
       cost: {
         question: "Combien coûte l'IA pour un psychologue ?",
         answer:
-          "Pour une pratique individuelle, un assistant de notes et un module de rendez-vous intelligent se situent entre 50 et 120 € par mois. Un dispositif sur mesure — accueil conversationnel sur votre site, gestion fine des annulations et de la liste d'attente — représente 5 000 à 10 000 €.",
+          "Pour une pratique individuelle, un assistant de notes et un module de rendez-vous intelligent se situent entre 50 et 120 € par mois. Un dispositif sur mesure — accueil conversationnel sur votre site, gestion fine des annulations et de la liste d'attente — représente un projet à partir de 1 490 €.",
       },
       duration: {
         question: "Combien de temps pour équiper une pratique de psychologue ?",
@@ -457,7 +457,7 @@ export const aiSectorProfilesSante: AiSectorProfile[] = [
       cost: {
         question: "Combien coûte l'IA pour un ostéopathe ?",
         answer:
-          "Un standard vocal IA avec prise de rendez-vous coûte entre 60 et 200 € par mois. Un dispositif complet sur mesure — anamnèse en ligne, suivis post-séance automatisés, relances de fidélisation intégrées à votre agenda — représente un projet de 5 000 à 12 000 € pour un cabinet individuel.",
+          "Un standard vocal IA avec prise de rendez-vous coûte entre 60 et 200 € par mois. Un dispositif complet sur mesure — anamnèse en ligne, suivis post-séance automatisés, relances de fidélisation intégrées à votre agenda — représente un projet à partir de 1 490 € pour un cabinet individuel.",
       },
       duration: {
         question: "Combien de temps pour équiper un cabinet d'ostéopathie ?",
@@ -563,7 +563,7 @@ export const aiSectorProfilesSante: AiSectorProfile[] = [
       cost: {
         question: "Combien coûte l'IA pour un coach sportif ?",
         answer:
-          "Les outils SaaS de programmation et de suivi client se situent entre 50 et 150 € par mois. Une plateforme sur mesure à votre marque — génération de programmes selon votre méthode, espace client, vente de programmes en ligne — représente un projet de 6 000 à 20 000 € selon l'ambition.",
+          "Les outils SaaS de programmation et de suivi client se situent entre 50 et 150 € par mois. Une plateforme sur mesure à votre marque — génération de programmes selon votre méthode, espace client, vente de programmes en ligne — représente un projet à partir de 1 490 €.",
       },
       duration: {
         question: "Combien de temps pour outiller une activité de coaching ?",
@@ -670,7 +670,7 @@ export const aiSectorProfilesSante: AiSectorProfile[] = [
       cost: {
         question: "Combien coûte l'IA pour un salon de coiffure ?",
         answer:
-          "Un assistant de réservation multicanal (Instagram, site, téléphone) se situe entre 60 et 200 € par mois selon les canaux. Un dispositif sur mesure — relances anti-no-show, remplissage automatique des creux, fiches clients enrichies (couleurs, formules) — représente 5 000 à 12 000 €.",
+          "Un assistant de réservation multicanal (Instagram, site, téléphone) se situe entre 60 et 200 € par mois selon les canaux. Un dispositif sur mesure — relances anti-no-show, remplissage automatique des creux, fiches clients enrichies (couleurs, formules) — représente un projet à partir de 1 490 €.",
       },
       duration: {
         question: "Combien de temps pour équiper un salon de coiffure ?",
@@ -777,7 +777,7 @@ export const aiSectorProfilesSante: AiSectorProfile[] = [
       cost: {
         question: "Combien coûte l'IA pour un institut de beauté ?",
         answer:
-          "Un assistant de conseil et de réservation se situe entre 60 et 200 € par mois. Un dispositif sur mesure — suivi des cures, marketing automatisé des cartes cadeaux et des abonnements, fiches clientes enrichies (type de peau, soins réalisés) — représente un projet de 5 000 à 15 000 €.",
+          "Un assistant de conseil et de réservation se situe entre 60 et 200 € par mois. Un dispositif sur mesure — suivi des cures, marketing automatisé des cartes cadeaux et des abonnements, fiches clientes enrichies (type de peau, soins réalisés) — représente un projet à partir de 1 490 €.",
       },
       duration: {
         question: "Combien de temps pour équiper un institut de beauté ?",

@@ -68,7 +68,7 @@ export function getLocalServicesForCity(cityName: string): LocalService[] {
       title: `E-commerce & Shopify à ${cityName}`,
       description: `Création de boutiques en ligne pour les commerces de ${cityName}. Shopify, WooCommerce ou solutions sur-mesure. Thèmes personnalisés, intégrations et optimisation conversion.`,
       highlights: [
-        "Boutiques Shopify clé en main dès 3 000€",
+        "Boutiques Shopify clé en main dès 2 490€",
         "Thèmes sur-mesure en Liquid",
         "Intégrations ERP, CRM et logistique",
         "Taux de conversion optimisé (+15% en moyenne)"
@@ -128,7 +128,7 @@ export const cities: CityData[] = [
     faqs: [
       {
         question: "Combien coûte la création d'un site web à Paris ?",
-        answer: "Le coût d'un site web professionnel à Paris varie entre 2 000€ et 15 000€ selon la complexité. Un site vitrine démarre à 2 000€, un site e-commerce à partir de 5 000€, et une application web sur mesure à partir de 8 000€. Chez RLN Consulting, nous proposons des devis transparents adaptés à votre budget et vos objectifs.",
+        answer: "Chez nous, un site vitrine démarre à 990€, un site e-commerce à 2 490€ et une application web sur mesure à 4 900€. Le devis est gratuit, transparent et adapté à votre projet.",
       },
       {
         question: "Pourquoi choisir une agence web locale à Paris ?",
@@ -169,7 +169,7 @@ export const cities: CityData[] = [
     faqs: [
       {
         question: "Combien coûte un site web à Lyon ?",
-        answer: "À Lyon, un site vitrine professionnel coûte entre 1 800€ et 12 000€. Les tarifs sont généralement 10 à 20% inférieurs à Paris tout en maintenant un niveau de qualité équivalent. Chez RLN Consulting, nous proposons des solutions adaptées aux budgets des PME lyonnaises.",
+        answer: "Un site vitrine professionnel démarre à 990€, un e-commerce à 2 490€. Nous proposons des solutions adaptées aux budgets des PME lyonnaises, avec un devis gratuit.",
       },
       {
         question: "Comment améliorer le référencement local à Lyon ?",
@@ -214,7 +214,7 @@ export const cities: CityData[] = [
       },
       {
         question: "Combien coûte le référencement SEO à Marseille ?",
-        answer: "Un accompagnement SEO à Marseille coûte entre 500€ et 2 000€ par mois selon la concurrence de votre secteur. L'investissement est rentabilisé en 3 à 6 mois avec un trafic organique qualifié et durable. Nous proposons des formules adaptées aux entreprises marseillaises.",
+        answer: "Notre accompagnement SEO démarre à 390€ par mois. L'investissement est rentabilisé en 3 à 6 mois avec un trafic organique qualifié et durable. La formule s'adapte à la concurrence de votre secteur.",
       },
       {
         question: "Travaillez-vous avec des entreprises de toute la région PACA ?",
@@ -259,7 +259,7 @@ export const cities: CityData[] = [
       },
       {
         question: "Quel budget prévoir pour le marketing digital à Bordeaux ?",
-        answer: "Un budget marketing digital à Bordeaux varie entre 500€ et 5 000€ par mois. Comptez 500-1 500€/mois pour du SEO, 300-2 000€/mois pour Google Ads (hors budget média), et 500-1 500€/mois pour les réseaux sociaux. Nous adaptons nos offres au budget et aux objectifs de chaque entreprise.",
+        answer: "Vous pouvez démarrer avec un petit budget : SEO à partir de 390€/mois, gestion Google Ads à partir de 290€/mois (hors budget média). Nous adaptons nos offres au budget et aux objectifs de chaque entreprise.",
       },
     ],
     businessAreas: ["Les Chartrons", "Mériadeck", "Euratlantique", "Bordeaux Lac", "Bassins à flot", "Darwin"],
@@ -636,7 +636,7 @@ export const cities: CityData[] = [
       },
       {
         question: "Quel budget prévoir pour un site web professionnel à Vannes ?",
-        answer: "Un site vitrine Next.js professionnel démarre autour de 2 500 à 4 000 €, un site e-commerce à partir de 5 000 € selon le périmètre. Nous établissons un devis gratuit et détaillé adapté aux budgets des TPE et PME morbihannaises, sans coûts cachés, avec un site que vous pouvez faire évoluer.",
+        answer: "Un site vitrine Next.js professionnel démarre à 990 €, un site e-commerce à 2 490 €. Nous établissons un devis gratuit et détaillé adapté aux budgets des TPE et PME morbihannaises, sans coûts cachés, avec un site que vous pouvez faire évoluer.",
       },
     ],
     businessAreas: ["Centre-ville de Vannes", "Le Prat", "Parc Innovation Bretagne Sud", "Laroiseau", "Séné", "Arradon", "Presqu'île de Rhuys"],

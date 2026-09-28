@@ -128,8 +128,7 @@ export default function AiHubPage() {
               analyse de documents) sur les tâches répétitives de votre
               quotidien : réponses aux clients, saisie administrative, relances,
               comptes rendus. Un premier cas d&apos;usage se déploie
-              généralement en 2 à 6 semaines, pour un budget de 3 000 à
-              30 000 € selon le périmètre, avec un retour sur investissement
+              généralement en 2 à 6 semaines, à partir de 1 490 €, avec un retour sur investissement
               constaté en moins d&apos;un an.
             </p>
           </div>

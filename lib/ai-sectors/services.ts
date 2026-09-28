@@ -28,7 +28,7 @@ export const aiSectorProfilesServices: AiSectorProfile[] = [
       cost: {
         question: "Combien coûte l'IA pour un cabinet comptable ?",
         answer:
-          "Un outil de reconnaissance de factures démarre à 50-150 € par mois. Un assistant IA sur mesure (réponses clients, pré-révision, intégration à votre outil de production) représente un projet de 5 000 à 25 000 € selon le périmètre et la taille du cabinet.",
+          "Un outil de reconnaissance de factures démarre à 50-150 € par mois. Un assistant IA sur mesure (réponses clients, pré-révision, intégration à votre outil de production) représente un projet à partir de 1 490 €.",
       },
       duration: {
         question: "Combien de temps pour intégrer l'IA dans un cabinet ?",
@@ -140,7 +140,7 @@ export const aiSectorProfilesServices: AiSectorProfile[] = [
       cost: {
         question: "Combien coûte l'IA pour une agence immobilière ?",
         answer:
-          "Un assistant de qualification de leads coûte 100 à 300 € par mois. Un dispositif sur mesure — réponse automatique multi-portails, avis de valeur, rapprochement acquéreurs branché sur votre logiciel de transaction — représente un projet de 6 000 à 25 000 € selon le nombre d'agences.",
+          "Un assistant de qualification de leads coûte 100 à 300 € par mois. Un dispositif sur mesure — réponse automatique multi-portails, avis de valeur, rapprochement acquéreurs branché sur votre logiciel de transaction — représente un projet à partir de 1 490 €.",
       },
       duration: {
         question: "Combien de temps pour équiper une agence immobilière ?",
@@ -251,7 +251,7 @@ export const aiSectorProfilesServices: AiSectorProfile[] = [
       cost: {
         question: "Combien coûte l'IA pour une agence de voyage ?",
         answer:
-          "Un assistant de réponse aux voyageurs coûte 50 à 200 € par mois. Un dispositif sur mesure — propositions automatisées à partir de vos contrats et de votre back-office, relances de devis — représente un projet de 6 000 à 20 000 € selon le périmètre.",
+          "Un assistant de réponse aux voyageurs coûte 50 à 200 € par mois. Un dispositif sur mesure — propositions automatisées à partir de vos contrats et de votre back-office, relances de devis — représente un projet à partir de 1 490 €.",
       },
       duration: {
         question: "Combien de temps pour équiper une agence de voyage ?",
@@ -357,7 +357,7 @@ export const aiSectorProfilesServices: AiSectorProfile[] = [
       cost: {
         question: "Combien coûte l'IA pour une agence d'architecture ?",
         answer:
-          "Les outils de transcription et de rédaction coûtent 50 à 200 € par mois. Un assistant sur mesure entraîné sur vos dossiers d'affaires — comptes rendus, mémoires techniques, suivi des réserves — représente un projet de 6 000 à 20 000 € selon la taille de l'agence.",
+          "Les outils de transcription et de rédaction coûtent 50 à 200 € par mois. Un assistant sur mesure entraîné sur vos dossiers d'affaires — comptes rendus, mémoires techniques, suivi des réserves — représente un projet à partir de 1 490 €.",
       },
       duration: {
         question: "Combien de temps pour équiper une agence d'architecture ?",
@@ -464,7 +464,7 @@ export const aiSectorProfilesServices: AiSectorProfile[] = [
       cost: {
         question: "Combien coûte l'IA pour une auto-école ?",
         answer:
-          "Un standard téléphonique IA coûte 60 à 250 € par mois. Un dispositif complet — standard, relances d'élèves, planning optimisé, intégration à votre logiciel de gestion d'auto-école — représente un projet de 5 000 à 15 000 € selon le nombre d'agences.",
+          "Un standard téléphonique IA coûte 60 à 250 € par mois. Un dispositif complet — standard, relances d'élèves, planning optimisé, intégration à votre logiciel de gestion d'auto-école — représente un projet à partir de 1 490 €.",
       },
       duration: {
         question: "Combien de temps pour équiper une auto-école ?",
@@ -571,7 +571,7 @@ export const aiSectorProfilesServices: AiSectorProfile[] = [
       cost: {
         question: "Combien coûte l'IA pour un cabinet d'avocats ?",
         answer:
-          "Les outils de recherche et de rédaction juridiques assistés par IA coûtent 100 à 300 € par mois et par utilisateur. Un assistant sur mesure, entraîné sur vos modèles d'actes et branché sur votre logiciel de gestion de cabinet, représente un projet de 8 000 à 30 000 € selon la taille de la structure.",
+          "Les outils de recherche et de rédaction juridiques assistés par IA coûtent 100 à 300 € par mois et par utilisateur. Un assistant sur mesure, entraîné sur vos modèles d'actes et branché sur votre logiciel de gestion de cabinet, représente un projet à partir de 1 490 €.",
       },
       duration: {
         question: "Combien de temps pour intégrer l'IA dans un cabinet d'avocats ?",
@@ -681,7 +681,7 @@ export const aiSectorProfilesServices: AiSectorProfile[] = [
       cost: {
         question: "Combien coûte l'IA pour un organisme de formation ?",
         answer:
-          "Les outils de création de contenus pédagogiques coûtent 50 à 200 € par mois. Un dispositif sur mesure — automatisation des dossiers de financement, préparation Qualiopi, assistant stagiaires branché sur votre outil de gestion — représente un projet de 8 000 à 25 000 €.",
+          "Les outils de création de contenus pédagogiques coûtent 50 à 200 € par mois. Un dispositif sur mesure — automatisation des dossiers de financement, préparation Qualiopi, assistant stagiaires branché sur votre outil de gestion — représente un projet à partir de 1 490 €.",
       },
       duration: {
         question: "Combien de temps pour équiper un centre de formation ?",
@@ -793,7 +793,7 @@ export const aiSectorProfilesServices: AiSectorProfile[] = [
       cost: {
         question: "Combien coûte l'IA pour un consultant indépendant ?",
         answer:
-          "Les outils généralistes (transcription, rédaction assistée) coûtent 20 à 100 € par mois — le point d'entrée le plus bas de tous les métiers de services. Un assistant sur mesure entraîné sur vos livrables et votre méthodologie représente un projet de 5 000 à 15 000 €.",
+          "Les outils généralistes (transcription, rédaction assistée) coûtent 20 à 100 € par mois — le point d'entrée le plus bas de tous les métiers de services. Un assistant sur mesure entraîné sur vos livrables et votre méthodologie représente un projet à partir de 1 490 €.",
       },
       duration: {
         question: "Combien de temps pour outiller une activité de conseil ?",
@@ -899,7 +899,7 @@ export const aiSectorProfilesServices: AiSectorProfile[] = [
       cost: {
         question: "Combien coûte l'IA pour une entreprise de déménagement ?",
         answer:
-          "Un standard IA et un module de devis en ligne coûtent 80 à 250 € par mois. Un dispositif complet — estimation du cubage par photos, planning optimisé, documents automatisés — représente un projet de 5 000 à 20 000 € selon la taille de la flotte.",
+          "Un standard IA et un module de devis en ligne coûtent 80 à 250 € par mois. Un dispositif complet — estimation du cubage par photos, planning optimisé, documents automatisés — représente un projet à partir de 1 490 €.",
       },
       duration: {
         question: "Combien de temps pour équiper une entreprise de déménagement ?",
@@ -1004,7 +1004,7 @@ export const aiSectorProfilesServices: AiSectorProfile[] = [
       cost: {
         question: "Combien coûte l'IA pour une étude notariale ?",
         answer:
-          "Un assistant de suivi de dossiers coûte 100 à 300 € par mois. Un projet sur mesure, intégré à votre logiciel de rédaction d'actes et à vos circuits de collecte de pièces, représente 10 000 à 30 000 € selon le périmètre et la taille de l'étude.",
+          "Un assistant de suivi de dossiers coûte 100 à 300 € par mois. Un projet sur mesure, intégré à votre logiciel de rédaction d'actes et à vos circuits de collecte de pièces, représente un projet à partir de 1 490 €.",
       },
       duration: {
         question: "Combien de temps pour équiper une étude notariale ?",
@@ -1110,7 +1110,7 @@ export const aiSectorProfilesServices: AiSectorProfile[] = [
       cost: {
         question: "Combien coûte l'IA pour un wedding planner ?",
         answer:
-          "Un assistant de réponse et de qualification coûte 50 à 200 € par mois. Un dispositif sur mesure — rétroplannings automatisés, suivi prestataires, contenus — représente 5 000 à 15 000 € : à l'échelle d'une saison, l'équivalent d'un seul contrat d'organisation complète signé en plus.",
+          "Un assistant de réponse et de qualification coûte 50 à 200 € par mois. Un dispositif sur mesure — rétroplannings automatisés, suivi prestataires, contenus — représente un projet à partir de 1 490 € : à l'échelle d'une saison, l'équivalent d'un seul contrat d'organisation complète signé en plus.",
       },
       duration: {
         question: "Combien de temps pour outiller une activité de wedding planner ?",

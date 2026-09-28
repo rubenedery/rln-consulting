@@ -150,7 +150,6 @@ export default async function ExpertiseTechPage({ params }: PageProps) {
         description={expertise.description}
         url={`${baseUrl}/expertise/${expertise.slug}`}
         minPrice={expertise.pricing.minPrice}
-        maxPrice={expertise.pricing.maxPrice}
         features={expertise.features}
         estimatedDuration={expertise.answerFirst.duration.answer.split(".")[0]}
       />
@@ -445,9 +444,9 @@ export default async function ExpertiseTechPage({ params }: PageProps) {
               Tarifs {expertise.name}
             </h2>
             <div className="bg-muted/30 rounded-lg p-8 border border-border/50">
+              <div className="v-label mb-2">À partir de</div>
               <div className="text-4xl font-semibold text-primary mb-2">
-                {expertise.pricing.minPrice.toLocaleString("fr-FR")}€ -{" "}
-                {expertise.pricing.maxPrice.toLocaleString("fr-FR")}€
+                {expertise.pricing.minPrice.toLocaleString("fr-FR")}€
               </div>
               <div className="text-muted-foreground mb-6">
                 par {expertise.pricing.unit}

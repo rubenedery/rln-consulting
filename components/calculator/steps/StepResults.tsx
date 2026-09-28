@@ -94,7 +94,7 @@ export function StepResults() {
           <CardContent className="pt-8 pb-6">
             <div className="text-center">
               <p className="text-sm text-muted-foreground mb-2">
-                Estimation {priceEstimate.isRecurring ? "mensuelle" : ""}
+                À partir de
               </p>
               <div className="flex items-baseline justify-center gap-2">
                 <m.span
@@ -109,7 +109,7 @@ export function StepResults() {
                 )}
               </div>
               <p className="text-sm text-muted-foreground mt-2">
-                Fourchette : {priceEstimate.min.toLocaleString("fr-FR")}€ - {priceEstimate.max.toLocaleString("fr-FR")}€
+                Prix de départ indicatif, affiné gratuitement lors de l&apos;appel de cadrage.
               </p>
             </div>
           </CardContent>

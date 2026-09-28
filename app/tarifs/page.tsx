@@ -29,7 +29,7 @@ const plans = [
     id: "essentiel",
     name: "Essentiel",
     description: "Idéal pour les startups et petites entreprises qui démarrent leur présence en ligne.",
-    price: "999",
+    price: "990",
     priceNote: "à partir de",
     icon: Sparkles,
     popular: false,
@@ -54,8 +54,8 @@ const plans = [
     id: "professionnel",
     name: "Professionnel",
     description: "Pour les entreprises qui veulent un site performant avec des fonctionnalités avancées.",
-    price: "Sur devis",
-    priceNote: "",
+    price: "1 990",
+    priceNote: "à partir de",
     icon: Zap,
     popular: true,
     features: [
@@ -80,8 +80,8 @@ const plans = [
     id: "sur-mesure",
     name: "Sur-Mesure",
     description: "Pour les projets ambitieux nécessitant une solution entièrement personnalisée.",
-    price: "Sur devis",
-    priceNote: "",
+    price: "4 900",
+    priceNote: "à partir de",
     icon: Crown,
     popular: false,
     features: [
@@ -107,12 +107,12 @@ const addons = [
   {
     name: "Intégration IA",
     description: "Chatbot, automatisation, API GPT/Claude",
-    price: "à partir de 2 000€",
+    price: "à partir de 1 490€",
   },
   {
     name: "Gestion Ads",
     description: "Facebook & Google Ads",
-    price: "à partir de 500€/mois",
+    price: "à partir de 290€/mois",
   },
   {
     name: "Maintenance",
@@ -122,12 +122,12 @@ const addons = [
   {
     name: "SEO Avancé",
     description: "Stratégie & contenu",
-    price: "à partir de 800€/mois",
+    price: "à partir de 390€/mois",
   },
   {
     name: "Formation",
     description: "Prise en main du site",
-    price: "300€ (2h)",
+    price: "à partir de 300€",
   },
 ]
 
