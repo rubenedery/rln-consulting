@@ -28,7 +28,7 @@ export const aiSectorProfilesArtisanat: AiSectorProfile[] = [
       cost: {
         question: "Combien coûte l’IA pour une entreprise de couverture ?",
         answer:
-          "Un standard téléphonique IA coûte 30 à 100 € par mois, un outil de relance automatique 30 à 80 € par mois. Un assistant sur mesure qui pré-chiffre vos devis à partir de photos de toiture représente un projet de 3 000 à 12 000 € selon vos types de couverture.",
+          "Un standard téléphonique IA coûte 30 à 100 € par mois, un outil de relance automatique 30 à 80 € par mois. Un assistant sur mesure qui pré-chiffre vos devis à partir de photos de toiture représente un projet à partir de 1 490 €.",
       },
       duration: {
         question: "Combien de temps pour mettre l’IA en place chez un couvreur ?",
@@ -140,7 +140,7 @@ export const aiSectorProfilesArtisanat: AiSectorProfile[] = [
       cost: {
         question: "Combien coûte l’IA pour un électricien ?",
         answer:
-          "Les outils prêts à l’emploi coûtent 30 à 120 € par mois : standard téléphonique IA, devis-factures automatisés, classement de documents. Un assistant sur mesure qui chiffre vos mises aux normes selon vos prix et vos fournisseurs représente 2 000 à 10 000 € selon le périmètre.",
+          "Les outils prêts à l’emploi coûtent 30 à 120 € par mois : standard téléphonique IA, devis-factures automatisés, classement de documents. Un assistant sur mesure qui chiffre vos mises aux normes selon vos prix et vos fournisseurs représente un projet à partir de 1 490 €.",
       },
       duration: {
         question: "En combien de temps un électricien peut-il s’équiper ?",
@@ -246,7 +246,7 @@ export const aiSectorProfilesArtisanat: AiSectorProfile[] = [
       cost: {
         question: "Combien coûte l’IA pour un garage ?",
         answer:
-          "Un standard téléphonique IA avec prise de rendez-vous coûte 50 à 150 € par mois. Les rappels d’entretien automatisés s’ajoutent pour 30 à 80 € par mois. Un assistant sur mesure branché sur votre logiciel d’atelier représente un projet de 3 000 à 15 000 € selon la taille du garage.",
+          "Un standard téléphonique IA avec prise de rendez-vous coûte 50 à 150 € par mois. Les rappels d’entretien automatisés s’ajoutent pour 30 à 80 € par mois. Un assistant sur mesure branché sur votre logiciel d’atelier représente un projet à partir de 1 490 €.",
       },
       duration: {
         question: "Combien de temps pour équiper un garage ?",
@@ -358,7 +358,7 @@ export const aiSectorProfilesArtisanat: AiSectorProfile[] = [
       cost: {
         question: "Combien coûte l’IA pour un paysagiste ?",
         answer:
-          "Un CRM avec relances automatiques coûte 30 à 100 € par mois, un standard téléphonique IA 30 à 100 € par mois également. Un outil sur mesure de planification des tournées et des contrats saisonniers représente un projet de 2 000 à 10 000 € selon la taille de l’équipe.",
+          "Un CRM avec relances automatiques coûte 30 à 100 € par mois, un standard téléphonique IA 30 à 100 € par mois également. Un outil sur mesure de planification des tournées et des contrats saisonniers représente un projet à partir de 1 490 €.",
       },
       duration: {
         question: "Combien de temps pour équiper une entreprise de paysage ?",
@@ -466,7 +466,7 @@ export const aiSectorProfilesArtisanat: AiSectorProfile[] = [
       cost: {
         question: "Combien coûte l’IA pour une menuiserie ?",
         answer:
-          "Les outils prêts à l’emploi — transcription de rendez-vous, devis-factures, relances — coûtent 30 à 120 € par mois. Un assistant de chiffrage sur mesure, entraîné sur vos anciens devis d’agencements, d’escaliers ou de cuisines, représente un projet de 3 000 à 12 000 €.",
+          "Les outils prêts à l’emploi — transcription de rendez-vous, devis-factures, relances — coûtent 30 à 120 € par mois. Un assistant de chiffrage sur mesure, entraîné sur vos anciens devis d’agencements, d’escaliers ou de cuisines, représente un projet à partir de 1 490 €.",
       },
       duration: {
         question: "Combien de temps pour équiper une menuiserie ?",
@@ -573,7 +573,7 @@ export const aiSectorProfilesArtisanat: AiSectorProfile[] = [
       cost: {
         question: "Combien coûte l’IA pour un peintre ?",
         answer:
-          "Un outil de devis avec estimation sur photos coûte 30 à 100 € par mois, le standard téléphonique IA 30 à 100 € par mois. Un assistant sur mesure — chiffrage selon vos gammes, conseil couleurs à partir de vos nuanciers habituels — représente un projet de 2 000 à 8 000 €.",
+          "Un outil de devis avec estimation sur photos coûte 30 à 100 € par mois, le standard téléphonique IA 30 à 100 € par mois. Un assistant sur mesure — chiffrage selon vos gammes, conseil couleurs à partir de vos nuanciers habituels — représente un projet à partir de 1 490 €.",
       },
       duration: {
         question: "Combien de temps pour mettre l’IA en place chez un peintre ?",
@@ -679,7 +679,7 @@ export const aiSectorProfilesArtisanat: AiSectorProfile[] = [
       cost: {
         question: "Combien coûte l’IA pour un plombier ?",
         answer:
-          "Un standard téléphonique IA coûte 30 à 100 € par mois, la suite devis-factures-relances 30 à 80 € par mois. Un assistant sur mesure — pré-diagnostic par photo, tri des urgences selon vos règles, intégration à votre agenda — représente un projet de 2 000 à 8 000 €.",
+          "Un standard téléphonique IA coûte 30 à 100 € par mois, la suite devis-factures-relances 30 à 80 € par mois. Un assistant sur mesure — pré-diagnostic par photo, tri des urgences selon vos règles, intégration à votre agenda — représente un projet à partir de 1 490 €.",
       },
       duration: {
         question: "En combien de temps un plombier peut-il être équipé ?",

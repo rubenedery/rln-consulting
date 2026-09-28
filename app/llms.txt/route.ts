@@ -38,13 +38,13 @@ export function GET() {
   lines.push("## Services")
   lines.push("")
   lines.push(
-    "- [IA pour Entreprises](/services/ia-entreprise): Chatbots intelligents, automatisation, intégration GPT-4 et Claude, RAG. À partir de 3 000€"
+    "- [IA pour Entreprises](/services/ia-entreprise): Chatbots intelligents, automatisation, intégration GPT-4 et Claude, RAG. À partir de 1 490€"
   )
   lines.push(
     "- [GEO - Référencement IA](/services/geo): Optimisation pour être cité par ChatGPT, Perplexity et Google AI Overview"
   )
   lines.push(
-    "- [Google Ads & Meta Ads](/services/ads-management): Gestion campagnes publicitaires B2B et B2C, acquisition clients. À partir de 500€/mois"
+    "- [Google Ads & Meta Ads](/services/ads-management): Gestion campagnes publicitaires B2B et B2C, acquisition clients. À partir de 290€/mois"
   )
   for (const service of services) {
     lines.push(
@@ -75,7 +75,7 @@ export function GET() {
   // ─── Ressources clés ───
   lines.push("## Ressources Clés")
   lines.push("")
-  lines.push("- [Tarifs et Formules](/tarifs): Grille tarifaire transparente de 1 500€ à 50 000€+")
+  lines.push("- [Tarifs et Formules](/tarifs): Tarifs à partir de 990€ (site vitrine)")
   lines.push("- [Simulateur de Tarifs](/tarifs/simulateur): Calculateur interactif pour estimer votre projet")
   lines.push("- [Statistiques & Benchmarks 2026](/statistiques): Données marketing digital, e-commerce, IA avec sources citées")
   lines.push("- [FAQ](/faq): Questions fréquentes sur nos services et processus")

@@ -13,7 +13,7 @@ export function WebSiteJsonLd() {
     name: siteConfig.name,
     url: siteConfig.url,
     description:
-      "RLN Consulting : agence web française fondée en 2020. Développement Next.js/React, e-commerce, CRM sur mesure, Google Ads et Meta Ads. Tarifs à partir de 1 500€.",
+      "RLN Consulting : agence web française fondée en 2020. Développement Next.js/React, e-commerce, CRM sur mesure, Google Ads et Meta Ads. Tarifs à partir de 990€.",
     publisher: {
       "@type": "Organization",
       "@id": `${siteConfig.url}/#organization`,
@@ -49,7 +49,7 @@ export function OrganizationJsonLd({ url = siteConfig.url }: OrganizationJsonLdP
     },
     image: `${url}/og-image.png`,
     description:
-      "RLN Consulting est une agence web française fondée en 2020, spécialisée en développement Next.js/React et gestion Google Ads/Meta Ads. Services : création de sites web (à partir de 1 500€), e-commerce, applications web, CRM sur mesure et intégration IA pour entreprises.",
+      "RLN Consulting est une agence web française fondée en 2020, spécialisée en développement Next.js/React et gestion Google Ads/Meta Ads. Services : création de sites web (à partir de 990€), e-commerce, applications web, CRM sur mesure et intégration IA pour entreprises.",
     slogan: "Votre partenaire digital pour des projets web sur mesure",
     address: {
       "@type": "PostalAddress",
@@ -230,7 +230,7 @@ export function LocalBusinessJsonLd({ url = siteConfig.url }: LocalBusinessJsonL
     "@id": `${url}/#localbusiness`,
     name: siteConfig.name,
     description:
-      "RLN Consulting : agence web parisienne fondée en 2020. Développement Next.js/React, e-commerce Shopify, CRM sur mesure, Google Ads et Meta Ads. Tarifs à partir de 1 500€ pour un site web vitrine.",
+      "RLN Consulting : agence web parisienne fondée en 2020. Développement Next.js/React, e-commerce Shopify, CRM sur mesure, Google Ads et Meta Ads. Tarifs à partir de 990€ pour un site web vitrine.",
     url,
     telephone: siteConfig.contact.phone.replace(/\s/g, "-"),
     email: siteConfig.contact.email,

@@ -204,9 +204,8 @@ export default function ExpertisePage() {
                 </h3>
                 <p className="text-sm text-muted-foreground">
                   Un développeur freelance facture 400-800€/jour selon la
-                  technologie et l&apos;expérience. En agence, les projets démarrent
-                  à 2 000€ pour une intégration simple, 5 000-15 000€ pour une
-                  application complète, et 20 000€+ pour des projets enterprise.
+                  technologie et l&apos;expérience. Chez nous, un site démarre à 990€
+                  et une application complète à 4 900€.
                 </p>
               </div>
               <div className="bg-background rounded-lg p-6 border border-border/50">
@@ -241,8 +240,8 @@ export default function ExpertisePage() {
                 <p className="text-sm text-muted-foreground">
                   L&apos;IA générative (GPT-4, Claude) s&apos;intègre via chatbots,
                   automatisation ou analyse de documents. ROI moyen : 300-500%
-                  sur 12 mois. Projets à partir de 3 000€ pour un chatbot
-                  simple, 8 000€+ pour une solution RAG personnalisée.
+                  sur 12 mois. Chatbot à partir de 1 490€, solution RAG
+                  personnalisée à partir de 2 490€.
                 </p>
               </div>
             </div>

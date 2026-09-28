@@ -28,7 +28,7 @@ export const aiSectorProfilesCommerce: AiSectorProfile[] = [
       cost: {
         question: "Combien coûte l'IA pour un restaurant ?",
         answer:
-          "Un module de réservation intelligent ou un standard téléphonique IA coûte entre 40 et 150 € par mois. Un assistant sur mesure combinant réservations, anti-no-show et prévision de couverts branché sur votre caisse représente un projet de 3 000 à 12 000 € selon le périmètre.",
+          "Un module de réservation intelligent ou un standard téléphonique IA coûte entre 40 et 150 € par mois. Un assistant sur mesure combinant réservations, anti-no-show et prévision de couverts branché sur votre caisse représente un projet à partir de 1 490 €.",
       },
       duration: {
         question: "Combien de temps pour mettre en place l'IA dans un restaurant ?",
@@ -141,7 +141,7 @@ export const aiSectorProfilesCommerce: AiSectorProfile[] = [
       cost: {
         question: "Combien coûte l'IA pour une boulangerie ?",
         answer:
-          "Un outil de prévision de production dédié aux boulangeries coûte entre 50 et 150 € par mois. Un assistant sur mesure gérant en plus les commandes spéciales et la communication représente un projet de 3 000 à 10 000 €, souvent amorti par la seule baisse des invendus.",
+          "Un outil de prévision de production dédié aux boulangeries coûte entre 50 et 150 € par mois. Un assistant sur mesure gérant en plus les commandes spéciales et la communication représente un projet à partir de 1 490 €, souvent amorti par la seule baisse des invendus.",
       },
       duration: {
         question: "Combien de temps pour mettre en place l'IA au fournil ?",
@@ -251,7 +251,7 @@ export const aiSectorProfilesCommerce: AiSectorProfile[] = [
       cost: {
         question: "Combien coûte l'IA pour une boutique de mode ?",
         answer:
-          "Les modules IA des plateformes e-commerce (description automatique, recommandation, conseil de taille) coûtent entre 30 et 150 € par mois. Un dispositif sur mesure reliant boutique physique et site — stocks unifiés, campagnes personnalisées — représente un projet de 4 000 à 15 000 €.",
+          "Les modules IA des plateformes e-commerce (description automatique, recommandation, conseil de taille) coûtent entre 30 et 150 € par mois. Un dispositif sur mesure reliant boutique physique et site — stocks unifiés, campagnes personnalisées — représente un projet à partir de 1 490 €.",
       },
       duration: {
         question: "Combien de temps pour équiper une boutique de vêtements ?",
@@ -357,7 +357,7 @@ export const aiSectorProfilesCommerce: AiSectorProfile[] = [
       cost: {
         question: "Combien coûte l'IA pour un caviste ?",
         answer:
-          "Un assistant d'accords mets-vins intégré à votre site coûte entre 50 et 150 € par mois. Un sommelier numérique sur mesure, entraîné sur votre cave réelle et connecté à votre stock et à votre fichier clients, représente un projet de 4 000 à 15 000 € selon la profondeur du catalogue.",
+          "Un assistant d'accords mets-vins intégré à votre site coûte entre 50 et 150 € par mois. Un sommelier numérique sur mesure, entraîné sur votre cave réelle et connecté à votre stock et à votre fichier clients, représente un projet à partir de 1 490 €.",
       },
       duration: {
         question: "Combien de temps pour équiper une cave à vins ?",
@@ -467,7 +467,7 @@ export const aiSectorProfilesCommerce: AiSectorProfile[] = [
       cost: {
         question: "Combien coûte l'IA pour un fleuriste ?",
         answer:
-          "Un assistant vocal qui prend les commandes coûte entre 40 et 120 € par mois. Un dispositif sur mesure ajoutant les devis événementiels assistés et l'aide aux achats représente un projet de 3 000 à 10 000 €, dimensionné pour une boutique indépendante.",
+          "Un assistant vocal qui prend les commandes coûte entre 40 et 120 € par mois. Un dispositif sur mesure ajoutant les devis événementiels assistés et l'aide aux achats représente un projet à partir de 1 490 €, dimensionné pour une boutique indépendante.",
       },
       duration: {
         question: "Combien de temps pour équiper une boutique de fleuriste ?",
@@ -578,7 +578,7 @@ export const aiSectorProfilesCommerce: AiSectorProfile[] = [
       cost: {
         question: "Combien coûte l'IA pour une bijouterie ?",
         answer:
-          "Un assistant de qualification des demandes et de rédaction de fiches coûte entre 50 et 200 € par mois. Un dispositif sur mesure couvrant le suivi des projets d'atelier et la clientèle fidèle représente un projet de 5 000 à 20 000 €, à la mesure d'une maison qui vend des pièces à forte valeur.",
+          "Un assistant de qualification des demandes et de rédaction de fiches coûte entre 50 et 200 € par mois. Un dispositif sur mesure couvrant le suivi des projets d'atelier et la clientèle fidèle représente un projet à partir de 1 490 €, à la mesure d'une maison qui vend des pièces à forte valeur.",
       },
       duration: {
         question: "Combien de temps pour intégrer l'IA dans une bijouterie ?",
@@ -689,7 +689,7 @@ export const aiSectorProfilesCommerce: AiSectorProfile[] = [
       cost: {
         question: "Combien coûte l'IA pour un traiteur ?",
         answer:
-          "Un outil de devis assisté coûte entre 50 et 200 € par mois. Un dispositif sur mesure couvrant devis au couvert, fiches de production et suivi des prospects représente un projet de 4 000 à 15 000 €, calibré selon votre volume d'événements et la variété de vos formules.",
+          "Un outil de devis assisté coûte entre 50 et 200 € par mois. Un dispositif sur mesure couvrant devis au couvert, fiches de production et suivi des prospects représente un projet à partir de 1 490 €, calibré selon votre volume d'événements et la variété de vos formules.",
       },
       duration: {
         question: "Combien de temps pour équiper une activité de traiteur ?",

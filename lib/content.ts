@@ -6,7 +6,7 @@ export const services: Service[] = [
     id: "developpement-web",
     title: "Développement Web",
     description:
-      "Un site vitrine professionnel coûte entre 2 000€ et 5 000€, un e-commerce à partir de 5 000€. Nous développons avec Next.js et React pour des performances optimales et un meilleur référencement Google.",
+      "Site vitrine à partir de 990€, e-commerce à partir de 2 490€. Nous développons avec Next.js et React pour des performances optimales et un meilleur référencement Google.",
     features: [
       "Sites vitrines & e-commerce",
       "Applications web sur mesure",
@@ -21,7 +21,7 @@ export const services: Service[] = [
     id: "ads-management",
     title: "Acquisition Clients",
     description:
-      "Gestion de campagnes Google Ads et Facebook Ads à partir de 500€/mois. Nos clients obtiennent en moyenne un ROI de 320% et divisent leur coût par lead par 2 en 3 mois.",
+      "Gestion de campagnes Google Ads et Facebook Ads à partir de 290€/mois. Nos clients obtiennent en moyenne un ROI de 320% et divisent leur coût par lead par 2 en 3 mois.",
     features: [
       "Google Ads & Facebook Ads",
       "Stratégie d'acquisition",
@@ -36,7 +36,7 @@ export const services: Service[] = [
     id: "ia-entreprise",
     title: "IA pour Entreprises",
     description:
-      "Un chatbot IA pour entreprise coûte entre 3 000€ et 30 000€ selon la complexité. Il peut automatiser 70% de votre support client et réduire vos coûts de service de 40%.",
+      "Chatbot IA pour entreprise à partir de 1 490€. Il peut automatiser 70% de votre support client et réduire vos coûts de service de 40%.",
     features: [
       "Chatbots intelligents 24/7",
       "Automatisation des tâches",
@@ -66,7 +66,7 @@ export const services: Service[] = [
     id: "applications-mobiles",
     title: "Applications Mobiles",
     description:
-      "Une application mobile coûte entre 15 000€ et 80 000€. Nous utilisons React Native ou Flutter pour développer une seule fois pour iOS et Android, réduisant les coûts de 40%.",
+      "Application mobile à partir de 4 900€. Nous utilisons React Native ou Flutter pour développer une seule fois pour iOS et Android, réduisant les coûts de 40%.",
     features: [
       "Apps iOS & Android",
       "React Native / Flutter",
@@ -81,7 +81,7 @@ export const services: Service[] = [
     id: "crm-applications-metier",
     title: "CRM & Applications Métier",
     description:
-      "Un CRM sur mesure coûte entre 15 000€ et 50 000€, sans abonnement mensuel. Il s'adapte exactement à vos processus métier contrairement aux solutions génériques comme Salesforce.",
+      "CRM sur mesure à partir de 4 900€, sans abonnement mensuel. Il s'adapte exactement à vos processus métier contrairement aux solutions génériques comme Salesforce.",
     features: [
       "CRM personnalisé",
       "Tableaux de bord métier",
@@ -96,7 +96,7 @@ export const services: Service[] = [
     id: "seo-referencement",
     title: "SEO & Référencement",
     description:
-      "Une prestation SEO démarre à 800€/mois. Les premiers résultats apparaissent en 3 à 6 mois. Nos clients constatent en moyenne +180% de trafic organique et x3 mots-clés en première page.",
+      "Accompagnement SEO à partir de 390€/mois. Les premiers résultats apparaissent en 3 à 6 mois. Nos clients constatent en moyenne +180% de trafic organique et x3 mots-clés en première page.",
     features: [
       "Audit SEO complet",
       "Optimisation on-page",
@@ -126,7 +126,7 @@ export const services: Service[] = [
     id: "configurateur-3d",
     title: "Configurateurs 3D",
     description:
-      "Un configurateur 3D coûte entre 8 000€ et 50 000€. Il augmente les conversions de 40% en moyenne car les clients visualisent exactement le produit personnalisé avant d'acheter.",
+      "Configurateur 3D à partir de 3 900€. Il augmente les conversions de 40% en moyenne car les clients visualisent exactement le produit personnalisé avant d'acheter.",
     features: [
       "Visualisation 3D temps réel",
       "Personnalisation produits",
@@ -141,7 +141,7 @@ export const services: Service[] = [
     id: "ecommerce",
     title: "E-commerce",
     description:
-      "Un site e-commerce Shopify clé en main coûte entre 3 000€ et 8 000€. WooCommerce démarre à 5 000€. Nos optimisations augmentent le taux de conversion de 20% à 40% en moyenne.",
+      "Boutique e-commerce (Shopify, WooCommerce ou sur mesure) à partir de 2 490€. Nos optimisations augmentent le taux de conversion de 20% à 40% en moyenne.",
     features: [
       "Shopify & WooCommerce",
       "Solutions sur mesure",
@@ -272,7 +272,7 @@ export const serviceFaqs: Record<string, FAQItem[]> = {
   "developpement": [
     {
       question: "Combien coûte un site web en 2026 ?",
-      answer: "Un site vitrine professionnel coûte entre 2 000€ et 5 000€ en France (source : étude RLN Consulting 2026). Un site e-commerce démarre à 5 000€ et peut aller jusqu'à 15 000€. Une application web sur mesure se situe entre 10 000€ et 50 000€+. Note : 94% des premières impressions sont liées au design du site (Stanford Web Credibility), donc l'investissement dans un design professionnel est crucial pour la conversion.",
+      answer: "Chez nous, un site vitrine professionnel démarre à 990€, un site e-commerce à 2 490€ et une application web sur mesure à 4 900€. Le devis final dépend de vos besoins et reste gratuit. Note : 94% des premières impressions sont liées au design du site (Stanford Web Credibility), donc l'investissement dans un design professionnel est crucial pour la conversion.",
       category: "pricing",
     },
     {
@@ -299,12 +299,12 @@ export const serviceFaqs: Record<string, FAQItem[]> = {
   "ads-management": [
     {
       question: "Combien coûte la gestion de campagnes Google Ads ?",
-      answer: "Nos honoraires démarrent à 500€/mois (budgets jusqu'à 3 000€), puis 10-15% du budget média au-delà. Le CTR moyen Google Ads est de 3.17% tous secteurs (WordStream 2026). Nos clients atteignent 4-6% grâce à l'optimisation continue. ROI moyen constaté : 320% sur nos campagnes gérées.",
+      answer: "Nos honoraires de gestion démarrent à 290€/mois. Le CTR moyen Google Ads est de 3.17% tous secteurs (WordStream 2026). Nos clients atteignent 4-6% grâce à l'optimisation continue. ROI moyen constaté : 320% sur nos campagnes gérées.",
       category: "pricing",
     },
     {
       question: "Quel budget publicitaire minimum pour commencer ?",
-      answer: "Minimum recommandé : 1 000€/mois Google Ads, 500€/mois Facebook Ads. Statistiques : avec 1 000€/mois, attendez 20-50 leads qualifiés selon votre secteur. Le coût par lead moyen en France varie de 15€ (e-commerce) à 150€ (B2B SaaS). En dessous de ces budgets, les données sont insuffisantes pour l'optimisation machine learning des plateformes.",
+      answer: "Vous pouvez démarrer avec un budget publicitaire modeste, dès 300€/mois, puis l'augmenter à mesure que les campagnes prouvent leur rentabilité. Le coût par lead moyen en France varie de 15€ (e-commerce) à 150€ (B2B SaaS) : nous fixons ensemble un objectif réaliste avant de lancer.",
       category: "pricing",
     },
     {
@@ -326,7 +326,7 @@ export const serviceFaqs: Record<string, FAQItem[]> = {
   "ia-entreprise": [
     {
       question: "Combien coûte un chatbot IA pour entreprise ?",
-      answer: "Chatbot basique : 3 000€ à 8 000€ + 200-500€/mois maintenance. Assistant IA avancé (RAG sur vos données) : 10 000€ à 30 000€. Statistiques : un chatbot IA réduit les tickets support de 70% en moyenne (Gartner 2025) et les coûts service client de 40% (IBM 2025). ROI atteint en 3-6 mois pour la plupart des entreprises.",
+      answer: "Un chatbot IA démarre à 1 490€, un assistant IA entraîné sur vos données (RAG) à 2 490€. Statistiques : un chatbot IA réduit les tickets support de 70% en moyenne (Gartner 2025) et les coûts service client de 40% (IBM 2025). ROI atteint en 3-6 mois pour la plupart des entreprises.",
       category: "pricing",
     },
     {
@@ -353,7 +353,7 @@ export const serviceFaqs: Record<string, FAQItem[]> = {
   "applications-mobiles": [
     {
       question: "Combien coûte une application mobile ?",
-      answer: "Une application mobile simple coûte entre 15 000€ et 30 000€. Une application complexe avec backend, authentification et fonctionnalités avancées se situe entre 30 000€ et 80 000€+. Ces prix incluent iOS, Android, le backend et la publication sur les stores.",
+      answer: "Une application mobile démarre à 4 900€, pour iOS et Android avec un seul code. Le devis précis dépend des fonctionnalités (backend, authentification, paiement) et inclut la publication sur les stores.",
       category: "pricing",
     },
     {
@@ -375,7 +375,7 @@ export const serviceFaqs: Record<string, FAQItem[]> = {
   "crm-applications-metier": [
     {
       question: "Combien coûte un CRM sur mesure ?",
-      answer: "Un CRM sur mesure coûte entre 15 000€ et 50 000€ selon la complexité. C'est plus cher qu'un Salesforce ou HubSpot à court terme, mais vous n'avez pas d'abonnement mensuel (souvent 100€ à 500€/utilisateur/mois). Le ROI est généralement atteint en 18 à 24 mois.",
+      answer: "Un CRM sur mesure démarre à 4 900€. Contrairement à Salesforce ou HubSpot, vous n'avez pas d'abonnement par utilisateur (souvent 100€ à 500€/utilisateur/mois) : l'outil vous appartient.",
       category: "pricing",
     },
     {
@@ -402,7 +402,7 @@ export const serviceFaqs: Record<string, FAQItem[]> = {
     },
     {
       question: "Combien coûte une prestation SEO ?",
-      answer: "Audit SEO : 500€ à 1 500€. Accompagnement mensuel : 800€/mois (PME) à 2 000€/mois (e-commerce). Statistique : les entreprises qui investissent en SEO voient +180% de trafic organique en moyenne sur 12 mois (RLN Consulting). Le SEO représente 53% du trafic des sites web (BrightEdge 2025).",
+      answer: "Audit SEO à partir de 290€, accompagnement mensuel à partir de 390€/mois. Statistique : les entreprises qui investissent en SEO voient +180% de trafic organique en moyenne sur 12 mois (RLN Consulting). Le SEO représente 53% du trafic des sites web (BrightEdge 2025).",
       category: "pricing",
     },
     {
@@ -424,7 +424,7 @@ export const serviceFaqs: Record<string, FAQItem[]> = {
   "email-marketing": [
     {
       question: "Combien coûte une stratégie email marketing ?",
-      answer: "La mise en place d'une stratégie email complète coûte entre 2 000€ et 5 000€ (audit, séquences, templates, automation). L'accompagnement mensuel démarre à 500€/mois pour la gestion de newsletters et campagnes. Ces tarifs n'incluent pas les coûts d'outils (Mailchimp, Klaviyo, etc.).",
+      answer: "La mise en place d'une stratégie email (séquences, templates, automatisation) démarre à 990€, l'accompagnement mensuel à 290€/mois. Ces tarifs n'incluent pas les coûts d'outils (Mailchimp, Klaviyo, etc.).",
       category: "pricing",
     },
     {
@@ -446,7 +446,7 @@ export const serviceFaqs: Record<string, FAQItem[]> = {
   "configurateur-3d": [
     {
       question: "Combien coûte un configurateur 3D ?",
-      answer: "Un configurateur 3D simple coûte entre 8 000€ et 15 000€. Un configurateur avancé avec nombreuses options, rendu photoréaliste et intégration e-commerce se situe entre 20 000€ et 50 000€. Le prix dépend du nombre de produits, options de personnalisation et niveau de détail 3D.",
+      answer: "Un configurateur 3D démarre à 3 900€. Le prix final dépend du nombre de produits, options de personnalisation et niveau de détail 3D.",
       category: "pricing",
     },
     {
@@ -468,7 +468,7 @@ export const serviceFaqs: Record<string, FAQItem[]> = {
   "ecommerce": [
     {
       question: "Combien coûte un site e-commerce ?",
-      answer: "Shopify clé en main : 3 000€ à 8 000€. WooCommerce personnalisé : 5 000€ à 15 000€. Solution sur mesure (marketplace, B2B) : 15 000€ à 50 000€+. Statistique : le taux de conversion e-commerce moyen en France est de 2.5% (Contentsquare 2025). Nos sites atteignent 3.5-5% grâce à l'optimisation UX.",
+      answer: "Une boutique e-commerce démarre à 2 490€, que ce soit sur Shopify, WooCommerce ou en sur mesure. Statistique : le taux de conversion e-commerce moyen en France est de 2.5% (Contentsquare 2025). Nos sites atteignent 3.5-5% grâce à l'optimisation UX.",
       category: "pricing",
     },
     {
@@ -504,7 +504,7 @@ export const faqData: FAQItem[] = [
   {
     question: "Combien coûte un site web ?",
     answer:
-      "Le coût d'un site web dépend de plusieurs facteurs : complexité, fonctionnalités, design sur mesure, intégrations. Un site vitrine simple commence autour de 2 000€, tandis qu'une application web complexe peut aller de 10 000€ à 50 000€+. Contactez-nous pour un devis personnalisé gratuit.",
+      "Le coût d'un site web dépend de plusieurs facteurs : complexité, fonctionnalités, design sur mesure, intégrations. Un site vitrine démarre à 990€, une application web sur mesure à 4 900€. Contactez-nous pour un devis personnalisé gratuit.",
     category: "pricing",
   },
   {

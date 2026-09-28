@@ -362,9 +362,8 @@ export default async function CityPage({ params }: PageProps) {
               </h3>
               <p className="text-sm text-muted-foreground">
                 Un développeur freelance à {cityData.name} facture entre <strong>350€ et 700€/jour</strong> selon l&apos;expérience.
-                En agence, un site vitrine coûte <strong>2 000-5 000€</strong>, un e-commerce <strong>5 000-15 000€</strong>,
-                une application web <strong>10 000-50 000€</strong>. RLN Consulting propose des tarifs compétitifs
-                avec un accompagnement complet pour les entreprises de {cityData.name} et de {cityData.region}.
+                Chez nous, un site vitrine démarre à <strong>990€</strong>, un e-commerce à <strong>2 490€</strong>
+                et une application web à <strong>4 900€</strong>, avec un accompagnement complet pour les entreprises de {cityData.name} et de {cityData.region}.
               </p>
             </div>
           </div>

@@ -27,7 +27,7 @@ export const aiSectorProfilesTech: AiSectorProfile[] = [
       cost: {
         question: "Combien coûte l'IA pour un développeur freelance ?",
         answer:
-          "Les outils SaaS (assistant de code, CRM avec IA, rédaction assistée) coûtent 20 à 100 € par mois au total. Une automatisation sur mesure de votre tunnel de prospection — qualification des demandes, devis semi-automatique, relances — représente un projet de 1 500 à 6 000 € selon vos outils existants.",
+          "Les outils SaaS (assistant de code, CRM avec IA, rédaction assistée) coûtent 20 à 100 € par mois au total. Une automatisation sur mesure de votre tunnel de prospection — qualification des demandes, devis semi-automatique, relances — représente un projet à partir de 1 490 €.",
       },
       duration: {
         question: "Combien de temps pour mettre l'IA en place ?",
@@ -37,7 +37,7 @@ export const aiSectorProfilesTech: AiSectorProfile[] = [
       roi: {
         question: "Quel retour sur investissement pour un développeur freelance ?",
         answer:
-          "Un freelance consacre en moyenne un jour par semaine à la prospection et à l'administratif. En récupérer la moitié représente 2 jours facturables par mois : à 500 € de TJM, environ 12 000 € par an. Une automatisation à 3 000 € est rentabilisée en un trimestre.",
+          "Un freelance consacre en moyenne un jour par semaine à la prospection et à l'administratif. En récupérer la moitié représente 2 jours facturables par mois : à 500 € de TJM, environ 12 000 € par an. Une automatisation à partir de 1 490 € est rentabilisée en quelques semaines.",
       },
     },
     painPoints: [
@@ -139,7 +139,7 @@ export const aiSectorProfilesTech: AiSectorProfile[] = [
       cost: {
         question: "Combien coûte l'IA pour un photographe ?",
         answer:
-          "Les outils de culling et de retouche par lot coûtent 20 à 60 € par mois, souvent moins que le temps qu'ils économisent sur un seul reportage. Une automatisation complète de votre parcours client — devis, contrats, galeries, relances de vente de tirages — représente 1 500 à 5 000 € sur mesure.",
+          "Les outils de culling et de retouche par lot coûtent 20 à 60 € par mois, souvent moins que le temps qu'ils économisent sur un seul reportage. Une automatisation complète de votre parcours client — devis, contrats, galeries, relances de vente de tirages — représente un projet sur mesure à partir de 1 490 €.",
       },
       duration: {
         question: "Combien de temps pour intégrer l'IA dans mon activité photo ?",
@@ -250,7 +250,7 @@ export const aiSectorProfilesTech: AiSectorProfile[] = [
       cost: {
         question: "Combien coûte l'IA pour un vidéaste ?",
         answer:
-          "Les outils de transcription, sous-titrage et montage assisté reviennent à 20 à 80 € par mois. Un flux de production sur mesure — ingestion des rushes, indexation, pré-montage des interviews, livraison client — se construit entre 2 000 et 8 000 € selon le volume et vos logiciels de montage.",
+          "Les outils de transcription, sous-titrage et montage assisté reviennent à 20 à 80 € par mois. Un flux de production sur mesure — ingestion des rushes, indexation, pré-montage des interviews, livraison client — se construit à partir de 1 490 €.",
       },
       duration: {
         question: "Combien de temps pour intégrer l'IA dans ma production vidéo ?",

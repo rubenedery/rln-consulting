@@ -105,7 +105,7 @@ export function ServicesBento() {
             <TileHead
               label="Recto · Sites & e-commerce"
               title="Des sites qui chargent vite et qui vendent."
-              price={"Dès\u00a02\u00a0000\u00a0€\nE-commerce dès\u00a05\u00a0000\u00a0€"}
+              price={"Dès\u00a0990\u00a0€\nE-commerce dès\u00a02\u00a0490\u00a0€"}
               href="/services/developpement"
             />
             <div className="relative min-h-[280px] flex-1 overflow-hidden rounded-md border bg-card" aria-hidden="true">
@@ -151,7 +151,7 @@ export function ServicesBento() {
                   Un assistant qui répond à <span className="v-em text-[#C8CDFF]">70 %</span> des demandes.
                 </>
               }
-              price="3 000 € – 30 000 €"
+              price="Dès 1 490 €"
               href="/services/ia-entreprise"
             />
             <div className="flex min-h-[260px] flex-1 flex-col justify-end gap-2.5 rounded-md bg-white p-4 text-[#0B0D12]" aria-hidden="true">
@@ -178,7 +178,7 @@ export function ServicesBento() {
 
           {/* 3D */}
           <article className={cn(tile, "min-h-[440px] border-transparent bg-secondary lg:col-span-4")}>
-            <TileHead label="Recto · Configurateurs 3D" title="Le client voit son produit exact." price="8 000 € – 50 000 €" href="/services/configurateur-3d" />
+            <TileHead label="Recto · Configurateurs 3D" title="Le client voit son produit exact." price="Dès 3 900 €" href="/services/configurateur-3d" />
             <div
               className="v-scene grid min-h-[200px] flex-1 place-items-center"
               style={{ "--c": finishes[finish].hex } as React.CSSProperties}
@@ -223,7 +223,7 @@ export function ServicesBento() {
                   Trouvé sur Google. <span className="v-em">Cité par les IA.</span>
                 </>
               }
-              price="Dès 800 € / mois"
+              price="Dès 390 € / mois"
               href="/services/seo-referencement"
             />
             <div className="flex flex-1 flex-col gap-2.5" aria-hidden="true">
@@ -272,12 +272,12 @@ export function ServicesBento() {
                 </div>
               </div>
             </div>
-            <span className="font-mono text-xs text-white/80">15 000 € – 80 000 €</span>
+            <span className="font-mono text-xs text-white/80">Dès 4 900 €</span>
           </article>
 
           {/* CRM */}
           <article className={cn(tile, "min-h-[400px] bg-card lg:col-span-6")}>
-            <TileHead label="Recto · CRM sur mesure" title="Vos process, pas ceux d'un logiciel." price="15 000 € – 50 000 €" href="/services/crm-applications-metier" />
+            <TileHead label="Recto · CRM sur mesure" title="Vos process, pas ceux d'un logiciel." price="Dès 4 900 €" href="/services/crm-applications-metier" />
             <div className="grid flex-1 grid-cols-3 items-start gap-3" aria-hidden="true">
               {[
                 ["Nouveau · 4", 3],
@@ -314,7 +314,7 @@ export function ServicesBento() {
                   Pilotées au <span className="v-em text-[#C8CDFF]">coût par lead.</span>
                 </>
               }
-              price="Dès 500 € / mois"
+              price="Dès 290 € / mois"
               href="/services/ads-management"
             />
             <div className="flex flex-1 flex-col justify-center gap-6">

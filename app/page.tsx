@@ -27,7 +27,7 @@ const homeFaqs: FAQItem[] = [
   {
     question: "Combien coûte un site web ?",
     answer:
-      "Un site vitrine professionnel coûte entre 2 000 € et 5 000 €. Un e-commerce démarre à 5 000 € et peut aller jusqu'à 15 000 €. Une application web sur mesure se situe entre 10 000 € et 50 000 €.",
+      "Un site vitrine démarre à 990 €, un e-commerce à 2 490 €, un chatbot IA à 1 490 € et une application web ou mobile à 4 900 €. Le devis est gratuit et ajusté à votre projet.",
   },
   {
     question: "En combien de temps est-ce livré ?",

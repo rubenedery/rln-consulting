@@ -43,6 +43,7 @@ import {
 import type { DigitalServiceType } from "@/types/sectors"
 import { siteConfig } from "@/lib/constants"
 import { getAiSectorBySlug } from "@/lib/ai-use-cases-data"
+import { ExpertComptableLanding } from "@/components/sectors/ExpertComptableLanding"
 
 const service_icons: Record<DigitalServiceType, React.ElementType> = {
   site_web: Globe,
@@ -118,6 +119,29 @@ export default async function SectorPage({ params }: PageProps) {
     { name: sector.name, url: `${siteConfig.url}/secteurs/${sector.slug}` },
   ]
 
+  // Page sur mesure pour les experts-comptables (site + IA branchée sur leurs outils)
+  if (sector.slug === "expert-comptable") {
+    return (
+      <>
+        <WebPageJsonLd
+          title={sector.metaTitle}
+          description={sector.metaDescription}
+          url={`${siteConfig.url}/secteurs/${sector.slug}`}
+        />
+        <BreadcrumbJsonLd items={breadcrumbItems} />
+        <FAQPageJsonLd questions={faqJsonLd} />
+        <ExpertComptableLanding
+          sector={sector}
+          breadcrumbs={breadcrumbItems.slice(1).map((item, index, arr) =>
+            index < arr.length - 1
+              ? { label: item.name, href: new URL(item.url).pathname }
+              : { label: item.name }
+          )}
+        />
+      </>
+    )
+  }
+
   return (
     <>
       {/* SEO JSON-LD */}
@@ -150,7 +174,7 @@ export default async function SectorPage({ params }: PageProps) {
             <p className="text-lg sm:text-xl text-muted-foreground mb-8 max-w-2xl">
               {sector.subheadline}
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3">
               <Button
                 asChild
                 size="lg"

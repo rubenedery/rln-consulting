@@ -128,10 +128,9 @@ export default function AdsManagementPage() {
     <>
       <ServiceJsonLd
         name="Gestion Publicités Google Ads & Meta Ads"
-        description="Gestion et optimisation de vos campagnes publicitaires Facebook Ads, Google Ads et LinkedIn Ads. ROI moyen de 320% et coût par lead divisé par 2 en 3 mois. Honoraires à partir de 500€/mois."
+        description="Gestion et optimisation de vos campagnes publicitaires Facebook Ads, Google Ads et LinkedIn Ads. ROI moyen de 320% et coût par lead divisé par 2 en 3 mois. Honoraires à partir de 290€/mois."
         url={`${siteConfig.url}/services/ads-management`}
-        minPrice={500}
-        maxPrice={5000}
+        minPrice={290}
         features={[
           "Stratégie publicitaire personnalisée",
           "Création et gestion Google Ads",
@@ -217,19 +216,18 @@ export default function AdsManagementPage() {
                   Combien coûte la gestion Google Ads ?
                 </h2>
                 <p className="text-muted-foreground text-sm leading-relaxed">
-                  <strong>À partir de 500€/mois</strong> (budgets jusqu&apos;à 3 000€), puis 10-15%
-                  du budget média. CTR moyen Google Ads : 3.17% tous secteurs. Nos clients
+                  <strong>À partir de 290€/mois</strong> de frais de gestion. CTR moyen Google Ads : 3.17% tous secteurs. Nos clients
                   atteignent <strong>4-6%</strong> grâce à l&apos;optimisation continue.
                 </p>
               </div>
               <div className="bg-background rounded-lg p-6 shadow-sm">
                 <h2 className="text-lg font-semibold text-foreground mb-3">
-                  Quel budget minimum recommandé ?
+                  Avec quel budget démarrer ?
                 </h2>
                 <p className="text-muted-foreground text-sm leading-relaxed">
-                  <strong>1 000€/mois Google Ads, 500€/mois Facebook Ads</strong>. Avec 1 000€/mois,
-                  attendez 20-50 leads qualifiés. Coût par lead France : 15€ (e-commerce)
-                  à 150€ (B2B SaaS) selon secteur.
+                  <strong>Dès 300€/mois de budget publicitaire</strong>, à augmenter selon les
+                  résultats. Coût par lead France : 15€ (e-commerce) à 150€ (B2B SaaS) selon
+                  secteur.
                 </p>
               </div>
               <div className="bg-background rounded-lg p-6 shadow-sm">
