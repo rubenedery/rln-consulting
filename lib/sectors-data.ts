@@ -242,17 +242,19 @@ export const sectors: Sector[] = [
     namePlural: "Bijouteries",
     icon: "Gem",
     category: "commerce",
-    metaTitle: "Site & E-commerce Bijouterie : configurateur, RDV, SEO local",
-    metaDescription: "Site et boutique en ligne pour bijouteries et joailliers : configurateur de bagues, prise de RDV en boutique, click & collect, paiement en plusieurs fois, SEO local. Dès 990€.",
-    headline: "Des bijoux qui se vendent aussi en ligne",
-    subheadline: "Un écrin digital à la hauteur de vos pièces : on donne envie en ligne, on rassure, et on fait venir en boutique pour conclure.",
+    metaTitle: "Site e-commerce Bijouterie qui vous appartient | 1 500 € + 599 €/mois",
+    metaDescription: "Site e-commerce sur mesure pour bijouteries, dont vous êtes propriétaire : reprise du catalogue, stock synchronisé, puis évolutions, publicité et 15 publications par mois. 1 500 € HT + 599 € HT/mois.",
+    headline: "Votre site de bijouterie, enfin à vous",
+    subheadline: "Un site e-commerce sur mesure dont vous êtes propriétaire, synchronisé avec votre stock, entretenu et mis en avant chaque mois.",
     painPoints: [
-      "Des pièces qui perdent leur éclat en photo",
-      "Des clients qui hésitent à acheter un bijou cher sans le voir",
-      "Des demandes de sur-mesure difficiles à cadrer à distance",
+      "Un site en abonnement qui ne vous appartient pas",
+      "Un site qui ne bouge plus et vieillit",
+      "Des réseaux sociaux animés quand on a le temps",
       "Une boutique invisible sur « bijouterie + ville » et sur Instagram",
     ],
     solutions: [
+      { title: "Un site qui vous appartient", description: "E-commerce sur mesure, catalogue repris, référencement préservé, stock synchronisé" },
+      { title: "Entretien, publicité et réseaux", description: "Évolutions, campagnes Google et Meta, 15 publications par mois pour 599 € HT" },
       { title: "E-commerce haut de gamme", description: "Zoom HD, vidéos 360°, fiches rassurantes (poinçons, certificats, garanties)" },
       { title: "Configurateur de bijoux", description: "Métal, pierre, taille, gravure : le client compose, vous recevez une demande qualifiée" },
       { title: "RDV en boutique", description: "Essayage, sur-mesure, bague de fiançailles : réservé en ligne, conclu chez vous" },
@@ -266,6 +268,22 @@ export const sectors: Sector[] = [
       { label: "RDV", value: "24/7" },
     ],
     faqs: [
+      {
+        question: "Mon site actuel est une formule en abonnement. Puis-je en changer ?",
+        answer: "Oui. On crée un site sur mesure dont vous êtes propriétaire, on reprend votre catalogue existant (produits, photos, descriptions) et on prépare la bascule pour que vous ne perdiez rien. Pendant l'audit gratuit, on regarde votre site actuel et votre engagement pour choisir le bon moment.",
+      },
+      {
+        question: "Vais-je perdre ma place sur Google en changeant de site ?",
+        answer: "Non. Chaque ancienne adresse de votre site est redirigée vers la nouvelle page correspondante. Google transfère ainsi le référencement acquis, et vos clients retrouvent leurs pages habituelles.",
+      },
+      {
+        question: "Mon stock en boutique sera-t-il synchronisé avec le site ?",
+        answer: "Oui. Le site est relié au stock de la boutique : une pièce vendue au comptoir disparaît du site. Pendant l'audit, on regarde votre logiciel de caisse pour définir la meilleure façon de le connecter.",
+      },
+      {
+        question: "Que comprend le forfait mensuel à 599 € HT ?",
+        answer: "Les évolutions et la maintenance du site, la gestion de vos campagnes Google et Meta, 15 publications par mois sur vos réseaux sociaux et un point mensuel sur les résultats. Le budget publicitaire versé à Google ou Meta reste à votre charge et se fixe avec vous.",
+      },
       {
         question: "Peut-on vraiment vendre des bijoux chers en ligne ?",
         answer: "Oui, à condition de rassurer : photos et vidéos fidèles, poinçons et certificats visibles, garanties, retours clairs et paiement sécurisé. Pour les pièces les plus chères, le site sert surtout à donner envie et à réserver un rendez-vous en boutique : la vente se conclut chez vous.",
