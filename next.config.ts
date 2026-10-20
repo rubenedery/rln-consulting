@@ -113,6 +113,14 @@ const nextConfig: NextConfig = {
         destination: "https://rln-consulting.com/:path*",
         permanent: true,
       },
+      // L'offre bijouterie vit désormais sur son propre site : agencerln.com.
+      // L'entrée « bijouterie » a été retirée de lib/sectors-data.ts pour que
+      // generateStaticParams ne régénère pas la page derrière la redirection.
+      {
+        source: "/secteurs/bijouterie",
+        destination: "https://agencerln.com/",
+        permanent: true,
+      },
       // Ancienne page portfolio devenue cas-etudes
       {
         source: "/portfolio",

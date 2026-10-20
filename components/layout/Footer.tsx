@@ -231,7 +231,11 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-sm text-white/60">
-            © {currentYear} Agence RLN · RLN Consulting. Tous droits réservés.</p>
+            © {currentYear} Agence RLN · RLN Consulting. Tous droits réservés. Bijouteries :{" "}
+            <a href="https://agencerln.com" className="underline-offset-4 hover:text-white hover:underline" rel="noopener">
+              agencerln.com
+            </a>
+          </p>
           <div className="flex gap-6">
             {footerLinks.legal.map((link) => (
               <Link

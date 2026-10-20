@@ -44,7 +44,6 @@ import type { DigitalServiceType } from "@/types/sectors"
 import { siteConfig } from "@/lib/constants"
 import { getAiSectorBySlug } from "@/lib/ai-use-cases-data"
 import { ExpertComptableLanding } from "@/components/sectors/ExpertComptableLanding"
-import { BijouterieLanding } from "@/components/sectors/BijouterieLanding"
 
 const service_icons: Record<DigitalServiceType, React.ElementType> = {
   site_web: Globe,
@@ -124,21 +123,6 @@ export default async function SectorPage({ params }: PageProps) {
   const landingBreadcrumbs = breadcrumbItems.slice(1).map((item, index, arr) =>
     index < arr.length - 1 ? { label: item.name, href: new URL(item.url).pathname } : { label: item.name }
   )
-
-  if (sector.slug === "bijouterie") {
-    return (
-      <>
-        <WebPageJsonLd
-          title={sector.metaTitle}
-          description={sector.metaDescription}
-          url={`${siteConfig.url}/secteurs/${sector.slug}`}
-        />
-        <BreadcrumbJsonLd items={breadcrumbItems} />
-        <FAQPageJsonLd questions={faqJsonLd} />
-        <BijouterieLanding sector={sector} breadcrumbs={landingBreadcrumbs} />
-      </>
-    )
-  }
 
   if (sector.slug === "expert-comptable") {
     return (
