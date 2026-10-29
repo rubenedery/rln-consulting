@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { Bricolage_Grotesque, Instrument_Sans, Instrument_Serif, JetBrains_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { BotIdClient } from "botid/client"
 import { Navbar, Footer } from "@/components/layout"
 import { Toaster } from "@/components/ui/toaster"
 import { ThemeProvider } from "@/components/providers/theme-provider"
@@ -13,6 +14,7 @@ import { ExitIntentPopup } from "@/components/marketing/ExitIntentPopup"
 import { GoogleAnalytics, MetaPixel, Clarity } from "@/components/analytics"
 import "./globals.css"
 import { siteConfig } from "@/lib/constants"
+import { protectedFormRoutes } from "@/lib/bot-protection"
 
 const bricolage = Bricolage_Grotesque({
   variable: "--font-bricolage",
@@ -141,6 +143,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr" suppressHydrationWarning>
+      <head>
+        <BotIdClient protect={protectedFormRoutes} />
+      </head>
       <body
         className={`${bricolage.variable} ${instrumentSans.variable} ${instrumentSerif.variable} ${jetbrainsMono.variable} antialiased min-h-screen flex flex-col`}
       >

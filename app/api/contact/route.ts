@@ -2,6 +2,7 @@ import { NextResponse } from "next/server"
 import { z } from "zod"
 import { siteConfig } from "@/lib/constants"
 import { validateAntiSpam } from "@/lib/antispam"
+import { assessSubmission, isAutomatedRequest, tagSubject } from "@/lib/spam-filter"
 import { escapeHtml } from "@/lib/email-utils"
 
 // Validation schema
@@ -128,8 +129,18 @@ export async function POST(request: Request) {
       )
     }
 
+
+    if (await isAutomatedRequest()) {
+      console.warn("[Anti-spam] Contact : robot détecté par BotID")
+      return NextResponse.json({ message: "Message envoyé avec succès" }, { status: 200 })
+    }
+
     // Validate input
     const validatedData = contactSchema.parse(body)
+    const spam = assessSubmission(validatedData)
+    if (spam.suspect) {
+      console.warn(`[Anti-spam] Contact suspect (${spam.score}) : ${spam.reasons.join(" ; ")}`)
+    }
 
     const resendApiKey = process.env.RESEND_API_KEY
     const unavailableError = NextResponse.json(
@@ -154,7 +165,7 @@ export async function POST(request: Request) {
       from: process.env.RESEND_FROM_EMAIL || `contact@${new URL(siteConfig.url).host}`,
       to: siteConfig.contact.email,
       replyTo: validatedData.email,
-      subject: `[Contact] ${validatedData.name} - ${validatedData.service || "Demande générale"}`,
+      subject: tagSubject(`[Contact] ${validatedData.name} - ${validatedData.service || "Demande générale"}`.replace(/[\r\n]+/g, " "), spam),
       html: generateEmailHtml(validatedData),
     })
 

@@ -2,6 +2,7 @@ import { NextResponse } from "next/server"
 import { z } from "zod"
 import { siteConfig } from "@/lib/constants"
 import { validateAntiSpam } from "@/lib/antispam"
+import { assessSubmission, isAutomatedRequest, tagSubject } from "@/lib/spam-filter"
 import { escapeHtml } from "@/lib/email-utils"
 
 const referralSchema = z.object({
@@ -51,13 +52,20 @@ export async function POST(request: Request) {
   try {
     const body = await request.json()
 
-    const spam = validateAntiSpam(request, body)
-    if (spam) {
-      console.log(`[Anti-spam] Blocked referral form: ${spam}`)
+    const antiSpam = validateAntiSpam(request, body)
+    if (antiSpam) {
+      console.log(`[Anti-spam] Blocked referral form: ${antiSpam}`)
+      return NextResponse.json({ message: "Recommandation envoyée" }, { status: 200 })
+    }
+
+
+    if (await isAutomatedRequest()) {
+      console.warn("[Anti-spam] Apport : robot détecté par BotID")
       return NextResponse.json({ message: "Recommandation envoyée" }, { status: 200 })
     }
 
     const data = referralSchema.parse(body)
+    const spam = assessSubmission({ email: data.email, name: data.name, company: data.company, message: [data.contact, data.context].join("\n") })
     const resendApiKey = process.env.RESEND_API_KEY
     const unavailableError = NextResponse.json(
       {
@@ -79,7 +87,7 @@ export async function POST(request: Request) {
       from: process.env.RESEND_FROM_EMAIL || `contact@${new URL(siteConfig.url).host}`,
       to: siteConfig.contact.email,
       replyTo: data.email,
-      subject: `[Apport d'affaires] ${data.company} — recommandé par ${data.name}`,
+      subject: tagSubject(`[Apport d'affaires] ${data.company} — recommandé par ${data.name}`, spam),
       html: emailHtml(data),
     })
 

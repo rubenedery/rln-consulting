@@ -2,6 +2,7 @@ import { NextResponse } from "next/server"
 import { z } from "zod"
 import { siteConfig } from "@/lib/constants"
 import { validateAntiSpam } from "@/lib/antispam"
+import { assessSubmission, isAutomatedRequest, tagSubject } from "@/lib/spam-filter"
 import { escapeHtml } from "@/lib/email-utils"
 import {
   generateGuideHtml,
@@ -26,7 +27,14 @@ export async function POST(request: Request) {
       return NextResponse.json({ success: true, message: "Guide envoyé avec succès" })
     }
 
+
+    if (await isAutomatedRequest()) {
+      console.warn("[Anti-spam] Guide : robot détecté par BotID")
+      return NextResponse.json({ success: true, message: "Guide envoyé avec succès" })
+    }
+
     const { email } = leadMagnetSchema.parse(body)
+    const spam = assessSubmission({ email })
 
     const resendApiKey = process.env.RESEND_API_KEY
     const unavailableError = NextResponse.json(
@@ -67,7 +75,7 @@ export async function POST(request: Request) {
         from,
         to: siteConfig.contact.email,
         replyTo: email,
-        subject: `[Lead Magnet] Nouveau lead : ${email}`,
+        subject: tagSubject(`[Lead Magnet] Nouveau lead : ${email}`, spam),
         html: generateLeadNotificationHtml(escapeHtml(email)),
       }),
     ])

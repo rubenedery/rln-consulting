@@ -2,6 +2,7 @@ import { NextResponse, after } from "next/server"
 import { z } from "zod"
 import { siteConfig } from "@/lib/constants"
 import { validateAntiSpam } from "@/lib/antispam"
+import { assessSubmission, isAutomatedRequest, tagSubject } from "@/lib/spam-filter"
 import { escapeHtml } from "@/lib/email-utils"
 import { validateAuditUrl } from "@/lib/audit/validate-url"
 import { runHtmlChecks } from "@/lib/audit/checks"
@@ -42,7 +43,7 @@ async function runAuditAndSendEmails(
     from,
     to: siteConfig.contact.email,
     replyTo: email,
-    subject: `[Audit] Nouveau lead : ${email}`,
+    subject: tagSubject(`[Audit] Nouveau lead : ${email}`, assessSubmission({ email })),
     html: generateAuditNotificationHtml(safeEmail, targetUrl.href, null),
   })
   if (notifyEarly.error) {
@@ -97,6 +98,12 @@ export async function POST(request: Request) {
     if (spamResult) {
       // Return 200 to not reveal detection to bots
       console.log(`[Anti-spam] Blocked audit: ${spamResult}`)
+      return NextResponse.json({ success: true, message: "Audit lancé" })
+    }
+
+
+    if (await isAutomatedRequest()) {
+      console.warn("[Anti-spam] Audit : robot détecté par BotID")
       return NextResponse.json({ success: true, message: "Audit lancé" })
     }
 
