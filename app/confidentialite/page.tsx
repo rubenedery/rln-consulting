@@ -282,10 +282,62 @@ export default function ConfidentialitePage() {
               </ul>
             </section>
 
+            {/* Application TikTok Shop */}
+            <section id="rln-commerce-connect">
+              <h2 className="text-2xl font-semibold text-foreground mb-4">
+                10. Application RLN Commerce Connect (TikTok Shop)
+              </h2>
+              <p className="text-muted-foreground mb-4">
+                RLN Consulting édite RLN Commerce Connect, un service qui relie la boutique
+                TikTok Shop d&apos;un vendeur à son back-office. Le vendeur connecte sa boutique
+                par l&apos;autorisation officielle de TikTok Shop et peut la révoquer à tout moment,
+                depuis TikTok Shop ou depuis son back-office : les jetons d&apos;accès sont alors
+                effacés et les échanges cessent.
+              </p>
+              <ul className="list-disc list-inside text-muted-foreground space-y-2 mb-4">
+                <li>
+                  <strong>Données traitées :</strong> identifiants techniques de la boutique,
+                  commandes (articles, montants, adresse de livraison, nom et téléphone de
+                  l&apos;acheteur tels que transmis par TikTok Shop), fiches produits, stock,
+                  versements.
+                </li>
+                <li>
+                  <strong>Finalités :</strong> exécution des commandes (préparation, expédition,
+                  suivi, retours), synchronisation du catalogue et du stock, suivi financier du
+                  vendeur.
+                </li>
+                <li>
+                  <strong>Base légale :</strong> exécution du contrat entre le vendeur et
+                  l&apos;acheteur, et du contrat de service entre le vendeur et RLN Consulting.
+                </li>
+                <li>
+                  <strong>Partage :</strong> aucune donnée n&apos;est utilisée à des fins
+                  publicitaires, revendue ou partagée, hors sous-traitant d&apos;hébergement
+                  situé dans l&apos;Union européenne.
+                </li>
+                <li>
+                  <strong>Sécurité :</strong> échanges en HTTPS, notifications authentifiées par
+                  signature, jetons d&apos;accès chiffrés au repos et jamais journalisés.
+                </li>
+                <li>
+                  <strong>Conservation :</strong> les données personnelles des acheteurs sont
+                  effacées au terme de la durée de conservation des commandes.
+                </li>
+              </ul>
+              <p className="text-muted-foreground">
+                Pour exercer vos droits d&apos;accès, de rectification et d&apos;effacement sur ces
+                données, écrivez à{" "}
+                <a href="mailto:ruben@rln-consulting.com" className="text-primary hover:underline">
+                  ruben@rln-consulting.com
+                </a>
+                .
+              </p>
+            </section>
+
             {/* Modifications */}
             <section>
               <h2 className="text-2xl font-semibold text-foreground mb-4">
-                10. Modifications de la politique
+                11. Modifications de la politique
               </h2>
               <p className="text-muted-foreground">
                 Nous nous réservons le droit de modifier cette politique de confidentialité à
@@ -297,7 +349,7 @@ export default function ConfidentialitePage() {
             {/* Contact & Réclamation */}
             <section>
               <h2 className="text-2xl font-semibold text-foreground mb-4">
-                11. Contact et réclamation
+                12. Contact et réclamation
               </h2>
               <p className="text-muted-foreground mb-4">
                 Pour toute question relative à cette politique ou à vos données personnelles,
