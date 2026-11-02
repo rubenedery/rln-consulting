@@ -38,7 +38,7 @@ export default function ConfidentialitePage() {
               Politique de Confidentialité
             </h1>
             <p className="text-muted-foreground">
-              Dernière mise à jour : {new Date().toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" })}
+              Dernière mise à jour : 2 novembre 2026
             </p>
           </div>
 
@@ -280,6 +280,55 @@ export default function ConfidentialitePage() {
                 <li>Accès limité aux données personnelles</li>
                 <li>Mises à jour régulières de sécurité</li>
               </ul>
+
+              <h3 className="text-xl font-medium text-foreground mt-6 mb-3">
+                Classification des données
+              </h3>
+              <p className="text-muted-foreground mb-4">
+                Chaque donnée est classée selon sa sensibilité, et la protection appliquée
+                dépend de sa classe :
+              </p>
+              <ul className="list-disc list-inside text-muted-foreground space-y-2 mb-4">
+                <li>
+                  <strong>Secrète</strong> (jetons d&apos;accès, secrets d&apos;application, clés) :
+                  chiffrée au repos, jamais affichée ni journalisée, accessible au seul service
+                  qui l&apos;utilise.
+                </li>
+                <li>
+                  <strong>Confidentielle</strong> (données personnelles des clients et des
+                  acheteurs : nom, adresse, téléphone, e-mail) : accès réservé aux comptes
+                  autorisés, utilisée uniquement pour exécuter la commande, effacée au terme
+                  de la durée de conservation.
+                </li>
+                <li>
+                  <strong>Interne</strong> (commandes, stock, versements, journaux techniques) :
+                  accès réservé au vendeur et à l&apos;agence, sans donnée personnelle dans les
+                  journaux.
+                </li>
+                <li>
+                  <strong>Publique</strong> (catalogue, prix, contenus du site) : diffusion
+                  libre.
+                </li>
+              </ul>
+
+              <h3 className="text-xl font-medium text-foreground mt-6 mb-3">
+                Gestion des failles
+              </h3>
+              <ul className="list-disc list-inside text-muted-foreground space-y-2 mb-4">
+                <li>Correctifs de sécurité du système appliqués automatiquement sur les serveurs</li>
+                <li>Pare-feu qui ne laisse passer que le web et l&apos;administration par clé SSH, blocage des tentatives d&apos;intrusion répétées</li>
+                <li>Veille automatique des alertes de sécurité sur les dépendances logicielles, audit des dépendances avant chaque mise en production</li>
+                <li>Faille critique corrigée en priorité, et notification sous 72 heures en cas de violation de données</li>
+              </ul>
+
+              <h3 className="text-xl font-medium text-foreground mt-6 mb-3">
+                Révision de cette politique
+              </h3>
+              <p className="text-muted-foreground">
+                Cette politique et nos règles internes de protection des données sont relues au
+                moins une fois par an, et à chaque nouveau service ou nouveau traitement de
+                données. La date de dernière mise à jour figure en haut de cette page.
+              </p>
             </section>
 
             {/* Application TikTok Shop */}
