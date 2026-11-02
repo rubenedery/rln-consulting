@@ -3,6 +3,8 @@ import { NextResponse, type NextRequest } from "next/server"
 import { instancesAutorisees, urlRetourInstance } from "@/lib/tiktok-relais"
 
 export const dynamic = "force-dynamic"
+// Données d'acheteurs en transit : la fonction s'exécute en France (Paris), jamais hors UE.
+export const preferredRegion = "cdg1"
 
 /** Retour du vendeur depuis TikTok : redirigé vers le back-office de sa bijouterie. */
 export function GET(request: NextRequest) {

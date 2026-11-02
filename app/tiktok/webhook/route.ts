@@ -3,6 +3,8 @@ import { NextResponse, type NextRequest } from "next/server"
 import { instancesAutorisees, statutPourTikTok, transmetNotification } from "@/lib/tiktok-relais"
 
 export const dynamic = "force-dynamic"
+// Données d'acheteurs en transit : la fonction s'exécute en France (Paris), jamais hors UE.
+export const preferredRegion = "cdg1"
 export const maxDuration = 10
 
 /** Notification TikTok : transmise telle quelle à chaque back-office connu. */
