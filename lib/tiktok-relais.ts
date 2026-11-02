@@ -97,8 +97,10 @@ export async function transmetNotification(
 /**
  * 200 dès qu'une instance a accepté : TikTok ne renvoie alors pas la
  * notification. Sinon 502, pour que TikTok la renvoie plus tard (le back-office
- * la rattrape aussi par relecture périodique).
+ * la rattrape aussi par relecture périodique). Sans aucune instance déclarée il
+ * n'y a rien à livrer : 200, pour que la console TikTok accepte l'URL.
  */
 export function statutPourTikTok(transmissions: Transmission[]): number {
+  if (transmissions.length === 0) return 200
   return transmissions.some((t) => t.statut !== null && t.statut >= 200 && t.statut < 300) ? 200 : 502
 }

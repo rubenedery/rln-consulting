@@ -88,6 +88,9 @@ describe("transmission des notifications", () => {
     assert.equal(statutPourTikTok(await transmetNotification(corps, { authorization: "s", contentType: null }, instances, une_seule)), 200)
     const aucune: typeof fetch = async () => new Response(null, { status: 401 })
     assert.equal(statutPourTikTok(await transmetNotification(corps, { authorization: "s", contentType: null }, instances, aucune)), 502)
-    assert.equal(statutPourTikTok([]), 502)
+  })
+
+  it("répond 200 quand aucune instance n'est déclarée (rien à livrer)", async () => {
+    assert.equal(statutPourTikTok(await transmetNotification(corps, { authorization: null, contentType: null }, new Map())), 200)
   })
 })
