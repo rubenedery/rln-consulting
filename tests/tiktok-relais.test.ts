@@ -54,10 +54,23 @@ describe("retour d'autorisation", () => {
     assert.equal(cible.searchParams.get("shop_region"), "FR")
   })
 
-  it("refuse une instance absente de la liste ou un state sans instance", () => {
+  it("refuse une instance absente de la liste", () => {
     assert.equal(urlRetourInstance(new URLSearchParams({ code: "c", state: "inconnue~n.1.s" }), instances), null)
+  })
+
+  it("sans state et plusieurs instances : impossible de choisir, refus", () => {
     assert.equal(urlRetourInstance(new URLSearchParams({ code: "c", state: "n.1.s" }), instances), null)
     assert.equal(urlRetourInstance(new URLSearchParams({ code: "c" }), instances), null)
+  })
+
+  it("sans state et une seule instance : le code part sur sa page Connecteurs pour confirmation", () => {
+    const seule = instancesAutorisees(JSON.stringify({ "boutique-a": "https://api.boutique-a.fr" }))
+    const cible = new URL(urlRetourInstance(new URLSearchParams({ code: "TTP_code", app_key: "k" }), seule) ?? "")
+    assert.equal(cible.origin + cible.pathname, "https://api.boutique-a.fr/app/mon-enseigne/connecteurs")
+    assert.equal(cible.searchParams.get("tiktok_code"), "TTP_code")
+    assert.equal(cible.searchParams.get("app_key"), null)
+    const refus = urlRetourInstance(new URLSearchParams({ error: "auth_denied", code: "null" }), seule)
+    assert.equal(refus, "https://api.boutique-a.fr/app/mon-enseigne/connecteurs?tiktok=refuse")
   })
 })
 

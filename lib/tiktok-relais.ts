@@ -55,9 +55,27 @@ export function instanceDuState(state: string | null): string | null {
  */
 export function urlRetourInstance(recherche: URLSearchParams, instances: Map<string, string>): string | null {
   const identifiant = instanceDuState(recherche.get("state"))
-  const origine = identifiant ? instances.get(identifiant) : undefined
-  if (!origine) return null
-  return `${origine}/hooks/tiktok/autorisation?${recherche.toString()}`
+  if (identifiant) {
+    const origine = instances.get(identifiant)
+    return origine ? `${origine}/hooks/tiktok/autorisation?${recherche.toString()}` : null
+  }
+  return urlSansState(recherche, instances)
+}
+
+/**
+ * Autorisation lancée depuis TikTok (Partner Center, boutique d'applications) :
+ * aucun state, donc aucune instance désignée. Avec une seule instance déclarée,
+ * le code part sur sa page Connecteurs, où l'administrateur connecté confirme ;
+ * avec plusieurs, impossible de deviner : le vendeur relance depuis son
+ * back-office.
+ */
+function urlSansState(recherche: URLSearchParams, instances: Map<string, string>): string | null {
+  if (instances.size !== 1) return null
+  const [origine] = instances.values()
+  const page = `${origine}/app/mon-enseigne/connecteurs`
+  const code = recherche.get("code")
+  if (recherche.get("error") || !code || code === "null") return `${page}?tiktok=refuse`
+  return `${page}?${new URLSearchParams({ tiktok_code: code }).toString()}`
 }
 
 export type Transmission = { instance: string; statut: number | null }
