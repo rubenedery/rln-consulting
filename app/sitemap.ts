@@ -112,6 +112,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     },
     {
+      url: `${baseUrl}/rln-commerce-connect`,
+      lastModified: new Date("2026-11-17"),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
       url: `${baseUrl}/confidentialite`,
       lastModified: contentLastModified.staticPages,
       changeFrequency: "yearly",
